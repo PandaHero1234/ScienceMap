@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Beleg",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^ev-[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "claim_id": {
+      "type": "string",
+      "pattern": "^cl-[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "study_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "study_version": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "locator": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dataset_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "event_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "conditions": {
+      "type": "string",
+      "minLength": 1
+    },
+    "metric": {
+      "type": "string",
+      "minLength": 1
+    },
+    "values": {
+      "type": "object",
+      "minProperties": 1
+    },
+    "uncertainty": {
+      "type": "string",
+      "minLength": 1
+    },
+    "relation": {
+      "enum": [
+        "stuetzt",
+        "spricht_dagegen",
+        "nicht_entscheidend"
+      ]
+    },
+    "review_status": {
+      "enum": [
+        "vorgeschlagen",
+        "in_pruefung",
+        "freigegeben",
+        "erneut_zu_pruefen"
+      ]
+    },
+    "extracted_by": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewed_by": {
+      "type": "string",
+      "minLength": 1
+    },
+    "note": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "id",
+    "claim_id",
+    "study_id",
+    "study_version",
+    "locator",
+    "metric",
+    "values",
+    "uncertainty",
+    "relation",
+    "review_status"
+  ],
+  "anyOf": [
+    {
+      "required": [
+        "dataset_id"
+      ]
+    },
+    {
+      "required": [
+        "event_ids"
+      ]
+    }
+  ]
+}

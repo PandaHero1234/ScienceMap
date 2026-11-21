@@ -1,0 +1,11 @@
+id: cl-splitminer-bpic12-fscore
+statement: >-
+  Auf dem Log BPIC12 erreicht Split Miner mit den Standardparametern der Studie
+  einen höheren F-Score als Inductive Miner.
+scope: >-
+  BPIC12 in der Fassung der Studie, Standardparameter beider Verfahren, F-Score aus
+  Fitness und Precision. Die genaue Variante des Inductive Miner und die Vorverarbeitung
+  des Logs sind noch aus der Studie zu erfassen.
+milestone_ids:
+  - ms-bpic12-quellenabgleich
+  - ms-bpic12-reproduktion

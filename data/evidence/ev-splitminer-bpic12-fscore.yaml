@@ -1,0 +1,18 @@
+id: ev-splitminer-bpic12-fscore
+claim_id: cl-splitminer-bpic12-fscore
+study_id: augusto-split-miner-journal
+study_version: autorenfassung
+locator: Tabelle 4, BPIC12, Zeilen SM und IM
+dataset_id: bpic12
+conditions: Standardparameter der Studie
+metric: F-Score aus Fitness und Precision
+values:
+  split_miner: 0.88
+  inductive_miner: 0.66
+uncertainty: offen
+relation: stuetzt
+review_status: vorgeschlagen
+note: >-
+  Fitness 0,96 gegenüber 0,98 und Precision 0,81 gegenüber 0,50. Der Fitness-Wert allein
+  würde zur umgekehrten Rangfolge führen. Die Werte stammen aus dem Dokumentationsentwurf
+  und sind noch nicht von einer zweiten Person mit der Tabelle abgeglichen.

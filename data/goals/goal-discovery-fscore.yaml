@@ -1,0 +1,37 @@
+id: goal-discovery-fscore
+field: Process Mining
+title: F-Score-Vorteil von Split Miner nachvollziehen und seine Übertragbarkeit untersuchen
+last_work: Vergleichswerte und Fundstelle für BPIC12 erfasst
+open_question: Zweite Person prüft die Zeilen für beide Verfahren und die verwendete Metrik
+milestones:
+  - id: ms-bpic12-quellenabgleich
+    title: Ausgangsbefund belegen
+    criterion: Zwei Personen gleichen Metrik, Log, Parameter und beide Vergleichswerte mit der Tabelle ab.
+    note: Werte und Fundstelle erfasst, Zweitprüfung offen.
+  - id: ms-bpic12-reproduktion
+    title: Rechnung reproduzieren
+    criterion: >-
+      Eine andere Person erhält mit ursprünglichen Daten, Implementierungen und Einstellungen
+      beide Werte auf die publizierte Genauigkeit. Artefakte und Laufprotokoll sind verlinkt.
+    note: Eigener Rechenlauf offen.
+  - id: ms-uebertragbarkeit-test
+    title: Übertragbarkeit testen
+    criterion: >-
+      Auf drei vorab ausgewählten, voneinander unabhängigen Datenquellen wird der
+      F-Score-Unterschied samt Unsicherheit und vorab vereinbarter Auswertung berichtet.
+    note: Auswahl und Test offen.
+  - id: ms-geltungsbereich
+    title: Geltungsbereich bestimmen
+    criterion: >-
+      Die Synthese beurteilt, unter welchen Logeigenschaften und Parametern sich die Rangfolge
+      hält oder ändert. Sie benennt Abweichungen und methodische Grenzen.
+    note: Synthese offen.
+catalog:
+  - version: 1
+    date: 2026-11-21
+    reason: Erster Zielkatalog des Pilotentwurfs
+    milestones:
+      - ms-bpic12-quellenabgleich
+      - ms-bpic12-reproduktion
+      - ms-uebertragbarkeit-test
+      - ms-geltungsbereich
