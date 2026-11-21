@@ -34,7 +34,9 @@ def ids(page: Path) -> set[str]:
 
 def test_alle_seiten_sind_vorhanden(site):
     names = {p.relative_to(site).as_posix() for p in pages(site)}
-    assert {"index.html", "pruefen.html", "verlauf.html"} <= names
+    assert {"index.html", "ziele.html", "pruefen.html", "verlauf.html"} <= names
+    assert {n for n in names if n.startswith("fach/")} == {
+        "fach/mathematik.html", "fach/informatik.html", "fach/physik-astronomie.html", "fach/biologie.html"}
     assert sum(n.startswith("ziele/") for n in names) == 5
     assert sum(n.startswith("aussagen/") for n in names) == 12
     assert (site / "atlas.css").is_file() and (site / "atlas.js").is_file()
@@ -64,7 +66,7 @@ def test_kein_interner_link_und_kein_anker_fuehrt_ins_leere(site):
 
 
 def test_route_zeigt_jeden_meilenstein_mit_seinem_zustand(site):
-    index = (site / "index.html").read_text(encoding="utf-8")
+    index = (site / "ziele.html").read_text(encoding="utf-8")
     states = re.findall(r'<li class="station is-([a-z-]+)">', index)
     assert len(states) == 19
     assert {s: states.count(s) for s in set(states)} == {"proposed": 12, "proposed-failed": 2, "open": 5}
@@ -72,7 +74,7 @@ def test_route_zeigt_jeden_meilenstein_mit_seinem_zustand(site):
 
 
 def test_zustand_steht_als_text_und_nicht_nur_als_farbe(site):
-    index = (site / "index.html").read_text(encoding="utf-8")
+    index = (site / "ziele.html").read_text(encoding="utf-8")
     assert index.count('<span class="sr">: Vorschlag: erreicht</span>') == 12
     assert 'aria-label="Legende der Stationen"' in index
     claim = (site / "aussagen" / "cl-gw-zwei-ereignisse.html").read_text(encoding="utf-8")
@@ -80,14 +82,14 @@ def test_zustand_steht_als_text_und_nicht_nur_als_farbe(site):
 
 
 def test_ohne_javascript_ist_alles_lesbar(site):
-    index = (site / "index.html").read_text(encoding="utf-8")
+    index = (site / "ziele.html").read_text(encoding="utf-8")
     assert index.count('<li class="goal"') == 5, "alle Ziele stehen im HTML"
     assert 'id="filter" role="search" hidden' in index, "die Filterleiste erscheint erst mit JavaScript"
     assert 'id="theme" type="button" hidden' in index
 
 
 def test_suche_findet_ziele_ueber_aussagen_und_quellen(site):
-    index = (site / "index.html").read_text(encoding="utf-8")
+    index = (site / "ziele.html").read_text(encoding="utf-8")
     search = {m.group(1): m.group(2) for m in re.finditer(
         r'data-search="([^"]*)">\s*<div>\s*<h4><a href="ziele/([^"]+)\.html"', index)}
     by_goal = {goal: text for text, goal in search.items()}
@@ -110,7 +112,7 @@ def test_aussage_fuehrt_zurueck_zu_ziel_und_meilenstein(site):
     links = hrefs(claim)
     assert "../ziele/goal-primzahlluecken.html" in links
     assert "../ziele/goal-primzahlluecken.html#ms-primluecken-zweiter-beweis" in links
-    assert "../index.html#fach-mathematik" in links
+    assert "../fach/mathematik.html" in links, "der Rückweg führt über das Fachgebiet"
 
 
 def test_offene_pruefungen_nennen_jeden_ungeprueften_eintrag_mit_datei(site):
@@ -144,7 +146,7 @@ def test_erreichte_station_nach_freigabe(world, tmp_path):
     """Mit erfundenen Daten: Eine freigegebene Entscheidung macht die Station zu 'erreicht'."""
     world.decide("dec-1", "ms-a", "erreicht", "2026-02-01")
     assert atlas.main(["build", "--data", str(world.root), "--out", str(tmp_path / "s")]) == 0
-    index = (tmp_path / "s" / "index.html").read_text(encoding="utf-8")
+    index = (tmp_path / "s" / "ziele.html").read_text(encoding="utf-8")
     assert index.count('<li class="station is-reached">') == 1
     assert "<strong>1 von 4</strong> Meilensteinen erreicht" in index
     goal = (tmp_path / "s" / "ziele" / "goal-test.html").read_text(encoding="utf-8")

@@ -11,7 +11,7 @@ python -m pytest -q                  # prüft jede Regel
 python scripts/atlas.py build        # schreibt die Übersicht nach public/
 ```
 
-Von den 97 Tests arbeiten 49 mit erfundenen Daten in einem temporären Ordner. `tests/test_pilotdaten.py`, `tests/test_fachgebiete.py` und der größte Teil von `tests/test_oberflaeche.py` und `tests/test_gesamt.py` lesen die echten Daten. Als Gegenprobe wurden dreizehn Regeln einzeln im Skript ausgeschaltet. Jedes Mal schlug mindestens ein Test fehl.
+Von den 109 Tests arbeiten 50 mit erfundenen Daten in einem temporären Ordner. `tests/test_pilotdaten.py`, `tests/test_fachgebiete.py` und der größte Teil von `tests/test_oberflaeche.py`, `tests/test_gesamt.py` und `tests/test_ueberatlas.py` lesen die echten Daten. Als Gegenprobe wurden dreizehn Regeln einzeln im Skript ausgeschaltet. Jedes Mal schlug mindestens ein Test fehl.
 
 ## Belegt
 
@@ -39,6 +39,8 @@ Von den 97 Tests arbeiten 49 mit erfundenen Daten in einem temporären Ordner. `
 | Der Gesamtstand zählt alle Meilensteine nach Zustand, die Fächer ergeben zusammen das Ganze | 1 | `test_gesamtstand_zaehlt_alle_meilensteine_nach_zustand`, `test_faecher_ergeben_zusammen_den_gesamtstand` |
 | Die Karte hat eine Kachel je Meilenstein, Aussage und Beleg | 1 | `test_karte_hat_eine_kachel_je_meilenstein_aussage_und_beleg` |
 | Die Kurve zeigt erreichte Meilensteine über die Zeit | 1 | `test_kurve_zeigt_erreichte_meilensteine_ueber_die_zeit` |
+| Der Über-Atlas zeigt alle 42 Fachgebiete, auch die leeren, und die Fachgebiete ergeben zusammen den Gesamtstand | 1 | `test_startseite_zeigt_alle_fachgebiete_auch_die_leeren`, `test_fachgebiete_ergeben_zusammen_den_gesamtstand` |
+| Ein Ziel ohne oder mit unbekanntem Fachgebiet stoppt die Aktualisierung | 3 | `test_ziel_ohne_fachgebiet_stoppt`, `test_unbekanntes_fachgebiet_stoppt` |
 | Ein Vorschlag ist sichtbar und verändert den Zähler nicht | 2, 7 | `test_vorschlag_ist_sichtbar_und_zaehlt_nicht` |
 | Ein Sprachmodell ersetzt keine der zwei Personen | 2 | `test_sprachmodell_ersetzt_keine_der_zwei_personen` |
 | Eine zurückgezogene Studie stützt nichts mehr | 7 | `test_zurueckgezogene_studie_stuetzt_nichts_mehr` |
@@ -65,4 +67,5 @@ Von den 97 Tests arbeiten 49 mit erfundenen Daten in einem temporären Ordner. `
 - **Überwachung von Korrekturen und Rückzügen.** Jemand muss den Status der Studie von Hand eintragen. Danach markiert das Skript alle betroffenen Entscheidungen.
 - **Unsicherheit in Meilenstein 3.** Das Kriterium nennt noch kein Verfahren und keine Schwelle für „Vorteil nicht nachweisbar“.
 - **Drei Fachgebiete.** Die Einträge aus Physik, Mathematik und Biologie sind mit Abstracts abgeglichen, nicht mit den Volltexten. Einzelheiten stehen in [Drei Fachgebiete als Prozesstest](07-fachgebiete.md).
+- **Bezeichnungen der Systematik.** Der Aufbau von ÖFOS 2012 mit 6 Hauptgruppen und 42 Gruppen ist geprüft. Die Namen der Gruppen sind noch nicht vollständig mit der Veröffentlichung von Statistik Austria abgeglichen.
 - **Zuordnung von Meilenstein 1.** Der Quellenabgleich ist Arbeit am Atlas und zählt derzeit im Fortschrittsbalken mit. Kapitel 1 trennt beides. Die Entscheidung steht aus.

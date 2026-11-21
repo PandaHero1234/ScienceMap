@@ -89,6 +89,9 @@ TILE_TEXT = {  # Prüfstand von Aussagen und Belegen
     "done": "geprüft", "proposed": "vorgeschlagen, Zweitprüfung offen", "open": "noch nicht eingestuft",
     "attention": "erneut zu prüfen",
 }
+COVER_HEAD = ('<th scope="col">Meilensteine</th><th scope="col" class="num">erreicht</th>'
+              '<th scope="col" class="num">vorgeschlagen</th><th scope="col" class="num">Aussagen geprüft</th>'
+              '<th scope="col" class="num">Belege geprüft</th>')
 MAP_LEGEND = [("done", "geprüft oder erreicht"), ("proposed", "vorgeschlagen"), ("open", "offen"),
               ("proposed-failed", "als nicht erreicht vorgeschlagen"), ("failed", "nicht erreicht"),
               ("attention", "erneut zu prüfen")]
@@ -253,6 +256,7 @@ def page(title: str, body: str, ctx: dict, depth: int = 0, current: str = "", de
 <a class="brand" href="{up}index.html">{LOGO}{e(config['title'])}</a>
 <nav class="nav" aria-label="Hauptnavigation">
 {nav("index.html", "Übersicht", "index")}
+{nav("ziele.html", "Ziele", "ziele")}
 {nav("pruefen.html", "Offene Prüfungen", "pruefen", queue)}
 {nav("verlauf.html", "Verlauf", "verlauf")}
 <a href="{e(config['repo_url'])}#readme">Methodik</a>
@@ -318,27 +322,27 @@ def tile(state: str, href: str, tip: str) -> str:
     return f'<a class="tile is-{state}" href="{e(href)}" title="{e(tip)}">{inner}<span class="sr">{e(tip)}</span></a>'
 
 
-def atlas_map(state: dict) -> str:
+def atlas_map(state: dict, prefix: str = "") -> str:
     """Die Karte: je Ziel eine Reihe Kacheln für Meilensteine, Aussagen und Belege."""
     blocks = ""
     for goal in state["goals"]:
         claims = [c for c in state["claims"] if c["goal_ids"][0] == goal["id"]]
         rows = [
             ("Meilensteine", "".join(
-                tile(ms["state"], f"ziele/{goal['id']}.html#{ms['id']}",
+                tile(ms["state"], f"{prefix}ziele/{goal['id']}.html#{ms['id']}",
                      f"Meilenstein: {ms['title']} · {STATIONS[ms['state']][0]}") for ms in goal["milestones"])),
             ("Aussagen", "".join(
-                tile(c["review_state"], f"aussagen/{c['id']}.html",
+                tile(c["review_state"], f"{prefix}aussagen/{c['id']}.html",
                      f"Aussage: {c['statement']} · {TILE_TEXT[c['review_state']]}") for c in claims)),
             ("Belege", "".join(
-                tile(ev["review_state"], f"aussagen/{c['id']}.html#{ev['id']}",
+                tile(ev["review_state"], f"{prefix}aussagen/{c['id']}.html#{ev['id']}",
                      f"Beleg: {ev['study']['short_label']}, {ev['locator']} · {TILE_TEXT[ev['review_state']]}")
                 for c in claims for ev in c["evidence"])),
         ]
         body = "".join(f'<div><dt>{name}</dt><dd>{tiles or "<span class=muted>noch keine</span>"}</dd></div>'
                        for name, tiles in rows)
         blocks += (f'<div class="map-goal"><span class="k">{e(goal["field"])}</span>'
-                   f'<a class="map-title" href="ziele/{e(goal["id"])}.html">{e(goal["title"])}</a>'
+                   f'<a class="map-title" href="{prefix}ziele/{e(goal["id"])}.html">{e(goal["title"])}</a>'
                    f'<dl class="map-rows">{body}</dl></div>')
     items = "".join(f'<li><span class="tile is-{state}" aria-hidden="true">'
                     + (f'<svg viewBox="0 0 16 16">{ICONS[TILE_ICONS[state]]}</svg>' if TILE_ICONS[state] else "")
@@ -346,46 +350,40 @@ def atlas_map(state: dict) -> str:
     return f'<ul class="legend" aria-label="Legende der Karte">{items}</ul><div class="map">{blocks}</div>'
 
 
-def cover_table(state: dict) -> str:
+def cover_table(state: dict, prefix: str = "") -> str:
     """Zahlen je Ziel und gesamt. Zugleich die Tabellenansicht zu Balken und Karte."""
-    def cells(counts: dict) -> str:
-        m = counts["milestones"]
-        return (f'<td class="bar">{segbar(m)}</td><td class="num">{m["reached"]} von {m["total"]}</td>'
-                f'<td class="num">{m["proposed"]}</td>'
-                f'<td class="num">{counts["claims"]["reviewed"]} von {counts["claims"]["total"]}</td>'
-                f'<td class="num">{counts["evidence"]["reviewed"]} von {counts["evidence"]["total"]}</td>')
+    cells = cover_cells
     rows = "".join(
         f'<tr><th scope="row"><span class="k">{e(g["field"])}</span>'
-        f'<a href="ziele/{e(g["id"])}.html">{e(g["title"])}</a></th>{cells(g["tally"])}</tr>' for g in state["goals"])
+        f'<a href="{prefix}ziele/{e(g["id"])}.html">{e(g["title"])}</a></th>{cells(g["tally"])}</tr>' for g in state["goals"])
     return f"""<div class="tablewrap"><table class="cover">
-<thead><tr><th scope="col">Fach und Ziel</th><th scope="col">Meilensteine</th><th scope="col" class="num">erreicht</th>
-<th scope="col" class="num">vorgeschlagen</th><th scope="col" class="num">Aussagen geprüft</th>
-<th scope="col" class="num">Belege geprüft</th></tr></thead>
+<thead><tr><th scope="col">Fach und Ziel</th>{COVER_HEAD}</tr></thead>
 <tbody>{rows}</tbody>
 <tfoot><tr><th scope="row">Gesamt</th>{cells(state["totals"])}</tr></tfoot>
 </table></div>"""
 
 
-def needs(state: dict) -> str:
+def needs(state: dict, prefix: str = "", extra: str = "") -> str:
     """Was bis zum vollen Zählerstand fehlt, nach Art der fehlenden Arbeit."""
     m = state["totals"]["milestones"]
     items = ""
     waiting = m["proposed"] + m["proposed_failed"]
     if waiting:
         items += (f'<li><b>{waiting}</b> {"Meilenstein wartet" if waiting == 1 else "Meilensteine warten"} auf die '
-                  f'Zweitprüfung. <a href="pruefen.html">Zu den offenen Prüfungen</a></li>')
+                  f'Zweitprüfung. <a href="{prefix}pruefen.html">Zu den offenen Prüfungen</a></li>')
     missing = [(g, ms) for g in state["goals"] for ms in g["milestones"] if ms["state"] == "open"]
     if missing:
-        links = ", ".join(f'<a href="ziele/{e(g["id"])}.html#{e(ms["id"])}">{e(ms["title"])}</a> ({e(g["field"])})'
+        links = ", ".join(f'<a href="{prefix}ziele/{e(g["id"])}.html#{e(ms["id"])}">{e(ms["title"])}</a> ({e(g["field"])})'
                           for g, ms in missing)
         items += (f'<li><b>{len(missing)}</b> {"Meilenstein hat" if len(missing) == 1 else "Meilensteine haben"} '
                   f'noch keinen Vorschlag: {links}</li>')
     again = [c for c in state["claims"] if c["review_state"] == "attention"]
     if again:
-        links = ", ".join(f'<a href="aussagen/{e(c["id"])}.html">{e(c["statement"])}</a>' for c in again)
+        links = ", ".join(f'<a href="{prefix}aussagen/{e(c["id"])}.html">{e(c["statement"])}</a>' for c in again)
         items += f'<li><b>{len(again)}</b> {"Aussage ist" if len(again) == 1 else "Aussagen sind"} erneut zu prüfen: {links}</li>'
     if m["failed"]:
         items += f'<li><b>{m["failed"]}</b> {"Meilenstein gilt" if m["failed"] == 1 else "Meilensteine gelten"} als nicht erreicht.</li>'
+    items += extra
     if not items:
         items = "<li>Alle Meilensteine sind erreicht und geprüft.</li>"
     return f'<ul class="needs">{items}</ul>'
@@ -454,46 +452,62 @@ def badge_svg(name: str, value: str) -> str:
             f'<text x="{left / 2}" y="14">{e(name)}</text><text x="{left + right / 2}" y="14">{e(value)}</text></g></svg>\n')
 
 
-def legend() -> str:
-    items = "".join(f'<li class="is-{state}">{node(state)}{e(text)}</li>' for state, (text, _) in STATIONS.items())
-    return f'<ul class="legend" aria-label="Legende der Stationen">{items}</ul>'
+def cover_cells(counts: dict) -> str:
+    m = counts["milestones"]
+    return (f'<td class="bar">{segbar(m)}</td><td class="num">{m["reached"]} von {m["total"]}</td>'
+            f'<td class="num">{m["proposed"]}</td>'
+            f'<td class="num">{counts["claims"]["reviewed"]} von {counts["claims"]["total"]}</td>'
+            f'<td class="num">{counts["evidence"]["reviewed"]} von {counts["evidence"]["total"]}</td>')
 
 
-# --------------------------------------------------------------------------
-# Seiten
-# --------------------------------------------------------------------------
-
-
-def render_index(state: dict, ctx: dict) -> str:
-    goals = state["goals"]
-    fields = sorted({g["field"] for g in goals})
-    totals = state["totals"]
-    m = totals["milestones"]
+def overall(counts: dict, stats: list[tuple[str, str]], title: str = "Gesamtstand") -> str:
+    """Der Stand als große Zahl mit Balken. stats sind weitere Kennzahlen als (Wert, Beschriftung)."""
+    m = counts["milestones"]
     scenario = ""
     if m["proposed"]:
         scenario = (f'<p class="small muted">Rechnung, kein Stand: Würden alle offenen Vorschläge freigegeben, wären '
                     f'{m["reached"] + m["proposed"]} von {m["total"]} Meilensteinen erreicht '
                     f'({percent(m["reached"] + m["proposed"], m["total"])}).</p>')
-    overall = f"""<section class="panel overall" aria-labelledby="gesamt">
-<h2 class="k" id="gesamt">Gesamtstand</h2>
+    items = "".join(f"<li><b>{value}</b><span>{text}</span></li>" for value, text in stats)
+    return f"""<section class="panel overall" aria-labelledby="gesamt">
+<h2 class="k" id="gesamt">{e(title)}</h2>
 <div class="overall-head">
 <p class="hero"><b>{m['reached']} von {m['total']}</b><span>Meilensteinen erreicht · {percent(m['reached'], m['total'])}</span></p>
-<ul class="stats">
-<li><b>{totals['claims']['reviewed']} von {totals['claims']['total']}</b><span>Aussagen geprüft</span></li>
-<li><b>{totals['evidence']['reviewed']} von {totals['evidence']['total']}</b><span>Belege geprüft</span></li>
-<li><b>{len(ctx['queue'])}</b><span><a href="pruefen.html">offene Prüfungen</a></span></li>
-<li><b>{len(goals)}</b><span>{'Ziel' if len(goals) == 1 else 'Ziele'} in {plural(len(fields), 'Fach', 'Fächern')}</span></li>
-</ul>
+<ul class="stats">{items}</ul>
 </div>
 {segbar(m, tall=True)}
 {bar_legend(m)}
 {scenario}
 </section>"""
-    history = ""
-    if len(state["series"]) > 1:
-        history = f'<h2>Verlauf</h2>{chart(state["series"])}<p><a href="verlauf.html">Alle Änderungen ansehen</a></p>'
-    pills = '<button class="pill" type="button" data-field="" aria-pressed="true">Alle Fächer</button>' + "".join(
-        f'<button class="pill" type="button" data-field="{e(f)}" aria-pressed="false">{e(f)}</button>' for f in fields)
+
+
+def science_map(state: dict) -> str:
+    """Der Über-Atlas: jedes Fachgebiet der Systematik als Feld, mit oder ohne Einträge."""
+    out = ""
+    for realm in state["realms"]:
+        cells = ""
+        covered = sum(1 for a in realm["areas"] if a["goal_ids"])
+        for area in realm["areas"]:
+            head = f'<span class="area-code">{e(area["code"])}</span><span class="area-name">{e(area["name"])}</span>'
+            if area["goal_ids"]:
+                m = area["tally"]["milestones"]
+                meta = f'{m["reached"]} von {m["total"]} erreicht'
+                if m["proposed"]:
+                    meta += f' · {m["proposed"]} vorgeschlagen'
+                cells += (f'<a class="area has" href="fach/{slug(area["name"])}.html">{head}{segbar(m)}'
+                          f'<span class="area-meta">{meta}</span>'
+                          f'<span class="area-meta">{plural(len(area["goal_ids"]), "Ziel", "Ziele")}</span></a>')
+            else:
+                cells += f'<div class="area">{head}<span class="area-meta">noch kein Eintrag</span></div>'
+        out += (f'<section class="realm"><h3>{e(realm["name"])} '
+                f'<small>{covered} von {len(realm["areas"])} mit Einträgen</small></h3>'
+                f'<div class="areas">{cells}</div></section>')
+    return out
+
+
+def goal_list(goals: list[dict], ctx: dict, prefix: str = "", with_filter: bool = True) -> str:
+    """Die Ziele als Routen, nach Fach gruppiert. Mit Suche und Fachfilter, wenn gewünscht."""
+    fields = sorted({g["field"] for g in goals})
     sections = ""
     for field in fields:
         rows = ""
@@ -506,33 +520,20 @@ def render_index(state: dict, ctx: dict) -> str:
                    if goal.get("open_question") else "")
             rows += f"""<li class="goal" data-field="{e(field)}" data-search="{e(' '.join(words).lower())}">
 <div>
-<h4><a href="ziele/{e(goal['id'])}.html">{e(goal['title'])}</a></h4>
+<h4><a href="{prefix}ziele/{e(goal['id'])}.html">{e(goal['title'])}</a></h4>
 <p class="goal-count">{count_text(goal)}</p>
 {nxt}
 </div>
-{route(goal, "")}
+{route(goal, prefix)}
 </li>"""
         sections += (f'<section class="field" id="fach-{slug(field)}" data-field="{e(field)}">'
                      f'<h3>{e(field)} <small>{plural(len(mine), "Ziel", "Ziele")}</small></h3>'
                      f'<ul class="goals">{rows}</ul></section>')
-    body = f"""<h1>{e(ctx['config']['title'])}</h1>
-<p class="lead">Der Atlas zeigt für jedes Forschungsziel, welche Meilensteine erreicht sind, welche
-Veröffentlichungen das tragen und welche Prüfung als Nächstes ansteht.</p>
-{overall}
-<h2>Karte des Atlas</h2>
-<p class="scope">Jede Kachel ist ein Meilenstein, eine Aussage oder ein Beleg und führt zu ihrem Eintrag.
-Eine Kachel gilt erst als geprüft, wenn zwei Personen sie freigegeben haben.</p>
-{atlas_map(state)}
-<h2>Stand nach Fach und Ziel</h2>
-{cover_table(state)}
-<h2>Was noch fehlt</h2>
-{needs(state)}
-{history}
-<h2 id="ziele">Ziele im Einzelnen</h2>
-<p class="scope">Jedes Ziel ist eine Route aus Meilensteinen. Als erreicht gilt eine Station erst, wenn zwei Personen
-die Einstufung freigegeben haben. Bis dahin bleibt sie ein Vorschlag.</p>
-{legend()}
-<div class="filters" id="filter" role="search" hidden>
+    if not with_filter:
+        return sections
+    pills = '<button class="pill" type="button" data-field="" aria-pressed="true">Alle Fächer</button>' + "".join(
+        f'<button class="pill" type="button" data-field="{e(f)}" aria-pressed="false">{e(f)}</button>' for f in fields)
+    return f"""<div class="filters" id="filter" role="search" hidden>
 <div class="search">{icon("search")}<label class="sr" for="suche">Ziele, Aussagen und Quellen durchsuchen</label>
 <input type="search" id="suche" placeholder="Ziele, Aussagen und Quellen durchsuchen" autocomplete="off"></div>
 <div class="pills" role="group" aria-label="Nach Fach filtern">{pills}</div>
@@ -540,11 +541,146 @@ die Einstufung freigegeben haben. Bis dahin bleibt sie ein Vorschlag.</p>
 <p class="result" id="treffer" role="status" aria-live="polite"></p>
 {sections}
 <div class="empty" id="leer" hidden><p>Kein Ziel passt zu dieser Suche.</p>
-<button class="btn ghost s" type="button" id="zuruecksetzen">Suche zurücksetzen</button></div>
-<p class="small muted" style="margin-top:2rem">Die Zählung bezieht sich auf den jeweiligen Zielkatalog. Aus einem Zählerstand
-lässt sich keine Aussage zum gesamten Forschungsstand eines Fachs ableiten.</p>"""
+<button class="btn ghost s" type="button" id="zuruecksetzen">Suche zurücksetzen</button></div>"""
+
+
+ROUTE_INTRO = ('<p class="scope">Jedes Ziel ist eine Route aus Meilensteinen. Als erreicht gilt eine Station erst, wenn '
+               'zwei Personen die Einstufung freigegeben haben. Bis dahin bleibt sie ein Vorschlag.</p>')
+CATALOG_NOTE = ('<p class="small muted" style="margin-top:2rem">Die Zählung bezieht sich auf den jeweiligen Zielkatalog. '
+                'Aus einem Zählerstand lässt sich keine Aussage zum gesamten Forschungsstand eines Fachs ableiten.</p>')
+
+
+def area_of(goal: dict, ctx: dict) -> dict | None:
+    return ctx["areas"].get(goal.get("area"))
+
+
+def crumbs(goal: dict, ctx: dict, with_goal: bool = False) -> str:
+    """Rückweg: Übersicht, Fachgebiet und bei Aussagen das Ziel."""
+    area = area_of(goal, ctx)
+    middle = (f'<li><a href="../fach/{area["slug"]}.html">{e(area["name"])}</a></li>' if area
+              else f'<li>{e(goal["field"])}</li>')
+    last = f'<li><a href="../ziele/{e(goal["id"])}.html">{e(goal["title"])}</a></li>' if with_goal else ""
+    return f'<ol class="crumbs"><li><a href="../index.html">Übersicht</a></li>{middle}{last}</ol>'
+
+
+def legend() -> str:
+    items = "".join(f'<li class="is-{state}">{node(state)}{e(text)}</li>' for state, (text, _) in STATIONS.items())
+    return f'<ul class="legend" aria-label="Legende der Stationen">{items}</ul>'
+
+
+# --------------------------------------------------------------------------
+# Seiten
+# --------------------------------------------------------------------------
+
+
+def render_index(state: dict, ctx: dict) -> str:
+    """Der Über-Atlas: das Ganze zuerst, dann der Weg in die Fachgebiete."""
+    goals, totals, coverage = state["goals"], state["totals"], state["coverage"]
+    fields = sorted({g["field"] for g in goals})
+    stats = [(f"{totals['claims']['reviewed']} von {totals['claims']['total']}", "Aussagen geprüft"),
+             (f"{totals['evidence']['reviewed']} von {totals['evidence']['total']}", "Belege geprüft"),
+             (str(len(ctx["queue"])), '<a href="pruefen.html">offene Prüfungen</a>')]
+    if coverage["areas"]:
+        stats.append((f"{coverage['covered']} von {coverage['areas']}", "Fachgebieten mit Einträgen"))
+    else:
+        stats.append((str(len(goals)), f"{'Ziel' if len(goals) == 1 else 'Ziele'} in {plural(len(fields), 'Fach', 'Fächern')}"))
+    history = ""
+    if len(state["series"]) > 1:
+        history = f'<h2>Verlauf</h2>{chart(state["series"])}<p><a href="verlauf.html">Alle Änderungen ansehen</a></p>'
+    if coverage["areas"]:
+        rows = "".join(
+            f'<tr><th scope="row"><span class="k">{e(realm["name"])}</span>'
+            f'<a href="fach/{slug(area["name"])}.html">{e(area["name"])}</a></th>'
+            f'<td class="num">{len(area["goal_ids"])}</td>{cover_cells(area["tally"])}</tr>'
+            for realm in state["realms"] for area in realm["areas"] if area["goal_ids"])
+        table = f"""<div class="tablewrap"><table class="cover">
+<thead><tr><th scope="col">Fachgebiet</th><th scope="col" class="num">Ziele</th>{COVER_HEAD}</tr></thead>
+<tbody>{rows}</tbody>
+<tfoot><tr><th scope="row">Gesamt</th><td class="num">{len(goals)}</td>{cover_cells(totals)}</tr></tfoot>
+</table></div>"""
+        empty = coverage["areas"] - coverage["covered"]
+        more = (f'<li><b>{empty}</b> {"Fachgebiet hat" if empty == 1 else "Fachgebiete haben"} noch keinen Eintrag. '
+                f'<a href="{e(ctx["repo"])}/blob/{e(ctx["branch"])}/CONTRIBUTING.md">So trägst du ein Ziel bei</a></li>'
+                if empty else "")
+        middle = f"""<h2>Karte der Wissenschaften</h2>
+<p class="scope">Die Karte zeigt alle {coverage['areas']} Fachgebiete der Systematik in {len(state['realms'])} Bereichen,
+auch die ohne Einträge. Ein Fachgebiet mit Einträgen führt zu seinem eigenen Atlas.</p>
+{science_map(state)}
+<p class="small muted">Gliederung: {e(ctx['taxonomy'].get('source', ''))}.</p>
+<h2>Stand nach Fachgebiet</h2>
+{table}
+<h2>Was noch fehlt</h2>
+{needs(state, extra=more)}"""
+    else:
+        middle = f"""<h2>Karte des Atlas</h2>
+<p class="scope">Jede Kachel ist ein Meilenstein, eine Aussage oder ein Beleg und führt zu ihrem Eintrag.</p>
+{atlas_map(state)}
+<h2>Stand nach Fach und Ziel</h2>
+{cover_table(state)}
+<h2>Was noch fehlt</h2>
+{needs(state)}"""
+    body = f"""<h1>{e(ctx['config']['title'])}</h1>
+<p class="lead">Der Atlas zeigt, wie weit die Forschung bei ausgewählten Zielen ist, welche Veröffentlichungen
+das tragen und welche Prüfung als Nächstes ansteht.</p>
+{overall(totals, stats)}
+{middle}
+{history}
+<div class="actions">
+<a class="btn" href="ziele.html">Alle {len(goals)} Ziele ansehen</a>
+<a class="btn ghost" href="pruefen.html">Offene Prüfungen</a>
+</div>
+{CATALOG_NOTE}"""
     return page("Übersicht", body, ctx, current="index",
-                description="Gesamtstand, Karte und Ziele des Forschungsatlas mit den Veröffentlichungen, die sie tragen.")
+                description="Über-Atlas: Gesamtstand und Karte aller Wissenschaften mit dem Weg in die Fachgebiete.")
+
+
+def render_goals(state: dict, ctx: dict) -> str:
+    """Alle Ziele auf einer Seite: Karte der Einträge und die Routen mit Suche."""
+    body = f"""<ol class="crumbs"><li><a href="index.html">Übersicht</a></li></ol>
+<h1>Alle Ziele</h1>
+<p class="lead">{plural(len(state['goals']), 'Forschungsziel', 'Forschungsziele')} mit ihren Meilensteinen, Aussagen und Belegen.</p>
+<h2>Karte der Einträge</h2>
+<p class="scope">Jede Kachel ist ein Meilenstein, eine Aussage oder ein Beleg und führt zu ihrem Eintrag.
+Eine Kachel gilt erst als geprüft, wenn zwei Personen sie freigegeben haben.</p>
+{atlas_map(state)}
+<h2 id="ziele">Ziele im Einzelnen</h2>
+{ROUTE_INTRO}
+{legend()}
+{goal_list(state['goals'], ctx)}
+{CATALOG_NOTE}"""
+    return page("Alle Ziele", body, ctx, current="ziele",
+                description="Alle Forschungsziele des Atlas als Routen aus Meilensteinen.")
+
+
+def render_area(realm: dict, area: dict, state: dict, ctx: dict) -> str:
+    """Der Atlas eines Fachgebiets: derselbe Aufbau wie das Ganze, begrenzt auf ein Fach."""
+    goals = [ctx["goals"][g] for g in area["goal_ids"]]
+    ids = set(area["goal_ids"])
+    claims = [c for c in state["claims"] if c["goal_ids"][0] in ids]
+    sub = {"goals": goals, "claims": claims, "totals": area["tally"]}
+    waiting = sum(1 for q in ctx["queue"] if q["goal_id"] in ids)
+    stats = [(f"{area['tally']['claims']['reviewed']} von {area['tally']['claims']['total']}", "Aussagen geprüft"),
+             (f"{area['tally']['evidence']['reviewed']} von {area['tally']['evidence']['total']}", "Belege geprüft"),
+             (str(waiting), '<a href="../pruefen.html">offene Prüfungen</a>'),
+             (str(len(goals)), "Ziel" if len(goals) == 1 else "Ziele")]
+    body = f"""<ol class="crumbs"><li><a href="../index.html">Übersicht</a></li><li>{e(realm['name'])}</li></ol>
+<p class="k">Fachgebiet {e(area['code'])}</p>
+<h1>{e(area['name'])}</h1>
+{overall(area['tally'], stats, title="Stand des Fachgebiets")}
+<h2>Karte der Einträge</h2>
+<p class="scope">Jede Kachel ist ein Meilenstein, eine Aussage oder ein Beleg und führt zu ihrem Eintrag.</p>
+{atlas_map(sub, "../")}
+<h2>Stand nach Ziel</h2>
+{cover_table(sub, "../")}
+<h2>Was noch fehlt</h2>
+{needs(sub, "../")}
+<h2>Ziele im Einzelnen</h2>
+{ROUTE_INTRO}
+{legend()}
+{goal_list(goals, ctx, "../", with_filter=False)}
+{CATALOG_NOTE}"""
+    return page(area["name"], body, ctx, depth=1,
+                description=f"Atlas des Fachgebiets {area['name']}: Stand, Karte und Ziele.")
 
 
 def render_goal(goal: dict, ctx: dict) -> str:
@@ -585,8 +721,7 @@ def render_goal(goal: dict, ctx: dict) -> str:
     catalog = f" · Zielkatalog v{goal['catalog_version']}" if goal["catalog_version"] else ""
     nxt = (f'<p class="scope"><span class="k">Nächste offene Prüfung</span>{e(goal["open_question"])}</p>'
            if goal.get("open_question") else "")
-    body = f"""<ol class="crumbs"><li><a href="../index.html">Übersicht</a></li>
-<li><a href="../index.html#fach-{slug(goal['field'])}">{e(goal['field'])}</a></li></ol>
+    body = f"""{crumbs(goal, ctx)}
 <h1>{e(goal['title'])}</h1>
 <p class="goal-count">{count_text(goal)}{catalog} ·
 {goal['claims_reviewed']} von {goal['claims_total']} Aussagen geprüft</p>
@@ -707,9 +842,7 @@ def render_claim(claim: dict, ctx: dict) -> str:
         groups = '<p class="muted">Zu dieser Aussage ist noch kein Beleg erfasst.</p>'
     issue = f"{ctx['repo']}/issues/new?template=einwand.md&title=" + quote(f"Einwand zu {claim['id']}")
     file = f"{ctx['repo']}/blob/{ctx['branch']}/data/claims/{claim['id']}.yaml"
-    body = f"""<ol class="crumbs"><li><a href="../index.html">Übersicht</a></li>
-<li><a href="../index.html#fach-{slug(field)}">{e(field)}</a></li>
-<li><a href="../ziele/{e(goal['id'])}.html">{e(goal['title'])}</a></li></ol>
+    body = f"""{crumbs(goal, ctx, with_goal=True)}
 <p class="k">Aussage</p>
 <h1 class="statement">{e(claim['statement'])}</h1>
 <p class="scope"><span class="k">Geltungsbereich</span>{e(claim['scope'])}</p>
@@ -861,14 +994,19 @@ def write_site(state: dict, config: dict, out: Path) -> list[Path]:
         "goals": {g["id"]: g for g in state["goals"]},
         "claims": {c["id"]: c for c in state["claims"]},
         "milestones": {ms["id"]: (g, ms) for g in state["goals"] for ms in g["milestones"]},
+        "areas": {a["code"]: a | {"slug": slug(a["name"]), "realm": r["name"]}
+                  for r in state["realms"] for a in r["areas"]},
+        "taxonomy": state.get("taxonomy", {}),
         "queue": [],
     }
     ctx["queue"] = build_queue(state, ctx)
     files = {
         "index.html": render_index(state, ctx),
+        "ziele.html": render_goals(state, ctx),
         "pruefen.html": render_queue(ctx),
         "verlauf.html": render_history(state, ctx),
-        "progress.json": json.dumps({k: state[k] for k in ("as_of", "totals", "fields", "series", "goals", "claims")},
+        "progress.json": json.dumps({k: state[k] for k in ("as_of", "totals", "coverage", "realms", "fields",
+                                                           "series", "goals", "claims")},
                                     ensure_ascii=False, indent=2) + "\n",
         "history.json": json.dumps(state["history"], ensure_ascii=False, indent=2) + "\n",
     }
@@ -877,6 +1015,10 @@ def write_site(state: dict, config: dict, out: Path) -> list[Path]:
     for entry in state["fields"]:
         files[f"badge-{slug(entry['field'])}.svg"] = badge_svg(
             entry["field"], f"{entry['milestones']['reached']}/{entry['milestones']['total']}")
+    for realm in state["realms"]:
+        for area in realm["areas"]:
+            if area["goal_ids"]:
+                files[f"fach/{slug(area['name'])}.html"] = render_area(realm, area, state, ctx)
     for goal in state["goals"]:
         files[f"ziele/{goal['id']}.html"] = render_goal(goal, ctx)
     for claim in state["claims"]:

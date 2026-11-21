@@ -2,7 +2,9 @@
 
 | Ansicht | Inhalt | Beispiel oder Frage |
 |---|---|---|
-| Startseite | Zuerst das Ganze: Gesamtstand mit Balken, Karte aus Kacheln, Tabelle je Fach und Ziel und die fehlende Arbeit. Darunter je Forschungsziel eine Route aus Meilenstein-Stationen mit Suche und Fachfilter | Wie weit ist der Atlas insgesamt, und wo steht eine Prüfung an? |
+| Startseite (Über-Atlas) | Das Ganze: Gesamtstand mit Balken, Karte aller Wissenschaften, Tabelle je Fachgebiet und die fehlende Arbeit | Wie weit ist der Atlas insgesamt, und welche Fachgebiete haben schon Einträge? |
+| Fachgebiet | Der Atlas eines Fachgebiets mit demselben Aufbau: Stand, Karte der Einträge, Tabelle je Ziel und die Ziele als Routen | Wie steht es in der Physik? |
+| Alle Ziele | Karte aller Einträge und jedes Ziel als Route aus Meilenstein-Stationen. Suche und Fachfilter durchsuchen Ziele, Aussagen und Quellen | Wo kommt eine bestimmte Quelle vor? |
 | Zielseite | Die Route senkrecht: je Meilenstein Erfüllungskriterium, Status, Begründung und die verknüpften Aussagen im Wortlaut | Welche Evidenz fehlt für die Übertragbarkeit eines Verfahrens? |
 | Aussage | Präziser Satz mit Geltungsbereich, drei Angaben zur Einordnung, einer Matrix aus Quellen und ihren Grundlagen sowie den Belegen, getrennt nach Richtung | Für welche Logversion und Parameter gilt der gemessene Vorsprung? |
 | Beleg | Konkretes Ergebnis aus einer Arbeit, genaue Fundstelle, Version, Datenherkunft und Prüfvermerk | Welche Zeilen in welcher Tabelle tragen den Vergleich? |
@@ -27,19 +29,22 @@ Die Anzeige bezieht sich auf die Arbeit an diesem Zielkatalog. Aus „0 von 4“
 
 ## Gesamtübersicht
 
-Die Startseite beginnt mit dem Stand des ganzen Atlas. Sie folgt dem Aufbau der Fortschrittsseite von AnyPS5: Gesamtzahl, Karte, Tabelle, offene Arbeit, Verlauf und Abzeichen.
+Die Startseite ist der Über-Atlas. Sie zeigt den Stand des Ganzen und folgt dem Aufbau der Fortschrittsseite von AnyPS5: Gesamtzahl, Karte, Tabelle, offene Arbeit, Verlauf und Abzeichen. Wie dort die Karte alle Bibliotheken zeigt, auch die unfertigen, zeigt hier die Karte alle Fachgebiete, auch die ohne Einträge.
 
 | Baustein | Inhalt |
 |---|---|
 | Gesamtstand | Erreichte von allen Meilensteinen als Zahl und Anteil, dazu geprüfte Aussagen, geprüfte Belege und offene Prüfungen. Ein Balken teilt alle Meilensteine nach Zustand |
 | Rechnung | Ein Satz nennt, wo der Zähler stünde, wenn alle offenen Vorschläge freigegeben würden. Er ist als Rechnung gekennzeichnet und zählt nicht als Stand |
-| Karte | Je Ziel eine Kachel für jeden Meilenstein, jede Aussage und jeden Beleg. Jede Kachel führt zu ihrem Eintrag |
-| Tabelle | Je Ziel und gesamt: erreichte und vorgeschlagene Meilensteine, geprüfte Aussagen und geprüfte Belege |
-| Was noch fehlt | Meilensteine, die auf die Zweitprüfung warten, Meilensteine ohne Vorschlag und Aussagen, die erneut zu prüfen sind |
+| Karte der Wissenschaften | Alle 42 Fachgebiete der Systematik in 6 Bereichen. Ein Fachgebiet mit Einträgen zeigt seinen Stand und führt zu seinem eigenen Atlas, die übrigen sind als „noch kein Eintrag“ gezeichnet |
+| Karte der Einträge | Auf der Seite eines Fachgebiets und unter „Alle Ziele“: je Ziel eine Kachel für jeden Meilenstein, jede Aussage und jeden Beleg. Jede Kachel führt zu ihrem Eintrag |
+| Tabelle | Je Fachgebiet und gesamt, auf der Seite eines Fachgebiets je Ziel: erreichte und vorgeschlagene Meilensteine, geprüfte Aussagen und geprüfte Belege |
+| Was noch fehlt | Meilensteine, die auf die Zweitprüfung warten, Meilensteine ohne Vorschlag, Aussagen, die erneut zu prüfen sind, und die Zahl der Fachgebiete ohne Eintrag |
 | Verlauf | Erreichte Meilensteine über die Zeit als Linie, die Zahl der Meilensteine im Katalog gestrichelt. Die Kurve erscheint ab zwei Tagen mit Änderungen |
 | Abzeichen | `badge.svg` mit dem Gesamtstand und ein Abzeichen je Fach, etwa `badge-physik.svg`, zum Einbinden in andere Seiten |
 
-Dieselben Zahlen stehen in `progress.json` unter `totals`, `fields` und `series`.
+Dieselben Zahlen stehen in `progress.json` unter `totals`, `coverage`, `realms`, `fields` und `series`.
+
+Die Gliederung liegt in `data/taxonomy.yaml` und folgt der Österreichischen Systematik der Wissenschaftszweige (ÖFOS 2012) mit 6 Hauptgruppen und 42 Gruppen. Jedes Ziel nennt im Feld `area` den Code seines Fachgebiets. Aus dem Anteil der Fachgebiete mit Einträgen lässt sich nicht ablesen, wie weit die Forschung dort ist. Er zeigt nur, wo der Atlas schon arbeitet.
 
 ## Gestaltung der Seiten
 

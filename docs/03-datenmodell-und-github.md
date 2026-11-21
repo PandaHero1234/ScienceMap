@@ -4,7 +4,8 @@
 |---|---|
 | `README.md` | Einstiegsseite mit Stand, Aufruf und Links zur Methodik |
 | `docs/` | Regeln für Aufnahme, Suche und Bewertung, Beispielkarten, Pilotplan und Nachweis |
-| `data/goals/` | Feld, Ziel, versionierter Katalog mit stabilen Meilenstein-IDs und Erfüllungskriterien |
+| `data/taxonomy.yaml` | Gliederung des Über-Atlas: alle Fachgebiete der Systematik mit Code und Name |
+| `data/goals/` | Feld, Fachgebiet (`area`), Ziel, versionierter Katalog mit stabilen Meilenstein-IDs und Erfüllungskriterien |
 | `data/claims/` | Präzise Aussagen, Geltungsbereich und Zuordnung zu einem oder mehreren Meilensteinen |
 | `data/studies/` | Studie mit Kurzbezeichnung, Team, Fassungen mit Link sowie Vermerk bei Korrektur oder Rückzug |
 | `data/datasets/` | Grundlagen mit stabiler ID: Datensätze, Ereignisse, Versuchsreihen, klinische Studien und Beweise |
@@ -100,6 +101,7 @@ Die ID jeder Datei entspricht ihrem Dateinamen.
 ## Prüfungen beim Erzeugen der Übersicht
 
 - Ein Verweis auf eine unbekannte Studien-, Aussage-, Datensatz-, Beleg- oder Meilenstein-ID stoppt die Aktualisierung. Die bisherige Übersicht bleibt stehen.
+- Jedes Ziel nennt ein Fachgebiet aus `data/taxonomy.yaml`. Ein fehlender oder unbekannter Code stoppt die Aktualisierung.
 - Jede freigegebene Entscheidung nennt die Begründung, das Prüfdatum, zwei verschiedene Personen, die Art der Absicherung und ihre Beleg-IDs. Die genannten Belege sind selbst freigegeben und gehören zum bewerteten Gegenstand.
 - Die Evidenzlage passt zu den Belegen, auch bei einem Vorschlag. „Evidenz spricht dagegen“ braucht einen Gegenbeleg, „widersprüchlich“ braucht beide Richtungen.
 - Mehrere Publikationen mit derselben Datensatz- oder Ereignis-ID bleiben als Quellen sichtbar. Die Auswertung zählt die zugrunde liegende Beobachtung einmal. „Mehrfach gestützt“ verlangt mindestens zwei stützende Belege auf zwei verschiedenen Grundlagen. Ein gemeinsames Team oder Instrument wird angezeigt.

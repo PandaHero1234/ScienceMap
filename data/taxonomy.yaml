@@ -1,0 +1,107 @@
+# Gliederung des Über-Atlas: alle Wissenschaftszweige, auch die ohne Einträge.
+source: Österreichische Systematik der Wissenschaftszweige (ÖFOS 2012), Hauptgruppen und Gruppen
+note: Aufbau mit 6 Hauptgruppen und 42 Gruppen geprüft. Die Bezeichnungen der Gruppen sind noch nicht vollständig
+  mit der Veröffentlichung von Statistik Austria abgeglichen.
+groups:
+- code: '1'
+  name: Naturwissenschaften
+  areas:
+  - code: '101'
+    name: Mathematik
+  - code: '102'
+    name: Informatik
+  - code: '103'
+    name: Physik, Astronomie
+  - code: '104'
+    name: Chemie
+  - code: '105'
+    name: Geowissenschaften
+  - code: '106'
+    name: Biologie
+  - code: '107'
+    name: Andere Naturwissenschaften
+- code: '2'
+  name: Technische Wissenschaften
+  areas:
+  - code: '201'
+    name: Bauwesen
+  - code: '202'
+    name: Elektrotechnik, Elektronik, Informationstechnik
+  - code: '203'
+    name: Maschinenbau
+  - code: '204'
+    name: Chemische Verfahrenstechnik
+  - code: '205'
+    name: Werkstofftechnik
+  - code: '206'
+    name: Medizintechnik
+  - code: '207'
+    name: Umweltingenieurwesen, Angewandte Geowissenschaften
+  - code: '208'
+    name: Umweltbiotechnologie
+  - code: '209'
+    name: Industrielle Biotechnologie
+  - code: '210'
+    name: Nanotechnologie
+  - code: '211'
+    name: Andere Technische Wissenschaften
+- code: '3'
+  name: Humanmedizin, Gesundheitswissenschaften
+  areas:
+  - code: '301'
+    name: Medizinisch-theoretische Wissenschaften, Pharmazie
+  - code: '302'
+    name: Klinische Medizin
+  - code: '303'
+    name: Gesundheitswissenschaften
+  - code: '304'
+    name: Medizinische Biotechnologie
+  - code: '305'
+    name: Andere Humanmedizin, Gesundheitswissenschaften
+- code: '4'
+  name: Agrarwissenschaften, Veterinärmedizin
+  areas:
+  - code: '401'
+    name: Land- und Forstwirtschaft, Fischerei
+  - code: '402'
+    name: Tierzucht, Tierproduktion
+  - code: '403'
+    name: Veterinärmedizin
+  - code: '404'
+    name: Agrarbiotechnologie, Lebensmittelbiotechnologie
+  - code: '405'
+    name: Andere Agrarwissenschaften
+- code: '5'
+  name: Sozialwissenschaften
+  areas:
+  - code: '501'
+    name: Psychologie
+  - code: '502'
+    name: Wirtschaftswissenschaften
+  - code: '503'
+    name: Erziehungswissenschaften
+  - code: '504'
+    name: Soziologie
+  - code: '505'
+    name: Rechtswissenschaften
+  - code: '506'
+    name: Politikwissenschaften
+  - code: '507'
+    name: Humangeographie, Regionale Geographie, Raumplanung
+  - code: '508'
+    name: Medien- und Kommunikationswissenschaften
+  - code: '509'
+    name: Andere Sozialwissenschaften
+- code: '6'
+  name: Geisteswissenschaften
+  areas:
+  - code: '601'
+    name: Geschichte, Archäologie
+  - code: '602'
+    name: Sprach- und Literaturwissenschaften
+  - code: '603'
+    name: Philosophie, Ethik, Religion
+  - code: '604'
+    name: Kunstwissenschaften
+  - code: '605'
+    name: Andere Geisteswissenschaften

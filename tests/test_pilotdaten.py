@@ -39,15 +39,17 @@ def test_kein_beleg_ist_ohne_zweitpruefung_freigegeben():
 
 
 def test_weg_von_der_startseite_bis_zur_fundstelle(tmp_path):
-    """docs/05, Erfolgskriterium: Startseite -> Ziel -> Aussage -> Fundstelle -> Einwand."""
+    """docs/05, Erfolgskriterium: Startseite -> Fachgebiet -> Ziel -> Aussage -> Fundstelle -> Einwand."""
     assert atlas.main(["build", "--out", str(tmp_path)]) == 0
 
     def links(path: Path) -> list[str]:
         return re.findall(r'href="([^"]+)"', path.read_text(encoding="utf-8"))
 
     index = tmp_path / "index.html"
-    goal_link = next(h for h in links(index) if h == f"ziele/{PILOT}.html")
-    goal_page = tmp_path / goal_link
+    area_link = next(h for h in links(index) if h == "fach/informatik.html")
+    area_page = tmp_path / area_link
+    goal_link = next(h for h in links(area_page) if h == f"../ziele/{PILOT}.html")
+    goal_page = (area_page.parent / goal_link).resolve()
     assert goal_page.is_file()
 
     claim_link = next(h for h in links(goal_page) if h.startswith("../aussagen/"))

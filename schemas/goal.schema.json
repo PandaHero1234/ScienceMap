@@ -88,6 +88,10 @@
           "milestones"
         ]
       }
+    },
+    "area": {
+      "type": "string",
+      "pattern": "^[0-9]{3}$"
     }
   },
   "required": [

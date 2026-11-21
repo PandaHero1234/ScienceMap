@@ -50,6 +50,7 @@ class Atlas:
     datasets: dict = field(default_factory=dict)
     evidence: dict = field(default_factory=dict)
     decisions: dict = field(default_factory=dict)
+    taxonomy: dict = field(default_factory=dict)
 
     def milestone_goal(self) -> dict:
         """Meilenstein-ID -> Ziel-ID."""
@@ -100,6 +101,21 @@ def load(data_dir: Path, schema_dir: Path | None = None) -> tuple[Atlas, list[st
                 errors.append(f"{name}: die ID '{record['id']}' muss dem Dateinamen entsprechen")
                 continue
             store[record["id"]] = record
+    # Die Gliederung des Über-Atlas ist eine einzelne Datei. Ohne sie gibt es keine Karte der Wissenschaften.
+    path = data_dir / "taxonomy.yaml"
+    if path.is_file():
+        schema = json.loads((schema_dir / "taxonomy.schema.json").read_text(encoding="utf-8"))
+        try:
+            record = _plain(yaml.safe_load(path.read_text(encoding="utf-8")))
+        except yaml.YAMLError as exc:
+            errors.append(f"taxonomy.yaml: kein gültiges YAML ({exc})")
+        else:
+            problems = sorted(Draft202012Validator(schema).iter_errors(record), key=lambda e: list(e.path))
+            for problem in problems:
+                where = "/".join(str(p) for p in problem.path) or "(Datei)"
+                errors.append(f"taxonomy.yaml: {where}: {problem.message}")
+            if not problems:
+                atlas.taxonomy = record
     return atlas, errors
 
 
@@ -167,6 +183,21 @@ def check(atlas: Atlas) -> list[str]:
     """Prüft Verweise, Zählbarkeit und die Regeln für freigegebene Entscheidungen."""
     errors: list[str] = []
     err = errors.append
+
+    # Systematik: eindeutige Codes, jedes Ziel einem Fachgebiet zugeordnet
+    codes: list[str] = [a["code"] for g in atlas.taxonomy.get("groups", []) for a in g["areas"]]
+    for code in sorted({c for c in codes if codes.count(c) > 1}):
+        err(f"taxonomy.yaml: der Code {code} kommt mehrfach vor")
+    for group in atlas.taxonomy.get("groups", []):
+        for area in group["areas"]:
+            if not area["code"].startswith(group["code"]):
+                err(f"taxonomy.yaml: {area['code']} gehört nicht zur Hauptgruppe {group['code']}")
+    if codes:
+        for goal in atlas.goals.values():
+            if "area" not in goal:
+                err(f"{goal['id']}: das Fachgebiet (area) fehlt")
+            elif goal["area"] not in codes:
+                err(f"{goal['id']}: unbekanntes Fachgebiet {goal['area']}")
 
     # Ziele und Kataloge
     owner: dict[str, str] = {}
@@ -484,6 +515,7 @@ def goal_state(atlas: Atlas, goal: dict, as_of: str | None = None) -> dict:
     return {
         "id": goal["id"],
         "field": goal["field"],
+        "area": goal.get("area"),
         "title": goal["title"],
         "catalog_version": catalog["version"] if catalog else None,
         "milestones_reached": reached if catalog else None,
@@ -572,6 +604,17 @@ def build_state(atlas: Atlas) -> dict:
         mine = [g for g in goals if g["field"] == name]
         ids = {g["id"] for g in mine}
         fields.append({"field": name} | tally(mine, [c for c in claims if c["goal_ids"][0] in ids]))
+    # Über-Atlas: alle Fachgebiete der Systematik, mit oder ohne Einträge
+    realms = []
+    for group in atlas.taxonomy.get("groups", []):
+        areas = []
+        for area in group["areas"]:
+            mine = [g for g in goals if g["area"] == area["code"]]
+            ids = {g["id"] for g in mine}
+            areas.append({"code": area["code"], "name": area["name"], "goal_ids": sorted(ids),
+                          "tally": tally(mine, [c for c in claims if c["goal_ids"][0] in ids]) if mine else None})
+        realms.append({"code": group["code"], "name": group["name"], "areas": areas})
+    covered = sum(1 for r in realms for a in r["areas"] if a["goal_ids"])
     # Verlauf in Zahlen: ein Punkt je Tag, an dem sich Katalog oder Einstufungen geändert haben
     series = []
     for date in sorted({e["date"] for e in events}):
@@ -582,6 +625,9 @@ def build_state(atlas: Atlas) -> dict:
     return {
         "as_of": max((e["date"] for e in events), default=None),
         "totals": tally(goals, claims),
+        "coverage": {"areas": sum(len(r["areas"]) for r in realms), "covered": covered},
+        "taxonomy": {k: v for k, v in atlas.taxonomy.items() if k != "groups"},
+        "realms": realms,
         "fields": fields,
         "series": series,
         "goals": goals,

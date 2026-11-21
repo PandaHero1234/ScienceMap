@@ -48,9 +48,10 @@ def test_startseite_beginnt_mit_dem_gesamtstand(site):
     assert "<b>0 von 19</b><span>Meilensteinen erreicht · 0 %</span>" in index
     assert "<b>0 von 12</b><span>Aussagen geprüft</span>" in index
     assert "<b>0 von 21</b><span>Belege geprüft</span>" in index
-    order = [index.index(text) for text in ('id="gesamt"', "Karte des Atlas", "Stand nach Fach und Ziel",
-                                             "Was noch fehlt", "Ziele im Einzelnen")]
-    assert order == sorted(order), "erst das Ganze, dann die einzelnen Ziele"
+    order = [index.index(text) for text in ('id="gesamt"', "Karte der Wissenschaften", "Stand nach Fachgebiet",
+                                             "Was noch fehlt", 'href="ziele.html">Alle 5 Ziele ansehen')]
+    assert order == sorted(order), "erst das Ganze, dann der Weg zu den einzelnen Zielen"
+    assert '<li class="goal"' not in index, "die einzelnen Ziele stehen auf eigenen Seiten"
 
 
 def test_gesamtbalken_teilt_das_ganze_nach_zustand(site):
@@ -68,7 +69,7 @@ def test_vorschlaege_sind_als_rechnung_gekennzeichnet(site):
 
 
 def test_karte_hat_eine_kachel_je_meilenstein_aussage_und_beleg(site):
-    index = (site / "index.html").read_text(encoding="utf-8")
+    index = (site / "ziele.html").read_text(encoding="utf-8")
     tiles = re.findall(r'<a class="tile is-([a-z-]+)" href="([^"]+)"', index)
     assert len(tiles) == 19 + 12 + 21
     assert sum(1 for _, href in tiles if href.startswith("ziele/")) == 19
@@ -78,12 +79,12 @@ def test_karte_hat_eine_kachel_je_meilenstein_aussage_und_beleg(site):
     assert "Meilenstein: Erstnachweis belegen · Vorschlag: erreicht" in index
 
 
-def test_tabelle_nennt_jedes_ziel_und_die_summe(site):
+def test_tabelle_nennt_jedes_fachgebiet_und_die_summe(site):
     index = (site / "index.html").read_text(encoding="utf-8")
     table = index[index.index('<table class="cover">'):index.index("</table>")]
-    assert table.count('<tr><th scope="row"><span class="k">') == 5
+    assert table.count('<tr><th scope="row"><span class="k">') == 4, "eine Zeile je Fachgebiet mit Einträgen"
     total = table[table.index("<tfoot>"):]
-    assert [c for c in re.findall(r'<td class="num">([^<]+)</td>', total)] == ["0 von 19", "12", "0 von 12", "0 von 21"]
+    assert [c for c in re.findall(r'<td class="num">([^<]+)</td>', total)] == ["5", "0 von 19", "12", "0 von 12", "0 von 21"]
 
 
 def test_was_noch_fehlt_nennt_die_fehlende_arbeit(site):
