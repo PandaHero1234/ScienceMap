@@ -11,7 +11,7 @@ python -m pytest -q                  # prüft jede Regel
 python scripts/atlas.py build        # schreibt die Übersicht nach public/
 ```
 
-Von den 84 Tests arbeiten 48 mit erfundenen Daten in einem temporären Ordner. `tests/test_pilotdaten.py`, `tests/test_fachgebiete.py` und der größte Teil von `tests/test_oberflaeche.py` lesen die echten Daten. Als Gegenprobe wurden dreizehn Regeln einzeln im Skript ausgeschaltet. Jedes Mal schlug mindestens ein Test fehl.
+Von den 97 Tests arbeiten 49 mit erfundenen Daten in einem temporären Ordner. `tests/test_pilotdaten.py`, `tests/test_fachgebiete.py` und der größte Teil von `tests/test_oberflaeche.py` und `tests/test_gesamt.py` lesen die echten Daten. Als Gegenprobe wurden dreizehn Regeln einzeln im Skript ausgeschaltet. Jedes Mal schlug mindestens ein Test fehl.
 
 ## Belegt
 
@@ -36,6 +36,9 @@ Von den 84 Tests arbeiten 48 mit erfundenen Daten in einem temporären Ordner. `
 | Jeder ungeprüfte Eintrag steht unter „Offene Prüfungen“ mit seiner Datei | 1 | `test_offene_pruefungen_nennen_jeden_ungeprueften_eintrag_mit_datei` |
 | Der Zustand einer Station steht als Text und nicht nur als Farbe | 1 | `test_zustand_steht_als_text_und_nicht_nur_als_farbe` |
 | Alle Inhalte sind ohne JavaScript lesbar | 1 | `test_ohne_javascript_ist_alles_lesbar` |
+| Der Gesamtstand zählt alle Meilensteine nach Zustand, die Fächer ergeben zusammen das Ganze | 1 | `test_gesamtstand_zaehlt_alle_meilensteine_nach_zustand`, `test_faecher_ergeben_zusammen_den_gesamtstand` |
+| Die Karte hat eine Kachel je Meilenstein, Aussage und Beleg | 1 | `test_karte_hat_eine_kachel_je_meilenstein_aussage_und_beleg` |
+| Die Kurve zeigt erreichte Meilensteine über die Zeit | 1 | `test_kurve_zeigt_erreichte_meilensteine_ueber_die_zeit` |
 | Ein Vorschlag ist sichtbar und verändert den Zähler nicht | 2, 7 | `test_vorschlag_ist_sichtbar_und_zaehlt_nicht` |
 | Ein Sprachmodell ersetzt keine der zwei Personen | 2 | `test_sprachmodell_ersetzt_keine_der_zwei_personen` |
 | Eine zurückgezogene Studie stützt nichts mehr | 7 | `test_zurueckgezogene_studie_stuetzt_nichts_mehr` |

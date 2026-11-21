@@ -9,6 +9,7 @@ from __future__ import annotations
 import json
 import re
 import shutil
+from datetime import date
 from html import escape as e
 from pathlib import Path
 from urllib.parse import quote
@@ -73,7 +74,24 @@ ICONS = {
     "search": f'<circle cx="7" cy="7" r="4.5" {STROKE}/><path d="M10.5 10.5l3.5 3.5" {STROKE}/>',
     "theme": '<path d="M8 1.5a6.5 6.5 0 1 0 0 13z" fill="currentColor"/>' + f'<circle cx="8" cy="8" r="6.5" {STROKE}/>',
     "arrow": f'<path d="M3 8h10M9 4l4 4-4 4" {STROKE}/>',
+    "bang": f'<path d="M8 3.5v5.5M8 12v.4" {STROKE}/>',
 }
+PARTS = [  # Teile des Gesamtbalkens in fester Reihenfolge: Schlüssel, Name, CSS-Klasse
+    ("reached", "erreicht", "reached"),
+    ("proposed", "als erreicht vorgeschlagen", "proposed"),
+    ("proposed_failed", "als nicht erreicht vorgeschlagen", "proposed-failed"),
+    ("failed", "nicht erreicht", "failed"),
+    ("open", "offen", "open"),
+]
+TILE_ICONS = {"reached": "check", "done": "check", "proposed": "dot", "proposed-failed": "cross",
+              "failed": "cross", "open": "", "attention": "bang"}
+TILE_TEXT = {  # Prüfstand von Aussagen und Belegen
+    "done": "geprüft", "proposed": "vorgeschlagen, Zweitprüfung offen", "open": "noch nicht eingestuft",
+    "attention": "erneut zu prüfen",
+}
+MAP_LEGEND = [("done", "geprüft oder erreicht"), ("proposed", "vorgeschlagen"), ("open", "offen"),
+              ("proposed-failed", "als nicht erreicht vorgeschlagen"), ("failed", "nicht erreicht"),
+              ("attention", "erneut zu prüfen")]
 LOGO = ('<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">'
         '<rect width="32" height="32" rx="7" fill="#1c5cab"/>'
         '<path d="M8 22h4l4-12h8" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>'
@@ -124,13 +142,7 @@ def people(record: dict) -> str:
 
 
 def station_state(milestone: dict) -> str:
-    if milestone["status"] == "erreicht":
-        return "reached"
-    if milestone["status"] == "nicht_erreicht":
-        return "failed"
-    if milestone["open_proposals"]:
-        return "proposed" if milestone["open_proposals"][-1]["outcome"] == "erreicht" else "proposed-failed"
-    return "open"
+    return milestone["state"]
 
 
 def node(state: str) -> str:
@@ -265,6 +277,183 @@ Einstufungen und Belege bis zur Fundstelle zurückverfolgen.</p>
 """
 
 
+def percent(part: int, total: int) -> str:
+    return f"{round(100 * part / total)} %" if total else "0 %"
+
+
+def segbar(counts: dict, tall: bool = False) -> str:
+    """Ein Ganzes, geteilt nach Zustand. Hoch mit Zahlen im Block, schmal neben Zahlen in der Tabelle."""
+    total = counts["total"]
+    if not total:
+        return ""
+    blocks = ""
+    for key, name, css in PARTS:
+        n = counts[key]
+        if not n:
+            continue
+        if tall:
+            text = f"{n} von {total} {name} ({percent(n, total)})"
+            printed = f'<span class="n">{n}</span>' if n / total >= 0.06 else ""
+            blocks += (f'<span class="seg s-{css}" style="flex-grow:{n}" tabindex="0" role="img" '
+                       f'aria-label="{e(text)}" title="{e(text)}">{printed}</span>')
+        else:
+            blocks += f'<span class="seg s-{css}" style="flex-grow:{n}"></span>'
+    return f'<div class="segbar {"tall" if tall else "thin"}"{"" if tall else ' aria-hidden="true"'}>{blocks}</div>'
+
+
+def bar_legend(counts: dict) -> str:
+    """Namen in der Reihenfolge der Blöcke. Eine Zahl steht hier nur, wenn sie im Block keinen Platz hat."""
+    items = ""
+    for key, name, css in PARTS:
+        n = counts[key]
+        if n:
+            extra = "" if n / counts["total"] >= 0.06 else f" ({n})"
+            items += f'<li><span class="swatch s-{css}"></span>{e(name)}{extra}</li>'
+    return f'<ul class="legend" aria-label="Legende des Balkens">{items}</ul>'
+
+
+def tile(state: str, href: str, tip: str) -> str:
+    symbol = TILE_ICONS[state]
+    inner = f'<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">{ICONS[symbol]}</svg>' if symbol else ""
+    return f'<a class="tile is-{state}" href="{e(href)}" title="{e(tip)}">{inner}<span class="sr">{e(tip)}</span></a>'
+
+
+def atlas_map(state: dict) -> str:
+    """Die Karte: je Ziel eine Reihe Kacheln für Meilensteine, Aussagen und Belege."""
+    blocks = ""
+    for goal in state["goals"]:
+        claims = [c for c in state["claims"] if c["goal_ids"][0] == goal["id"]]
+        rows = [
+            ("Meilensteine", "".join(
+                tile(ms["state"], f"ziele/{goal['id']}.html#{ms['id']}",
+                     f"Meilenstein: {ms['title']} · {STATIONS[ms['state']][0]}") for ms in goal["milestones"])),
+            ("Aussagen", "".join(
+                tile(c["review_state"], f"aussagen/{c['id']}.html",
+                     f"Aussage: {c['statement']} · {TILE_TEXT[c['review_state']]}") for c in claims)),
+            ("Belege", "".join(
+                tile(ev["review_state"], f"aussagen/{c['id']}.html#{ev['id']}",
+                     f"Beleg: {ev['study']['short_label']}, {ev['locator']} · {TILE_TEXT[ev['review_state']]}")
+                for c in claims for ev in c["evidence"])),
+        ]
+        body = "".join(f'<div><dt>{name}</dt><dd>{tiles or "<span class=muted>noch keine</span>"}</dd></div>'
+                       for name, tiles in rows)
+        blocks += (f'<div class="map-goal"><span class="k">{e(goal["field"])}</span>'
+                   f'<a class="map-title" href="ziele/{e(goal["id"])}.html">{e(goal["title"])}</a>'
+                   f'<dl class="map-rows">{body}</dl></div>')
+    items = "".join(f'<li><span class="tile is-{state}" aria-hidden="true">'
+                    + (f'<svg viewBox="0 0 16 16">{ICONS[TILE_ICONS[state]]}</svg>' if TILE_ICONS[state] else "")
+                    + f'</span>{e(text)}</li>' for state, text in MAP_LEGEND)
+    return f'<ul class="legend" aria-label="Legende der Karte">{items}</ul><div class="map">{blocks}</div>'
+
+
+def cover_table(state: dict) -> str:
+    """Zahlen je Ziel und gesamt. Zugleich die Tabellenansicht zu Balken und Karte."""
+    def cells(counts: dict) -> str:
+        m = counts["milestones"]
+        return (f'<td class="bar">{segbar(m)}</td><td class="num">{m["reached"]} von {m["total"]}</td>'
+                f'<td class="num">{m["proposed"]}</td>'
+                f'<td class="num">{counts["claims"]["reviewed"]} von {counts["claims"]["total"]}</td>'
+                f'<td class="num">{counts["evidence"]["reviewed"]} von {counts["evidence"]["total"]}</td>')
+    rows = "".join(
+        f'<tr><th scope="row"><span class="k">{e(g["field"])}</span>'
+        f'<a href="ziele/{e(g["id"])}.html">{e(g["title"])}</a></th>{cells(g["tally"])}</tr>' for g in state["goals"])
+    return f"""<div class="tablewrap"><table class="cover">
+<thead><tr><th scope="col">Fach und Ziel</th><th scope="col">Meilensteine</th><th scope="col" class="num">erreicht</th>
+<th scope="col" class="num">vorgeschlagen</th><th scope="col" class="num">Aussagen geprüft</th>
+<th scope="col" class="num">Belege geprüft</th></tr></thead>
+<tbody>{rows}</tbody>
+<tfoot><tr><th scope="row">Gesamt</th>{cells(state["totals"])}</tr></tfoot>
+</table></div>"""
+
+
+def needs(state: dict) -> str:
+    """Was bis zum vollen Zählerstand fehlt, nach Art der fehlenden Arbeit."""
+    m = state["totals"]["milestones"]
+    items = ""
+    waiting = m["proposed"] + m["proposed_failed"]
+    if waiting:
+        items += (f'<li><b>{waiting}</b> {"Meilenstein wartet" if waiting == 1 else "Meilensteine warten"} auf die '
+                  f'Zweitprüfung. <a href="pruefen.html">Zu den offenen Prüfungen</a></li>')
+    missing = [(g, ms) for g in state["goals"] for ms in g["milestones"] if ms["state"] == "open"]
+    if missing:
+        links = ", ".join(f'<a href="ziele/{e(g["id"])}.html#{e(ms["id"])}">{e(ms["title"])}</a> ({e(g["field"])})'
+                          for g, ms in missing)
+        items += (f'<li><b>{len(missing)}</b> {"Meilenstein hat" if len(missing) == 1 else "Meilensteine haben"} '
+                  f'noch keinen Vorschlag: {links}</li>')
+    again = [c for c in state["claims"] if c["review_state"] == "attention"]
+    if again:
+        links = ", ".join(f'<a href="aussagen/{e(c["id"])}.html">{e(c["statement"])}</a>' for c in again)
+        items += f'<li><b>{len(again)}</b> {"Aussage ist" if len(again) == 1 else "Aussagen sind"} erneut zu prüfen: {links}</li>'
+    if m["failed"]:
+        items += f'<li><b>{m["failed"]}</b> {"Meilenstein gilt" if m["failed"] == 1 else "Meilensteine gelten"} als nicht erreicht.</li>'
+    if not items:
+        items = "<li>Alle Meilensteine sind erreicht und geprüft.</li>"
+    return f'<ul class="needs">{items}</ul>'
+
+
+def chart(series: list[dict]) -> str:
+    """Verlauf in Zahlen: erreichte Meilensteine als Linie, Gesamtzahl gestrichelt. Erst ab zwei Tagen sinnvoll."""
+    if len(series) < 2:
+        return ""
+    width, height, left, right, top, bottom = 640, 230, 34, 104, 14, 30
+    first = date.fromisoformat(series[0]["date"])
+    span = max((date.fromisoformat(series[-1]["date"]) - first).days, 1)
+    peak = max(max(p["total"] for p in series), 1)
+    x = lambda p: left + (date.fromisoformat(p["date"]) - first).days / span * (width - left - right)
+    y = lambda value: top + (1 - value / peak) * (height - top - bottom)
+
+    def steps(key: str) -> str:
+        path = f"M{x(series[0]):.1f} {y(series[0][key]):.1f}"
+        for point in series[1:]:
+            path += f"H{x(point):.1f}V{y(point[key]):.1f}"
+        return path
+
+    ticks = sorted({0, peak // 2, peak})
+    grid = "".join(f'<line class="grid" x1="{left}" x2="{width - right}" y1="{y(v):.1f}" y2="{y(v):.1f}"/>'
+                   f'<text class="tick" x="{left - 8}" y="{y(v) + 4:.1f}" text-anchor="end">{v}</text>' for v in ticks)
+    dots = "".join(f'<circle class="dot" cx="{x(p):.1f}" cy="{y(p["reached"]):.1f}" r="4.5">'
+                   f'<title>{e(p["date"])}: {p["reached"]} von {p["total"]} erreicht</title></circle>' for p in series)
+    last = series[-1]
+    y_reached, y_total = y(last["reached"]), y(last["total"])
+    if abs(y_reached - y_total) < 16:
+        y_total = y_reached - 16
+    end = width - right + 10
+    labels = (f'<text class="end" x="{end}" y="{y_reached + 4:.1f}">erreicht {last["reached"]}</text>'
+              f'<text class="end muted" x="{end}" y="{y_total + 4:.1f}">gesamt {last["total"]}</text>')
+    days = (f'<text class="tick" x="{left}" y="{height - 8}">{e(series[0]["date"])}</text>'
+            f'<text class="tick" x="{width - right}" y="{height - 8}" text-anchor="end">{e(last["date"])}</text>')
+    summary = (f"Verlauf vom {series[0]['date']} bis {last['date']}: zuletzt {last['reached']} von "
+               f"{last['total']} Meilensteinen erreicht.")
+    return (f'<figure class="chart"><svg viewBox="0 0 {width} {height}" role="img" aria-label="{e(summary)}">'
+            f'{grid}<path class="total" d="{steps("total")}"/><path class="reached" d="{steps("reached")}"/>'
+            f'{dots}{labels}{days}</svg>'
+            f'<figcaption class="small muted">Durchgezogen: erreichte Meilensteine. Gestrichelt: Meilensteine im Katalog.'
+            f'</figcaption></figure>')
+
+
+def series_table(series: list[dict]) -> str:
+    rows, before = "", None
+    for point in series:
+        change = "–" if before is None else f"{point['reached'] - before:+d}"
+        rows += (f'<tr><th scope="row">{e(point["date"])}</th><td class="num">{point["reached"]}</td>'
+                 f'<td class="num">{point["total"]}</td><td class="num">{change}</td></tr>')
+        before = point["reached"]
+    return f"""<div class="tablewrap"><table class="cover">
+<thead><tr><th scope="col">Tag</th><th scope="col" class="num">erreicht</th><th scope="col" class="num">im Katalog</th>
+<th scope="col" class="num">Änderung</th></tr></thead><tbody>{rows}</tbody></table></div>"""
+
+
+def badge_svg(name: str, value: str) -> str:
+    """Abzeichen für die README, etwa 'Meilensteine 0/19'."""
+    left, right = 12 + round(6.7 * len(name)), 12 + round(7.2 * len(value))
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{left + right}" height="20" role="img" '
+            f'aria-label="{e(name)}: {e(value)}"><title>{e(name)}: {e(value)}</title>'
+            f'<rect width="{left + right}" height="20" rx="3" fill="#43505d"/>'
+            f'<path d="M{left} 0h{right - 3}a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3H{left}z" fill="#1c5cab"/>'
+            f'<g fill="#fff" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" font-size="11" text-anchor="middle">'
+            f'<text x="{left / 2}" y="14">{e(name)}</text><text x="{left + right / 2}" y="14">{e(value)}</text></g></svg>\n')
+
+
 def legend() -> str:
     items = "".join(f'<li class="is-{state}">{node(state)}{e(text)}</li>' for state, (text, _) in STATIONS.items())
     return f'<ul class="legend" aria-label="Legende der Stationen">{items}</ul>'
@@ -278,15 +467,31 @@ def legend() -> str:
 def render_index(state: dict, ctx: dict) -> str:
     goals = state["goals"]
     fields = sorted({g["field"] for g in goals})
-    total = sum(g["milestones_total"] or 0 for g in goals)
-    reached = sum(g["milestones_reached"] or 0 for g in goals)
-    proposed = sum(g["milestones_proposed"] for g in goals)
-    summary = f"""<ul class="summary">
-<li><b>{len(goals)}</b><span>{'Forschungsziel' if len(goals) == 1 else 'Forschungsziele'} in {plural(len(fields), 'Fach', 'Fächern')}</span></li>
-<li><b>{reached} von {total}</b><span>Meilensteinen erreicht</span></li>
-<li><b>{proposed}</b><span>vorgeschlagen, Zweitprüfung offen</span></li>
+    totals = state["totals"]
+    m = totals["milestones"]
+    scenario = ""
+    if m["proposed"]:
+        scenario = (f'<p class="small muted">Rechnung, kein Stand: Würden alle offenen Vorschläge freigegeben, wären '
+                    f'{m["reached"] + m["proposed"]} von {m["total"]} Meilensteinen erreicht '
+                    f'({percent(m["reached"] + m["proposed"], m["total"])}).</p>')
+    overall = f"""<section class="panel overall" aria-labelledby="gesamt">
+<h2 class="k" id="gesamt">Gesamtstand</h2>
+<div class="overall-head">
+<p class="hero"><b>{m['reached']} von {m['total']}</b><span>Meilensteinen erreicht · {percent(m['reached'], m['total'])}</span></p>
+<ul class="stats">
+<li><b>{totals['claims']['reviewed']} von {totals['claims']['total']}</b><span>Aussagen geprüft</span></li>
+<li><b>{totals['evidence']['reviewed']} von {totals['evidence']['total']}</b><span>Belege geprüft</span></li>
 <li><b>{len(ctx['queue'])}</b><span><a href="pruefen.html">offene Prüfungen</a></span></li>
-</ul>"""
+<li><b>{len(goals)}</b><span>{'Ziel' if len(goals) == 1 else 'Ziele'} in {plural(len(fields), 'Fach', 'Fächern')}</span></li>
+</ul>
+</div>
+{segbar(m, tall=True)}
+{bar_legend(m)}
+{scenario}
+</section>"""
+    history = ""
+    if len(state["series"]) > 1:
+        history = f'<h2>Verlauf</h2>{chart(state["series"])}<p><a href="verlauf.html">Alle Änderungen ansehen</a></p>'
     pills = '<button class="pill" type="button" data-field="" aria-pressed="true">Alle Fächer</button>' + "".join(
         f'<button class="pill" type="button" data-field="{e(f)}" aria-pressed="false">{e(f)}</button>' for f in fields)
     sections = ""
@@ -301,20 +506,29 @@ def render_index(state: dict, ctx: dict) -> str:
                    if goal.get("open_question") else "")
             rows += f"""<li class="goal" data-field="{e(field)}" data-search="{e(' '.join(words).lower())}">
 <div>
-<h3><a href="ziele/{e(goal['id'])}.html">{e(goal['title'])}</a></h3>
+<h4><a href="ziele/{e(goal['id'])}.html">{e(goal['title'])}</a></h4>
 <p class="goal-count">{count_text(goal)}</p>
 {nxt}
 </div>
 {route(goal, "")}
 </li>"""
         sections += (f'<section class="field" id="fach-{slug(field)}" data-field="{e(field)}">'
-                     f'<h2>{e(field)} <small>{plural(len(mine), "Ziel", "Ziele")}</small></h2>'
+                     f'<h3>{e(field)} <small>{plural(len(mine), "Ziel", "Ziele")}</small></h3>'
                      f'<ul class="goals">{rows}</ul></section>')
     body = f"""<h1>{e(ctx['config']['title'])}</h1>
-<p class="lead">Für jedes Forschungsziel zeigt der Atlas, welche Meilensteine erreicht sind, welche
+<p class="lead">Der Atlas zeigt für jedes Forschungsziel, welche Meilensteine erreicht sind, welche
 Veröffentlichungen das tragen und welche Prüfung als Nächstes ansteht.</p>
-{summary}
-<h2>So liest du eine Route</h2>
+{overall}
+<h2>Karte des Atlas</h2>
+<p class="scope">Jede Kachel ist ein Meilenstein, eine Aussage oder ein Beleg und führt zu ihrem Eintrag.
+Eine Kachel gilt erst als geprüft, wenn zwei Personen sie freigegeben haben.</p>
+{atlas_map(state)}
+<h2>Stand nach Fach und Ziel</h2>
+{cover_table(state)}
+<h2>Was noch fehlt</h2>
+{needs(state)}
+{history}
+<h2 id="ziele">Ziele im Einzelnen</h2>
 <p class="scope">Jedes Ziel ist eine Route aus Meilensteinen. Als erreicht gilt eine Station erst, wenn zwei Personen
 die Einstufung freigegeben haben. Bis dahin bleibt sie ein Vorschlag.</p>
 {legend()}
@@ -330,7 +544,7 @@ die Einstufung freigegeben haben. Bis dahin bleibt sie ein Vorschlag.</p>
 <p class="small muted" style="margin-top:2rem">Die Zählung bezieht sich auf den jeweiligen Zielkatalog. Aus einem Zählerstand
 lässt sich keine Aussage zum gesamten Forschungsstand eines Fachs ableiten.</p>"""
     return page("Übersicht", body, ctx, current="index",
-                description="Forschungsziele, erreichte Meilensteine und die Veröffentlichungen, die sie tragen.")
+                description="Gesamtstand, Karte und Ziele des Forschungsatlas mit den Veröffentlichungen, die sie tragen.")
 
 
 def render_goal(goal: dict, ctx: dict) -> str:
@@ -593,9 +807,16 @@ def render_history(state: dict, ctx: dict) -> str:
 <p class="small muted">Stand danach: {e(stand)}</p></div></li>"""
     if not rows:
         rows = "<li>Noch keine Einträge.</li>"
+    series = state["series"]
+    curve = chart(series) or ('<p class="scope">Die Kurve erscheint, sobald der Verlauf zwei Tage umfasst. '
+                              'Bisher gibt es einen Stand.</p>' if series else "")
     body = f"""<h1>Verlauf</h1>
 <p class="lead">Jede Änderung mit dem Datum der Atlasentscheidung, altem und neuem Stand, Grund und Quelle.
 Vorschläge erscheinen hier erst nach ihrer Freigabe.</p>
+<h2>Erreichte Meilensteine über die Zeit</h2>
+{curve}
+{series_table(series) if series else ""}
+<h2>Änderungen</h2>
 <ol class="timeline">{rows}</ol>"""
     return page("Verlauf", body, ctx, current="verlauf", description="Datierte Änderungen am Stand des Atlas.")
 
@@ -647,10 +868,15 @@ def write_site(state: dict, config: dict, out: Path) -> list[Path]:
         "index.html": render_index(state, ctx),
         "pruefen.html": render_queue(ctx),
         "verlauf.html": render_history(state, ctx),
-        "progress.json": json.dumps({k: state[k] for k in ("as_of", "goals", "claims")},
+        "progress.json": json.dumps({k: state[k] for k in ("as_of", "totals", "fields", "series", "goals", "claims")},
                                     ensure_ascii=False, indent=2) + "\n",
         "history.json": json.dumps(state["history"], ensure_ascii=False, indent=2) + "\n",
     }
+    reached = state["totals"]["milestones"]
+    files["badge.svg"] = badge_svg("Meilensteine", f"{reached['reached']}/{reached['total']}")
+    for entry in state["fields"]:
+        files[f"badge-{slug(entry['field'])}.svg"] = badge_svg(
+            entry["field"], f"{entry['milestones']['reached']}/{entry['milestones']['total']}")
     for goal in state["goals"]:
         files[f"ziele/{goal['id']}.html"] = render_goal(goal, ctx)
     for claim in state["claims"]:

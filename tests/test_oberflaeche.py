@@ -38,6 +38,7 @@ def test_alle_seiten_sind_vorhanden(site):
     assert sum(n.startswith("ziele/") for n in names) == 5
     assert sum(n.startswith("aussagen/") for n in names) == 12
     assert (site / "atlas.css").is_file() and (site / "atlas.js").is_file()
+    assert (site / "badge.svg").is_file() and (site / "badge-physik.svg").is_file()
 
 
 def test_jede_seite_hat_grundgeruest_fuer_bedienbarkeit(site):
@@ -88,7 +89,7 @@ def test_ohne_javascript_ist_alles_lesbar(site):
 def test_suche_findet_ziele_ueber_aussagen_und_quellen(site):
     index = (site / "index.html").read_text(encoding="utf-8")
     search = {m.group(1): m.group(2) for m in re.finditer(
-        r'data-search="([^"]*)">\s*<div>\s*<h3><a href="ziele/([^"]+)\.html"', index)}
+        r'data-search="([^"]*)">\s*<div>\s*<h4><a href="ziele/([^"]+)\.html"', index)}
     by_goal = {goal: text for text, goal in search.items()}
     assert "ngago" in by_goal["goal-ngago-genom-editierung"]
     assert "frangoul et al. 2024" in by_goal["goal-cas9-genom-editierung"]

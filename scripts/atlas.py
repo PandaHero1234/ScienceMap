@@ -385,6 +385,7 @@ def _evidence_view(atlas: Atlas, ev: dict) -> dict:
                       "kind": atlas.datasets[i].get("kind", "datensatz"), "counts_as": _root_dataset(atlas, i)}
                      for i in basis_ids(ev)]
     view["counts_as_support"] = supports(atlas, ev)
+    view["review_state"] = {"freigegeben": "done", "erneut_zu_pruefen": "attention"}.get(ev["review_status"], "proposed")
     return view
 
 
@@ -426,6 +427,8 @@ def claim_state(atlas: Atlas, claim: dict, as_of: str | None = None) -> dict:
         "scope": claim["scope"],
         "milestone_ids": claim["milestone_ids"],
         "editorial_status": editorial,
+        "review_state": ("attention" if reasons or result["conflict"] else "done" if valid
+                         else "proposed" if pending else "open"),
         "evidence_status": valid["outcome"] if valid else "offen",
         "proposed_status": pending[-1]["outcome"] if pending else None,
         "assurance": valid.get("assurance", []) if valid else [],
@@ -439,6 +442,17 @@ def claim_state(atlas: Atlas, claim: dict, as_of: str | None = None) -> dict:
         "reexamine": reasons,
         "evidence": [_evidence_view(atlas, e) for e in sorted(evidence, key=lambda e: e["id"])],
     }
+
+
+def milestone_state(milestone: dict) -> str:
+    """Zustand einer Station: erreicht, nicht erreicht, vorgeschlagen oder offen."""
+    if milestone["status"] == "erreicht":
+        return "reached"
+    if milestone["status"] == "nicht_erreicht":
+        return "failed"
+    if milestone["open_proposals"]:
+        return "proposed" if milestone["open_proposals"][-1]["outcome"] == "erreicht" else "proposed-failed"
+    return "open"
 
 
 def goal_state(atlas: Atlas, goal: dict, as_of: str | None = None) -> dict:
@@ -459,6 +473,8 @@ def goal_state(atlas: Atlas, goal: dict, as_of: str | None = None) -> dict:
             "reexamine": _reexamine(atlas, valid),
             "claims": sorted(c["id"] for c in atlas.claims.values() if mid in c["milestone_ids"]),
         })
+    for ms in milestones:
+        ms["state"] = milestone_state(ms)
     reached = sum(1 for m in milestones if m["status"] == "erreicht")
     proposed = sum(1 for m in milestones if m["status"] != "erreicht"
                    and any(p["outcome"] == "erreicht" for p in m["open_proposals"]))
@@ -527,6 +543,21 @@ def history(atlas: Atlas) -> list[dict]:
     return events
 
 
+def tally(goals: list[dict], claims: list[dict]) -> dict:
+    """Zählt Meilensteine nach Zustand sowie geprüfte Aussagen und Belege."""
+    stations = [m for g in goals for m in g["milestones"]]
+    evidence = [ev for c in claims for ev in c["evidence"]]
+    count = lambda state: sum(1 for m in stations if m["state"] == state)
+    return {
+        "goals": len(goals),
+        "milestones": {"total": len(stations), "reached": count("reached"), "proposed": count("proposed"),
+                       "proposed_failed": count("proposed-failed"), "failed": count("failed"), "open": count("open")},
+        "claims": {"total": len(claims), "reviewed": sum(1 for c in claims if c["decision"])},
+        "evidence": {"total": len(evidence),
+                     "reviewed": sum(1 for ev in evidence if ev["review_status"] == "freigegeben")},
+    }
+
+
 def build_state(atlas: Atlas) -> dict:
     events = history(atlas)
     goals = [goal_state(atlas, g) for g in sorted(atlas.goals.values(), key=lambda g: (g["field"], g["id"]))]
@@ -534,8 +565,25 @@ def build_state(atlas: Atlas) -> dict:
         dates = [e["date"] for e in events if goal["id"] in e["goal_ids"]]
         goal["last_change"] = max(dates) if dates else None
     claims = [claim_state(atlas, c) for c in sorted(atlas.claims.values(), key=lambda c: c["id"])]
+    for goal in goals:
+        goal["tally"] = tally([goal], [c for c in claims if c["goal_ids"][0] == goal["id"]])
+    fields = []
+    for name in sorted({g["field"] for g in goals}):
+        mine = [g for g in goals if g["field"] == name]
+        ids = {g["id"] for g in mine}
+        fields.append({"field": name} | tally(mine, [c for c in claims if c["goal_ids"][0] in ids]))
+    # Verlauf in Zahlen: ein Punkt je Tag, an dem sich Katalog oder Einstufungen geändert haben
+    series = []
+    for date in sorted({e["date"] for e in events}):
+        then = [goal_state(atlas, g, as_of=date) for g in atlas.goals.values()]
+        series.append({"date": date,
+                       "reached": sum(g["milestones_reached"] or 0 for g in then),
+                       "total": sum(g["milestones_total"] or 0 for g in then)})
     return {
         "as_of": max((e["date"] for e in events), default=None),
+        "totals": tally(goals, claims),
+        "fields": fields,
+        "series": series,
         "goals": goals,
         "claims": claims,
         "history": events,

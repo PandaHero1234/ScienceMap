@@ -2,7 +2,7 @@
 
 | Ansicht | Inhalt | Beispiel oder Frage |
 |---|---|---|
-| Startseite | Je Forschungsziel eine Route aus Meilenstein-Stationen, nach Fach gruppiert, mit Zählerstand und nächster offener Prüfung. Suche und Fachfilter durchsuchen Ziele, Aussagen und Quellen | Bei welchen Zielen steht eine Prüfung an? |
+| Startseite | Zuerst das Ganze: Gesamtstand mit Balken, Karte aus Kacheln, Tabelle je Fach und Ziel und die fehlende Arbeit. Darunter je Forschungsziel eine Route aus Meilenstein-Stationen mit Suche und Fachfilter | Wie weit ist der Atlas insgesamt, und wo steht eine Prüfung an? |
 | Zielseite | Die Route senkrecht: je Meilenstein Erfüllungskriterium, Status, Begründung und die verknüpften Aussagen im Wortlaut | Welche Evidenz fehlt für die Übertragbarkeit eines Verfahrens? |
 | Aussage | Präziser Satz mit Geltungsbereich, drei Angaben zur Einordnung, einer Matrix aus Quellen und ihren Grundlagen sowie den Belegen, getrennt nach Richtung | Für welche Logversion und Parameter gilt der gemessene Vorsprung? |
 | Beleg | Konkretes Ergebnis aus einer Arbeit, genaue Fundstelle, Version, Datenherkunft und Prüfvermerk | Welche Zeilen in welcher Tabelle tragen den Vergleich? |
@@ -24,6 +24,22 @@ Der Nenner zählt die aktiven Meilensteine der gewählten Zielkatalog-Version. J
 
 Die Anzeige bezieht sich auf die Arbeit an diesem Zielkatalog. Aus „0 von 4“ lässt sich keine Aussage zum gesamten Forschungsstand von Process Mining ableiten.
 
+
+## Gesamtübersicht
+
+Die Startseite beginnt mit dem Stand des ganzen Atlas. Sie folgt dem Aufbau der Fortschrittsseite von AnyPS5: Gesamtzahl, Karte, Tabelle, offene Arbeit, Verlauf und Abzeichen.
+
+| Baustein | Inhalt |
+|---|---|
+| Gesamtstand | Erreichte von allen Meilensteinen als Zahl und Anteil, dazu geprüfte Aussagen, geprüfte Belege und offene Prüfungen. Ein Balken teilt alle Meilensteine nach Zustand |
+| Rechnung | Ein Satz nennt, wo der Zähler stünde, wenn alle offenen Vorschläge freigegeben würden. Er ist als Rechnung gekennzeichnet und zählt nicht als Stand |
+| Karte | Je Ziel eine Kachel für jeden Meilenstein, jede Aussage und jeden Beleg. Jede Kachel führt zu ihrem Eintrag |
+| Tabelle | Je Ziel und gesamt: erreichte und vorgeschlagene Meilensteine, geprüfte Aussagen und geprüfte Belege |
+| Was noch fehlt | Meilensteine, die auf die Zweitprüfung warten, Meilensteine ohne Vorschlag und Aussagen, die erneut zu prüfen sind |
+| Verlauf | Erreichte Meilensteine über die Zeit als Linie, die Zahl der Meilensteine im Katalog gestrichelt. Die Kurve erscheint ab zwei Tagen mit Änderungen |
+| Abzeichen | `badge.svg` mit dem Gesamtstand und ein Abzeichen je Fach, etwa `badge-physik.svg`, zum Einbinden in andere Seiten |
+
+Dieselben Zahlen stehen in `progress.json` unter `totals`, `fields` und `series`.
 
 ## Gestaltung der Seiten
 

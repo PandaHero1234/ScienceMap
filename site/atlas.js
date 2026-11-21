@@ -29,6 +29,37 @@
     });
   }
 
+  // --- Kurzinfo zu Kacheln und Balkenteilen -----------------------------------
+  var marks = Array.prototype.slice.call(document.querySelectorAll(".tile[title], .seg[title]"));
+  if (marks.length) {
+    var tip = document.createElement("div");
+    tip.className = "tip";
+    tip.setAttribute("role", "tooltip");
+    tip.hidden = true;
+    document.body.appendChild(tip);
+    var show = function (el) {
+      tip.textContent = el.getAttribute("data-tip");
+      tip.hidden = false;
+      var box = el.getBoundingClientRect();
+      var top = box.top - tip.offsetHeight - 8;
+      if (top < 4) { top = box.bottom + 8; }
+      var left = box.left + box.width / 2 - tip.offsetWidth / 2;
+      left = Math.max(8, Math.min(left, window.innerWidth - tip.offsetWidth - 8));
+      tip.style.top = top + "px";
+      tip.style.left = left + "px";
+    };
+    var hide = function () { tip.hidden = true; };
+    marks.forEach(function (el) {
+      el.setAttribute("data-tip", el.getAttribute("title"));
+      el.removeAttribute("title");
+      el.addEventListener("pointerenter", function () { show(el); });
+      el.addEventListener("focus", function () { show(el); });
+      el.addEventListener("pointerleave", hide);
+      el.addEventListener("blur", hide);
+    });
+    window.addEventListener("scroll", hide, { passive: true });
+  }
+
   // --- Suche und Fachfilter auf der Übersicht --------------------------------
   var box = document.getElementById("filter");
   if (!box) { return; }

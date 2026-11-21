@@ -1,5 +1,9 @@
 # Forschungsatlas
 
+[![Meilensteine](https://pandahero1234.github.io/ScienceMap/badge.svg)](https://pandahero1234.github.io/ScienceMap/)
+
+**Zur Übersicht:** https://pandahero1234.github.io/ScienceMap/
+
 Der Forschungsatlas zeigt für jedes Forschungsziel, welche Meilensteine erreicht sind, welche Veröffentlichungen diese Einschätzung tragen und welche Prüfung als Nächstes ansteht. Vom Stand eines Ziels führt ein direkter Weg zur konkreten Tabelle, Abbildung oder Textstelle im Paper.
 
 **Stand vom 21. November 2026.** Der Weg von den Daten zur Übersicht ist gebaut und getestet. Neben dem Pilot enthält der Atlas je ein Gebiet aus Physik, Mathematik und Biologie. Alle Einträge dieser drei Fächer sind Vorschläge, deren Zweitprüfung aussteht. Für Process Mining sind vier Meilensteine formuliert. Der Ausgangsbefund ist mit seiner Fundstelle erfasst. Die fachliche Zweitprüfung, die unabhängige Nachrechnung und die Übertragungsstudie stehen aus.

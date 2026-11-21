@@ -153,6 +153,13 @@ def test_nach_freigabe_sind_alle_aussagen_der_drei_faecher_eingestuft(approved):
         assert claim["conflict"] == []
 
 
+def test_nach_freigabe_stimmt_der_gesamtstand(approved):
+    assert approved["totals"]["milestones"] == {
+        "total": 19, "reached": 12, "proposed": 0, "proposed_failed": 0, "failed": 2, "open": 5}
+    assert approved["totals"]["claims"] == {"total": 12, "reviewed": 11}
+    assert approved["totals"]["evidence"] == {"total": 21, "reviewed": 21}
+
+
 def test_nach_freigabe_steht_jede_entscheidung_im_verlauf(approved):
     decisions = [e for e in approved["history"] if e["type"] == "entscheidung"]
     assert len(decisions) == 25
