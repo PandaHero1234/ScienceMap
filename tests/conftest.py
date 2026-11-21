@@ -65,7 +65,7 @@ class World:
             "review_status": "freigegeben" if released else "vorgeschlagen"}
         if released:
             record |= {"extracted_by": "Ada", "reviewed_by": "Ben"}
-        if "dataset_id" not in extra and "event_ids" not in extra:
+        if not {"dataset_id", "event_ids", "basis_ids"} & set(extra):
             record["dataset_id"] = "ds-eins"
         return self.put("evidence", record | extra)
 

@@ -1,0 +1,38 @@
+id: goal-primzahlluecken
+field: Mathematik
+title: Beschränkte Lücken zwischen Primzahlen bis zur Zwillingsprimzahlvermutung beweisen
+last_work: Drei Veröffentlichungen mit fünf Belegen als Vorschlag erfasst
+open_question: Zweite Person gleicht die Sätze und ihre Voraussetzungen mit den Veröffentlichungen ab
+milestones:
+- id: ms-primluecken-endliche-schranke
+  title: Endliche Schranke beweisen
+  criterion: Eine endliche obere Schranke für den Abstand unendlich vieler aufeinanderfolgender Primzahlpaare
+    ist ohne unbewiesene Annahmen bewiesen und in einer begutachteten Zeitschrift erschienen.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-primluecken-zweiter-beweis
+  title: Mit zweitem Beweis absichern
+  criterion: Ein zweiter veröffentlichter Beweis einer anderen Autorin, eines anderen Autors oder einer
+    anderen Gruppe belegt eine endliche Schranke.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-primluecken-schranke-246
+  title: Schranke auf höchstens 246 senken
+  criterion: Eine Schranke von höchstens 246 ist ohne unbewiesene Annahmen bewiesen.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-primluecken-bedingt
+  title: Bedingte Schranke bestimmen
+  criterion: Unter einer klar benannten, unbewiesenen Vermutung ist eine Schranke von höchstens 6 bewiesen.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-zwillingsprimzahlen
+  title: Zwillingsprimzahlvermutung beweisen
+  criterion: Die Schranke 2 ist ohne unbewiesene Annahmen bewiesen.
+  note: Offen. Im Atlas ist kein Beleg erfasst.
+catalog:
+- version: 1
+  date: '2026-11-21'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-primluecken-endliche-schranke
+  - ms-primluecken-zweiter-beweis
+  - ms-primluecken-schranke-246
+  - ms-primluecken-bedingt
+  - ms-zwillingsprimzahlen

@@ -1,0 +1,12 @@
+id: dec-2026-11-21-cl-primluecken-6-bedingt
+date: '2026-11-21'
+kind: aussage
+target_id: cl-primluecken-6-bedingt
+outcome: vorlaeufig_gestuetzt
+rationale: Die Veröffentlichung des Polymath-Projekts nennt die Schranke 6 unter der verallgemeinerten
+  Elliott-Halberstam-Vermutung.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-primluecken-polymath-geh-6
+- ev-primluecken-maynard-eh-12
+status: vorgeschlagen

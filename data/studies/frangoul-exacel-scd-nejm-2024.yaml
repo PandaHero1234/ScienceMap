@@ -1,0 +1,12 @@
+id: frangoul-exacel-scd-nejm-2024
+label: Frangoul et al., Exagamglogene Autotemcel for Severe Sickle Cell Disease (N. Engl. J. Med. 390,
+  1649–1662)
+short_label: Frangoul et al. 2024
+team: vertex-und-crispr-therapeutics
+doi: 10.1056/NEJMoa2309676
+status: aktiv
+published: '2024-04-24'
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1056/NEJMoa2309676

@@ -1,0 +1,10 @@
+id: zhang-bounded-gaps-annals
+label: Zhang, Bounded gaps between primes (Ann. of Math. 179, 2014, 1121–1174)
+short_label: Zhang 2014
+team: zhang
+doi: 10.4007/annals.2014.179.3.7
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.4007/annals.2014.179.3.7

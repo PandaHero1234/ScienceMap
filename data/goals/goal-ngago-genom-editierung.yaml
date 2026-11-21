@@ -1,0 +1,23 @@
+id: goal-ngago-genom-editierung
+field: Biologie
+title: DNA-geführte Genom-Editierung mit NgAgo in menschlichen Zellen bestätigen
+last_work: Zurückgezogene Erstveröffentlichung und gemeinsame Widerlegung dreier Gruppen als Vorschlag
+  erfasst
+open_question: Zweite Person prüft Rückzugsvermerk und Widerlegung
+milestones:
+- id: ms-ngago-erstbefund
+  title: Erstbefund belegen
+  criterion: Eine begutachtete, nicht zurückgezogene Veröffentlichung zeigt die Editierung eines Genorts
+    in menschlichen Zellen.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-ngago-replikation
+  title: Unabhängig replizieren
+  criterion: Ein zweites Team erzielt die Editierung mit eigenen Experimenten.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+catalog:
+- version: 1
+  date: '2026-11-21'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-ngago-erstbefund
+  - ms-ngago-replikation

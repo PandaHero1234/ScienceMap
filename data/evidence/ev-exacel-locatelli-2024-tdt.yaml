@@ -1,0 +1,14 @@
+id: ev-exacel-locatelli-2024-tdt
+claim_id: cl-cas9-klinische-wirksamkeit
+study_id: locatelli-exacel-tdt-nejm-2024
+study_version: journal
+locator: Abstract
+basis_ids:
+- nct03655678
+metric: Anteil mit Transfusionsunabhängigkeit über mindestens 12 Monate in Folge
+values:
+  Anteil: 32 von 35 (91 %)
+uncertainty: 95-%-Konfidenzintervall 77 bis 98 %
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell

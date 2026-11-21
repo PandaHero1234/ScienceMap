@@ -1,0 +1,11 @@
+id: dec-2026-11-21-ms-ngago-erstbefund
+date: '2026-11-21'
+kind: meilenstein
+target_id: ms-ngago-erstbefund
+catalog_version: 1
+outcome: nicht_erreicht
+rationale: Die einzige erfasste Veröffentlichung des Befunds wurde am 1. August 2017 zurückgezogen.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-ngago-gao-2016
+status: vorgeschlagen

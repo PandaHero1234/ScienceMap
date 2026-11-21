@@ -1,0 +1,7 @@
+id: cl-gw-auswertung-ausserhalb-kollaboration
+statement: Eine nicht von der Kollaboration veröffentlichte Auswertung der öffentlichen Daten des ersten
+  Beobachtungslaufs findet GW150914 und GW151226 als signifikante Kandidaten.
+scope: Öffentliche Daten des ersten Beobachtungslaufs von Advanced LIGO. Dieselben Daten wie in den Veröffentlichungen
+  der Kollaboration.
+milestone_ids:
+- ms-gw-unabhaengige-auswertung

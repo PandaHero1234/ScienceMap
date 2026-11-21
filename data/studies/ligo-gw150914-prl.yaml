@@ -1,0 +1,15 @@
+id: ligo-gw150914-prl
+label: LIGO Scientific Collaboration und Virgo Collaboration, GW150914 (Phys. Rev. Lett. 116, 061102)
+short_label: LVC 2016, GW150914
+team: ligo-virgo-kollaboration
+doi: 10.1103/PhysRevLett.116.061102
+status: aktiv
+instrument: ligo
+published: '2016-02-11'
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1103/PhysRevLett.116.061102
+- id: ligo-dokument
+  kind: LIGO-Dokument P150914
+  url: https://dcc.ligo.org/P150914/public

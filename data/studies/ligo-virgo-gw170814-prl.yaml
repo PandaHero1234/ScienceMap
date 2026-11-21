@@ -1,0 +1,11 @@
+id: ligo-virgo-gw170814-prl
+label: LIGO Scientific Collaboration und Virgo Collaboration, GW170814 (Phys. Rev. Lett. 119, 141101)
+short_label: LVC 2017, GW170814
+team: ligo-virgo-kollaboration
+doi: 10.1103/PhysRevLett.119.141101
+status: aktiv
+instrument: ligo-und-virgo
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1103/PhysRevLett.119.141101

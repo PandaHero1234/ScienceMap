@@ -1,0 +1,15 @@
+id: ev-ngago-lee-2016
+claim_id: cl-ngago-editierung-humanzellen
+study_id: lee-ngago-nbt-2016
+study_version: journal
+locator: Gesamter Beitrag, S. 17–18
+dataset_id: exp-lee-2016
+metric: Nachweis einer Editierung in Replikationsversuchen
+values:
+  Befund: Keine DNA-geführte Genom-Editierung nachweisbar
+  Beteiligte Gruppen: 3
+uncertainty: offen
+relation: spricht_dagegen
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Gemeinsamer Beitrag dreier Gruppen. Die Abbildung mit den Einzelergebnissen ist nachzutragen.

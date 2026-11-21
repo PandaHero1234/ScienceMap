@@ -1,0 +1,15 @@
+id: ev-cas9-mali-humanzellen
+claim_id: cl-cas9-editierung-humanzellen
+study_id: mali-cas9-science-2013
+study_version: journal
+locator: Abstract
+dataset_id: exp-mali-2013
+metric: Funktion des Systems mit eigener Leit-RNA in menschlichen Zellen
+values:
+  Befund: Das bakterielle Typ-II-CRISPR-System funktioniert mit eigens entworfener Leit-RNA in menschlichen
+    Zellen
+uncertainty: Im Abstract nicht beziffert.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Die Editierungsraten je Zelltyp sind aus dem Volltext nachzutragen.

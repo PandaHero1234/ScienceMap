@@ -6,12 +6,14 @@
 | `docs/` | Regeln für Aufnahme, Suche und Bewertung, Beispielkarten, Pilotplan und Nachweis |
 | `data/goals/` | Feld, Ziel, versionierter Katalog mit stabilen Meilenstein-IDs und Erfüllungskriterien |
 | `data/claims/` | Präzise Aussagen, Geltungsbereich und Zuordnung zu einem oder mehreren Meilensteinen |
-| `data/studies/` | Studie, Team, Fassungen mit Link sowie Vermerk bei Korrektur oder Rückzug |
-| `data/datasets/` | Datensätze und Ereignisse mit stabiler ID, Quelle, Version und Herkunft |
+| `data/studies/` | Studie mit Kurzbezeichnung, Team, Fassungen mit Link sowie Vermerk bei Korrektur oder Rückzug |
+| `data/datasets/` | Grundlagen mit stabiler ID: Datensätze, Ereignisse, Versuchsreihen, klinische Studien und Beweise |
 | `data/evidence/` | Einzelbefunde und ihre gerichteten Beziehungen zu Aussagen, mit Fundstellen und Datensatz-IDs |
 | `data/decisions/` | Datierte Bewertungen mit Begründung, Prüfenden, Beleg-IDs und Verweis auf die frühere Entscheidung |
 | `schemas/` | Ein JSON Schema je Datensatzart |
 | `scripts/` | `atlas.py` prüft und wertet aus, `render.py` erzeugt die Seiten |
+| `site/` | Gestaltung (`atlas.css`) und Bedienhilfen (`atlas.js`) der Seiten |
+| `atlas.yaml` | Titel, Adresse des Repositorys und Fachprofile mit eigenen Bezeichnungen je Fach |
 | `tests/` | Ein Test je Regel dieser Dokumentation |
 | `.github/` | Vorlagen für neue Belege und Einwände, automatisierte Prüfung und Veröffentlichung |
 
@@ -46,21 +48,23 @@ dataset_id: bpic12
 conditions: Standardparameter der Studie
 metric: F-Score aus Fitness und Precision
 values:
-  split_miner: 0.88
-  inductive_miner: 0.66
+  Split Miner: 0.88
+  Inductive Miner: 0.66
 uncertainty: offen
 relation: stuetzt
 review_status: vorgeschlagen
 ```
 
-Ein Beleg nennt einen Datensatz (`dataset_id`), ein oder mehrere Ereignisse (`event_ids`) oder beides. Ein Ausschnitt eines Rohlogs verweist im Datensatz mit `derived_from` auf seine Herkunft und zählt als dieselbe Beobachtung. Ein freigegebener Beleg nennt in `extracted_by` und `reviewed_by` zwei verschiedene Personen.
+Ein Beleg nennt seine Grundlage: einen Datensatz (`dataset_id`), Ereignisse (`event_ids`) oder allgemein eine Liste in `basis_ids`, etwa einen Beweis, eine Versuchsreihe oder die Registernummer einer klinischen Studie. Jede Grundlage hat einen Eintrag unter `data/datasets/` mit dem Feld `kind`. Ein Ausschnitt eines Rohlogs verweist dort mit `derived_from` auf seine Herkunft und zählt als dieselbe Grundlage.
+
+Ein freigegebener Beleg nennt in `extracted_by` und `reviewed_by` zwei verschiedene Personen. Schlägt ein Sprachmodell einen Beleg oder eine Entscheidung vor, steht es in `suggested_by`. Dieses Feld zählt für die Freigabe nicht. Ein Beleg aus einer zurückgezogenen Studie bleibt sichtbar und zählt nicht mehr als Stütze.
 
 ## Entscheidung
 
-Eine Entscheidung bewertet entweder einen Meilenstein oder eine Aussage. Nur freigegebene Entscheidungen verändern die Übersicht. Das folgende Beispiel zeigt die Form. Im Pilot liegt noch keine Entscheidung vor.
+Eine Entscheidung bewertet entweder einen Meilenstein oder eine Aussage. Nur freigegebene Entscheidungen verändern Zähler und Verlauf. Vorschläge erscheinen auf den Seiten als gestrichelte Station und unter „Offene Prüfungen“. Die ID einer Entscheidung enthält die vollständige ID ihres Gegenstands, etwa `dec-2026-11-21-ms-gw-erstnachweis`. Das folgende Beispiel zeigt die Form. Im Pilot liegt noch keine Entscheidung vor.
 
 ```yaml
-id: dec-2026-12-01-quellenabgleich
+id: dec-2026-12-01-ms-bpic12-quellenabgleich
 date: 2026-12-01
 kind: meilenstein          # oder: aussage
 target_id: ms-bpic12-quellenabgleich
@@ -89,7 +93,7 @@ Ein Forschungsziel enthält einen versionierten Meilensteinkatalog. Eine Aussage
 | Studie | `augusto-split-miner-journal` | Verbindet Literaturangabe und benutzte Fassung |
 | Datensatz | `bpic12` | Macht wiederverwendete Daten über mehrere Studien hinweg erkennbar |
 | Beleg | `ev-splitminer-bpic12-fscore` | Verbindet Tabelle 4 der Originalarbeit mit der Aussage |
-| Entscheidung | `dec-2026-12-01-quellenabgleich` | Hält fest, wer wann was mit welcher Begründung eingestuft hat |
+| Entscheidung | `dec-2026-12-01-ms-bpic12-quellenabgleich` | Hält fest, wer wann was mit welcher Begründung eingestuft hat |
 
 Die ID jeder Datei entspricht ihrem Dateinamen.
 
@@ -97,8 +101,8 @@ Die ID jeder Datei entspricht ihrem Dateinamen.
 
 - Ein Verweis auf eine unbekannte Studien-, Aussage-, Datensatz-, Beleg- oder Meilenstein-ID stoppt die Aktualisierung. Die bisherige Übersicht bleibt stehen.
 - Jede freigegebene Entscheidung nennt die Begründung, das Prüfdatum, zwei verschiedene Personen, die Art der Absicherung und ihre Beleg-IDs. Die genannten Belege sind selbst freigegeben und gehören zum bewerteten Gegenstand.
-- Die Evidenzlage passt zu den Belegen. „Evidenz spricht dagegen“ braucht einen Gegenbeleg, „widersprüchlich“ braucht beide Richtungen.
-- Mehrere Publikationen mit derselben Datensatz- oder Ereignis-ID bleiben als Quellen sichtbar. Die Auswertung zählt die zugrunde liegende Beobachtung einmal. „Mehrfach gestützt“ verlangt mindestens zwei verschiedene Beobachtungen. Ein gemeinsames Team oder Instrument wird angezeigt.
+- Die Evidenzlage passt zu den Belegen, auch bei einem Vorschlag. „Evidenz spricht dagegen“ braucht einen Gegenbeleg, „widersprüchlich“ braucht beide Richtungen.
+- Mehrere Publikationen mit derselben Datensatz- oder Ereignis-ID bleiben als Quellen sichtbar. Die Auswertung zählt die zugrunde liegende Beobachtung einmal. „Mehrfach gestützt“ verlangt mindestens zwei stützende Belege auf zwei verschiedenen Grundlagen. Ein gemeinsames Team oder Instrument wird angezeigt.
 - Liegen zwei widersprechende Nachfolgeentscheidungen vor, bleibt die letzte eindeutige Freigabe gültig, bis eine klärende Entscheidung beide ersetzt. Die Übersicht zeigt den Konflikt an.
 
 Der Nachweis zu jeder dieser Regeln steht in [Nachweis](06-nachweis.md).

@@ -1,0 +1,15 @@
+id: ev-primluecken-polymath-246
+claim_id: cl-primluecken-246
+study_id: polymath8b-selberg-sieve
+study_version: journal
+locator: Abstract
+basis_ids:
+- beweis-polymath8b-246
+metric: Obere Schranke für den Limes inferior der Abstände aufeinanderfolgender Primzahlen
+values:
+  Schranke: ≤ 246
+uncertainty: Entfällt. Die Aussage ist ein bewiesener Satz.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Die Nummer des Satzes im Volltext ist nachzutragen.

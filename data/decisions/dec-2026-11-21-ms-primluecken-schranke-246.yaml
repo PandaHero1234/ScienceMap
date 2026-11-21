@@ -1,0 +1,11 @@
+id: dec-2026-11-21-ms-primluecken-schranke-246
+date: '2026-11-21'
+kind: meilenstein
+target_id: ms-primluecken-schranke-246
+catalog_version: 1
+outcome: erreicht
+rationale: Das Polymath-Projekt beweist die Schranke 246 ohne unbewiesene Annahmen.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-primluecken-polymath-246
+status: vorgeschlagen

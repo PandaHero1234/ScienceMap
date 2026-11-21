@@ -1,0 +1,16 @@
+id: ev-gw150914-1ogc
+claim_id: cl-gw150914-nachweis
+study_id: nitz-1ogc-apj
+study_version: journal
+locator: Abstract
+event_ids:
+- gw150914
+metric: Einstufung in einer zweiten Auswertung derselben Daten
+values:
+  Befund: GW150914 gehört zu den drei signifikantesten Kandidaten des Katalogs
+uncertainty: offen
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Zweite Auswertung desselben Ereignisses, keine neue Beobachtung. Der Zahlenwert aus der Tabelle
+  des Katalogs ist nachzutragen.

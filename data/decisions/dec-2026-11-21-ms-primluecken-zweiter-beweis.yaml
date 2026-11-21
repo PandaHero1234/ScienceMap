@@ -1,0 +1,11 @@
+id: dec-2026-11-21-ms-primluecken-zweiter-beweis
+date: '2026-11-21'
+kind: meilenstein
+target_id: ms-primluecken-zweiter-beweis
+catalog_version: 1
+outcome: erreicht
+rationale: Maynards Beweis der Schranke 600 ist ein zweiter veröffentlichter Beweis eines anderen Autors.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-primluecken-maynard-600
+status: vorgeschlagen

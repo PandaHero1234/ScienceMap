@@ -1,0 +1,13 @@
+id: dec-2026-11-21-cl-cas9-klinische-wirksamkeit
+date: '2026-11-21'
+kind: aussage
+target_id: cl-cas9-klinische-wirksamkeit
+outcome: vorlaeufig_gestuetzt
+rationale: Drei Veröffentlichungen berichten aus zwei Studien desselben Sponsors, eine je Erkrankung.
+  Für jede Erkrankung liegt damit eine Studie vor. Deshalb lautet der Vorschlag nicht mehrfach gestützt.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-exacel-frangoul-2021
+- ev-exacel-frangoul-2024-scd
+- ev-exacel-locatelli-2024-tdt
+status: vorgeschlagen

@@ -1,0 +1,11 @@
+id: dec-2026-11-21-cl-gw-auswertung-ausserhalb-kollaboration
+date: '2026-11-21'
+kind: aussage
+target_id: cl-gw-auswertung-ausserhalb-kollaboration
+outcome: vorlaeufig_gestuetzt
+rationale: Der Katalog führt beide Ereignisse unter den signifikantesten Kandidaten. Ob die Autorengruppe
+  personell unabhängig von der Kollaboration ist, müssen die Prüfenden beurteilen.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-gw-1ogc-kandidaten
+status: vorgeschlagen

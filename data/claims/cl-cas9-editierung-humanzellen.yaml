@@ -1,0 +1,7 @@
+id: cl-cas9-editierung-humanzellen
+statement: Cas9 lässt sich mit kurzen Leit-RNAs so steuern, dass es Genorte in menschlichen Zellen gezielt
+  schneidet.
+scope: Zellkulturexperimente. Keine Aussage über Therapie oder Sicherheit.
+milestone_ids:
+- ms-cas9-humanzellen
+- ms-cas9-zweites-team

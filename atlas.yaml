@@ -1,3 +1,12 @@
 # Einstellungen für die erzeugte Übersicht.
 title: Forschungsatlas
 repo_url: https://github.com/PandaHero1234/ScienceMap
+branch: main
+
+# Fachprofile: eigene Bezeichnungen je Fach. Die Schlüsselwerte in den Daten bleiben gleich.
+fields:
+  Mathematik:
+    labels:
+      vorlaeufig_gestuetzt: bewiesen (ein Beweis)
+      mehrfach_gestuetzt: bewiesen (mehrere Beweise)
+      spricht_dagegen: widerlegt

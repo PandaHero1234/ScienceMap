@@ -120,12 +120,23 @@ def _root_dataset(atlas: Atlas, dataset_id: str) -> str:
     return dataset_id
 
 
-def observations(atlas: Atlas, evidence: dict) -> set[str]:
-    """Die Beobachtungen, auf denen ein Beleg beruht (Datensatz und Ereignisse)."""
-    ids = list(evidence.get("event_ids", []))
+def basis_ids(evidence: dict) -> list[str]:
+    """Alle Grundlagen eines Belegs: Datensatz, Ereignisse, Versuchsreihen, Studien, Beweise."""
+    ids = list(evidence.get("event_ids", [])) + list(evidence.get("basis_ids", []))
     if evidence.get("dataset_id"):
         ids.append(evidence["dataset_id"])
-    return {_root_dataset(atlas, i) for i in ids}
+    return ids
+
+
+def observations(atlas: Atlas, evidence: dict) -> set[str]:
+    """Die voneinander verschiedenen Grundlagen, auf denen ein Beleg beruht."""
+    return {_root_dataset(atlas, i) for i in basis_ids(evidence)}
+
+
+def supports(atlas: Atlas, evidence: dict) -> bool:
+    """Ein Beleg aus einer zurückgezogenen Studie stützt nichts mehr."""
+    study = atlas.studies.get(evidence["study_id"], {})
+    return evidence["relation"] == "stuetzt" and study.get("status") != "zurueckgezogen"
 
 
 def predecessors(decision: dict) -> list[str]:
@@ -205,9 +216,9 @@ def check(atlas: Atlas) -> list[str]:
             err(f"{ev['id']}: unbekannte Studie {ev['study_id']}")
         elif ev["study_version"] not in {v["id"] for v in study["versions"]}:
             err(f"{ev['id']}: Studie {study['id']} hat keine Fassung {ev['study_version']}")
-        for oid in ([ev["dataset_id"]] if ev.get("dataset_id") else []) + ev.get("event_ids", []):
+        for oid in basis_ids(ev):
             if oid not in atlas.datasets:
-                err(f"{ev['id']}: unbekannter Datensatz oder unbekanntes Ereignis {oid}")
+                err(f"{ev['id']}: unbekannte Grundlage {oid} (Datensatz, Ereignis oder Beweis)")
         if ev["review_status"] == "freigegeben" and not _two_people(ev):
             err(f"{ev['id']}: ein freigegebener Beleg braucht extracted_by und reviewed_by von zwei verschiedenen Personen")
 
@@ -262,32 +273,32 @@ def check(atlas: Atlas) -> list[str]:
         if did in _ancestors(atlas.decisions, did):
             err(f"{did}: supersedes bildet einen Kreis")
 
-        if not released:
-            continue
-        if not _two_people(dec):
-            err(f"{did}: eine Freigabe braucht extracted_by und reviewed_by von zwei verschiedenen Personen")
-        if not dec.get("evidence_ids"):
-            err(f"{did}: eine Freigabe muss ihre Beleg-IDs nennen")
-        if not dec.get("assurance"):
-            err(f"{did}: eine Freigabe muss die Art der Absicherung nennen")
-        for ev in cited:
-            if ev["review_status"] != "freigegeben":
-                err(f"{did}: Beleg {ev['id']} ist selbst noch nicht freigegeben")
+        if released:
+            if not _two_people(dec):
+                err(f"{did}: eine Freigabe braucht extracted_by und reviewed_by von zwei verschiedenen Personen")
+            if not dec.get("evidence_ids"):
+                err(f"{did}: eine Freigabe muss ihre Beleg-IDs nennen")
+            if not dec.get("assurance"):
+                err(f"{did}: eine Freigabe muss die Art der Absicherung nennen")
+            for ev in cited:
+                if ev["review_status"] != "freigegeben":
+                    err(f"{did}: Beleg {ev['id']} ist selbst noch nicht freigegeben")
+        # Die Evidenzlage muss zu den Belegen passen. Das gilt schon für Vorschläge.
         if kind == "aussage":
-            pro = [e for e in cited if e["relation"] == "stuetzt"]
+            pro = [e for e in cited if supports(atlas, e)]
             contra = [e for e in cited if e["relation"] == "spricht_dagegen"]
             outcome = dec["outcome"]
             if outcome in ("vorlaeufig_gestuetzt", "mehrfach_gestuetzt") and not pro:
-                err(f"{did}: '{outcome}' braucht mindestens einen stützenden Beleg")
+                err(f"{did}: '{outcome}' braucht mindestens einen stützenden Beleg aus einer nicht zurückgezogenen Studie")
             if outcome == "spricht_dagegen" and not contra:
                 err(f"{did}: 'spricht_dagegen' braucht mindestens einen Gegenbeleg")
             if outcome == "widerspruechlich" and not (pro and contra):
                 err(f"{did}: 'widerspruechlich' braucht stützende Belege und Gegenbelege")
             if outcome == "mehrfach_gestuetzt":
                 seen = set().union(*(observations(atlas, e) for e in pro)) if pro else set()
-                if len(seen) < 2:
-                    err(f"{did}: 'mehrfach_gestuetzt' braucht mindestens zwei verschiedene Beobachtungen, "
-                        f"die Belege beruhen auf {len(seen)} ({', '.join(sorted(seen)) or 'keiner'})")
+                if len(pro) < 2 or len(seen) < 2:
+                    err(f"{did}: 'mehrfach_gestuetzt' braucht mindestens zwei stützende Belege auf zwei verschiedenen "
+                        f"Grundlagen, vorhanden sind {len(pro)} Belege auf {len(seen)} ({', '.join(sorted(seen)) or 'keiner'})")
     return errors
 
 
@@ -351,7 +362,7 @@ def _catalog(goal: dict, as_of: str | None) -> dict | None:
 def _decision_view(dec: dict | None) -> dict | None:
     if dec is None:
         return None
-    keys = ("id", "date", "outcome", "rationale", "dissent", "assurance", "extracted_by",
+    keys = ("id", "date", "outcome", "rationale", "dissent", "assurance", "suggested_by", "extracted_by",
             "reviewed_by", "evidence_ids", "catalog_version", "supersedes")
     return {k: dec[k] for k in keys if k in dec}
 
@@ -360,30 +371,43 @@ def _evidence_view(atlas: Atlas, ev: dict) -> dict:
     study = atlas.studies[ev["study_id"]]
     version = next(v for v in study["versions"] if v["id"] == ev["study_version"])
     view = {k: ev[k] for k in ("id", "locator", "metric", "values", "uncertainty", "relation",
-                               "review_status", "conditions", "dataset_id", "event_ids", "note",
-                               "extracted_by", "reviewed_by") if k in ev}
-    view["study"] = {"id": study["id"], "label": study["label"], "team": study["team"],
+                               "review_status", "conditions", "dataset_id", "event_ids", "basis_ids",
+                               "note", "suggested_by", "extracted_by", "reviewed_by") if k in ev}
+    view["study"] = {"id": study["id"], "label": study["label"],
+                     "short_label": study.get("short_label", study["label"]), "team": study["team"],
                      "status": study["status"], "version": version["kind"], "url": version["url"]}
     for key in ("doi", "published", "instrument", "status_date", "status_note"):
         if key in study:
             view["study"][key] = study[key]
     view["observations"] = sorted(observations(atlas, ev))
+    view["basis"] = [{"id": i, "title": atlas.datasets[i]["title"],
+                      "short_title": atlas.datasets[i].get("short_title", atlas.datasets[i]["title"]),
+                      "kind": atlas.datasets[i].get("kind", "datensatz"), "counts_as": _root_dataset(atlas, i)}
+                     for i in basis_ids(ev)]
+    view["counts_as_support"] = supports(atlas, ev)
     return view
+
+
+def _proposals(atlas: Atlas, kind: str, target: str, as_of: str | None = None) -> list[dict]:
+    """Noch nicht freigegebene Entscheidungen zu einem Gegenstand, älteste zuerst."""
+    return sorted((d for d in atlas.decisions.values()
+                   if d["kind"] == kind and d["target_id"] == target and d["status"] != "freigegeben"
+                   and (as_of is None or d["date"] <= as_of)), key=lambda d: (d["date"], d["id"]))
 
 
 def claim_state(atlas: Atlas, claim: dict, as_of: str | None = None) -> dict:
     result = resolve(atlas, "aussage", claim["id"], as_of)
     valid = result["valid"]
     evidence = [e for e in atlas.evidence.values() if e["claim_id"] == claim["id"]]
-    pro = [e for e in evidence if e["relation"] == "stuetzt"]
+    pro = [e for e in evidence if supports(atlas, e)]
     reasons = _reexamine(atlas, valid, claim["id"])
-    pending = [d for d in atlas.decisions.values()
-               if d["kind"] == "aussage" and d["target_id"] == claim["id"] and d["status"] != "freigegeben"]
+    pending = _proposals(atlas, "aussage", claim["id"], as_of)
+    owner = atlas.milestone_goal()
     if valid and reasons:
         editorial = "erneut_zu_pruefen"
     elif valid:
         editorial = "freigegeben"
-    elif pending or any(e["review_status"] == "in_pruefung" for e in evidence):
+    elif any(x.get("status", x.get("review_status")) == "in_pruefung" for x in pending + evidence):
         editorial = "in_pruefung"
     else:
         editorial = "vorgeschlagen"
@@ -396,11 +420,14 @@ def claim_state(atlas: Atlas, claim: dict, as_of: str | None = None) -> dict:
                 shared.append(f"{label}: {values.pop()}")
     return {
         "id": claim["id"],
+        "goal_ids": sorted({owner[m] for m in claim["milestone_ids"]}),
+        "field": atlas.goals[owner[claim["milestone_ids"][0]]]["field"],
         "statement": claim["statement"],
         "scope": claim["scope"],
         "milestone_ids": claim["milestone_ids"],
         "editorial_status": editorial,
         "evidence_status": valid["outcome"] if valid else "offen",
+        "proposed_status": pending[-1]["outcome"] if pending else None,
         "assurance": valid.get("assurance", []) if valid else [],
         "supporting_sources": len(studies),
         "supporting_observations": len(set().union(*(observations(atlas, e) for e in pro))) if pro else 0,
@@ -426,11 +453,15 @@ def goal_state(atlas: Atlas, goal: dict, as_of: str | None = None) -> dict:
             "status": valid["outcome"] if valid else "offen",
             "decision": _decision_view(valid),
             "earlier_decisions": [_decision_view(d) for d in result["chain"][:-1]],
+            "open_proposals": [_decision_view(d) | {"status": d["status"]}
+                               for d in _proposals(atlas, "meilenstein", mid, as_of)],
             "conflict": result["conflict"],
             "reexamine": _reexamine(atlas, valid),
             "claims": sorted(c["id"] for c in atlas.claims.values() if mid in c["milestone_ids"]),
         })
     reached = sum(1 for m in milestones if m["status"] == "erreicht")
+    proposed = sum(1 for m in milestones if m["status"] != "erreicht"
+                   and any(p["outcome"] == "erreicht" for p in m["open_proposals"]))
     claims = [c for c in atlas.claims.values() if set(c["milestone_ids"]) & set(definitions)]
     reviewed = sum(1 for c in claims if resolve(atlas, "aussage", c["id"], as_of)["valid"])
     display = f"{reached} von {len(milestones)}" if catalog else "Katalog offen"
@@ -441,6 +472,7 @@ def goal_state(atlas: Atlas, goal: dict, as_of: str | None = None) -> dict:
         "catalog_version": catalog["version"] if catalog else None,
         "milestones_reached": reached if catalog else None,
         "milestones_total": len(milestones) if catalog else None,
+        "milestones_proposed": proposed,
         "display": display,
         "claims_reviewed": reviewed,
         "claims_total": len(claims),
@@ -556,6 +588,7 @@ def main(argv: list[str] | None = None) -> int:
     print(f"Daten gültig: {counts}.")
     for goal in state["goals"]:
         print(f"  {goal['id']}: {goal['display']} Meilensteinen erreicht, "
+              f"{goal['milestones_proposed']} weitere vorgeschlagen, "
               f"{goal['claims_reviewed']} von {goal['claims_total']} Aussagen geprüft")
     if args.command == "build":
         import render

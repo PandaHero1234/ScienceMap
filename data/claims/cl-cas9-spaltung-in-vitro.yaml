@@ -1,0 +1,6 @@
+id: cl-cas9-spaltung-in-vitro
+statement: Cas9 schneidet doppelsträngige DNA sequenzspezifisch, wenn es von einer einzelnen, künstlich
+  zusammengefügten Leit-RNA geführt wird.
+scope: In-vitro-Experimente der Studie. Keine Aussage über lebende Zellen.
+milestone_ids:
+- ms-cas9-in-vitro

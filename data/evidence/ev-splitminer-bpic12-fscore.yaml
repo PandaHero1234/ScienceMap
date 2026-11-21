@@ -7,8 +7,8 @@ dataset_id: bpic12
 conditions: Standardparameter der Studie
 metric: F-Score aus Fitness und Precision
 values:
-  split_miner: 0.88
-  inductive_miner: 0.66
+  Split Miner: 0.88
+  Inductive Miner: 0.66
 uncertainty: offen
 relation: stuetzt
 review_status: vorgeschlagen

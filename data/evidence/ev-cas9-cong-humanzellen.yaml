@@ -1,0 +1,15 @@
+id: ev-cas9-cong-humanzellen
+claim_id: cl-cas9-editierung-humanzellen
+study_id: cong-crispr-science-2013
+study_version: journal
+locator: Abstract
+dataset_id: exp-cong-2013
+metric: Gezielter Schnitt an Genorten in Säugerzellen
+values:
+  Befund: Cas9 erzeugt, von kurzen RNAs gelenkt, präzise Schnitte an endogenen Genorten in Zellen von
+    Mensch und Maus
+uncertainty: Im Abstract nicht beziffert.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Fundstelle bisher nur auf Ebene des Abstracts erfasst. Tabelle oder Abbildung im Volltext ist nachzutragen.

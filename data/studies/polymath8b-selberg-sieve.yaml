@@ -1,0 +1,14 @@
+id: polymath8b-selberg-sieve
+label: D. H. J. Polymath, Variants of the Selberg sieve, and bounded intervals containing many primes
+  (Res. Math. Sci. 1:12, 2014)
+short_label: Polymath 2014
+team: polymath
+doi: 10.1186/s40687-014-0012-7
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1186/s40687-014-0012-7
+- id: arxiv
+  kind: Preprint arXiv:1407.4897
+  url: https://arxiv.org/abs/1407.4897

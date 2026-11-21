@@ -1,0 +1,6 @@
+id: cl-gw150914-nachweis
+statement: Das Signal GW150914 ist mit einer Signifikanz von über 5 σ als Verschmelzung zweier Schwarzer
+  Löcher nachgewiesen.
+scope: Ein einzelnes Ereignis, beobachtet von den beiden Advanced-LIGO-Detektoren.
+milestone_ids:
+- ms-gw-erstnachweis

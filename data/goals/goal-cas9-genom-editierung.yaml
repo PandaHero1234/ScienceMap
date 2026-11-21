@@ -1,0 +1,34 @@
+id: goal-cas9-genom-editierung
+field: Biologie
+title: Programmierbare Genom-Editierung mit CRISPR-Cas9 nachweisen, bestätigen und klinisch anwenden
+last_work: Sechs Veröffentlichungen mit sechs Belegen als Vorschlag erfasst
+open_question: Zweite Person trägt Abbildungen und Zahlenwerte aus den Volltexten nach
+milestones:
+- id: ms-cas9-in-vitro
+  title: Programmierbare Spaltung in vitro zeigen
+  criterion: Eine begutachtete Veröffentlichung zeigt, dass Cas9 mit einer vorgegebenen RNA-Leitsequenz
+    DNA sequenzspezifisch schneidet.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-cas9-humanzellen
+  title: Editierung in menschlichen Zellen zeigen
+  criterion: Eine begutachtete Veröffentlichung zeigt den gezielten Schnitt an einem Genort in menschlichen
+    Zellen.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-cas9-zweites-team
+  title: Durch zweites Team bestätigen
+  criterion: Ein zweites Team zeigt die Editierung in menschlichen Zellen mit eigenen Experimenten.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-cas9-klinik
+  title: Klinische Wirksamkeit belegen
+  criterion: Eine klinische Studie berichtet für eine Cas9-basierte Therapie das Ergebnis zum primären
+    Endpunkt.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+catalog:
+- version: 1
+  date: '2026-11-21'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-cas9-in-vitro
+  - ms-cas9-humanzellen
+  - ms-cas9-zweites-team
+  - ms-cas9-klinik

@@ -243,7 +243,7 @@ def test_zwei_veroeffentlichungen_zu_einer_beobachtung_sind_nicht_mehrfach_gestu
     world.study("st-zwei", team="team-zwei")
     world.evidence("ev-b", study="st-zwei")
     world.decide("dec-1", "cl-a", "mehrfach_gestuetzt", "2026-02-01", evidence_ids=["ev-a", "ev-b"])
-    assert has(world.errors(), "dec-1", "zwei verschiedene Beobachtungen")
+    assert has(world.errors(), "dec-1", "zwei verschiedenen Grundlagen")
 
 
 def test_ausschnitt_desselben_rohlogs_ist_keine_neue_beobachtung(world):
@@ -251,7 +251,7 @@ def test_ausschnitt_desselben_rohlogs_ist_keine_neue_beobachtung(world):
     world.study("st-zwei", team="team-zwei")
     world.evidence("ev-b", study="st-zwei", dataset_id="ds-ausschnitt")
     world.decide("dec-1", "cl-a", "mehrfach_gestuetzt", "2026-02-01", evidence_ids=["ev-a", "ev-b"])
-    assert has(world.errors(), "dec-1", "zwei verschiedene Beobachtungen")
+    assert has(world.errors(), "dec-1", "zwei verschiedenen Grundlagen")
 
 
 def test_zwei_unabhaengige_datensaetze_sind_mehrfach_gestuetzt(world):
@@ -267,6 +267,81 @@ def test_zwei_unabhaengige_datensaetze_sind_mehrfach_gestuetzt(world):
 def test_evidenzlage_muss_zu_den_belegen_passen(world):
     world.decide("dec-1", "cl-a", "spricht_dagegen", "2026-02-01")
     assert has(world.errors(), "dec-1", "Gegenbeleg")
+
+
+def test_ein_beleg_mit_zwei_ereignissen_ist_nicht_mehrfach_gestuetzt(world):
+    world.dataset("gw-a")
+    world.dataset("gw-b")
+    world.evidence("ev-a", event_ids=["gw-a", "gw-b"])
+    world.decide("dec-1", "cl-a", "mehrfach_gestuetzt", "2026-02-01")
+    assert has(world.errors(), "dec-1", "zwei stützende Belege")
+
+
+def test_zwei_verschiedene_beweise_sind_zwei_grundlagen(world):
+    """Mathematik: Ein Beweis ist die Grundlage, auf der ein Beleg beruht."""
+    world.dataset("beweis-eins", kind="beweis")
+    world.dataset("beweis-zwei", kind="beweis")
+    world.study("st-zwei", team="team-zwei")
+    world.evidence("ev-a", basis_ids=["beweis-eins"])
+    world.evidence("ev-b", study="st-zwei", basis_ids=["beweis-zwei"])
+    world.decide("dec-1", "cl-a", "mehrfach_gestuetzt", "2026-02-01",
+                 evidence_ids=["ev-a", "ev-b"], assurance=["beweisreview"])
+    claim = world.claim()
+    assert (claim["supporting_sources"], claim["supporting_observations"]) == (2, 2)
+    assert claim["evidence"][0]["basis"][0]["kind"] == "beweis"
+
+
+def test_derselbe_beweis_in_zwei_veroeffentlichungen_zaehlt_einmal(world):
+    world.dataset("beweis-eins", kind="beweis")
+    world.study("st-zwei", team="team-zwei")
+    world.evidence("ev-a", basis_ids=["beweis-eins"])
+    world.evidence("ev-b", study="st-zwei", basis_ids=["beweis-eins"])
+    world.decide("dec-1", "cl-a", "mehrfach_gestuetzt", "2026-02-01", evidence_ids=["ev-a", "ev-b"])
+    assert has(world.errors(), "dec-1", "zwei verschiedenen Grundlagen")
+
+
+def test_unbekannte_grundlage_stoppt(world):
+    world.evidence("ev-b", basis_ids=["beweis-fehlt"])
+    assert has(world.errors(), "ev-b", "unbekannte Grundlage")
+
+
+def test_zurueckgezogene_studie_stuetzt_nichts_mehr(world):
+    world.study("st-eins", status="zurueckgezogen", status_date="2026-01-15", status_note="Nicht reproduzierbar")
+    claim = world.claim()
+    assert claim["supporting_sources"] == 0
+    assert claim["evidence"][0]["counts_as_support"] is False
+    world.decide("dec-1", "cl-a", "vorlaeufig_gestuetzt", "2026-02-01")
+    assert has(world.errors(), "dec-1", "nicht zurückgezogenen Studie")
+
+
+# --- Vorschläge --------------------------------------------------------------
+
+
+def test_vorschlag_ist_sichtbar_und_zaehlt_nicht(world):
+    world.decide("dec-1", "ms-a", "erreicht", "2026-02-01", status="vorgeschlagen",
+                 suggested_by="Sprachmodell", extracted_by=None, reviewed_by=None)
+    goal = world.goal()
+    assert goal["display"] == "0 von 4"
+    assert goal["milestones_proposed"] == 1
+    assert goal["milestones"][0]["open_proposals"][0]["suggested_by"] == "Sprachmodell"
+    assert world.state()["history"][-1]["type"] == "katalog", "Vorschläge stehen nicht im Verlauf"
+
+
+def test_auch_ein_vorschlag_muss_zu_den_belegen_passen(world):
+    world.decide("dec-1", "cl-a", "mehrfach_gestuetzt", "2026-02-01", status="vorgeschlagen")
+    assert has(world.errors(), "dec-1", "zwei stützende Belege")
+
+
+def test_sprachmodell_ersetzt_keine_der_zwei_personen(world):
+    world.decide("dec-1", "ms-a", "erreicht", "2026-02-01", suggested_by="Sprachmodell", extracted_by=None)
+    assert has(world.errors(), "dec-1", "zwei verschiedenen Personen")
+
+
+def test_vorgeschlagene_entscheidung_macht_die_aussage_nicht_zu_in_pruefung(world):
+    world.decide("dec-1", "cl-a", "vorlaeufig_gestuetzt", "2026-02-01", status="vorgeschlagen")
+    claim = world.claim()
+    assert claim["editorial_status"] == "vorgeschlagen"
+    assert (claim["evidence_status"], claim["proposed_status"]) == ("offen", "vorlaeufig_gestuetzt")
 
 
 # --- Neubewertung (docs/02, Schritt 6) --------------------------------------

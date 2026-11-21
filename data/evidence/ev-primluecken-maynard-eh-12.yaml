@@ -1,0 +1,17 @@
+id: ev-primluecken-maynard-eh-12
+claim_id: cl-primluecken-6-bedingt
+study_id: maynard-small-gaps-annals
+study_version: journal
+locator: Theorem 1.4
+basis_ids:
+- beweis-maynard-eh-12
+conditions: Elliott-Halberstam-Vermutung
+metric: Obere Schranke für den Limes inferior der Abstände aufeinanderfolgender Primzahlen
+values:
+  Schranke: ≤ 12
+uncertainty: Entfällt. Die Aussage ist ein bewiesener Satz.
+relation: nicht_entscheidend
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Die Schranke 12 ist schwächer als die Aussage und beruht auf einer anderen Vermutung. Sie entscheidet
+  die Aussage nicht.

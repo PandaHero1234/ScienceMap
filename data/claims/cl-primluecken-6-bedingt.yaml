@@ -1,0 +1,7 @@
+id: cl-primluecken-6-bedingt
+statement: Unter der verallgemeinerten Elliott-Halberstam-Vermutung gibt es unendlich viele Paare aufeinanderfolgender
+  Primzahlen, deren Abstand höchstens 6 beträgt.
+scope: Bedingte Aussage. Sie gilt nur, wenn die verallgemeinerte Elliott-Halberstam-Vermutung zutrifft.
+  Diese Vermutung ist unbewiesen.
+milestone_ids:
+- ms-primluecken-bedingt

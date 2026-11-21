@@ -1,0 +1,11 @@
+id: dec-2026-11-21-cl-ngago-editierung-humanzellen
+date: '2026-11-21'
+kind: aussage
+target_id: cl-ngago-editierung-humanzellen
+outcome: spricht_dagegen
+rationale: Die Erstveröffentlichung ist zurückgezogen. Drei Gruppen konnten keine Editierung nachweisen.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-ngago-gao-2016
+- ev-ngago-lee-2016
+status: vorgeschlagen
