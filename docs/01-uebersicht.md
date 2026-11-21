@@ -3,7 +3,9 @@
 | Ansicht | Inhalt | Beispiel oder Frage |
 |---|---|---|
 | Startseite (Über-Atlas) | Das Ganze: Gesamtstand mit Balken, Karte aller Wissenschaften, Tabelle je Fachgebiet und die fehlende Arbeit | Wie weit ist der Atlas insgesamt, und welche Fachgebiete haben schon Einträge? |
-| Fachgebiet | Der Atlas eines Fachgebiets mit demselben Aufbau: Stand, Karte der Einträge, Tabelle je Ziel und die Ziele als Routen | Wie steht es in der Physik? |
+| Bereich | Zwischenkarte eines der sechs Bereiche mit seinen Fachgebieten, auch denen ohne Einträge | Welche Naturwissenschaften sind schon erfasst? |
+| Fachgebiet | Zwischenkarte eines Fachgebiets: Stand, seine Teilgebiete und die Tabelle je Ziel | Wie steht es in der Physik? |
+| Teilgebiet | Zwischenkarte eines Teilgebiets: Stand, Karte der Einträge und die Ziele als Routen | Welche Ziele gibt es zur Genom-Editierung? |
 | Alle Ziele | Karte aller Einträge und jedes Ziel als Route aus Meilenstein-Stationen. Suche und Fachfilter durchsuchen Ziele, Aussagen und Quellen | Wo kommt eine bestimmte Quelle vor? |
 | Zielseite | Die Route senkrecht: je Meilenstein Erfüllungskriterium, Status, Begründung und die verknüpften Aussagen im Wortlaut | Welche Evidenz fehlt für die Übertragbarkeit eines Verfahrens? |
 | Aussage | Präziser Satz mit Geltungsbereich, drei Angaben zur Einordnung, einer Matrix aus Quellen und ihren Grundlagen sowie den Belegen, getrennt nach Richtung | Für welche Logversion und Parameter gilt der gemessene Vorsprung? |
@@ -45,6 +47,23 @@ Die Startseite ist der Über-Atlas. Sie zeigt den Stand des Ganzen und folgt dem
 Dieselben Zahlen stehen in `progress.json` unter `totals`, `coverage`, `realms`, `fields` und `series`.
 
 Die Gliederung liegt in `data/taxonomy.yaml` und folgt der Österreichischen Systematik der Wissenschaftszweige (ÖFOS 2012) mit 6 Hauptgruppen und 42 Gruppen. Jedes Ziel nennt im Feld `area` den Code seines Fachgebiets. Aus dem Anteil der Fachgebiete mit Einträgen lässt sich nicht ablesen, wie weit die Forschung dort ist. Er zeigt nur, wo der Atlas schon arbeitet.
+
+## Ebenen: hinein und hinaus
+
+Der Atlas hat sechs Ebenen. Jede Ebene ist eine eigene Karte mit demselben Aufbau.
+
+| Ebene | Karte | Führt hinein zu |
+|---|---|---|
+| 1 | Über-Atlas mit allen Wissenschaften | den sechs Bereichen und ihren Fachgebieten |
+| 2 | Bereich, etwa Naturwissenschaften | seinen Fachgebieten |
+| 3 | Fachgebiet, etwa Biologie | seinen Teilgebieten |
+| 4 | Teilgebiet, etwa Genom-Editierung | seinen Zielen |
+| 5 | Ziel | seinen Meilensteinen und Aussagen |
+| 6 | Aussage | den Belegen und von dort zur Fundstelle im Original |
+
+Hinein geht es über die Felder und Kacheln der Seite. Hinaus führt oben auf jeder Seite ein Knopf zur nächsten äußeren Ebene. Daneben steht der ganze Weg nach außen, jede Ebene als Link, und die Angabe „Ebene 4 von 6“. Unten nennt jede Seite ihre Nachbarn auf derselben Ebene.
+
+Das Teilgebiet eines Ziels steht im Feld `topic`. Fehlt es, gilt das Fach aus `field`. Auch ein Bereich ohne Einträge hat eine Karte. Sie zeigt seine Fachgebiete und sagt, dass noch nichts erfasst ist.
 
 ## Gestaltung der Seiten
 

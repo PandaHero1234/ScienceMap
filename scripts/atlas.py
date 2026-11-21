@@ -516,6 +516,7 @@ def goal_state(atlas: Atlas, goal: dict, as_of: str | None = None) -> dict:
         "id": goal["id"],
         "field": goal["field"],
         "area": goal.get("area"),
+        "topic": goal.get("topic") or goal["field"],
         "title": goal["title"],
         "catalog_version": catalog["version"] if catalog else None,
         "milestones_reached": reached if catalog else None,
@@ -611,9 +612,18 @@ def build_state(atlas: Atlas) -> dict:
         for area in group["areas"]:
             mine = [g for g in goals if g["area"] == area["code"]]
             ids = {g["id"] for g in mine}
-            areas.append({"code": area["code"], "name": area["name"], "goal_ids": sorted(ids),
+            topics = []
+            for name in sorted({g["topic"] for g in mine}):
+                part = [g for g in mine if g["topic"] == name]
+                part_ids = {g["id"] for g in part}
+                topics.append({"name": name, "goal_ids": sorted(part_ids),
+                               "tally": tally(part, [c for c in claims if c["goal_ids"][0] in part_ids])})
+            areas.append({"code": area["code"], "name": area["name"], "goal_ids": sorted(ids), "topics": topics,
                           "tally": tally(mine, [c for c in claims if c["goal_ids"][0] in ids]) if mine else None})
-        realms.append({"code": group["code"], "name": group["name"], "areas": areas})
+        inside = [g for g in goals if any(g["id"] in a["goal_ids"] for a in areas)]
+        inside_ids = {g["id"] for g in inside}
+        realms.append({"code": group["code"], "name": group["name"], "areas": areas,
+                       "tally": tally(inside, [c for c in claims if c["goal_ids"][0] in inside_ids]) if inside else None})
     covered = sum(1 for r in realms for a in r["areas"] if a["goal_ids"])
     # Verlauf in Zahlen: ein Punkt je Tag, an dem sich Katalog oder Einstufungen geändert haben
     series = []

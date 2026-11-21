@@ -37,6 +37,8 @@ def test_alle_seiten_sind_vorhanden(site):
     assert {"index.html", "ziele.html", "pruefen.html", "verlauf.html"} <= names
     assert {n for n in names if n.startswith("fach/")} == {
         "fach/mathematik.html", "fach/informatik.html", "fach/physik-astronomie.html", "fach/biologie.html"}
+    assert sum(n.startswith("bereich/") for n in names) == 6, "eine Zwischenkarte je Bereich, auch ohne Einträge"
+    assert sum(n.startswith("thema/") for n in names) == 4
     assert sum(n.startswith("ziele/") for n in names) == 5
     assert sum(n.startswith("aussagen/") for n in names) == 12
     assert (site / "atlas.css").is_file() and (site / "atlas.js").is_file()

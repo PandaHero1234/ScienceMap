@@ -5,7 +5,7 @@
 | `README.md` | Einstiegsseite mit Stand, Aufruf und Links zur Methodik |
 | `docs/` | Regeln für Aufnahme, Suche und Bewertung, Beispielkarten, Pilotplan und Nachweis |
 | `data/taxonomy.yaml` | Gliederung des Über-Atlas: alle Fachgebiete der Systematik mit Code und Name |
-| `data/goals/` | Feld, Fachgebiet (`area`), Ziel, versionierter Katalog mit stabilen Meilenstein-IDs und Erfüllungskriterien |
+| `data/goals/` | Feld, Fachgebiet (`area`), Teilgebiet (`topic`), Ziel, versionierter Katalog mit stabilen Meilenstein-IDs und Erfüllungskriterien |
 | `data/claims/` | Präzise Aussagen, Geltungsbereich und Zuordnung zu einem oder mehreren Meilensteinen |
 | `data/studies/` | Studie mit Kurzbezeichnung, Team, Fassungen mit Link sowie Vermerk bei Korrektur oder Rückzug |
 | `data/datasets/` | Grundlagen mit stabiler ID: Datensätze, Ereignisse, Versuchsreihen, klinische Studien und Beweise |

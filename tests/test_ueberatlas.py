@@ -87,8 +87,8 @@ def test_startseite_zeigt_alle_fachgebiete_auch_die_leeren(site):
     assert index.count("noch kein Eintrag") == 38
     assert "<b>4 von 42</b><span>Fachgebieten mit Einträgen</span>" in index
     assert "<b>38</b> Fachgebiete haben noch keinen Eintrag." in index
-    assert "Naturwissenschaften <small>4 von 7 mit Einträgen</small>" in index
-    assert "Geisteswissenschaften <small>0 von 5 mit Einträgen</small>" in index
+    assert '<a href="bereich/naturwissenschaften.html">Naturwissenschaften</a> <small>4 von 7 mit Einträgen</small>' in index
+    assert '<a href="bereich/geisteswissenschaften.html">Geisteswissenschaften</a> <small>0 von 5 mit Einträgen</small>' in index
 
 
 def test_feld_auf_der_karte_nennt_stand_und_fuehrt_zum_fachatlas(site):
@@ -99,16 +99,15 @@ def test_feld_auf_der_karte_nennt_stand_und_fuehrt_zum_fachatlas(site):
     assert (site / "fach" / "biologie.html").is_file()
 
 
-def test_fachatlas_zeigt_stand_karte_tabelle_und_ziele_des_fachs(site):
+def test_fachatlas_zeigt_stand_teilgebiete_und_tabelle_des_fachs(site):
     page = (site / "fach" / "biologie.html").read_text(encoding="utf-8")
     assert "<h1>Biologie</h1>" in page and "Fachgebiet 106" in page
     assert "<b>0 von 6</b><span>Meilensteinen erreicht · 0 %</span>" in page
     assert "<b>18</b>" in page, "offene Prüfungen nur dieses Fachgebiets"
-    assert len(re.findall(r'<a class="tile is-', page)) == 6 + 4 + 8
-    assert page.count('<li class="goal"') == 2
+    assert page.count('<div class="topic">') == 1, "beide Genom-Ziele gehören zu einem Teilgebiet"
+    assert '<a class="topic-title" href="../thema/106-genom-editierung.html">Genom-Editierung</a>' in page
     assert "Gravitationswellen" not in page, "Ziele anderer Fachgebiete gehören nicht hierher"
-    order = [page.index(text) for text in ("Stand des Fachgebiets", "Karte der Einträge", "Stand nach Ziel",
-                                           "Was noch fehlt", "Ziele im Einzelnen")]
+    order = [page.index(text) for text in ("Stand des Fachgebiets", "<h2>Teilgebiete</h2>", "Stand nach Ziel", "Was noch fehlt")]
     assert order == sorted(order)
 
 

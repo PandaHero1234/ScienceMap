@@ -11,7 +11,7 @@ python -m pytest -q                  # prüft jede Regel
 python scripts/atlas.py build        # schreibt die Übersicht nach public/
 ```
 
-Von den 109 Tests arbeiten 50 mit erfundenen Daten in einem temporären Ordner. `tests/test_pilotdaten.py`, `tests/test_fachgebiete.py` und der größte Teil von `tests/test_oberflaeche.py`, `tests/test_gesamt.py` und `tests/test_ueberatlas.py` lesen die echten Daten. Als Gegenprobe wurden dreizehn Regeln einzeln im Skript ausgeschaltet. Jedes Mal schlug mindestens ein Test fehl.
+Von den 118 Tests arbeiten 50 mit erfundenen Daten in einem temporären Ordner. `tests/test_pilotdaten.py`, `tests/test_fachgebiete.py`, `tests/test_ebenen.py` und der größte Teil von `tests/test_oberflaeche.py`, `tests/test_gesamt.py` und `tests/test_ueberatlas.py` lesen die echten Daten. Als Gegenprobe wurden dreizehn Regeln einzeln im Skript ausgeschaltet. Jedes Mal schlug mindestens ein Test fehl.
 
 ## Belegt
 
@@ -41,6 +41,8 @@ Von den 109 Tests arbeiten 50 mit erfundenen Daten in einem temporären Ordner. 
 | Die Kurve zeigt erreichte Meilensteine über die Zeit | 1 | `test_kurve_zeigt_erreichte_meilensteine_ueber_die_zeit` |
 | Der Über-Atlas zeigt alle 42 Fachgebiete, auch die leeren, und die Fachgebiete ergeben zusammen den Gesamtstand | 1 | `test_startseite_zeigt_alle_fachgebiete_auch_die_leeren`, `test_fachgebiete_ergeben_zusammen_den_gesamtstand` |
 | Ein Ziel ohne oder mit unbekanntem Fachgebiet stoppt die Aktualisierung | 3 | `test_ziel_ohne_fachgebiet_stoppt`, `test_unbekanntes_fachgebiet_stoppt` |
+| Jede der sechs Ebenen führt hinein zur nächsten und mit einem Knopf hinaus zur vorigen | 1 | `test_jede_ebene_fuehrt_hinein_zur_naechsten`, `test_jede_ebene_fuehrt_mit_einem_knopf_hinaus_zur_vorigen` |
+| Jede Ebene nennt ihre Stufe und den ganzen Weg nach außen | 1 | `test_jede_ebene_nennt_ihre_stufe_und_den_ganzen_weg_nach_aussen` |
 | Ein Vorschlag ist sichtbar und verändert den Zähler nicht | 2, 7 | `test_vorschlag_ist_sichtbar_und_zaehlt_nicht` |
 | Ein Sprachmodell ersetzt keine der zwei Personen | 2 | `test_sprachmodell_ersetzt_keine_der_zwei_personen` |
 | Eine zurückgezogene Studie stützt nichts mehr | 7 | `test_zurueckgezogene_studie_stuetzt_nichts_mehr` |

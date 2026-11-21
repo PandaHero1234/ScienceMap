@@ -1,6 +1,7 @@
 id: goal-discovery-fscore
 field: Process Mining
 area: '102'
+topic: Process Mining
 title: F-Score-Vorteil von Split Miner nachvollziehen und seine Übertragbarkeit untersuchen
 last_work: Vergleichswerte und Fundstelle für BPIC12 erfasst
 open_question: Zweite Person prüft die Zeilen für beide Verfahren und die verwendete Metrik
