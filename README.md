@@ -2,7 +2,7 @@
 
 Der Forschungsatlas zeigt für jedes Forschungsziel, welche Meilensteine erreicht sind, welche Veröffentlichungen diese Einschätzung tragen und welche Prüfung als Nächstes ansteht. Vom Stand eines Ziels führt ein direkter Weg zur konkreten Tabelle, Abbildung oder Textstelle im Paper.
 
-**Stand vom 21. November 2026.** Der Weg von den Daten zur Übersicht ist gebaut und getestet. Der Pilot selbst steht am Anfang. Für Process Mining sind vier Meilensteine formuliert. Der Ausgangsbefund ist mit seiner Fundstelle erfasst. Die fachliche Zweitprüfung, die unabhängige Nachrechnung und die Übertragungsstudie stehen aus.
+**Stand vom 21. November 2026.** Der Weg von den Daten zur Übersicht ist gebaut und getestet. Neben dem Pilot enthält der Atlas je ein Gebiet aus Physik, Mathematik und Biologie. Alle Einträge dieser drei Fächer sind Vorschläge, deren Zweitprüfung aussteht. Für Process Mining sind vier Meilensteine formuliert. Der Ausgangsbefund ist mit seiner Fundstelle erfasst. Die fachliche Zweitprüfung, die unabhängige Nachrechnung und die Übertragungsstudie stehen aus.
 
 Das Vorbild AnyPS5 erzeugt aus versionierten Daten eine Übersicht, Detailansichten und eine Änderungshistorie. Für die Wissenschaft braucht dieses Prinzip eine redaktionelle Entscheidung zwischen Paper und Fortschrittsanzeige. Ein neuer Artikel kann ein Ziel näherbringen, Zweifel aufwerfen oder die Gültigkeit eines älteren Ergebnisses eingrenzen. Alle drei Veränderungen verdienen einen Eintrag. [AnyPS5 – Progress Reporting](https://github.com/boykopovar/AnyPS5/blob/main/docs/dev/PROGRESS.md)
 
@@ -16,6 +16,7 @@ Wer den Forschungsstand lesen möchte, beginnt mit der Übersicht und den Beispi
 - [Beispielkarten mit Primärquellen](docs/04-beispiele.md)
 - [Pilotplan für Process Mining](docs/05-pilotplan.md)
 - [Nachweis: Was funktioniert und was offen bleibt](docs/06-nachweis.md)
+- [Drei Fachgebiete als Prozesstest](docs/07-fachgebiete.md)
 - [Ein Paper oder eine Korrektur beitragen](CONTRIBUTING.md)
 
 ## Ausführen

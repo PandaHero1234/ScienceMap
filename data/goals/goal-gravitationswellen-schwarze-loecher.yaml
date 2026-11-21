@@ -1,0 +1,33 @@
+id: goal-gravitationswellen-schwarze-loecher
+field: Physik
+title: Gravitationswellen von Verschmelzungen stellarer Schwarzer Löcher nachweisen und absichern
+last_work: Fünf Veröffentlichungen mit sieben Belegen als Vorschlag erfasst
+open_question: Zweite Person gleicht Signifikanzen und Falschalarmraten mit den Veröffentlichungen ab
+milestones:
+- id: ms-gw-erstnachweis
+  title: Erstnachweis belegen
+  criterion: Ein Ereignis ist in einer begutachteten Veröffentlichung mit einer Signifikanz von mindestens
+    5 σ als Verschmelzung zweier Schwarzer Löcher berichtet.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-gw-zweites-ereignis
+  title: Zweites Ereignis belegen
+  criterion: Ein zweites, vom ersten verschiedenes Ereignis ist mit mindestens 5 σ berichtet.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-gw-weiteres-instrument
+  title: Mit weiterem Instrument beobachten
+  criterion: Ein Ereignis ist zusätzlich mit einem Detektor außerhalb des LIGO-Netzwerks beobachtet.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-gw-unabhaengige-auswertung
+  title: Auswertung außerhalb der Kollaboration
+  criterion: Eine Auswertung der öffentlichen Daten, die nicht von der Kollaboration veröffentlicht wurde,
+    findet mindestens zwei Ereignisse wieder.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+catalog:
+- version: 1
+  date: '2026-11-21'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-gw-erstnachweis
+  - ms-gw-zweites-ereignis
+  - ms-gw-weiteres-instrument
+  - ms-gw-unabhaengige-auswertung

@@ -1,0 +1,10 @@
+id: dec-2026-11-21-cl-primluecken-246
+date: '2026-11-21'
+kind: aussage
+target_id: cl-primluecken-246
+outcome: vorlaeufig_gestuetzt
+rationale: Die Veröffentlichung des Polymath-Projekts nennt die Schranke 246 als unbedingtes Ergebnis.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-primluecken-polymath-246
+status: vorgeschlagen

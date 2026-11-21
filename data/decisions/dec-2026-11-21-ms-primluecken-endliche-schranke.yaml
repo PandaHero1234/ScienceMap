@@ -1,0 +1,11 @@
+id: dec-2026-11-21-ms-primluecken-endliche-schranke
+date: '2026-11-21'
+kind: meilenstein
+target_id: ms-primluecken-endliche-schranke
+catalog_version: 1
+outcome: erreicht
+rationale: Zhangs Beweis der Schranke 70 Millionen ist in den Annals of Mathematics erschienen.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-primluecken-zhang
+status: vorgeschlagen

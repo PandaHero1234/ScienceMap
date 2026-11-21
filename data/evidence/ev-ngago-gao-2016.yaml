@@ -1,0 +1,14 @@
+id: ev-ngago-gao-2016
+claim_id: cl-ngago-editierung-humanzellen
+study_id: gao-ngago-nbt-2016
+study_version: journal
+locator: Titel und Abstract
+dataset_id: exp-gao-2016
+metric: Editierung von Genorten in menschlichen Zellen
+values:
+  befund: DNA-geführte Genom-Editierung in menschlichen Zellen berichtet
+uncertainty: offen
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Die Veröffentlichung wurde zurückgezogen. Der Beleg bleibt als Ausgangspunkt des Verlaufs erhalten.

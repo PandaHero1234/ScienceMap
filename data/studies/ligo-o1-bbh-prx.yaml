@@ -1,0 +1,14 @@
+id: ligo-o1-bbh-prx
+label: LIGO Scientific Collaboration und Virgo Collaboration, Binary Black Hole Mergers in the First Advanced
+  LIGO Observing Run (Phys. Rev. X 6, 041015)
+team: ligo-virgo-kollaboration
+doi: 10.1103/PhysRevX.6.041015
+status: aktiv
+instrument: ligo
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1103/PhysRevX.6.041015
+- id: arxiv
+  kind: Preprint arXiv:1606.04856
+  url: https://arxiv.org/abs/1606.04856

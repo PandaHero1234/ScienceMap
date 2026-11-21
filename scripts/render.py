@@ -34,6 +34,15 @@ LABELS = {
     "beweisreview": "fachliches Beweisreview",
 }
 RELATION_LABELS = {"spricht_dagegen": "spricht dagegen"}
+KIND_LABELS = {"datensatz": "Datensatz", "ereignis": "Ereignis", "experiment": "Versuchsreihe",
+               "klinische_studie": "Klinische Studie", "beweis": "Beweis"}
+TONES = {"erreicht": "good", "freigegeben": "good", "vorlaeufig_gestuetzt": "good",
+         "mehrfach_gestuetzt": "good", "stuetzt": "good",
+         "erneut_zu_pruefen": "warn", "widerspruechlich": "warn", "in_pruefung": "warn",
+         "nicht_erreicht": "bad", "spricht_dagegen": "bad"}
+
+# Fachprofile aus atlas.yaml: eigene Bezeichnungen je Fach, gesetzt in write_site().
+PROFILES: dict = {}
 
 CSS = """
 :root { --bg:#fbfaf7; --fg:#1d1d1b; --muted:#66645e; --line:#dcd9d0; --card:#ffffff;
@@ -56,17 +65,19 @@ a { color:var(--accent); }
 table { border-collapse:collapse; width:100%; font-size:.95rem; }
 th, td { text-align:left; vertical-align:top; padding:.6rem .75rem .6rem 0; border-bottom:1px solid var(--line); }
 th { color:var(--muted); font-weight:600; font-size:.8rem; text-transform:uppercase; letter-spacing:.04em; }
-.bar { height:.5rem; background:var(--track); border-radius:1rem; overflow:hidden; min-width:7rem; margin-top:.3rem; }
+.bar { display:flex; height:.5rem; background:var(--track); border-radius:1rem; overflow:hidden; min-width:7rem; margin-top:.3rem; }
 .bar span { display:block; height:100%; background:var(--accent); }
+.bar span.proposed { background:repeating-linear-gradient(135deg, var(--accent) 0 2px, transparent 2px 6px); }
 .num { font-variant-numeric: tabular-nums; white-space:nowrap; font-weight:600; }
 .sub { color:var(--muted); font-size:.85rem; }
 .card { background:var(--card); border:1px solid var(--line); border-radius:.6rem; padding:1rem 1.1rem; margin:.75rem 0; }
-.card h3 { margin:0 0 .35rem; font-size:1.05rem; }
+.card h3 { margin:0 0 .35rem; font-size:1.05rem; overflow-wrap:anywhere; }
 .badge { display:inline-block; font-size:.8rem; font-weight:600; padding:.1rem .55rem; border-radius:1rem;
          border:1px solid var(--line); color:var(--muted); white-space:nowrap; }
 .badge.good { color:var(--accent); border-color:var(--accent); }
 .badge.warn { color:var(--warn); border-color:var(--warn); }
 .badge.bad { color:var(--bad); border-color:var(--bad); }
+.badge.draft { border-style:dashed; }
 dl { display:grid; grid-template-columns:minmax(9rem, max-content) 1fr; gap:.3rem 1rem; margin:.6rem 0 0; }
 dt { color:var(--muted); }
 dd { margin:0; overflow-wrap:anywhere; }
@@ -81,22 +92,24 @@ footer { color:var(--muted); font-size:.85rem; margin:3rem 0 2rem; }
 """
 
 
-def label(value: str | None) -> str:
-    return LABELS.get(value, value or "offen")
+def label(value: str | None, field: str | None = None) -> str:
+    override = PROFILES.get(field, {}).get("labels", {})
+    return override.get(value) or LABELS.get(value, value or "offen")
 
 
-def badge(value: str) -> str:
-    tone = {"erreicht": "good", "freigegeben": "good", "vorlaeufig_gestuetzt": "good",
-            "mehrfach_gestuetzt": "good", "stuetzt": "good",
-            "erneut_zu_pruefen": "warn", "widerspruechlich": "warn", "in_pruefung": "warn",
-            "nicht_erreicht": "bad", "spricht_dagegen": "bad"}.get(value, "")
-    return f'<span class="badge {tone}">{e(label(value))}</span>'
+def badge(value: str, field: str | None = None, draft: bool = False) -> str:
+    tone = TONES.get(value, "") + (" draft" if draft else "")
+    return f'<span class="badge {tone}">{e(label(value, field))}</span>'
 
 
 def number(value) -> str:
     if isinstance(value, float):
         return str(value).replace(".", ",")
     return str(value)
+
+
+def plural(count: int, one: str, many: str) -> str:
+    return f"{count} {one if count == 1 else many}"
 
 
 def page(title: str, body: str, config: dict, depth: int = 0) -> str:
@@ -129,12 +142,15 @@ verlinkten Entscheidungen und Belege bis zur Fundstelle zurückverfolgen.</foote
 def bar(goal: dict) -> str:
     if goal["milestones_total"] is None:
         return '<span class="num">Katalog offen</span>'
-    total = goal["milestones_total"]
-    share = 100 * goal["milestones_reached"] / total if total else 0
-    return (f'<span class="num">{goal["milestones_reached"]} von {total} Meilensteinen erreicht</span>'
+    total, reached, proposed = goal["milestones_total"], goal["milestones_reached"], goal["milestones_proposed"]
+    share = lambda n: f"{100 * n / total:.0f}%" if total else "0%"
+    extra = (f'<div class="sub">{proposed} weitere vorgeschlagen, Zweitprüfung offen</div>' if proposed else "")
+    return (f'<span class="num">{reached} von {total} Meilensteinen erreicht</span>'
             f'<div class="sub">Zielkatalog v{goal["catalog_version"]}</div>'
-            f'<div class="bar" role="img" aria-label="{e(goal["display"])} Meilensteinen erreicht">'
-            f'<span style="width:{share:.0f}%"></span></div>')
+            f'<div class="bar" role="img" aria-label="{e(goal["display"])} Meilensteinen erreicht, '
+            f'{proposed} weitere vorgeschlagen">'
+            f'<span style="width:{share(reached)}"></span>'
+            f'<span class="proposed" style="width:{share(proposed)}"></span></div>{extra}')
 
 
 def notices(item: dict) -> str:
@@ -147,19 +163,27 @@ def notices(item: dict) -> str:
     return out
 
 
-def decision_block(dec: dict | None, heading: str = "Gültige Entscheidung") -> str:
+def people(record: dict) -> str:
+    names = [p for p in (record.get("extracted_by"), record.get("reviewed_by")) if p]
+    return " und ".join(names)
+
+
+def decision_block(dec: dict | None, heading: str, field: str | None = None, draft: bool = False) -> str:
     if not dec:
         return ""
     rows = [("Entscheidung", f"{e(dec['id'])} vom {e(dec['date'])}"),
-            ("Ergebnis", badge(dec["outcome"])),
+            ("Ergebnis", badge(dec["outcome"], field, draft)),
             ("Begründung", e(dec["rationale"]))]
     if dec.get("dissent"):
         rows.append(("Abweichende Einschätzung", e(dec["dissent"])))
     if dec.get("assurance"):
         rows.append(("Art der Absicherung", e(", ".join(label(a) for a in dec["assurance"]))))
-    people = [p for p in (dec.get("extracted_by"), dec.get("reviewed_by")) if p]
-    if people:
-        rows.append(("Geprüft von", e(" und ".join(people))))
+    if dec.get("suggested_by"):
+        rows.append(("Vorgeschlagen von", e(dec["suggested_by"])))
+    if people(dec):
+        rows.append(("Geprüft von", e(people(dec))))
+    elif draft:
+        rows.append(("Geprüft von", "noch niemandem"))
     if dec.get("evidence_ids"):
         rows.append(("Belege", e(", ".join(dec["evidence_ids"]))))
     body = "".join(f"<dt>{k}</dt><dd>{v}</dd>" for k, v in rows)
@@ -183,7 +207,9 @@ diese Einschätzung tragen und welche Prüfung als Nächstes ansteht.</p>
 <thead><tr><th>Fach</th><th>Forschungsziel</th><th>Fortschritt</th><th>Letzte Änderung</th><th>Nächste offene Prüfung</th></tr></thead>
 <tbody>{rows}</tbody>
 </table></div>
-<p class="sub">Die Anzeige bezieht sich auf die Arbeit am jeweiligen Zielkatalog. Aus einem Zählerstand
+<p class="sub">Als erreicht zählt ein Meilenstein erst, wenn zwei Personen die Einstufung freigegeben haben.
+Der schraffierte Teil des Balkens zeigt Vorschläge, deren Zweitprüfung aussteht.
+Die Anzeige bezieht sich auf die Arbeit am jeweiligen Zielkatalog. Aus einem Zählerstand
 lässt sich keine Aussage zum gesamten Forschungsstand eines Fachs ableiten.</p>"""
     return page("Übersicht", body, config)
 
@@ -196,11 +222,16 @@ def render_goal(goal: dict, config: dict) -> str:
         reason = (f"<dt>Begründung</dt><dd>{e(dec['rationale'])} "
                   f"<span class=\"sub\">({e(dec['id'])}, {e(dec['date'])})</span></dd>") if dec else ""
         note = f"<dt>Stand</dt><dd>{e(ms['note'])}</dd>" if ms.get("note") and not dec else ""
+        proposals = ""
+        for prop in ms["open_proposals"]:
+            who = f"vorgeschlagen von {prop['suggested_by']}, " if prop.get("suggested_by") else ""
+            proposals += (f"<dt>Vorschlag</dt><dd>{badge(prop['outcome'], draft=True)} {e(prop['rationale'])} "
+                          f"<span class=\"sub\">({e(prop['id'])}, {e(who)}Zweitprüfung offen)</span></dd>")
         cards += f"""<div class="card" id="{e(ms['id'])}">
 <h3>{e(ms['title'])} {badge(ms['status'])}</h3>
 {notices(ms)}
 <dl><dt>Erfüllungskriterium</dt><dd>{e(ms['criterion'])}</dd>
-{note}{reason}
+{note}{reason}{proposals}
 <dt>Verknüpfte Aussagen</dt><dd>{claims}</dd>
 <dt>Meilenstein-ID</dt><dd>{e(ms['id'])}</dd></dl>
 </div>"""
@@ -217,20 +248,27 @@ Nächste offene Prüfung: {e(goal.get('open_question') or 'offen')}</p>
 
 
 def render_claim(claim: dict, config: dict) -> str:
+    field = claim["field"]
     assurance = ", ".join(label(a) for a in claim["assurance"]) or "noch keine"
+    proposed = (f'<div class="sub">Vorschlag: {e(label(claim["proposed_status"], field))}</div>'
+                if claim.get("proposed_status") else "")
     facts = f"""<div class="facts">
 <div class="card"><div class="k">Redaktioneller Stand</div>{badge(claim['editorial_status'])}</div>
-<div class="card"><div class="k">Evidenzlage zur Aussage</div>{badge(claim['evidence_status'])}</div>
+<div class="card"><div class="k">Evidenzlage zur Aussage</div>{badge(claim['evidence_status'], field)}{proposed}</div>
 <div class="card"><div class="k">Art der Absicherung</div>{e(assurance)}</div>
 </div>"""
-    counts = (f"{claim['supporting_sources']} stützende Quelle(n), "
-              f"{claim['supporting_observations']} zugrunde liegende Beobachtung(en).")
+    one, many = PROFILES.get(field, {}).get("basis", ["Grundlage", "Grundlagen"])
+    bases = claim["supporting_observations"]
+    counts = (plural(claim["supporting_sources"], "stützende Quelle", "stützende Quellen") + ", "
+              + (f"1 {one}" if bases == 1 else f"{bases} verschiedene {many}") + ".")
+    if not claim["supporting_sources"]:
+        counts = "Keine stützende Quelle."
     if claim["shared_dependencies"]:
         counts += " Gemeinsame Abhängigkeiten: " + ", ".join(claim["shared_dependencies"]) + "."
     cards = ""
     for ev in claim["evidence"]:
         study = ev["study"]
-        values = ", ".join(f"{k}: {number(v)}" for k, v in ev["values"].items())
+        values = ", ".join(f"{k.replace('_', ' ')}: {number(v)}" for k, v in ev["values"].items())
         rows = [("Quelle", f"{e(study['label'])} ({e(study['version'])})"),
                 ("Fundstelle", f"{e(ev['locator'])} · <a href=\"{e(study['url'])}\">Original öffnen</a>"),
                 ("Messgröße", e(ev["metric"])),
@@ -238,26 +276,33 @@ def render_claim(claim: dict, config: dict) -> str:
                 ("Unsicherheit", e(ev["uncertainty"]))]
         if ev.get("conditions"):
             rows.append(("Bedingungen", e(ev["conditions"])))
-        rows.append(("Beobachtung", e(", ".join(ev["observations"]))))
+        rows.append(("Grundlage", "<br>".join(
+            f"{e(KIND_LABELS[b['kind']])}: {e(b['title'])} <span class=\"sub\">({e(b['id'])})</span>"
+            for b in ev["basis"])))
         if study["status"] != "aktiv":
-            rows.append(("Status der Studie", e(f"{study['status']} am {study.get('status_date')}: {study.get('status_note')}")))
-        people = [p for p in (ev.get("extracted_by"), ev.get("reviewed_by")) if p]
-        rows.append(("Prüfvermerk", badge(ev["review_status"]) + (" " + e(" und ".join(people)) if people else "")))
+            word = "korrigiert" if study["status"] == "korrigiert" else "zurückgezogen"
+            rows.append(("Status der Studie", e(f"{word} am {study.get('status_date')}: {study.get('status_note')}")))
+        who = people(ev) or (f"vorgeschlagen von {ev['suggested_by']}" if ev.get("suggested_by") else "")
+        rows.append(("Prüfvermerk", badge(ev["review_status"]) + (" " + e(who) if who else "")))
         if ev.get("note"):
             rows.append(("Anmerkung", e(ev["note"])))
         body = "".join(f"<dt>{k}</dt><dd>{v}</dd>" for k, v in rows)
         relation = RELATION_LABELS.get(ev["relation"], label(ev["relation"]))
         tone = {"stuetzt": "good", "spricht_dagegen": "bad"}.get(ev["relation"], "")
+        retracted = ""
+        if ev["relation"] == "stuetzt" and not ev["counts_as_support"]:
+            tone = ""
+            retracted = ' <span class="badge bad">Studie zurückgezogen, zählt nicht als Stütze</span>'
         cards += (f'<div class="card" id="{e(ev["id"])}"><h3>{e(ev["id"])} '
-                  f'<span class="badge {tone}">{e(relation)}</span></h3><dl>{body}</dl></div>')
+                  f'<span class="badge {tone}">{e(relation)}</span>{retracted}</h3><dl>{body}</dl></div>')
     if not cards:
         cards = '<p class="notice">Zu dieser Aussage ist noch kein Beleg erfasst.</p>'
-    earlier = "".join(decision_block(d, "Frühere Entscheidung") for d in reversed(claim["earlier_decisions"]))
-    proposals = "".join(decision_block(d, "Offener Vorschlag") for d in claim["open_proposals"])
+    earlier = "".join(decision_block(d, "Frühere Entscheidung", field) for d in reversed(claim["earlier_decisions"]))
+    proposals = "".join(decision_block(d, "Offener Vorschlag", field, draft=True) for d in claim["open_proposals"])
     issue = (f"{config['repo_url']}/issues/new?template=einwand.md&title="
              + quote(f"Einwand zu {claim['id']}"))
     milestones = ", ".join(e(m) for m in claim["milestone_ids"])
-    body = f"""<p class="sub">Aussage · {e(claim['id'])}</p>
+    body = f"""<p class="sub">{e(field)} · Aussage · {e(claim['id'])}</p>
 <h1>{e(claim['statement'])}</h1>
 <dl><dt>Geltungsbereich</dt><dd>{e(claim['scope'])}</dd>
 <dt>Meilensteine</dt><dd>{milestones}</dd></dl>
@@ -265,7 +310,7 @@ def render_claim(claim: dict, config: dict) -> str:
 <h2>Einordnung</h2>
 {facts}
 <p class="sub">{e(counts)}</p>
-{decision_block(claim['decision'])}
+{decision_block(claim['decision'], "Gültige Entscheidung", field)}
 {proposals}
 <h2>Belege</h2>
 {cards}
@@ -284,22 +329,25 @@ def render_history(state: dict, config: dict) -> str:
             if event["removed"]:
                 change += "; " + ", ".join(event["removed"]) + " entfernt"
             sources = ""
+            subject = f"{event['goal_ids'][0]} · {event['subject']}"
         else:
             before = " / ".join(label(o) for o in event["old"]) or "keine Entscheidung"
             change = f"{before} → {label(event['new'])}"
+            subject = event["subject"]
             sources = "<br>".join(
                 f'<a href="{e(s["url"])}">{e(s["study"])}</a>, {e(s["locator"])}'
                 + (f' <span class="sub">(veröffentlicht {e(s["published"])})</span>' if s.get("published") else "")
                 for s in event["sources"])
         stand = "<br>".join(f"{e(v['display'])} · v{v['catalog_version']}" if v["catalog_version"] else e(v["display"])
                             for v in event["stand"].values())
-        rows += f"""<tr><td class="num">{e(event['date'])}</td><td>{e(event['subject'])}</td>
+        rows += f"""<tr><td class="num">{e(event['date'])}</td><td>{e(subject)}</td>
 <td>{e(change)}</td><td>{e(event['reason'])}</td><td>{sources}</td><td class="num">{stand}</td></tr>"""
     if not rows:
         rows = '<tr><td colspan="6">Noch keine Einträge.</td></tr>'
     body = f"""<h1>Verlauf</h1>
 <p class="lead">Jede Änderung mit Datum der Atlasentscheidung, altem und neuem Stand, Grund und Quelle.
-Die letzte Spalte zeigt den Zählerstand des Ziels nach der Änderung.</p>
+Die letzte Spalte zeigt den Zählerstand des Ziels nach der Änderung. Vorschläge erscheinen hier erst
+nach ihrer Freigabe.</p>
 <div class="tablewrap"><table>
 <thead><tr><th>Datum</th><th>Gegenstand</th><th>Änderung</th><th>Grund</th><th>Quelle</th><th>Stand danach</th></tr></thead>
 <tbody>{rows}</tbody></table></div>"""
@@ -307,6 +355,8 @@ Die letzte Spalte zeigt den Zählerstand des Ziels nach der Änderung.</p>
 
 
 def write_site(state: dict, config: dict, out: Path) -> list[Path]:
+    PROFILES.clear()
+    PROFILES.update(config.get("fields") or {})
     files = {
         "style.css": CSS.strip() + "\n",
         "index.html": render_index(state, config),

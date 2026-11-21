@@ -1,0 +1,11 @@
+id: locatelli-exacel-tdt-nejm-2024
+label: Locatelli et al., Exagamglogene Autotemcel for Transfusion-Dependent β-Thalassemia (N. Engl. J.
+  Med. 390, 1663–1676)
+team: vertex-und-crispr-therapeutics
+doi: 10.1056/NEJMoa2309673
+status: aktiv
+published: '2024-04-24'
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1056/NEJMoa2309673

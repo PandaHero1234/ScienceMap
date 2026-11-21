@@ -1,0 +1,6 @@
+id: cl-gw170814-drei-detektoren
+statement: 'Das Signal GW170814 wurde von drei Detektoren beobachtet: den beiden Advanced-LIGO-Detektoren
+  und Advanced Virgo.'
+scope: Ein einzelnes Ereignis aus dem August 2017.
+milestone_ids:
+- ms-gw-weiteres-instrument

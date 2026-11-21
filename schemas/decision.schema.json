@@ -98,6 +98,10 @@
         "in_pruefung",
         "freigegeben"
       ]
+    },
+    "suggested_by": {
+      "type": "string",
+      "minLength": 1
     }
   },
   "required": [

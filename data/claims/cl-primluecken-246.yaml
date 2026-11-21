@@ -1,0 +1,6 @@
+id: cl-primluecken-246
+statement: Es gibt unendlich viele Paare aufeinanderfolgender Primzahlen, deren Abstand höchstens 246
+  beträgt.
+scope: Unbedingte Aussage ohne unbewiesene Annahmen.
+milestone_ids:
+- ms-primluecken-schranke-246

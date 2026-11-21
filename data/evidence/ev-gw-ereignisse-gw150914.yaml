@@ -1,0 +1,15 @@
+id: ev-gw-ereignisse-gw150914
+claim_id: cl-gw-zwei-ereignisse
+study_id: ligo-gw150914-prl
+study_version: journal
+locator: Abstract
+event_ids:
+- gw150914
+metric: Signifikanz des Signals
+values:
+  signifikanz: '> 5,1 σ'
+uncertainty: Die Signifikanz ist als untere Grenze angegeben.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Fundstelle bisher nur auf Ebene des Abstracts erfasst. Tabelle oder Abbildung im Volltext ist nachzutragen.

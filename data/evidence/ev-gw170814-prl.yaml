@@ -1,0 +1,17 @@
+id: ev-gw170814-prl
+claim_id: cl-gw170814-drei-detektoren
+study_id: ligo-virgo-gw170814-prl
+study_version: journal
+locator: Abstract
+event_ids:
+- gw170814
+metric: Falschalarmrate und Signal-Rausch-Verhältnis im Netzwerk aus drei Detektoren
+values:
+  falschalarmrate: ≲ 1 pro 27 000 Jahre
+  signal_rausch_verhaeltnis_netzwerk: 18
+  detektoren: 3
+uncertainty: Die Falschalarmrate ist als obere Grenze angegeben.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Fundstelle bisher nur auf Ebene des Abstracts erfasst. Tabelle oder Abbildung im Volltext ist nachzutragen.

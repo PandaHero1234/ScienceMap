@@ -1,0 +1,15 @@
+id: gao-ngago-nbt-2016
+label: Gao et al., DNA-guided genome editing using the Natronobacterium gregoryi Argonaute (Nat. Biotechnol.
+  34, 768–773)
+team: gao-et-al
+doi: 10.1038/nbt.3547
+status: zurueckgezogen
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1038/nbt.3547
+- id: rueckzug
+  kind: Rückzugsvermerk Nat. Biotechnol. 35, 797
+  url: https://www.nature.com/articles/nbt0817-797a
+status_date: '2017-08-01'
+status_note: Rückzug durch die Autoren, weil andere Gruppen die Ergebnisse nicht reproduzieren konnten.

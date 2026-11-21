@@ -1,0 +1,12 @@
+id: dec-2026-11-21-cl-primluecken-endliche-schranke
+date: '2026-11-21'
+kind: aussage
+target_id: cl-primluecken-endliche-schranke
+outcome: mehrfach_gestuetzt
+rationale: Zwei veröffentlichte Beweise verschiedener Autoren belegen eine endliche Schranke. Beide bauen
+  auf dem Ansatz von Goldston, Pintz und Yıldırım auf. Ob sie als unabhängig gelten, beurteilen die Prüfenden.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-primluecken-zhang
+- ev-primluecken-maynard-600
+status: vorgeschlagen

@@ -1,0 +1,11 @@
+id: dec-2026-11-21-ms-gw-unabhaengige-auswertung
+date: '2026-11-21'
+kind: meilenstein
+target_id: ms-gw-unabhaengige-auswertung
+catalog_version: 1
+outcome: erreicht
+rationale: Der Katalog 1-OGC findet GW150914 und GW151226 in den öffentlichen Daten wieder.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-gw-1ogc-kandidaten
+status: vorgeschlagen

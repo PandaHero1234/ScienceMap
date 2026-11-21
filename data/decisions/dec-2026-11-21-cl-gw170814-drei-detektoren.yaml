@@ -1,0 +1,10 @@
+id: dec-2026-11-21-cl-gw170814-drei-detektoren
+date: '2026-11-21'
+kind: aussage
+target_id: cl-gw170814-drei-detektoren
+outcome: vorlaeufig_gestuetzt
+rationale: Die Veröffentlichung berichtet die Beobachtung mit drei Detektoren. Es liegt eine Quelle vor.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-gw170814-prl
+status: vorgeschlagen

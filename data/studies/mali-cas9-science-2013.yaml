@@ -1,0 +1,10 @@
+id: mali-cas9-science-2013
+label: Mali et al., RNA-Guided Human Genome Engineering via Cas9 (Science 339, 823–826)
+team: mali-et-al
+doi: 10.1126/science.1232033
+status: aktiv
+published: '2013-02-15'
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1126/science.1232033

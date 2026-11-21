@@ -1,0 +1,11 @@
+id: dec-2026-11-21-ms-primluecken-bedingt
+date: '2026-11-21'
+kind: meilenstein
+target_id: ms-primluecken-bedingt
+catalog_version: 1
+outcome: erreicht
+rationale: Das Polymath-Projekt beweist die Schranke 6 unter der verallgemeinerten Elliott-Halberstam-Vermutung.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-primluecken-polymath-geh-6
+status: vorgeschlagen

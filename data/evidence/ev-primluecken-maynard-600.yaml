@@ -1,0 +1,15 @@
+id: ev-primluecken-maynard-600
+claim_id: cl-primluecken-endliche-schranke
+study_id: maynard-small-gaps-annals
+study_version: journal
+locator: Theorem 1.3
+basis_ids:
+- beweis-maynard-600
+metric: Obere Schranke für den Limes inferior der Abstände aufeinanderfolgender Primzahlen
+values:
+  schranke: ≤ 600
+uncertainty: Entfällt. Die Aussage ist ein bewiesener Satz.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Die Schranke 600 schließt die Aussage mit 70 Millionen ein.

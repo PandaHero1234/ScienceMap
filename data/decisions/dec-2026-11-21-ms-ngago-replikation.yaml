@@ -1,0 +1,11 @@
+id: dec-2026-11-21-ms-ngago-replikation
+date: '2026-11-21'
+kind: meilenstein
+target_id: ms-ngago-replikation
+catalog_version: 1
+outcome: nicht_erreicht
+rationale: Die Replikationsversuche dreier Gruppen blieben ohne Nachweis einer Editierung.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-ngago-lee-2016
+status: vorgeschlagen

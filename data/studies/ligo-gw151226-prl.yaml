@@ -1,0 +1,10 @@
+id: ligo-gw151226-prl
+label: LIGO Scientific Collaboration und Virgo Collaboration, GW151226 (Phys. Rev. Lett. 116, 241103)
+team: ligo-virgo-kollaboration
+doi: 10.1103/PhysRevLett.116.241103
+status: aktiv
+instrument: ligo
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1103/PhysRevLett.116.241103

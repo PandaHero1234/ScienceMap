@@ -1,0 +1,17 @@
+id: ev-gw150914-prl-signifikanz
+claim_id: cl-gw150914-nachweis
+study_id: ligo-gw150914-prl
+study_version: journal
+locator: Abstract
+event_ids:
+- gw150914
+metric: Signifikanz und Falschalarmrate des Signals
+values:
+  signifikanz: '> 5,1 σ'
+  falschalarmrate: < 1 pro 203 000 Jahre
+  signal_rausch_verhaeltnis: 24
+uncertainty: Die Signifikanz ist als untere Grenze angegeben.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Fundstelle bisher nur auf Ebene des Abstracts erfasst. Tabelle oder Abbildung im Volltext ist nachzutragen.

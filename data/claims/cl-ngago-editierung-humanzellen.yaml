@@ -1,0 +1,7 @@
+id: cl-ngago-editierung-humanzellen
+statement: Das Argonaute-Protein aus Natronobacterium gregoryi (NgAgo) editiert, von einer DNA-Leitsequenz
+  geführt, Genorte in menschlichen Zellen.
+scope: Zellkulturexperimente unter den Bedingungen der Erstveröffentlichung.
+milestone_ids:
+- ms-ngago-erstbefund
+- ms-ngago-replikation

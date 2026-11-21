@@ -1,0 +1,17 @@
+id: ev-gw-1ogc-kandidaten
+claim_id: cl-gw-auswertung-ausserhalb-kollaboration
+study_id: nitz-1ogc-apj
+study_version: journal
+locator: Abstract
+event_ids:
+- gw150914
+- gw151226
+metric: Signifikanteste Kandidaten des Katalogs
+values:
+  befund: GW150914, GW151226 und LVT151012 sind die drei signifikantesten Kandidaten
+  wahrscheinlichkeit_lvt151012_astrophysikalisch: 97,6 %
+uncertainty: offen
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Die Falschalarmraten je Kandidat sind aus der Tabelle des Katalogs nachzutragen.

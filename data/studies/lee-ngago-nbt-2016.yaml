@@ -1,0 +1,10 @@
+id: lee-ngago-nbt-2016
+label: Lee et al., Failure to detect DNA-guided genome editing using Natronobacterium gregoryi Argonaute
+  (Nat. Biotechnol. 35, 17–18)
+team: lee-et-al
+doi: 10.1038/nbt.3753
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1038/nbt.3753

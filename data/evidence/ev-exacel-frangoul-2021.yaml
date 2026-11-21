@@ -1,0 +1,17 @@
+id: ev-exacel-frangoul-2021
+claim_id: cl-cas9-klinische-wirksamkeit
+study_id: frangoul-ctx001-nejm-2021
+study_version: journal
+locator: Abstract
+basis_ids:
+- nct03655678
+- nct03745287
+metric: Verlauf der ersten beiden Behandelten über mehr als ein Jahr
+values:
+  behandelte: 2
+  befund: Beide transfusionsunabhängig, bei der Person mit Sichelzellkrankheit keine vasookklusiven Episoden
+uncertainty: Zwei Behandelte, kein Konfidenzintervall.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Früher Bericht aus denselben zwei Studien wie die Veröffentlichungen von 2024.

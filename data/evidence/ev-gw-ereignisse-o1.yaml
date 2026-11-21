@@ -1,0 +1,18 @@
+id: ev-gw-ereignisse-o1
+claim_id: cl-gw-zwei-ereignisse
+study_id: ligo-o1-bbh-prx
+study_version: journal
+locator: Abstract
+event_ids:
+- gw150914
+- gw151226
+metric: Signifikanz der Signale über den gesamten Beobachtungslauf
+values:
+  signifikanz: '> 5 σ'
+  eindeutig_identifizierte_signale: 2
+uncertainty: Die Signifikanz ist als untere Grenze angegeben.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Gemeinsame Auswertung derselben zwei Ereignisse. Ein dritter Kandidat (LVT151012) hat eine deutlich
+  geringere Signifikanz.

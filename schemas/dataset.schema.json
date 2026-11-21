@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Datensatz oder Ereignis",
+  "title": "Grundlage: Datensatz, Ereignis, Versuchsreihe, klinische Studie oder Beweis",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -27,6 +27,15 @@
     "derived_from": {
       "type": "string",
       "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "kind": {
+      "enum": [
+        "datensatz",
+        "ereignis",
+        "experiment",
+        "klinische_studie",
+        "beweis"
+      ]
     }
   },
   "required": [

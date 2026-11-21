@@ -1,0 +1,11 @@
+id: dec-2026-11-21-ms-cas9-in-vitro
+date: '2026-11-21'
+kind: meilenstein
+target_id: ms-cas9-in-vitro
+catalog_version: 1
+outcome: erreicht
+rationale: Jinek et al. zeigen die programmierbare Spaltung in vitro.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-cas9-jinek-chimaere
+status: vorgeschlagen

@@ -1,0 +1,11 @@
+id: dec-2026-11-21-ms-cas9-humanzellen
+date: '2026-11-21'
+kind: meilenstein
+target_id: ms-cas9-humanzellen
+catalog_version: 1
+outcome: erreicht
+rationale: Cong et al. zeigen gezielte Schnitte an Genorten in menschlichen Zellen.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-cas9-cong-humanzellen
+status: vorgeschlagen

@@ -1,0 +1,13 @@
+id: dec-2026-11-21-cl-gw-zwei-ereignisse
+date: '2026-11-21'
+kind: aussage
+target_id: cl-gw-zwei-ereignisse
+outcome: mehrfach_gestuetzt
+rationale: Drei Veröffentlichungen berichten zwei verschiedene Ereignisse mit jeweils über 5 σ. Team und
+  Instrument sind allen drei gemeinsam.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-gw-ereignisse-gw150914
+- ev-gw-ereignisse-gw151226
+- ev-gw-ereignisse-o1
+status: vorgeschlagen

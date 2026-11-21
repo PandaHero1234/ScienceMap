@@ -1,0 +1,12 @@
+id: maynard-small-gaps-annals
+label: Maynard, Small gaps between primes (Ann. of Math. 181, 2015, 383–413)
+team: maynard
+doi: 10.4007/annals.2015.181.1.7
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.4007/annals.2015.181.1.7
+- id: arxiv
+  kind: Preprint arXiv:1311.4600
+  url: https://arxiv.org/abs/1311.4600

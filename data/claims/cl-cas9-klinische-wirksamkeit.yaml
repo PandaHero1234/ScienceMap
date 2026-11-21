@@ -1,0 +1,8 @@
+id: cl-cas9-klinische-wirksamkeit
+statement: Die Cas9-basierte Zelltherapie Exagamglogen Autotemcel (exa-cel, zuvor CTX001) erreicht bei
+  schwerer Sichelzellkrankheit und bei transfusionsabhängiger β-Thalassämie bei über 90 % der auswertbaren
+  Behandelten den primären Endpunkt.
+scope: Zwei Studien desselben Sponsors, eine je Erkrankung (NCT03745287 und NCT03655678). Ausgewertet
+  wurden Behandelte mit ausreichender Nachbeobachtung.
+milestone_ids:
+- ms-cas9-klinik

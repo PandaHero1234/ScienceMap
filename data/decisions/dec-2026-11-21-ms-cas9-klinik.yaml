@@ -1,0 +1,12 @@
+id: dec-2026-11-21-ms-cas9-klinik
+date: '2026-11-21'
+kind: meilenstein
+target_id: ms-cas9-klinik
+catalog_version: 1
+outcome: erreicht
+rationale: Zwei Studien berichten Ergebnisse zum primären Endpunkt, 29 von 30 und 32 von 35 Behandelten.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-exacel-frangoul-2024-scd
+- ev-exacel-locatelli-2024-tdt
+status: vorgeschlagen

@@ -1,0 +1,12 @@
+id: dec-2026-11-21-cl-gw150914-nachweis
+date: '2026-11-21'
+kind: aussage
+target_id: cl-gw150914-nachweis
+outcome: vorlaeufig_gestuetzt
+rationale: Die Erstveröffentlichung nennt über 5,1 σ. Eine zweite Auswertung derselben Daten führt das
+  Signal ebenfalls. Beide Belege beruhen auf demselben Ereignis.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-gw150914-prl-signifikanz
+- ev-gw150914-1ogc
+status: vorgeschlagen
