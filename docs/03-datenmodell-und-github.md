@@ -6,12 +6,13 @@
 | `docs/` | Regeln für Aufnahme, Suche und Bewertung, Beispielkarten, Pilotplan und Nachweis |
 | `data/goals/` | Feld, Ziel, versionierter Katalog mit stabilen Meilenstein-IDs und Erfüllungskriterien |
 | `data/claims/` | Präzise Aussagen, Geltungsbereich und Zuordnung zu einem oder mehreren Meilensteinen |
-| `data/studies/` | Studie, Team, Fassungen mit Link sowie Vermerk bei Korrektur oder Rückzug |
+| `data/studies/` | Studie mit Kurzbezeichnung, Team, Fassungen mit Link sowie Vermerk bei Korrektur oder Rückzug |
 | `data/datasets/` | Grundlagen mit stabiler ID: Datensätze, Ereignisse, Versuchsreihen, klinische Studien und Beweise |
 | `data/evidence/` | Einzelbefunde und ihre gerichteten Beziehungen zu Aussagen, mit Fundstellen und Datensatz-IDs |
 | `data/decisions/` | Datierte Bewertungen mit Begründung, Prüfenden, Beleg-IDs und Verweis auf die frühere Entscheidung |
 | `schemas/` | Ein JSON Schema je Datensatzart |
 | `scripts/` | `atlas.py` prüft und wertet aus, `render.py` erzeugt die Seiten |
+| `site/` | Gestaltung (`atlas.css`) und Bedienhilfen (`atlas.js`) der Seiten |
 | `atlas.yaml` | Titel, Adresse des Repositorys und Fachprofile mit eigenen Bezeichnungen je Fach |
 | `tests/` | Ein Test je Regel dieser Dokumentation |
 | `.github/` | Vorlagen für neue Belege und Einwände, automatisierte Prüfung und Veröffentlichung |
@@ -47,8 +48,8 @@ dataset_id: bpic12
 conditions: Standardparameter der Studie
 metric: F-Score aus Fitness und Precision
 values:
-  split_miner: 0.88
-  inductive_miner: 0.66
+  Split Miner: 0.88
+  Inductive Miner: 0.66
 uncertainty: offen
 relation: stuetzt
 review_status: vorgeschlagen
@@ -60,7 +61,7 @@ Ein freigegebener Beleg nennt in `extracted_by` und `reviewed_by` zwei verschied
 
 ## Entscheidung
 
-Eine Entscheidung bewertet entweder einen Meilenstein oder eine Aussage. Nur freigegebene Entscheidungen verändern Zähler und Verlauf. Vorschläge erscheinen auf den Seiten als Vorschlag und im Balken schraffiert. Die ID einer Entscheidung enthält die vollständige ID ihres Gegenstands, etwa `dec-2026-11-21-ms-gw-erstnachweis`. Das folgende Beispiel zeigt die Form. Im Pilot liegt noch keine Entscheidung vor.
+Eine Entscheidung bewertet entweder einen Meilenstein oder eine Aussage. Nur freigegebene Entscheidungen verändern Zähler und Verlauf. Vorschläge erscheinen auf den Seiten als gestrichelte Station und unter „Offene Prüfungen“. Die ID einer Entscheidung enthält die vollständige ID ihres Gegenstands, etwa `dec-2026-11-21-ms-gw-erstnachweis`. Das folgende Beispiel zeigt die Form. Im Pilot liegt noch keine Entscheidung vor.
 
 ```yaml
 id: dec-2026-12-01-ms-bpic12-quellenabgleich

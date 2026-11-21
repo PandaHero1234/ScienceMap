@@ -6,7 +6,7 @@ locator: Abstract
 dataset_id: exp-jinek-2012
 metric: Sequenzspezifische Spaltung doppelsträngiger DNA
 values:
-  befund: Die zu einer einzelnen RNA-Chimäre verbundene tracrRNA:crRNA lenkt Cas9 zur sequenzspezifischen
+  Befund: Die zu einer einzelnen RNA-Chimäre verbundene tracrRNA:crRNA lenkt Cas9 zur sequenzspezifischen
     Spaltung
 uncertainty: Im Abstract nicht beziffert.
 relation: stuetzt

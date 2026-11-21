@@ -7,8 +7,8 @@ event_ids:
 - gw151226
 metric: Signifikanz des Signals
 values:
-  signifikanz: '> 5 σ'
-  signal_rausch_verhaeltnis: 13
+  Signifikanz: '> 5 σ'
+  Signal-Rausch-Verhältnis: 13
 uncertainty: Die Signifikanz ist als untere Grenze angegeben.
 relation: stuetzt
 review_status: vorgeschlagen

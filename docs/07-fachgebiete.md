@@ -31,7 +31,7 @@ Drei Angaben ließen sich nicht bestätigen und fehlen deshalb:
 |---|---|
 | In der Mathematik gibt es weder Datensatz noch Ereignis. Ein Beleg ließ sich nicht anlegen | Belege nennen allgemein ihre Grundlagen in `basis_ids`. Einträge unter `data/datasets/` tragen eine Art: Datensatz, Ereignis, Versuchsreihe, klinische Studie oder Beweis |
 | Die zurückgezogene NgAgo-Studie zählte als stützende Quelle | Ein Beleg aus einer zurückgezogenen Studie stützt nichts mehr. Er bleibt mit Vermerk sichtbar |
-| Ein vollständig erfasstes Fach sah mit „0 von 4“ aus wie ein leeres | Vorschläge sind sichtbar: schraffierter Balken und eigene Zeile. Der Zähler bleibt unverändert |
+| Ein vollständig erfasstes Fach sah mit „0 von 4“ aus wie ein leeres | Vorschläge sind sichtbar: gestrichelte Station auf der Route und eigene Seite „Offene Prüfungen“. Der Zähler bleibt unverändert |
 | Ein Sprachmodell ließ sich als eine der zwei Personen eintragen | Eigenes Feld `suggested_by`. Für die Freigabe zählen nur `extracted_by` und `reviewed_by` |
 | Ein einzelner Beleg mit zwei Ereignissen genügte für „mehrfach gestützt“ | Verlangt werden zwei stützende Belege auf zwei verschiedenen Grundlagen |
 | Auch ein Vorschlag konnte den Belegen widersprechen | Die Evidenzlage wird schon beim Vorschlag gegen die Belege geprüft |

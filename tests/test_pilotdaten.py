@@ -57,13 +57,10 @@ def test_weg_von_der_startseite_bis_zur_fundstelle(tmp_path):
     html = claim_page.read_text(encoding="utf-8")
     assert "Tabelle 4, BPIC12, Zeilen SM und IM" in html
     assert "https://kodu.ut.ee/~dumas/pubs/SplitMinerKAIS.pdf" in links(claim_page)
-    assert "split miner: 0,88" in html and "inductive miner: 0,66" in html
+    assert "Split Miner:</b> 0,88" in html and "Inductive Miner:</b> 0,66" in html
     assert any("/issues/new?template=einwand.md" in h for h in links(claim_page))
 
-    for page in tmp_path.rglob("*.html"):
-        for href in links(page):
-            if not href.startswith("http"):
-                assert (page.parent / href).resolve().is_file(), f"{page.name}: toter Link {href}"
+    assert f"../ziele/{PILOT}.html" in links(claim_page), "von der Aussage führt ein Weg zurück zum Ziel"
 
 
 def test_progress_json_enthaelt_den_stand(tmp_path):

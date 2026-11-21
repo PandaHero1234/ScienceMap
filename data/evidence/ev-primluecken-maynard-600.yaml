@@ -7,7 +7,7 @@ basis_ids:
 - beweis-maynard-600
 metric: Obere Schranke für den Limes inferior der Abstände aufeinanderfolgender Primzahlen
 values:
-  schranke: ≤ 600
+  Schranke: ≤ 600
 uncertainty: Entfällt. Die Aussage ist ein bewiesener Satz.
 relation: stuetzt
 review_status: vorgeschlagen

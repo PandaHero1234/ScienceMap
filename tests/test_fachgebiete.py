@@ -98,12 +98,14 @@ def test_biologie_zurueckgezogene_studie_zaehlt_nicht(state):
 def test_seiten_zeigen_vorschlaege_und_fachbezeichnungen(tmp_path):
     assert atlas.main(["build", "--out", str(tmp_path)]) == 0
     index = (tmp_path / "index.html").read_text(encoding="utf-8")
-    assert index.count("4 weitere vorgeschlagen, Zweitprüfung offen") == 3
+    assert index.count("</strong> Meilensteinen erreicht · 4 vorgeschlagen") == 3
+    assert "0 von 2</strong> Meilensteinen erreicht · 2 als nicht erreicht vorgeschlagen" in index
     mathe = (tmp_path / "aussagen" / "cl-primluecken-endliche-schranke.html").read_text(encoding="utf-8")
     assert "Vorschlag: bewiesen (mehrere Beweise)" in mathe
-    assert "2 stützende Quellen, 2 verschiedene Beweise." in mathe
+    assert "2 Quellen, 2 Beweise." in mathe
     ngago = (tmp_path / "aussagen" / "cl-ngago-editierung-humanzellen.html").read_text(encoding="utf-8")
-    assert "Studie zurückgezogen, zählt nicht als Stütze" in ngago
+    assert "Zurückgezogen, zählt nicht mehr" in ngago
+    assert "Keine stützende Quelle." in ngago
 
 
 # --- Durchgespielt: zwei Personen geben jeden Vorschlag frei ------------------

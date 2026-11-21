@@ -1,5 +1,6 @@
 id: ligo-gw151226-prl
 label: LIGO Scientific Collaboration und Virgo Collaboration, GW151226 (Phys. Rev. Lett. 116, 241103)
+short_label: LVC 2016, GW151226
 team: ligo-virgo-kollaboration
 doi: 10.1103/PhysRevLett.116.241103
 status: aktiv

@@ -7,9 +7,9 @@ event_ids:
 - gw150914
 metric: Signifikanz und Falschalarmrate des Signals
 values:
-  signifikanz: '> 5,1 σ'
-  falschalarmrate: < 1 pro 203 000 Jahre
-  signal_rausch_verhaeltnis: 24
+  Signifikanz: '> 5,1 σ'
+  Falschalarmrate: < 1 pro 203 000 Jahre
+  Signal-Rausch-Verhältnis: 24
 uncertainty: Die Signifikanz ist als untere Grenze angegeben.
 relation: stuetzt
 review_status: vorgeschlagen

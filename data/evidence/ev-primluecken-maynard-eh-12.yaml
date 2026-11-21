@@ -8,7 +8,7 @@ basis_ids:
 conditions: Elliott-Halberstam-Vermutung
 metric: Obere Schranke für den Limes inferior der Abstände aufeinanderfolgender Primzahlen
 values:
-  schranke: ≤ 12
+  Schranke: ≤ 12
 uncertainty: Entfällt. Die Aussage ist ein bewiesener Satz.
 relation: nicht_entscheidend
 review_status: vorgeschlagen

@@ -7,7 +7,7 @@ event_ids:
 - gw150914
 metric: Signifikanz des Signals
 values:
-  signifikanz: '> 5,1 σ'
+  Signifikanz: '> 5,1 σ'
 uncertainty: Die Signifikanz ist als untere Grenze angegeben.
 relation: stuetzt
 review_status: vorgeschlagen

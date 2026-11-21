@@ -11,7 +11,7 @@ python -m pytest -q                  # prüft jede Regel
 python scripts/atlas.py build        # schreibt die Übersicht nach public/
 ```
 
-Von den 71 Tests arbeiten 47 mit erfundenen Daten in einem temporären Ordner. `tests/test_pilotdaten.py` und `tests/test_fachgebiete.py` lesen die echten Daten. Als Gegenprobe wurden dreizehn Regeln einzeln im Skript ausgeschaltet. Jedes Mal schlug mindestens ein Test fehl.
+Von den 84 Tests arbeiten 48 mit erfundenen Daten in einem temporären Ordner. `tests/test_pilotdaten.py`, `tests/test_fachgebiete.py` und der größte Teil von `tests/test_oberflaeche.py` lesen die echten Daten. Als Gegenprobe wurden dreizehn Regeln einzeln im Skript ausgeschaltet. Jedes Mal schlug mindestens ein Test fehl.
 
 ## Belegt
 
@@ -32,6 +32,10 @@ Von den 71 Tests arbeiten 47 mit erfundenen Daten in einem temporären Ordner. `
 | Ein Nullergebnis kann einen Meilenstein erfüllen | 5 | `test_nullergebnis_kann_einen_meilenstein_erfuellen` |
 | Bei Dissens bleibt der Vorschlag offen und die abweichende Begründung sichtbar | 2 | `test_dissens_bleibt_sichtbar_und_der_vorschlag_offen` |
 | Von der Startseite führt ein Weg über Ziel und Aussage zur Fundstelle und zum Einwand | 5 | `test_weg_von_der_startseite_bis_zur_fundstelle` |
+| Kein interner Link und kein Anker führt ins Leere | 1 | `test_kein_interner_link_und_kein_anker_fuehrt_ins_leere` |
+| Jeder ungeprüfte Eintrag steht unter „Offene Prüfungen“ mit seiner Datei | 1 | `test_offene_pruefungen_nennen_jeden_ungeprueften_eintrag_mit_datei` |
+| Der Zustand einer Station steht als Text und nicht nur als Farbe | 1 | `test_zustand_steht_als_text_und_nicht_nur_als_farbe` |
+| Alle Inhalte sind ohne JavaScript lesbar | 1 | `test_ohne_javascript_ist_alles_lesbar` |
 | Ein Vorschlag ist sichtbar und verändert den Zähler nicht | 2, 7 | `test_vorschlag_ist_sichtbar_und_zaehlt_nicht` |
 | Ein Sprachmodell ersetzt keine der zwei Personen | 2 | `test_sprachmodell_ersetzt_keine_der_zwei_personen` |
 | Eine zurückgezogene Studie stützt nichts mehr | 7 | `test_zurueckgezogene_studie_stuetzt_nichts_mehr` |

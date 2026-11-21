@@ -7,7 +7,7 @@ basis_ids:
 - nct03745287
 metric: Anteil ohne vasookklusive Krisen über mindestens 12 Monate in Folge
 values:
-  anteil: 29 von 30 (97 %)
+  Anteil: 29 von 30 (97 %)
 uncertainty: 95-%-Konfidenzintervall 83 bis 100 %
 relation: stuetzt
 review_status: vorgeschlagen

@@ -1,12 +1,13 @@
 id: augusto-split-miner-journal
 label: Augusto et al., Split Miner
+short_label: Augusto et al.
 team: augusto-et-al
 doi: 10.1007/s10115-018-1214-x
 status: aktiv
 versions:
-  - id: autorenfassung
-    kind: Autorenfassung
-    url: https://kodu.ut.ee/~dumas/pubs/SplitMinerKAIS.pdf
-  - id: journal
-    kind: Journalfassung
-    url: https://doi.org/10.1007/s10115-018-1214-x
+- id: autorenfassung
+  kind: Autorenfassung
+  url: https://kodu.ut.ee/~dumas/pubs/SplitMinerKAIS.pdf
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1007/s10115-018-1214-x

@@ -373,13 +373,16 @@ def _evidence_view(atlas: Atlas, ev: dict) -> dict:
     view = {k: ev[k] for k in ("id", "locator", "metric", "values", "uncertainty", "relation",
                                "review_status", "conditions", "dataset_id", "event_ids", "basis_ids",
                                "note", "suggested_by", "extracted_by", "reviewed_by") if k in ev}
-    view["study"] = {"id": study["id"], "label": study["label"], "team": study["team"],
+    view["study"] = {"id": study["id"], "label": study["label"],
+                     "short_label": study.get("short_label", study["label"]), "team": study["team"],
                      "status": study["status"], "version": version["kind"], "url": version["url"]}
     for key in ("doi", "published", "instrument", "status_date", "status_note"):
         if key in study:
             view["study"][key] = study[key]
     view["observations"] = sorted(observations(atlas, ev))
-    view["basis"] = [{"id": i, "title": atlas.datasets[i]["title"], "kind": atlas.datasets[i].get("kind", "datensatz")}
+    view["basis"] = [{"id": i, "title": atlas.datasets[i]["title"],
+                      "short_title": atlas.datasets[i].get("short_title", atlas.datasets[i]["title"]),
+                      "kind": atlas.datasets[i].get("kind", "datensatz"), "counts_as": _root_dataset(atlas, i)}
                      for i in basis_ids(ev)]
     view["counts_as_support"] = supports(atlas, ev)
     return view
@@ -417,6 +420,7 @@ def claim_state(atlas: Atlas, claim: dict, as_of: str | None = None) -> dict:
                 shared.append(f"{label}: {values.pop()}")
     return {
         "id": claim["id"],
+        "goal_ids": sorted({owner[m] for m in claim["milestone_ids"]}),
         "field": atlas.goals[owner[claim["milestone_ids"][0]]]["field"],
         "statement": claim["statement"],
         "scope": claim["scope"],

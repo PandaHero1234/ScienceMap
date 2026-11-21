@@ -6,7 +6,7 @@ locator: Titel und Abstract
 dataset_id: exp-gao-2016
 metric: Editierung von Genorten in menschlichen Zellen
 values:
-  befund: DNA-geführte Genom-Editierung in menschlichen Zellen berichtet
+  Befund: DNA-geführte Genom-Editierung in menschlichen Zellen berichtet
 uncertainty: offen
 relation: stuetzt
 review_status: vorgeschlagen

@@ -6,7 +6,7 @@ locator: Abstract
 dataset_id: exp-mali-2013
 metric: Funktion des Systems mit eigener Leit-RNA in menschlichen Zellen
 values:
-  befund: Das bakterielle Typ-II-CRISPR-System funktioniert mit eigens entworfener Leit-RNA in menschlichen
+  Befund: Das bakterielle Typ-II-CRISPR-System funktioniert mit eigens entworfener Leit-RNA in menschlichen
     Zellen
 uncertainty: Im Abstract nicht beziffert.
 relation: stuetzt

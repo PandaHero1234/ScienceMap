@@ -8,8 +8,8 @@ event_ids:
 - gw151226
 metric: Signifikanz der Signale über den gesamten Beobachtungslauf
 values:
-  signifikanz: '> 5 σ'
-  eindeutig_identifizierte_signale: 2
+  Signifikanz: '> 5 σ'
+  Eindeutig identifizierte Signale: 2
 uncertainty: Die Signifikanz ist als untere Grenze angegeben.
 relation: stuetzt
 review_status: vorgeschlagen

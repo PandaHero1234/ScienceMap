@@ -6,8 +6,8 @@ locator: Gesamter Beitrag, S. 17–18
 dataset_id: exp-lee-2016
 metric: Nachweis einer Editierung in Replikationsversuchen
 values:
-  befund: Keine DNA-geführte Genom-Editierung nachweisbar
-  beteiligte_gruppen: 3
+  Befund: Keine DNA-geführte Genom-Editierung nachweisbar
+  Beteiligte Gruppen: 3
 uncertainty: offen
 relation: spricht_dagegen
 review_status: vorgeschlagen

@@ -8,8 +8,8 @@ basis_ids:
 - nct03745287
 metric: Verlauf der ersten beiden Behandelten über mehr als ein Jahr
 values:
-  behandelte: 2
-  befund: Beide transfusionsunabhängig, bei der Person mit Sichelzellkrankheit keine vasookklusiven Episoden
+  Behandelte: 2
+  Befund: Beide transfusionsunabhängig, bei der Person mit Sichelzellkrankheit keine vasookklusiven Episoden
 uncertainty: Zwei Behandelte, kein Konfidenzintervall.
 relation: stuetzt
 review_status: vorgeschlagen

@@ -1,6 +1,7 @@
 id: ligo-o1-bbh-prx
 label: LIGO Scientific Collaboration und Virgo Collaboration, Binary Black Hole Mergers in the First Advanced
   LIGO Observing Run (Phys. Rev. X 6, 041015)
+short_label: LVC 2016, erster Lauf
 team: ligo-virgo-kollaboration
 doi: 10.1103/PhysRevX.6.041015
 status: aktiv

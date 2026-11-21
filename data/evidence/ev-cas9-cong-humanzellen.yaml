@@ -6,7 +6,7 @@ locator: Abstract
 dataset_id: exp-cong-2013
 metric: Gezielter Schnitt an Genorten in Säugerzellen
 values:
-  befund: Cas9 erzeugt, von kurzen RNAs gelenkt, präzise Schnitte an endogenen Genorten in Zellen von
+  Befund: Cas9 erzeugt, von kurzen RNAs gelenkt, präzise Schnitte an endogenen Genorten in Zellen von
     Mensch und Maus
 uncertainty: Im Abstract nicht beziffert.
 relation: stuetzt
