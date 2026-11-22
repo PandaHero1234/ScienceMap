@@ -1,0 +1,10 @@
+id: abramson-alphafold3-nature-2024
+label: Abramson et al., Accurate structure prediction of biomolecular interactions with AlphaFold 3 (Nature
+  630, 493–500)
+short_label: Abramson et al. 2024
+team: abramson-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1038/s41586-024-07487-w

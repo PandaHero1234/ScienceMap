@@ -1,0 +1,10 @@
+id: laetsch-eliana-jco-2023
+label: Laetsch et al., Three-Year Update of Tisagenlecleucel in Pediatric and Young Adult Patients With
+  Relapsed/Refractory Acute Lymphoblastic Leukemia in the ELIANA Trial (J. Clin. Oncol. 41, 1664–1669)
+short_label: Laetsch et al. 2023
+team: laetsch-et-al
+status: aktiv
+versions:
+- id: pmc
+  kind: Volltext in PubMed Central
+  url: https://pmc.ncbi.nlm.nih.gov/articles/PMC10022844

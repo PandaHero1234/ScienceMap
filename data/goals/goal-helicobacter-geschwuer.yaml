@@ -3,7 +3,7 @@ field: Medizin
 area: '302'
 topic: Helicobacter pylori und Geschwüre
 title: Helicobacter pylori als Ursache wiederkehrender Zwölffingerdarmgeschwüre belegen
-last_work: Zwei Veröffentlichungen mit zwei Belegen als Vorschlag erfasst
+last_work: Drei Veröffentlichungen mit drei Belegen als Vorschlag erfasst
 open_question: Zweite Person trägt die Rückfallraten beider Gruppen aus der Studie von 1993 nach
 milestones:
 - id: ms-hpylori-bakterium
@@ -19,7 +19,7 @@ milestones:
 - id: ms-hpylori-zweite-studie
   title: In zweiter kontrollierter Studie bestätigen
   criterion: Eine zweite kontrollierte Studie einer anderen Gruppe berichtet dasselbe.
-  note: Offen. Im Atlas ist kein Beleg erfasst.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
 catalog:
 - version: 1
   date: '2026-11-22'

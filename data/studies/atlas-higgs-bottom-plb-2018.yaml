@@ -1,0 +1,13 @@
+id: atlas-higgs-bottom-plb-2018
+label: ATLAS Collaboration, Observation of H→bb̄ decays and VH production with the ATLAS detector (Phys.
+  Lett. B 786, 59)
+short_label: ATLAS 2018
+team: atlas-kollaboration
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1016/j.physletb.2018.09.013
+- id: arxiv
+  kind: Preprint arXiv:1808.08238
+  url: https://arxiv.org/abs/1808.08238

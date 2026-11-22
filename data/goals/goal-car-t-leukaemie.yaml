@@ -3,8 +3,8 @@ field: Medizinische Biotechnologie
 area: '304'
 topic: CAR-T-Zell-Therapie
 title: Mit CAR-T-Zellen Remissionen bei akuter lymphatischer Leukämie erreichen
-last_work: Zwei Veröffentlichungen mit zwei Belegen als Vorschlag erfasst
-open_question: Zweite Person gleicht Remissionsraten und Überlebenszahlen mit den Tabellen ab
+last_work: Drei Veröffentlichungen mit drei Belegen als Vorschlag erfasst
+open_question: Zweite Person sucht eine Auswertung über fünf Jahre
 milestones:
 - id: ms-cart-erste-studie
   title: Remissionen in erster Studie zeigen
@@ -18,7 +18,7 @@ milestones:
 - id: ms-cart-fuenf-jahre
   title: Verlauf über fünf Jahre berichten
   criterion: Eine Veröffentlichung berichtet das Überleben der Behandelten über mindestens fünf Jahre.
-  note: Offen. Im Atlas ist kein Beleg erfasst.
+  note: Offen. Erfasst ist ein Verlauf über drei Jahre, das Kriterium verlangt fünf.
 catalog:
 - version: 1
   date: '2026-11-22'

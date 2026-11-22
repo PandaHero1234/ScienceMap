@@ -1,0 +1,6 @@
+id: cl-protein-datenbank
+statement: Eine frei zugängliche Datenbank stellt Strukturvorhersagen für über 200 Millionen Proteine
+  bereit.
+scope: AlphaFold Protein Structure Database, Stand der Veröffentlichung von 2024.
+milestone_ids:
+- ms-protein-datenbank

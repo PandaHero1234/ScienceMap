@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-qc-groesserer-prozessor
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-qc-groesserer-prozessor
+catalog_version: 2
+outcome: erreicht
+rationale: Wu et al. nutzen 56 Qubits, drei mehr als Sycamore.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-qc-zuchongzhi-2021
+status: vorgeschlagen

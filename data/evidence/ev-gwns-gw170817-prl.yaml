@@ -1,0 +1,17 @@
+id: ev-gwns-gw170817-prl
+claim_id: cl-gwns-signal
+study_id: ligo-virgo-gw170817-prl
+study_version: journal
+locator: Abstract
+event_ids:
+- gw170817
+metric: Signal-Rausch-Verhältnis, Massen und Entfernung
+values:
+  Signal-Rausch-Verhältnis im Netzwerk: 32,4
+  Massen der beiden Körper: 0,86 bis 2,26 Sonnenmassen
+  Entfernung: etwa 40 Mpc
+uncertainty: Die Entfernung ist mit +8 und −14 Mpc angegeben.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Fundstelle bisher nur auf Ebene des Abstracts erfasst. Tabelle oder Abbildung im Volltext ist nachzutragen.

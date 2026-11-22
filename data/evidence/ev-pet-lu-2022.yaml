@@ -1,0 +1,16 @@
+id: ev-pet-lu-2022
+claim_id: cl-pet-zweites-enzym
+study_id: lu-pet-nature-2022
+study_version: journal
+locator: Abstract
+dataset_id: exp-lu-2022
+metric: Abbau gebrauchter Verpackungen
+values:
+  Abbau: fast vollständig in 1 Woche
+  Verpackungen: 51
+  Veränderungen gegenüber dem Ausgangsenzym: 5 Mutationen
+uncertainty: Als ungefähre Angabe berichtet.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Fundstelle bisher nur auf Ebene des Abstracts erfasst. Tabelle oder Abbildung im Volltext ist nachzutragen.

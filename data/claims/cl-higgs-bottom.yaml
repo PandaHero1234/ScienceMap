@@ -1,0 +1,6 @@
+id: cl-higgs-bottom
+statement: Das Higgs-Boson zerfällt in ein Bottom-Quark und sein Antiteilchen.
+scope: Proton-Proton-Kollisionen am LHC, Run 1 und Run 2.
+milestone_ids:
+- ms-higgs-bottom
+- ms-higgs-bottom-zweites-experiment

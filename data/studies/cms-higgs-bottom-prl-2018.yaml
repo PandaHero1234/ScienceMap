@@ -1,0 +1,12 @@
+id: cms-higgs-bottom-prl-2018
+label: CMS Collaboration, Observation of Higgs Boson Decay to Bottom Quarks (Phys. Rev. Lett. 121, 121801)
+short_label: CMS 2018
+team: cms-kollaboration
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1103/PhysRevLett.121.121801
+- id: arxiv
+  kind: Preprint arXiv:1808.08242
+  url: https://arxiv.org/abs/1808.08242

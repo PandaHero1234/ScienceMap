@@ -2,9 +2,11 @@ id: dec-2026-11-22-cl-haustuer-transphobie
 date: '2026-11-22'
 kind: aussage
 target_id: cl-haustuer-transphobie
-outcome: vorlaeufig_gestuetzt
-rationale: Broockman und Kalla berichten eine Wirkung über drei Monate. Es liegt eine Quelle vor.
+outcome: mehrfach_gestuetzt
+rationale: Zwei Veröffentlichungen mit eigenen Feldexperimenten berichten die Wirkung. Beide stammen vom
+  selben Team.
 suggested_by: Sprachmodell
 evidence_ids:
 - ev-haustuer-broockman-2016
+- ev-haustuer-kalla-2020
 status: vorgeschlagen

@@ -3,8 +3,9 @@ field: Industrielle Biotechnologie
 area: '209'
 topic: Enzymatischer Abbau von PET
 title: PET-Kunststoff mit Enzymen so schnell abbauen, dass er sich wiederverwerten lässt
-last_work: Zwei Veröffentlichungen mit zwei Belegen als Vorschlag erfasst
-open_question: Zweite Person erfasst ein zweites Enzym einer anderen Gruppe
+last_work: Drei Veröffentlichungen mit drei Belegen als Vorschlag erfasst
+open_question: Zweite Person entscheidet, ob das Kriterium des dritten Meilensteins auch eine Zeit nennen
+  soll
 milestones:
 - id: ms-pet-organismus
   title: Organismus finden, der PET abbaut
@@ -18,7 +19,7 @@ milestones:
 - id: ms-pet-zweites-enzym
   title: Mit zweitem Enzym einer anderen Gruppe erreichen
   criterion: Eine andere Gruppe erreicht mit einem eigenen Enzym denselben Abbaugrad.
-  note: Offen. Im Atlas ist kein Beleg erfasst.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
 catalog:
 - version: 1
   date: '2026-11-22'

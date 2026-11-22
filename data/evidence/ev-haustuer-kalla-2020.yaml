@@ -1,0 +1,17 @@
+id: ev-haustuer-kalla-2020
+claim_id: cl-haustuer-transphobie
+study_id: kalla-broockman-apsr-2020
+study_version: journal
+locator: Abstract
+dataset_id: feldexperimente-kalla-broockman-2020
+metric: Einstellung gegenüber Transgender-Personen
+values:
+  Wählerinnen und Wähler: 6869
+  Wahlhelfende: 230
+  Effektstärken d der beiden Versuche zu Transphobie: 0,08 und 0,04
+uncertainty: Konfidenzintervalle sind aus dem Volltext nachzutragen.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Wie lange die Wirkung in den beiden Versuchen zu Transphobie anhielt, ist nachzutragen. Der erste
+  der drei Versuche betrifft Einstellungen zu Einwanderern.

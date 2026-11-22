@@ -1,0 +1,16 @@
+id: ev-hpylori-graham-1992
+claim_id: cl-hpylori-rueckfall
+study_id: graham-geschwuer-aim-1992
+study_version: journal
+locator: Abstract
+dataset_id: studie-graham-1992
+metric: Rückfälle bei Zwölffingerdarmgeschwür
+values:
+  Rückfälle nach Beseitigung des Bakteriums: 12 %
+  Rückfälle in der Vergleichsgruppe: 95 %
+  Nachbeobachtung: bis zu 2 Jahre
+uncertainty: '95-%-Konfidenzintervall für 12 %: 1 bis 24 %.'
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Dass die 95 % zur Gruppe mit Ranitidin allein gehören, ist am Volltext zu prüfen.

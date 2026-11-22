@@ -1,0 +1,12 @@
+id: varadi-alphafold-db-nar-2024
+label: Varadi et al., AlphaFold Protein Structure Database in 2024 (Nucleic Acids Res. 52, D368)
+short_label: Varadi et al. 2024
+team: varadi-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://academic.oup.com/nar/article/52/D1/D368/7337620
+- id: pmc
+  kind: Volltext in PubMed Central
+  url: https://pmc.ncbi.nlm.nih.gov/articles/10767828/

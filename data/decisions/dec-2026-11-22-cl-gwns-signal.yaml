@@ -1,0 +1,11 @@
+id: dec-2026-11-22-cl-gwns-signal
+date: '2026-11-22'
+kind: aussage
+target_id: cl-gwns-signal
+outcome: vorlaeufig_gestuetzt
+rationale: Die Kollaborationen berichten das Signal mit Massen, die zu Neutronensternen passen. Es liegt
+  eine Quelle vor.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-gwns-gw170817-prl
+status: vorgeschlagen

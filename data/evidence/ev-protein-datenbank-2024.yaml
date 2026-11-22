@@ -1,0 +1,15 @@
+id: ev-protein-datenbank-2024
+claim_id: cl-protein-datenbank
+study_id: varadi-alphafold-db-nar-2024
+study_version: journal
+locator: Abstract
+dataset_id: alphafold-datenbank
+metric: Zahl der vorhergesagten Strukturen
+values:
+  Vorhergesagte Strukturen: über 214 Millionen
+  Stand beim Start der Datenbank: etwa 300 000
+uncertainty: Als gerundete Angaben berichtet.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Fundstelle bisher nur auf Ebene des Abstracts erfasst. Tabelle oder Abbildung im Volltext ist nachzutragen.

@@ -1,0 +1,9 @@
+id: zhong-jiuzhang-science-2020
+label: Zhong et al., Quantum computational advantage using photons (Science 370, 1460)
+short_label: Zhong et al. 2020
+team: zhong-et-al
+status: aktiv
+versions:
+- id: bericht
+  kind: Bericht in IEEE Spectrum
+  url: https://spectrum.ieee.org/photonic-quantum-computer-shows-advantage-over-supercomputer

@@ -1,0 +1,6 @@
+id: cl-qc-zuchongzhi
+statement: Ein supraleitender Prozessor löst mit 56 Qubits in etwa 1,2 Stunden eine Stichprobenaufgabe,
+  für die ein Supercomputer nach Schätzung der Gruppe mindestens 8 Jahre bräuchte.
+scope: Zufallsschaltkreise mit 56 Qubits und 20 Zyklen.
+milestone_ids:
+- ms-qc-groesserer-prozessor

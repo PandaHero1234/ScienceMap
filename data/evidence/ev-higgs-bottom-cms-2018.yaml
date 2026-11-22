@@ -1,0 +1,17 @@
+id: ev-higgs-bottom-cms-2018
+claim_id: cl-higgs-bottom
+study_id: cms-higgs-bottom-prl-2018
+study_version: journal
+locator: Abstract
+dataset_id: lhc-cms-run1-run2
+metric: Signifikanz des Zerfalls
+values:
+  Signifikanz: 5,6 σ
+  Erwartete Signifikanz: 5,5 σ
+  Signalstärke: 1,04 ± 0,20
+uncertainty: Die Unsicherheit der Signalstärke ist angegeben.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Der Wert gilt für die Kombination aller Kanäle. Die Analyse mit einem W- oder Z-Boson allein ergibt
+  4,8 σ.

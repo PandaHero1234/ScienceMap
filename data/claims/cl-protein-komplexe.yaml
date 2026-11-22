@@ -1,0 +1,7 @@
+id: cl-protein-komplexe
+statement: AlphaFold 3 sagt Komplexe aus Proteinen, Nukleinsäuren, kleinen Molekülen und Ionen genauer
+  vorher als spezialisierte Werkzeuge.
+scope: Die Vergleiche der Veröffentlichung von 2024.
+milestone_ids:
+- ms-protein-komplexe
+- ms-protein-komplexe-unabhaengig

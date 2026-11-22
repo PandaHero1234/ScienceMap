@@ -1,0 +1,11 @@
+id: dec-2026-11-22-cl-qc-photonen
+date: '2026-11-22'
+kind: aussage
+target_id: cl-qc-photonen
+outcome: vorlaeufig_gestuetzt
+rationale: Zhong et al. berichten das Experiment. Der klassische Aufwand ist eine Schätzung, deren Wert
+  noch nicht erfasst ist.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-qc-jiuzhang-2020
+status: vorgeschlagen

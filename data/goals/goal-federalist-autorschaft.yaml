@@ -3,8 +3,8 @@ field: Sprach- und Literaturwissenschaften
 area: '602'
 topic: Autorschaft der Federalist Papers
 title: Die Autorschaft der zwölf umstrittenen Federalist Papers klären
-last_work: Eine Veröffentlichung mit einem Beleg als Vorschlag erfasst
-open_question: Zweite Person erfasst Holmes und Forsyth 1995 sowie die Kritik von Rudman
+last_work: Zwei Veröffentlichungen mit zwei Belegen als Vorschlag erfasst
+open_question: Zweite Person erfasst die Kritik von Rudman und trägt die drei Wörter nach
 milestones:
 - id: ms-federalist-zuordnung
   title: Statistische Zuordnung veröffentlichen
@@ -14,7 +14,7 @@ milestones:
 - id: ms-federalist-zweites-verfahren
   title: Mit unabhängigem Verfahren bestätigen
   criterion: Eine andere Gruppe kommt mit einem anderen Verfahren zur selben Zuordnung.
-  note: Offen. Im Atlas ist kein Beleg erfasst.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
 catalog:
 - version: 1
   date: '2026-11-22'

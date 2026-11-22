@@ -1,0 +1,12 @@
+id: dec-2026-11-22-ms-pet-zweites-enzym
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-pet-zweites-enzym
+catalog_version: 1
+outcome: erreicht
+rationale: Lu et al. erreichen mit einem eigenen Enzym einen fast vollständigen Abbau. Er dauert eine
+  Woche statt zehn Stunden. Das Kriterium nennt den Abbaugrad, nicht die Zeit.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-pet-lu-2022
+status: vorgeschlagen

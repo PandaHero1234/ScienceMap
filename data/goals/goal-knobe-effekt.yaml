@@ -3,8 +3,8 @@ field: Philosophie
 area: '603'
 topic: Experimentelle Philosophie
 title: 'Den Knobe-Effekt belegen: Schädliche Nebenfolgen gelten eher als absichtlich'
-last_work: Zwei Veröffentlichungen mit zwei Belegen als Vorschlag erfasst
-open_question: Zweite Person prüft, ob die Studie von 2003 zu den 40 replizierten Studien gehört
+last_work: Drei Veröffentlichungen mit drei Belegen als Vorschlag erfasst
+open_question: Zweite Person trägt die Effektstärke aus Many Labs 2 nach
 milestones:
 - id: ms-knobe-erstbefund
   title: Unterschied im Experiment berichten
@@ -14,7 +14,7 @@ milestones:
 - id: ms-knobe-replikation
   title: In unabhängiger Replikation bestätigen
   criterion: Eine Replikation durch ein anderes Team berichtet denselben Unterschied.
-  note: Offen. Im Atlas ist kein Beleg erfasst.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
 catalog:
 - version: 1
   date: '2026-11-22'

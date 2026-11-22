@@ -1,0 +1,5 @@
+id: cl-gwns-gammablitz
+statement: Dem Signal GW170817 folgte 1,7 Sekunden später der Gammablitz GRB 170817A.
+scope: Beobachtung vom 17. August 2017.
+milestone_ids:
+- ms-gwns-gammablitz

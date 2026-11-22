@@ -11,7 +11,7 @@ python -m pytest -q                  # prüft jede Regel
 python scripts/atlas.py build        # schreibt die Übersicht nach public/
 ```
 
-Von den 180 Tests arbeiten 52 mit erfundenen Daten in einem temporären Ordner. Die übrigen lesen die echten Daten. Sie leiten ihre Erwartungen aus den Daten ab, damit ein weiterer Ausbau der Karte keine Tests bricht. Als Gegenprobe wurden dreizehn Regeln einzeln im Skript ausgeschaltet. Jedes Mal schlug mindestens ein Test fehl.
+Von den 197 Tests arbeiten 52 mit erfundenen Daten in einem temporären Ordner. Die übrigen lesen die echten Daten. Sie leiten ihre Erwartungen aus den Daten ab, damit ein weiterer Ausbau der Karte keine Tests bricht. Als Gegenprobe wurden dreizehn Regeln einzeln im Skript ausgeschaltet. Jedes Mal schlug mindestens ein Test fehl.
 
 ## Belegt
 
@@ -52,6 +52,10 @@ Von den 180 Tests arbeiten 52 mit erfundenen Daten in einem temporären Ordner. 
 | Dieselbe Studie kann eine Aussage stützen und gegen eine andere sprechen | 7 | `test_eine_studie_stuetzt_eine_aussage_und_spricht_gegen_eine_andere` |
 | Der Link eines Belegs führt zu der Fassung, die gelesen wurde | 7 | `test_beleg_verweist_auf_die_fassung_die_gelesen_wurde` |
 | Jeder der sechs Bereiche hat mindestens drei Fachgebiete mit Zielen | 7 | `test_jeder_bereich_hat_mindestens_drei_fachgebiete_mit_zielen` |
+| Weitere Meilensteine kommen als neue Katalogversion, frühere Vorschläge bleiben bei ihrem Meilenstein | 3, 7 | `test_weitere_meilensteine_kommen_als_neue_katalogversion`, `test_vorschlaege_aus_katalog_v1_bleiben_bei_ihrem_meilenstein` |
+| Ein Vorschlag für die falsche Katalogversion stoppt die Aktualisierung | 3 | `test_vorschlag_fuer_falsche_katalogversion_stoppt` |
+| Zwei Verfahren auf denselben Texten zählen als eine Grundlage | 7 | `test_zwei_verfahren_auf_denselben_texten_sind_eine_grundlage` |
+| Eine zweite Studie desselben Teams erfüllt kein Kriterium, das ein anderes Team verlangt | 7 | `test_zweite_studie_desselben_teams_laesst_den_meilenstein_offen` |
 
 ## Widerlegt oder nur mit Änderung umsetzbar
 
@@ -72,6 +76,6 @@ Von den 180 Tests arbeiten 52 mit erfundenen Daten in einem temporären Ordner. 
 - **Veröffentlichung von `main` aus.** Die Übersicht ist auf GitHub Pages veröffentlicht. Den Lauf von `main` aus lehnt GitHub bisher ab, vermutlich weil die Umgebung `github-pages` nur den früheren Standard-Branch zulässt. Bis `main` dort eingetragen ist, wird der Lauf von Hand vom Arbeits-Branch aus gestartet.
 - **Überwachung von Korrekturen und Rückzügen.** Jemand muss den Status der Studie von Hand eintragen. Danach markiert das Skript alle betroffenen Entscheidungen.
 - **Unsicherheit in Meilenstein 3.** Das Kriterium nennt noch kein Verfahren und keine Schwelle für „Vorteil nicht nachweisbar“.
-- **Einträge außerhalb des Pilots.** Die Einträge der 31 weiteren Ziele sind mit Abstracts abgeglichen, nicht mit den Volltexten. Was sich nicht bestätigen ließ, steht in [Drei Fachgebiete als Prozesstest](07-fachgebiete.md).
+- **Einträge außerhalb des Pilots.** Die Einträge der 32 weiteren Ziele sind mit Abstracts abgeglichen, nicht mit den Volltexten. Was sich nicht bestätigen ließ, steht in [Drei Fachgebiete als Prozesstest](07-fachgebiete.md).
 - **Bezeichnungen der Systematik.** Der Aufbau von ÖFOS 2012 mit 6 Hauptgruppen und 42 Gruppen ist geprüft. Die Namen der Gruppen sind noch nicht vollständig mit der Veröffentlichung von Statistik Austria abgeglichen.
 - **Zuordnung von Meilenstein 1.** Der Quellenabgleich ist Arbeit am Atlas und zählt derzeit im Fortschrittsbalken mit. Kapitel 1 trennt beides. Die Entscheidung steht aus.

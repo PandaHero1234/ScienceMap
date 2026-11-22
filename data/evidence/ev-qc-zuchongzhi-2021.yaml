@@ -1,0 +1,18 @@
+id: ev-qc-zuchongzhi-2021
+claim_id: cl-qc-zuchongzhi
+study_id: wu-zuchongzhi-prl-2021
+study_version: journal
+locator: Abstract
+dataset_id: zuchongzhi-experiment-2021
+metric: Laufzeit und geschätzter Aufwand
+values:
+  Qubits: 56
+  Zyklen: 20
+  Laufzeit: etwa 1,2 Stunden
+  Geschätzte Laufzeit auf einem Supercomputer: mindestens 8 Jahre
+uncertainty: Schätzung der Gruppe, kein Beweis.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Nach der Schätzung liegt der klassische Aufwand zwei bis drei Größenordnungen über dem der Aufgabe
+  von Sycamore.

@@ -1,0 +1,16 @@
+id: ev-gwns-grb170817a-apjl
+claim_id: cl-gwns-gammablitz
+study_id: lvc-fermi-grb170817a-apjl
+study_version: repositorium
+locator: Text des Artikels
+event_ids:
+- gw170817
+- grb170817a
+metric: Zeitabstand zwischen Verschmelzung und Gammablitz
+values:
+  Zeitabstand: 1,74 ± 0,05 s
+uncertainty: Die Unsicherheit des Zeitabstands ist angegeben.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Abschnitt und Gleichung im Volltext sind nachzutragen.

@@ -1,0 +1,11 @@
+id: dec-2026-11-22-cl-protein-komplexe
+date: '2026-11-22'
+kind: aussage
+target_id: cl-protein-komplexe
+outcome: vorlaeufig_gestuetzt
+rationale: Die Entwickler berichten eine höhere Genauigkeit als spezialisierte Werkzeuge. Es liegt eine
+  Quelle vor.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-protein-komplexe-2024
+status: vorgeschlagen

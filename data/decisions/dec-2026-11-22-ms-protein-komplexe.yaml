@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-protein-komplexe
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-protein-komplexe
+catalog_version: 2
+outcome: erreicht
+rationale: Abramson et al. berichten das Verfahren 2024 in Nature.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-protein-komplexe-2024
+status: vorgeschlagen

@@ -1,0 +1,11 @@
+id: dec-2026-11-22-cl-pet-zweites-enzym
+date: '2026-11-22'
+kind: aussage
+target_id: cl-pet-zweites-enzym
+outcome: vorlaeufig_gestuetzt
+rationale: Lu et al. berichten den fast vollständigen Abbau von 51 Verpackungen. Es liegt eine Quelle
+  vor.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-pet-lu-2022
+status: vorgeschlagen

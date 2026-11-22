@@ -1,0 +1,13 @@
+id: wu-zuchongzhi-prl-2021
+label: Wu et al., Strong Quantum Computational Advantage Using a Superconducting Quantum Processor (Phys.
+  Rev. Lett. 127, 180501)
+short_label: Wu et al. 2021
+team: wu-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1103/PhysRevLett.127.180501
+- id: arxiv
+  kind: Preprint arXiv:2106.14734
+  url: https://arxiv.org/abs/2106.14734

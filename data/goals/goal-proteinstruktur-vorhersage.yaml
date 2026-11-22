@@ -3,7 +3,7 @@ field: Biologie
 area: '106'
 topic: Proteinstrukturvorhersage
 title: Proteinstrukturen aus der Sequenz mit experimentnaher Genauigkeit vorhersagen
-last_work: Zwei Veröffentlichungen mit zwei Belegen als Vorschlag erfasst
+last_work: Vier Veröffentlichungen mit vier Belegen als Vorschlag erfasst
 open_question: Zweite Person trägt die Zahlenwerte des zweiten Verfahrens aus dem Volltext nach
 milestones:
 - id: ms-protein-blindtest
@@ -15,6 +15,19 @@ milestones:
   title: Mit zweitem Verfahren bestätigen
   criterion: Ein von einer anderen Gruppe entwickeltes Verfahren erreicht Genauigkeiten nahe dem ersten.
   note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-protein-datenbank
+  title: Vorhersagen für fast alle bekannten Proteine bereitstellen
+  criterion: Eine frei zugängliche Datenbank enthält Vorhersagen für mehr als 100 Millionen Proteine.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-protein-komplexe
+  title: Komplexe mit anderen Molekülen vorhersagen
+  criterion: Eine begutachtete Veröffentlichung berichtet ein Verfahren, das Komplexe aus Proteinen, Nukleinsäuren
+    und kleinen Molekülen genauer vorhersagt als spezialisierte Werkzeuge.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-protein-komplexe-unabhaengig
+  title: Vorhersage von Komplexen unabhängig prüfen
+  criterion: Eine Gruppe außerhalb der Entwickler bestätigt die Genauigkeit in einem eigenen Vergleich.
+  note: Offen. Im Atlas ist kein Beleg erfasst.
 catalog:
 - version: 1
   date: '2026-11-22'
@@ -22,3 +35,12 @@ catalog:
   milestones:
   - ms-protein-blindtest
   - ms-protein-zweites-verfahren
+- version: 2
+  date: '2026-11-22'
+  reason: Ziel um die Datenbank und um Komplexe mit anderen Molekülen erweitert
+  milestones:
+  - ms-protein-blindtest
+  - ms-protein-zweites-verfahren
+  - ms-protein-datenbank
+  - ms-protein-komplexe
+  - ms-protein-komplexe-unabhaengig

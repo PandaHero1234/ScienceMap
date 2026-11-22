@@ -117,10 +117,43 @@ Bei 14 der 36 neuen Studien verweist der Link auf die Fassung, die gelesen wurde
 
 Auch diese Stufe hat den Prozess nicht verändert. Neu genutzt wurde nur, was das Datenmodell schon konnte: die Beziehung „nicht entscheidend“ und Fassungen einer Studie, die nicht die Zeitschriftenfassung sind.
 
+## Vertiefung der bestehenden Ziele
+
+**Stand vom 22. November 2026.** Diese Stufe bringt kein neues Fachgebiet. Sie füllt offene Meilensteine, erweitert drei Ziele um weitere Meilensteine und gibt einem Teilgebiet ein zweites Ziel. Der Atlas hat damit 33 Ziele mit 97 Meilensteinen. Elf davon sind offen, vorher waren es dreizehn von 87.
+
+| Ziel | Was dazukam | Was der Fall zeigt |
+|---|---|---|
+| Helicobacter pylori | Zweite kontrollierte Studie (Graham et al. 1992) mit 12 % gegenüber 95 % Rückfällen | Der offene dritte Meilenstein hat jetzt einen Vorschlag |
+| Knobe-Effekt | Replikation in Many Labs 2 | Unabhängiges Team, die Aussage wäre mehrfach gestützt |
+| Federalist Papers | Zweites Verfahren (Fung 2003) | Zwei Quellen auf denselben Texten bleiben eine Grundlage |
+| Haustürgespräche | Drei weitere Feldexperimente (Kalla und Broockman 2020) | Zweite Quelle desselben Teams: Der Meilenstein „anderes Team“ bleibt offen |
+| PET-Abbau | Zweites Enzym (Lu et al. 2022) | Abbaugrad erreicht, aber in einer Woche: Das Kriterium nennt keine Zeit |
+| CAR-T-Zell-Therapie | Verlauf über drei Jahre (Laetsch et al. 2023) | Drei Jahre erfüllen ein Kriterium von fünf Jahren nicht |
+| Higgs-Boson | Zielkatalog v2: Zerfall in Bottom-Quarks bei ATLAS und CMS | Ein Ziel wächst, frühere Vorschläge bleiben gültig |
+| Proteinstrukturvorhersage | Zielkatalog v2: Datenbank, Komplexe, unabhängige Prüfung | Angabe der Entwickler, die unabhängige Prüfung bleibt offen |
+| Quantenüberlegenheit | Zielkatalog v2: zweite Plattform, größerer Prozessor | Wieder Schätzungen des klassischen Aufwands, keine Beweise |
+| Gravitationswellen | Zweites Ziel im Teilgebiet: Neutronensterne und Gammablitz | Ein Beleg mit zwei Ereignissen als Grundlage |
+
+Zwei Entscheidungen zum Vorgehen:
+
+- **Ein Ziel wächst über eine neue Katalogversion.** Die neuen Meilensteine stehen in Katalog v2, der alle Meilensteine aus v1 behält. Der Verlauf nennt den Wechsel mit Begründung. Vorschläge zu den neuen Meilensteinen tragen `catalog_version: 2`.
+- **Ein eigener, ungeprüfter Vorschlag wird ersetzt.** Kommt ein Beleg dazu, ändert das Sprachmodell seinen offenen Vorschlag zur Aussage, statt einen zweiten daneben zu legen. Die frühere Fassung steht in der Versionsgeschichte. Für freigegebene Entscheidungen gilt weiter `supersedes`.
+
+Diese Angaben ließen sich nicht bestätigen. Sie fehlen oder sind im Beleg als offen vermerkt:
+
+- die Effektstärke des Knobe-Effekts in Many Labs 2,
+- die drei Wörter bei Fung und der Wortlaut seines Artikels,
+- die Dauer der Wirkung in den beiden Versuchen zu Transphobie von 2020,
+- die Schätzung des klassischen Aufwands bei Zhong et al., die nur über Berichte erfasst ist,
+- die Zuordnung der 95 % zur Vergleichsgruppe bei Graham et al.,
+- ein zweites Signal zweier Neutronensterne und ein Verlauf über fünf Jahre bei CAR-T.
+
+Die Werte aus Tabelle 4 des Pilots sind weiterhin nicht geprüft. Die Fassungen bei Zenodo, der Universität Tartu und Springer sind aus der Arbeitsumgebung nicht erreichbar.
+
 ## Der Weg zur Freigabe
 
 1. Eine Person prüft einen Beleg gegen den Volltext, trägt die genaue Fundstelle nach und setzt sich in `extracted_by` ein.
 2. Eine zweite Person prüft Fundstelle, Richtung und Grenzen, setzt sich in `reviewed_by` ein und stellt `review_status` auf `freigegeben`.
 3. Dieselben zwei Schritte folgen für die Entscheidung. Sie erhält zusätzlich die Art der Absicherung und den Status `freigegeben`.
 
-`tests/test_fachgebiete.py` spielt diesen Weg für alle Vorschläge durch. Das Ergebnis wäre 4 von 4 in der Physik, 4 von 5 in der Mathematik, 4 von 4 bei CRISPR-Cas9 und 0 von 2 bei NgAgo. `tests/test_ausbau.py` und `tests/test_ausbau2.py` tun dasselbe für die beiden Ausbaustufen.
+`tests/test_fachgebiete.py` spielt diesen Weg für alle Vorschläge durch. Das Ergebnis wäre 4 von 4 in der Physik, 4 von 5 in der Mathematik, 4 von 4 bei CRISPR-Cas9 und 0 von 2 bei NgAgo. `tests/test_ausbau.py`, `tests/test_ausbau2.py` und `tests/test_vertiefung.py` tun dasselbe für die Ausbaustufen und die Vertiefung.

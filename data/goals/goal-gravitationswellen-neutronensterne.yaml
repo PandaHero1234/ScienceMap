@@ -1,0 +1,30 @@
+id: goal-gravitationswellen-neutronensterne
+field: Physik
+area: '103'
+topic: Gravitationswellen
+title: Die Verschmelzung zweier Neutronensterne mit Gravitationswellen und Licht beobachten
+last_work: Zwei Veröffentlichungen mit zwei Belegen als Vorschlag erfasst
+open_question: Zweite Person erfasst ein zweites Ereignis dieser Art
+milestones:
+- id: ms-gwns-signal
+  title: Signal zweier Neutronensterne nachweisen
+  criterion: Eine begutachtete Veröffentlichung berichtet ein Signal, dessen Massen zu Neutronensternen
+    passen.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-gwns-gammablitz
+  title: Gammablitz zum selben Ereignis beobachten
+  criterion: Ein Instrument für Gammastrahlen registriert innerhalb weniger Sekunden nach dem Signal einen
+    Gammablitz.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-gwns-zweites-ereignis
+  title: Zweites Ereignis dieser Art nachweisen
+  criterion: Eine begutachtete Veröffentlichung berichtet ein zweites Signal zweier Neutronensterne.
+  note: Offen. Im Atlas ist kein Beleg erfasst.
+catalog:
+- version: 1
+  date: '2026-11-22'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-gwns-signal
+  - ms-gwns-gammablitz
+  - ms-gwns-zweites-ereignis

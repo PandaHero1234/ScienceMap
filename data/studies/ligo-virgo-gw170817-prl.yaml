@@ -1,0 +1,14 @@
+id: ligo-virgo-gw170817-prl
+label: 'LIGO Scientific Collaboration und Virgo Collaboration, GW170817: Observation of Gravitational
+  Waves from a Binary Neutron Star Inspiral (Phys. Rev. Lett. 119, 161101)'
+short_label: LVC 2017, GW170817
+team: ligo-virgo-kollaboration
+status: aktiv
+instrument: ligo-und-virgo
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1103/PhysRevLett.119.161101
+- id: arxiv
+  kind: Preprint arXiv:1710.05832
+  url: https://arxiv.org/abs/1710.05832

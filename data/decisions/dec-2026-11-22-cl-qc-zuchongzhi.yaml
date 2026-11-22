@@ -1,0 +1,10 @@
+id: dec-2026-11-22-cl-qc-zuchongzhi
+date: '2026-11-22'
+kind: aussage
+target_id: cl-qc-zuchongzhi
+outcome: vorlaeufig_gestuetzt
+rationale: Wu et al. berichten das Experiment. Der klassische Aufwand ist eine Schätzung, kein Beweis.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-qc-zuchongzhi-2021
+status: vorgeschlagen

@@ -66,7 +66,7 @@ def test_nachrechnung_auf_demselben_datensatz_spricht_dagegen(real_state):
 
 def test_ueberholte_schaetzung_des_klassischen_aufwands(real_state):
     goal = by_id(real_state["goals"], "goal-quantenueberlegenheit")
-    assert [m["state"] for m in goal["milestones"]] == ["proposed", "proposed-failed"]
+    assert [m["state"] for m in goal["milestones"]][:2] == ["proposed", "proposed-failed"]
     assert by_id(real_state["claims"], "cl-sycamore-klassischer-aufwand")["proposed_status"] == "spricht_dagegen"
 
 
@@ -103,10 +103,10 @@ def approved(tmp_path_factory) -> dict:
 
 
 @pytest.mark.parametrize("goal_id, display", [
-    ("goal-higgs-boson", "3 von 3"), ("goal-kepler-vermutung", "2 von 2"), ("goal-proteinstruktur-vorhersage", "2 von 2"),
+    ("goal-higgs-boson", "5 von 5"), ("goal-kepler-vermutung", "2 von 2"), ("goal-proteinstruktur-vorhersage", "4 von 5"),
     ("goal-element-117", "2 von 2"), ("goal-kreide-einschlag", "3 von 3"), ("goal-mrna-impfstoff", "3 von 3"),
     ("goal-goldener-reis", "3 von 4"), ("goal-ego-depletion", "1 von 2"), ("goal-schulden-wachstum", "1 von 2"),
-    ("goal-richard-iii", "1 von 2"), ("goal-lk99-supraleitung", "1 von 2"), ("goal-quantenueberlegenheit", "1 von 2")])
+    ("goal-richard-iii", "1 von 2"), ("goal-lk99-supraleitung", "1 von 2"), ("goal-quantenueberlegenheit", "3 von 4")])
 def test_nach_freigabe_steht_jedes_neue_ziel_wie_vorgeschlagen(approved, goal_id, display):
     assert by_id(approved["goals"], goal_id)["display"] == display
 

@@ -1,0 +1,6 @@
+id: cl-qc-photonen
+statement: Ein photonischer Quantenrechner löst in 200 Sekunden eine Stichprobenaufgabe, für die klassische
+  Rechner nach Schätzung der Gruppe weit länger bräuchten.
+scope: Die im Experiment gewählte Stichprobenaufgabe.
+milestone_ids:
+- ms-qc-zweite-plattform

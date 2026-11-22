@@ -1,0 +1,10 @@
+id: lvc-fermi-grb170817a-apjl
+label: 'Abbott et al., Gravitational Waves and Gamma-Rays from a Binary Neutron Star Merger: GW170817
+  and GRB 170817A (Astrophys. J. Lett. 848, L13)'
+short_label: Abbott et al. 2017, GRB 170817A
+team: ligo-virgo-fermi-integral
+status: aktiv
+versions:
+- id: repositorium
+  kind: Fassung im Repositorium des Caltech
+  url: https://authors.library.caltech.edu/records/n30bb-yf022/preview/LIGO_2017pL13.pdf

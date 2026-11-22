@@ -1,0 +1,11 @@
+id: dec-2026-11-22-cl-protein-datenbank
+date: '2026-11-22'
+kind: aussage
+target_id: cl-protein-datenbank
+outcome: vorlaeufig_gestuetzt
+rationale: Die Veröffentlichung zur Datenbank nennt über 214 Millionen Strukturen. Es liegt eine Quelle
+  vor.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-protein-datenbank-2024
+status: vorgeschlagen

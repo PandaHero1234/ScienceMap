@@ -1,0 +1,13 @@
+id: lu-pet-nature-2022
+label: Lu et al., Machine learning-aided engineering of hydrolases for PET depolymerization (Nature 604,
+  662–667)
+short_label: Lu et al. 2022
+team: lu-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1038/s41586-022-04599-z
+- id: pubmed
+  kind: Eintrag in PubMed
+  url: https://pubmed.ncbi.nlm.nih.gov/35478237/

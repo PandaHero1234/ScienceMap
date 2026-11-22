@@ -1,0 +1,16 @@
+id: ev-federalist-fung-2003
+claim_id: cl-federalist-madison
+study_id: fung-federalist-tapia-2003
+study_version: dblp
+locator: Zusammenfassung des Verfahrens
+dataset_id: korpus-federalist
+metric: Zuordnung der umstrittenen Texte
+values:
+  Befund: alle zwölf umstrittenen Texte liegen auf derselben Seite der Trennebene, wie in früheren Arbeiten
+  Verfahren: Support Vector Machine mit den Häufigkeiten von drei Wörtern
+uncertainty: Entfällt. Das Verfahren liefert eine Zuordnung ohne Wahrscheinlichkeit.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Erfasst über die Ankündigung eines Vortrags zum Verfahren, nicht über den Artikel. Welche drei Wörter
+  es sind, ist nachzutragen.

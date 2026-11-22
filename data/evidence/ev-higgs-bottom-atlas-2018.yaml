@@ -1,0 +1,16 @@
+id: ev-higgs-bottom-atlas-2018
+claim_id: cl-higgs-bottom
+study_id: atlas-higgs-bottom-plb-2018
+study_version: journal
+locator: Abstract
+dataset_id: lhc-atlas-run1-run2
+metric: Signifikanz des Zerfalls
+values:
+  Signifikanz: 5,4 σ
+  Erwartete Signifikanz: 5,5 σ
+uncertainty: Erwarteter und beobachteter Wert sind angegeben.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Der Wert gilt für die Kombination der Suchen aus Run 1 und Run 2. Die Analyse der Erzeugung zusammen
+  mit einem W- oder Z-Boson allein ergibt 4,9 σ.

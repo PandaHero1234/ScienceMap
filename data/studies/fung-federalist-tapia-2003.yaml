@@ -1,0 +1,10 @@
+id: fung-federalist-tapia-2003
+label: 'Fung, The disputed Federalist Papers: SVM feature selection via concave minimization (Richard
+  Tapia Celebration of Diversity in Computing Conference 2003, 42–46)'
+short_label: Fung 2003
+team: fung
+status: aktiv
+versions:
+- id: dblp
+  kind: Eintrag in dblp
+  url: https://dblp.uni-trier.de/rec/conf/tapia/Fung03.html

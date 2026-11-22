@@ -1,0 +1,12 @@
+id: dec-2026-11-22-cl-higgs-bottom
+date: '2026-11-22'
+kind: aussage
+target_id: cl-higgs-bottom
+outcome: mehrfach_gestuetzt
+rationale: Zwei Experimente mit eigenen Detektoren berichten den Zerfall mit jeweils über 5 σ. Beide Werte
+  stammen aus Kombinationen mehrerer Suchen.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-higgs-bottom-atlas-2018
+- ev-higgs-bottom-cms-2018
+status: vorgeschlagen

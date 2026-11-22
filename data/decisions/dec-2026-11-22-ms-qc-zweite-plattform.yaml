@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-qc-zweite-plattform
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-qc-zweite-plattform
+catalog_version: 2
+outcome: erreicht
+rationale: Zhong et al. berichten ein Experiment mit Photonen statt supraleitenden Qubits.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-qc-jiuzhang-2020
+status: vorgeschlagen

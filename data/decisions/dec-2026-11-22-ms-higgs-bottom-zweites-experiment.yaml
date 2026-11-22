@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-higgs-bottom-zweites-experiment
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-higgs-bottom-zweites-experiment
+catalog_version: 2
+outcome: erreicht
+rationale: CMS berichtet den Zerfall mit 5,6 σ.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-higgs-bottom-cms-2018
+status: vorgeschlagen

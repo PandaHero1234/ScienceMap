@@ -1,0 +1,5 @@
+id: alphafold-datenbank
+title: AlphaFold Protein Structure Database
+short_title: AlphaFold-Datenbank
+kind: datensatz
+source: varadi-alphafold-db-nar-2024

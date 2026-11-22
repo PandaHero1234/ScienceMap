@@ -1,0 +1,11 @@
+id: dec-2026-11-22-cl-gwns-gammablitz
+date: '2026-11-22'
+kind: aussage
+target_id: cl-gwns-gammablitz
+outcome: vorlaeufig_gestuetzt
+rationale: Die gemeinsame Veröffentlichung nennt einen Zeitabstand von 1,74 Sekunden. Es liegt eine Quelle
+  vor.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-gwns-grb170817a-apjl
+status: vorgeschlagen

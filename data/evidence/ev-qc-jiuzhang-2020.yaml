@@ -1,0 +1,16 @@
+id: ev-qc-jiuzhang-2020
+claim_id: cl-qc-photonen
+study_id: zhong-jiuzhang-science-2020
+study_version: bericht
+locator: Bericht über die Studie
+dataset_id: jiuzhang-experiment-2020
+metric: Umfang und Dauer des Experiments
+values:
+  Nachgewiesene Photonen: bis zu 76, im Mittel 43
+  Kanäle: 100
+  Dauer eines Laufs: 200 Sekunden
+uncertainty: Die Schätzung des klassischen Aufwands ist aus dem Artikel nachzutragen.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Erfasst über Berichte über die Studie, nicht über das Abstract.

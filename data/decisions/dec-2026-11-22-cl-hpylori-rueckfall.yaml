@@ -2,10 +2,11 @@ id: dec-2026-11-22-cl-hpylori-rueckfall
 date: '2026-11-22'
 kind: aussage
 target_id: cl-hpylori-rueckfall
-outcome: vorlaeufig_gestuetzt
-rationale: Die kontrollierte Studie berichtet deutlich weniger Rückfälle. Es liegt eine Quelle vor, die
-  Raten fehlen noch.
+outcome: mehrfach_gestuetzt
+rationale: Zwei kontrollierte Studien verschiedener Gruppen berichten deutlich weniger Rückfälle. Für
+  die Studie von 1993 fehlen die Raten noch.
 suggested_by: Sprachmodell
 evidence_ids:
 - ev-hpylori-hentschel-1993
+- ev-hpylori-graham-1992
 status: vorgeschlagen

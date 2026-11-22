@@ -1,0 +1,17 @@
+id: ev-cart-laetsch-2023
+claim_id: cl-cart-drei-jahre
+study_id: laetsch-eliana-jco-2023
+study_version: pmc
+locator: Abstract
+dataset_id: nct02435849
+metric: Überleben nach 36 Monaten
+values:
+  Gesamtüberleben nach 36 Monaten: 63 %
+  Rückfallfreies Überleben nach 36 Monaten: 52 %
+  Behandelte: 79
+  Nachbeobachtung (Median): 38,8 Monate
+uncertainty: '95-%-Konfidenzintervall des Gesamtüberlebens: 51 bis 73 %.'
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Ein Kommentar in derselben Zeitschrift stellt die statistische Auswertung zur Diskussion.

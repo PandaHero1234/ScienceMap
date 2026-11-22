@@ -2,8 +2,8 @@ id: goal-higgs-boson
 field: Physik
 area: '103'
 topic: Higgs-Boson
-title: Das Higgs-Boson nachweisen und seine Masse bestimmen
-last_work: Drei Veröffentlichungen mit drei Belegen als Vorschlag erfasst
+title: Das Higgs-Boson nachweisen, seine Masse und seine Zerfälle bestimmen
+last_work: Fünf Veröffentlichungen mit fünf Belegen als Vorschlag erfasst
 open_question: Zweite Person gleicht Signifikanzen und Massenwerte mit den Veröffentlichungen ab
 milestones:
 - id: ms-higgs-nachweis
@@ -20,6 +20,15 @@ milestones:
   criterion: Eine gemeinsame Auswertung beider Experimente bestimmt die Masse mit einer Unsicherheit unter
     0,5 GeV.
   note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-higgs-bottom
+  title: Zerfall in Bottom-Quarks beobachten
+  criterion: Ein Experiment berichtet den Zerfall in Bottom-Quarks mit einer Signifikanz von mindestens
+    5 σ.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-higgs-bottom-zweites-experiment
+  title: Zerfall mit zweitem Experiment bestätigen
+  criterion: Ein zweites Experiment berichtet den Zerfall mit mindestens 5 σ.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
 catalog:
 - version: 1
   date: '2026-11-22'
@@ -28,3 +37,12 @@ catalog:
   - ms-higgs-nachweis
   - ms-higgs-zweites-experiment
   - ms-higgs-masse
+- version: 2
+  date: '2026-11-22'
+  reason: Ziel um den Zerfall in Bottom-Quarks erweitert
+  milestones:
+  - ms-higgs-nachweis
+  - ms-higgs-zweites-experiment
+  - ms-higgs-masse
+  - ms-higgs-bottom
+  - ms-higgs-bottom-zweites-experiment

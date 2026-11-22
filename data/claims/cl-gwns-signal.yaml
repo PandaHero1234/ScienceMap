@@ -1,0 +1,5 @@
+id: cl-gwns-signal
+statement: Das Signal GW170817 stammt von zwei verschmelzenden Neutronensternen.
+scope: Beobachtung vom 17. August 2017.
+milestone_ids:
+- ms-gwns-signal

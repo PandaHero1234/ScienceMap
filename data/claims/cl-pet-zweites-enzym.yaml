@@ -1,0 +1,6 @@
+id: cl-pet-zweites-enzym
+statement: Ein zweites, unabhängig entwickeltes Enzym (FAST-PETase) baut unbehandelte PET-Verpackungen
+  fast vollständig ab.
+scope: 51 gebrauchte, thermogeformte Verpackungen.
+milestone_ids:
+- ms-pet-zweites-enzym

@@ -1,0 +1,10 @@
+id: klein-manylabs2-ampps-2018
+label: 'Klein et al., Many Labs 2: Investigating Variation in Replicability Across Samples and Settings
+  (Adv. Methods Pract. Psychol. Sci. 1, 443–490)'
+short_label: Klein et al. 2018
+team: many-labs-2
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1177/2515245918810225

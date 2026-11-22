@@ -3,8 +3,8 @@ field: Informatik
 area: '102'
 topic: Quantenüberlegenheit
 title: Einen Rechenvorteil eines Quantenprozessors gegenüber klassischen Rechnern belegen
-last_work: Zwei Veröffentlichungen mit drei Belegen als Vorschlag erfasst
-open_question: Zweite Person gleicht Laufzeiten und Schätzungen mit den Veröffentlichungen ab
+last_work: Vier Veröffentlichungen mit fünf Belegen als Vorschlag erfasst
+open_question: Zweite Person prüft, ob spätere Simulationen auch diese Schätzungen überholt haben
 milestones:
 - id: ms-qc-experiment
   title: Experiment berichten
@@ -15,6 +15,16 @@ milestones:
   title: Klassischen Aufwand absichern
   criterion: Die Schätzung des klassischen Aufwands hält einer unabhängigen Nachrechnung stand.
   note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-qc-zweite-plattform
+  title: Auf einer zweiten Plattform zeigen
+  criterion: Ein Experiment mit anderer Technik berichtet eine Aufgabe, für die klassische Rechner nach
+    Schätzung der Gruppe weit länger brauchen.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-qc-groesserer-prozessor
+  title: Mit größerem supraleitendem Prozessor wiederholen
+  criterion: Ein Experiment mit mehr Qubits als bei Sycamore berichtet eine Aufgabe mit höherem geschätztem
+    klassischem Aufwand.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
 catalog:
 - version: 1
   date: '2026-11-22'
@@ -22,3 +32,11 @@ catalog:
   milestones:
   - ms-qc-experiment
   - ms-qc-klassischer-aufwand
+- version: 2
+  date: '2026-11-22'
+  reason: Ziel um eine zweite Plattform und einen größeren Prozessor erweitert
+  milestones:
+  - ms-qc-experiment
+  - ms-qc-klassischer-aufwand
+  - ms-qc-zweite-plattform
+  - ms-qc-groesserer-prozessor

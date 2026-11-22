@@ -1,0 +1,10 @@
+id: dec-2026-11-22-cl-cart-drei-jahre
+date: '2026-11-22'
+kind: aussage
+target_id: cl-cart-drei-jahre
+outcome: vorlaeufig_gestuetzt
+rationale: Die Auswertung nach drei Jahren nennt 63 % Gesamtüberleben. Es liegt eine Quelle vor.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-cart-laetsch-2023
+status: vorgeschlagen

@@ -1,0 +1,17 @@
+id: ev-knobe-manylabs2-2018
+claim_id: cl-knobe-nebenfolgen
+study_id: klein-manylabs2-ampps-2018
+study_version: journal
+locator: Ergebnis zu diesem Befund
+dataset_id: replikation-manylabs2-2018
+metric: Replikation des Befunds von 2003
+values:
+  Befund: repliziert, mit größerer Effektstärke als im Original
+  Stichproben der gesamten Studie: 125
+  Teilnehmende der gesamten Studie: 15305
+uncertainty: Die Effektstärke für diesen Befund ist aus dem Volltext nachzutragen.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Das Ergebnis ist bisher über eine Sekundärquelle erfasst. Jedes Protokoll lief in etwa der Hälfte
+  der Stichproben.

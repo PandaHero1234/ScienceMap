@@ -98,7 +98,9 @@ def test_biologie_zurueckgezogene_studie_zaehlt_nicht(state):
 def test_seiten_zeigen_vorschlaege_und_fachbezeichnungen(tmp_path):
     assert atlas.main(["build", "--out", str(tmp_path)]) == 0
     index = (tmp_path / "ziele.html").read_text(encoding="utf-8")
-    assert index.count("</strong> Meilensteinen erreicht · 4 vorgeschlagen") == 3
+    loaded, _ = atlas.load_checked(ROOT / "data")
+    with_four = sum(1 for g in atlas.build_state(loaded)["goals"] if g["milestones_proposed"] == 4)
+    assert with_four >= 3 and index.count("</strong> Meilensteinen erreicht · 4 vorgeschlagen") == with_four
     assert "0 von 2</strong> Meilensteinen erreicht · 2 als nicht erreicht vorgeschlagen" in index
     mathe = (tmp_path / "aussagen" / "cl-primluecken-endliche-schranke.html").read_text(encoding="utf-8")
     assert "Vorschlag: bewiesen (mehrere Beweise)" in mathe

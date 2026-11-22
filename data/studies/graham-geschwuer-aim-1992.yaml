@@ -1,0 +1,13 @@
+id: graham-geschwuer-aim-1992
+label: Graham et al., Effect of treatment of Helicobacter pylori infection on the long-term recurrence
+  of gastric or duodenal ulcer. A randomized, controlled study (Ann. Intern. Med. 116, 705–708)
+short_label: Graham et al. 1992
+team: graham-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.7326/0003-4819-116-9-705
+- id: pubmed
+  kind: Eintrag in PubMed
+  url: https://pubmed.ncbi.nlm.nih.gov/1558340/

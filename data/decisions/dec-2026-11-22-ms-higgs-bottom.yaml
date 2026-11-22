@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-higgs-bottom
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-higgs-bottom
+catalog_version: 2
+outcome: erreicht
+rationale: ATLAS berichtet den Zerfall mit 5,4 σ.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-higgs-bottom-atlas-2018
+status: vorgeschlagen

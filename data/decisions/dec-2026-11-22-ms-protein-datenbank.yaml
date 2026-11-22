@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-protein-datenbank
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-protein-datenbank
+catalog_version: 2
+outcome: erreicht
+rationale: Die Datenbank enthält über 214 Millionen Vorhersagen.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-protein-datenbank-2024
+status: vorgeschlagen

@@ -1,0 +1,14 @@
+id: ev-protein-komplexe-2024
+claim_id: cl-protein-komplexe
+study_id: abramson-alphafold3-nature-2024
+study_version: journal
+locator: Abstract
+dataset_id: vergleich-alphafold3
+metric: Genauigkeit im Vergleich mit spezialisierten Werkzeugen
+values:
+  Befund: deutlich genauer bei Bindungen von Proteinen an kleine Moleküle und an Nukleinsäuren
+uncertainty: Im Abstract nicht beziffert.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Der Vergleich stammt von den Entwicklern selbst. Eine unabhängige Prüfung ist nicht erfasst.
