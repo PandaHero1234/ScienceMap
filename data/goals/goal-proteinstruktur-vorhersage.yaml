@@ -1,0 +1,24 @@
+id: goal-proteinstruktur-vorhersage
+field: Biologie
+area: '106'
+topic: Proteinstrukturvorhersage
+title: Proteinstrukturen aus der Sequenz mit experimentnaher Genauigkeit vorhersagen
+last_work: Zwei Veröffentlichungen mit zwei Belegen als Vorschlag erfasst
+open_question: Zweite Person trägt die Zahlenwerte des zweiten Verfahrens aus dem Volltext nach
+milestones:
+- id: ms-protein-blindtest
+  title: Im Blindvergleich bestehen
+  criterion: Ein Verfahren erreicht in einem verblindeten Vergleich eine mittlere Abweichung des Rückgrats
+    von höchstens 1 Å.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-protein-zweites-verfahren
+  title: Mit zweitem Verfahren bestätigen
+  criterion: Ein von einer anderen Gruppe entwickeltes Verfahren erreicht Genauigkeiten nahe dem ersten.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+catalog:
+- version: 1
+  date: '2026-11-22'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-protein-blindtest
+  - ms-protein-zweites-verfahren

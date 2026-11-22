@@ -1,0 +1,30 @@
+id: goal-kreide-einschlag
+field: Geowissenschaften
+area: '105'
+topic: Massenaussterben am Ende der Kreidezeit
+title: Den Einschlag am Ende der Kreidezeit belegen und zeitlich mit dem Massenaussterben verbinden
+last_work: Drei Veröffentlichungen mit drei Belegen als Vorschlag erfasst
+open_question: Zweite Person trägt die Anreicherungsfaktoren des Iridiums aus dem Volltext nach
+milestones:
+- id: ms-kpg-iridium
+  title: Iridium-Anomalie belegen
+  criterion: Eine Anreicherung von Iridium an der Kreide-Paläogen-Grenze ist in einer begutachteten Veröffentlichung
+    berichtet.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-kpg-krater
+  title: Krater finden
+  criterion: Ein Einschlagkrater passender Größe ist identifiziert.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-kpg-datierung
+  title: Gleichzeitigkeit datieren
+  criterion: Einschlag und Grenze sind radiometrisch als gleichzeitig datiert, mit einem Abstand von unter
+    100 000 Jahren.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+catalog:
+- version: 1
+  date: '2026-11-22'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-kpg-iridium
+  - ms-kpg-krater
+  - ms-kpg-datierung

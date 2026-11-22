@@ -1,0 +1,29 @@
+id: goal-mrna-impfstoff
+field: Medizin
+area: '302'
+topic: mRNA-Impfstoffe gegen COVID-19
+title: Die Wirksamkeit von mRNA-Impfstoffen gegen COVID-19 belegen
+last_work: Drei Veröffentlichungen mit drei Belegen als Vorschlag erfasst
+open_question: Zweite Person trägt die Konfidenzintervalle der beiden Phase-3-Studien nach
+milestones:
+- id: ms-mrna-phase3
+  title: Phase-3-Studie berichten
+  criterion: Eine Phase-3-Studie berichtet die Wirksamkeit gegen COVID-19 in einer begutachteten Veröffentlichung.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-mrna-zweite-studie
+  title: Mit zweiter Studie bestätigen
+  criterion: Eine zweite Phase-3-Studie eines anderen Sponsors mit einem anderen mRNA-Impfstoff berichtet
+    die Wirksamkeit.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-mrna-bevoelkerung
+  title: In der Bevölkerung bestätigen
+  criterion: Eine Beobachtungsstudie außerhalb klinischer Studien berichtet die Wirksamkeit.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+catalog:
+- version: 1
+  date: '2026-11-22'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-mrna-phase3
+  - ms-mrna-zweite-studie
+  - ms-mrna-bevoelkerung

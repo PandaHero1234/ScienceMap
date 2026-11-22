@@ -1,0 +1,6 @@
+id: cl-rosettafold-genauigkeit
+statement: Ein von einer anderen Gruppe entwickeltes Verfahren (RoseTTAFold) erreicht Genauigkeiten nahe
+  denen von AlphaFold in CASP14.
+scope: Vergleich auf den Zielen von CASP14.
+milestone_ids:
+- ms-protein-zweites-verfahren

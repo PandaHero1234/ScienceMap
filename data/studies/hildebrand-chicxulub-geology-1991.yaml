@@ -1,0 +1,10 @@
+id: hildebrand-chicxulub-geology-1991
+label: 'Hildebrand et al., Chicxulub Crater: A possible Cretaceous/Tertiary boundary impact crater on
+  the Yucatán Peninsula, Mexico (Geology 19, 867–871)'
+short_label: Hildebrand et al. 1991
+team: hildebrand-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Nachweis in der Publikationsdatenbank der University of Arizona
+  url: https://experts.arizona.edu/en/publications/chicxulub-crater-a-possible-cretaceoustertiary-boundary-impact-cr/

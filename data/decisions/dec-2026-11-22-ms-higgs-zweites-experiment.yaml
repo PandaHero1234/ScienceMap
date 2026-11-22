@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-higgs-zweites-experiment
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-higgs-zweites-experiment
+catalog_version: 1
+outcome: erreicht
+rationale: CMS berichtet das Teilchen mit einer lokalen Signifikanz von 5,0 σ.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-higgs-cms-2012
+status: vorgeschlagen

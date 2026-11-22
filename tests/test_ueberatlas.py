@@ -16,17 +16,13 @@ ROOT = Path(__file__).resolve().parent.parent
 
 
 @pytest.fixture(scope="module")
-def state() -> dict:
-    loaded, errors = atlas.load_checked(ROOT / "data")
-    assert errors == []
-    return atlas.build_state(loaded)
+def state(real_state) -> dict:
+    return real_state
 
 
 @pytest.fixture(scope="module")
-def site(tmp_path_factory) -> Path:
-    out = tmp_path_factory.mktemp("ueberatlas")
-    assert atlas.main(["build", "--out", str(out)]) == 0
-    return out
+def site(real_site) -> Path:
+    return real_site
 
 
 def test_systematik_hat_sechs_bereiche_und_42_fachgebiete(state):
@@ -37,10 +33,15 @@ def test_systematik_hat_sechs_bereiche_und_42_fachgebiete(state):
     assert all(a["code"].startswith(r["code"]) for r in state["realms"] for a in r["areas"])
 
 
-def test_vier_fachgebiete_haben_eintraege(state):
-    assert state["coverage"] == {"areas": 42, "covered": 4}
+def test_abdeckung_zaehlt_die_fachgebiete_mit_eintraegen(state):
     covered = {a["name"]: len(a["goal_ids"]) for r in state["realms"] for a in r["areas"] if a["goal_ids"]}
-    assert covered == {"Mathematik": 1, "Informatik": 1, "Physik, Astronomie": 1, "Biologie": 2}
+    assert state["coverage"] == {"areas": 42, "covered": len(covered)}
+    assert {"Mathematik", "Informatik", "Physik, Astronomie", "Biologie"} <= set(covered)
+    assert sum(covered.values()) == len(state["goals"]), "jedes Ziel liegt in genau einem Fachgebiet"
+
+
+def test_alle_sechs_bereiche_haben_eintraege(state):
+    assert all(r["tally"] for r in state["realms"]), "der Ausbau reicht in jeden Bereich"
 
 
 def test_fachgebiete_ergeben_zusammen_den_gesamtstand(state):
@@ -80,31 +81,36 @@ def test_ziel_ohne_fachgebiet_stoppt(tmp_path):
     assert any("goal-primzahlluecken" in e and "area" in e for e in errors)
 
 
-def test_startseite_zeigt_alle_fachgebiete_auch_die_leeren(site):
+def test_startseite_zeigt_alle_fachgebiete_auch_die_leeren(site, state):
     index = (site / "index.html").read_text(encoding="utf-8")
+    covered = state["coverage"]["covered"]
     assert len(re.findall(r'class="area(?: has)?"', index)) == 42
-    assert index.count('<a class="area has" href="fach/') == 4
-    assert index.count("noch kein Eintrag") == 38
-    assert "<b>4 von 42</b><span>Fachgebieten mit Einträgen</span>" in index
-    assert "<b>38</b> Fachgebiete haben noch keinen Eintrag." in index
-    assert '<a href="bereich/naturwissenschaften.html">Naturwissenschaften</a> <small>4 von 7 mit Einträgen</small>' in index
-    assert '<a href="bereich/geisteswissenschaften.html">Geisteswissenschaften</a> <small>0 von 5 mit Einträgen</small>' in index
+    assert index.count('<a class="area has" href="fach/') == covered
+    assert index.count("noch kein Eintrag") == 42 - covered
+    assert f"<b>{covered} von 42</b><span>Fachgebieten mit Einträgen</span>" in index
+    assert f"<b>{42 - covered}</b> Fachgebiete haben noch keinen Eintrag." in index
+    for realm in state["realms"]:
+        inside = sum(1 for a in realm["areas"] if a["goal_ids"])
+        assert f'{realm["name"]}</a> <small>{inside} von {len(realm["areas"])} mit Einträgen</small>' in index
 
 
-def test_feld_auf_der_karte_nennt_stand_und_fuehrt_zum_fachatlas(site):
+def test_feld_auf_der_karte_nennt_stand_und_fuehrt_zum_fachatlas(site, state):
     index = (site / "index.html").read_text(encoding="utf-8")
+    area = next(a for r in state["realms"] for a in r["areas"] if a["name"] == "Biologie")
+    m = area["tally"]["milestones"]
     cell = index[index.index('<a class="area has" href="fach/biologie.html">'):]
     cell = cell[:cell.index("</a>")]
-    assert "0 von 6 erreicht · 4 vorgeschlagen" in cell and "2 Ziele" in cell
+    assert f"0 von {m['total']} erreicht · {m['proposed']} vorgeschlagen" in cell
+    assert f"{len(area['goal_ids'])} Ziele" in cell
     assert (site / "fach" / "biologie.html").is_file()
 
 
-def test_fachatlas_zeigt_stand_teilgebiete_und_tabelle_des_fachs(site):
+def test_fachatlas_zeigt_stand_teilgebiete_und_tabelle_des_fachs(site, state):
     page = (site / "fach" / "biologie.html").read_text(encoding="utf-8")
+    area = next(a for r in state["realms"] for a in r["areas"] if a["name"] == "Biologie")
     assert "<h1>Biologie</h1>" in page and "Fachgebiet 106" in page
-    assert "<b>0 von 6</b><span>Meilensteinen erreicht · 0 %</span>" in page
-    assert "<b>18</b>" in page, "offene Prüfungen nur dieses Fachgebiets"
-    assert page.count('<div class="topic">') == 1, "beide Genom-Ziele gehören zu einem Teilgebiet"
+    assert f"<b>0 von {area['tally']['milestones']['total']}</b><span>Meilensteinen erreicht · 0 %</span>" in page
+    assert page.count('<div class="topic">') == len(area["topics"])
     assert '<a class="topic-title" href="../thema/106-genom-editierung.html">Genom-Editierung</a>' in page
     assert "Gravitationswellen" not in page, "Ziele anderer Fachgebiete gehören nicht hierher"
     order = [page.index(text) for text in ("Stand des Fachgebiets", "<h2>Teilgebiete</h2>", "Stand nach Ziel", "Was noch fehlt")]
@@ -118,9 +124,9 @@ def test_ziel_und_aussage_fuehren_zurueck_zum_fachatlas(site):
     assert '<a href="../fach/physik-astronomie.html">Physik, Astronomie</a>' in claim
 
 
-def test_progress_json_enthaelt_die_abdeckung(site):
+def test_progress_json_enthaelt_die_abdeckung(site, state):
     progress = json.loads((site / "progress.json").read_text(encoding="utf-8"))
-    assert progress["coverage"] == {"areas": 42, "covered": 4}
+    assert progress["coverage"] == state["coverage"]
     assert [r["name"] for r in progress["realms"]][:2] == ["Naturwissenschaften", "Technische Wissenschaften"]
 
 

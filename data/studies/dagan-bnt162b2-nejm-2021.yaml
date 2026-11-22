@@ -1,0 +1,11 @@
+id: dagan-bnt162b2-nejm-2021
+label: Dagan et al., BNT162b2 mRNA Covid-19 Vaccine in a Nationwide Mass Vaccination Setting (N. Engl.
+  J. Med. 384, 1412–1423)
+short_label: Dagan et al. 2021
+team: clalit-forschungsinstitut
+status: aktiv
+published: '2021-02-24'
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1056/NEJMoa2101765

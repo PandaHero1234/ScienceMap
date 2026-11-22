@@ -1,0 +1,23 @@
+id: goal-richard-iii
+field: Geschichte und Archäologie
+area: '601'
+topic: Identifizierung historischer Personen
+title: Das 2012 in Leicester gefundene Skelett als Richard III. identifizieren
+last_work: Eine Veröffentlichung mit einem Beleg als Vorschlag erfasst
+open_question: Zweite Person sucht eine Bestätigung durch eine zweite Arbeitsgruppe
+milestones:
+- id: ms-r3-genetik
+  title: Genetisch vergleichen
+  criterion: Eine begutachtete Veröffentlichung vergleicht das Erbgut des Skeletts mit lebenden Verwandten.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-r3-zweite-gruppe
+  title: Durch zweite Gruppe bestätigen
+  criterion: Eine zweite Arbeitsgruppe bestätigt die Zuordnung mit eigenen Analysen.
+  note: Offen. Im Atlas ist kein Beleg erfasst.
+catalog:
+- version: 1
+  date: '2026-11-22'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-r3-genetik
+  - ms-r3-zweite-gruppe

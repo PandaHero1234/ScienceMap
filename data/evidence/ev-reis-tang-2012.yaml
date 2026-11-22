@@ -1,0 +1,16 @@
+id: ev-reis-tang-2012
+claim_id: cl-reis-kinder
+study_id: tang-golden-rice-ajcn-2012
+study_version: journal
+locator: Titel
+basis_ids:
+- studie-tang-2012
+metric: Vergleich mit β-Carotin in Öl
+values:
+  Befund: Gleichwertigkeit mit β-Carotin in Öl berichtet
+uncertainty: offen
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Zurückgezogen wegen Mängeln bei Ethikvotum und Teilnahme, nicht wegen der Messwerte. Die DOI der
+  Veröffentlichung ist noch nicht geprüft.

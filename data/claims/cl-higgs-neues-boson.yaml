@@ -1,0 +1,6 @@
+id: cl-higgs-neues-boson
+statement: Bei einer Masse von etwa 125 GeV existiert ein neues Boson, nachgewiesen mit mindestens 5 σ.
+scope: Proton-Proton-Kollisionen am LHC in den Jahren 2011 und 2012.
+milestone_ids:
+- ms-higgs-nachweis
+- ms-higgs-zweites-experiment

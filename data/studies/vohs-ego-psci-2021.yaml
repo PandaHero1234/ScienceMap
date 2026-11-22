@@ -1,0 +1,10 @@
+id: vohs-ego-psci-2021
+label: Vohs et al., A Multisite Preregistered Paradigmatic Test of the Ego-Depletion Effect (Psychol.
+  Sci. 32, 1566–1581)
+short_label: Vohs et al. 2021
+team: vohs-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Eintrag in PubMed
+  url: https://pubmed.ncbi.nlm.nih.gov/34520296/

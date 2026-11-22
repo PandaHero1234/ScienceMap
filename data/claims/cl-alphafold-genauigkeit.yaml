@@ -1,0 +1,6 @@
+id: cl-alphafold-genauigkeit
+statement: AlphaFold sagt im verblindeten Vergleich CASP14 das Rückgrat von Proteinen mit einer mittleren
+  Abweichung von unter 1 Å voraus.
+scope: 87 Proteindomänen aus CASP14. Die Aussage gilt für diesen Vergleich und nicht für jedes Protein.
+milestone_ids:
+- ms-protein-blindtest

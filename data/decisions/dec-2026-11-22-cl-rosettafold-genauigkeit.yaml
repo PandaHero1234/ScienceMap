@@ -1,0 +1,10 @@
+id: dec-2026-11-22-cl-rosettafold-genauigkeit
+date: '2026-11-22'
+kind: aussage
+target_id: cl-rosettafold-genauigkeit
+outcome: vorlaeufig_gestuetzt
+rationale: Die Veröffentlichung berichtet Genauigkeiten nahe denen von AlphaFold, im Abstract ohne Zahl.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-rosettafold-2021
+status: vorgeschlagen

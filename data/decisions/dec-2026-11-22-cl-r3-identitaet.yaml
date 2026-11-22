@@ -1,0 +1,11 @@
+id: dec-2026-11-22-cl-r3-identitaet
+date: '2026-11-22'
+kind: aussage
+target_id: cl-r3-identitaet
+outcome: vorlaeufig_gestuetzt
+rationale: Die Veröffentlichung nennt einen Likelihood-Quotienten von 6,7 Millionen. Es liegt eine Quelle
+  vor.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-r3-king-2014
+status: vorgeschlagen

@@ -1,0 +1,16 @@
+id: ev-higgs-masse-2015
+claim_id: cl-higgs-masse
+study_id: atlas-cms-higgs-masse-prl-2015
+study_version: journal
+locator: Abstract
+basis_ids:
+- lhc-atlas-2011-2012
+- lhc-cms-2011-2012
+metric: Masse des Higgs-Bosons
+values:
+  Masse: 125,09 ± 0,21 (stat.) ± 0,11 (syst.) GeV
+uncertainty: Statistische und systematische Unsicherheit sind angegeben.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Fundstelle bisher nur auf Ebene des Abstracts erfasst. Tabelle oder Abbildung im Volltext ist nachzutragen.

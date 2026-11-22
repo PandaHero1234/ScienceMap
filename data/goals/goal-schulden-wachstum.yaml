@@ -1,0 +1,23 @@
+id: goal-schulden-wachstum
+field: Wirtschaftswissenschaften
+area: '502'
+topic: Staatsverschuldung und Wachstum
+title: Den Wachstumseinbruch bei hoher Staatsverschuldung nachrechnen
+last_work: Zwei Veröffentlichungen mit zwei Belegen als Vorschlag erfasst
+open_question: Zweite Person trägt Tabelle und Seitenzahl der Originalarbeit nach
+milestones:
+- id: ms-rr-befund
+  title: Befund belegen
+  criterion: Der Befund ist veröffentlicht.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-rr-nachrechnung
+  title: Unabhängig nachrechnen
+  criterion: Eine unabhängige Nachrechnung mit den Daten der Autoren erhält denselben Wert.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+catalog:
+- version: 1
+  date: '2026-11-22'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-rr-befund
+  - ms-rr-nachrechnung

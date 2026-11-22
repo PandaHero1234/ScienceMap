@@ -1,0 +1,10 @@
+id: ye-golden-rice-science-2000
+label: Ye et al., Engineering the provitamin A (β-carotene) biosynthetic pathway into (carotenoid-free)
+  rice endosperm (Science 287, 2000)
+short_label: Ye et al. 2000
+team: ye-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1126/science.287.5451.303

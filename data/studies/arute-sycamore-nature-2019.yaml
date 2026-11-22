@@ -1,0 +1,9 @@
+id: arute-sycamore-nature-2019
+label: Arute et al., Quantum supremacy using a programmable superconducting processor (Nature 574, 505)
+short_label: Arute et al. 2019
+team: google-ai-quantum
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1038/s41586-019-1666-5

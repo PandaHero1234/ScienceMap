@@ -1,0 +1,10 @@
+id: dec-2026-11-22-cl-kpg-iridium
+date: '2026-11-22'
+kind: aussage
+target_id: cl-kpg-iridium
+outcome: vorlaeufig_gestuetzt
+rationale: Die Veröffentlichung berichtet die Anreicherung. Es liegt eine Quelle vor.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-kpg-alvarez-1980
+status: vorgeschlagen

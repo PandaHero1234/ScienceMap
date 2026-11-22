@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-kpg-krater
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-kpg-krater
+catalog_version: 1
+outcome: erreicht
+rationale: Hildebrand et al. beschreiben die Struktur von Chicxulub als Einschlagkrater.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-kpg-hildebrand-1991
+status: vorgeschlagen

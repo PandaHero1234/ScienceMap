@@ -1,0 +1,30 @@
+id: goal-higgs-boson
+field: Physik
+area: '103'
+topic: Higgs-Boson
+title: Das Higgs-Boson nachweisen und seine Masse bestimmen
+last_work: Drei Veröffentlichungen mit drei Belegen als Vorschlag erfasst
+open_question: Zweite Person gleicht Signifikanzen und Massenwerte mit den Veröffentlichungen ab
+milestones:
+- id: ms-higgs-nachweis
+  title: Neues Boson nachweisen
+  criterion: Ein Experiment berichtet in einer begutachteten Veröffentlichung ein neues Boson mit einer
+    Signifikanz von mindestens 5 σ.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-higgs-zweites-experiment
+  title: Mit zweitem Experiment bestätigen
+  criterion: Ein zweites Experiment mit eigenem Detektor berichtet das Teilchen mit mindestens 5 σ.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-higgs-masse
+  title: Masse gemeinsam bestimmen
+  criterion: Eine gemeinsame Auswertung beider Experimente bestimmt die Masse mit einer Unsicherheit unter
+    0,5 GeV.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+catalog:
+- version: 1
+  date: '2026-11-22'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-higgs-nachweis
+  - ms-higgs-zweites-experiment
+  - ms-higgs-masse

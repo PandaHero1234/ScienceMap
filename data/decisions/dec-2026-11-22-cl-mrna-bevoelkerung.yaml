@@ -1,0 +1,11 @@
+id: dec-2026-11-22-cl-mrna-bevoelkerung
+date: '2026-11-22'
+kind: aussage
+target_id: cl-mrna-bevoelkerung
+outcome: vorlaeufig_gestuetzt
+rationale: Die Beobachtungsstudie nennt 94 % mit einem Konfidenzintervall von 87 bis 98 %. Es liegt eine
+  Quelle vor.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-mrna-dagan-2021
+status: vorgeschlagen

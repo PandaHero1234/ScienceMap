@@ -1,0 +1,12 @@
+id: dec-2026-11-22-ms-lk99-replikation
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-lk99-replikation
+catalog_version: 1
+outcome: nicht_erreicht
+rationale: Zwei Gruppen finden an eigenen Proben keine Kennzeichen der Supraleitung.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-lk99-puphal-2023
+- ev-lk99-zhu-2023
+status: vorgeschlagen

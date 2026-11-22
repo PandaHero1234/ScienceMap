@@ -1,0 +1,12 @@
+id: zhu-lk99-matter-2023
+label: Zhu et al., First-order transition in LK-99 containing Cu2S (Matter, 2023)
+short_label: Zhu et al. 2023
+team: zhu-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1016/j.matt.2023.11.001
+- id: arxiv
+  kind: Preprint arXiv:2308.04353
+  url: https://arxiv.org/abs/2308.04353

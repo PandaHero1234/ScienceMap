@@ -1,0 +1,12 @@
+id: dec-2026-11-22-cl-mrna-phase3-wirksam
+date: '2026-11-22'
+kind: aussage
+target_id: cl-mrna-phase3-wirksam
+outcome: mehrfach_gestuetzt
+rationale: Zwei Phase-3-Studien verschiedener Sponsoren mit zwei verschiedenen Impfstoffen nennen 95 %
+  und 94,1 %.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-mrna-polack-2020
+- ev-mrna-baden-2021
+status: vorgeschlagen

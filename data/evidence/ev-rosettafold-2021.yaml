@@ -1,0 +1,14 @@
+id: ev-rosettafold-2021
+claim_id: cl-rosettafold-genauigkeit
+study_id: baek-rosettafold-science-2021
+study_version: journal
+locator: Abstract
+dataset_id: casp14
+metric: Genauigkeit im Vergleich zu AlphaFold in CASP14
+values:
+  Befund: Genauigkeiten nahe denen von DeepMind in CASP14
+uncertainty: Im Abstract nicht beziffert.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Der Wortlaut stammt aus dem Abstract der Vorabfassung. Zahlenwerte sind aus dem Volltext nachzutragen.

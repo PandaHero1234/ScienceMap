@@ -1,0 +1,9 @@
+id: hales-kepler-annals-2005
+label: Hales, A proof of the Kepler conjecture (Ann. of Math. 162, 2005, 1065–1185)
+short_label: Hales 2005
+team: hales
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.4007/annals.2005.162.1065

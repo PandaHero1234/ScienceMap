@@ -1,0 +1,14 @@
+id: ev-lk99-lee-2023
+claim_id: cl-lk99-supraleiter
+study_id: lee-lk99-arxiv-2023
+study_version: journal
+locator: Titel
+dataset_id: exp-lee-lk99
+metric: Kennzeichen der Supraleitung
+values:
+  Befund: Supraleitung bei Raumtemperatur und Normaldruck berichtet
+uncertainty: offen
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Vorabveröffentlichung ohne Begutachtung. Die Kennung des Preprints ist noch nicht geprüft.

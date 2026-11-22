@@ -1,0 +1,12 @@
+id: dec-2026-11-22-cl-rr-wachstum-ueber-90
+date: '2026-11-22'
+kind: aussage
+target_id: cl-rr-wachstum-ueber-90
+outcome: spricht_dagegen
+rationale: Die Nachrechnung mit den Daten der Autoren ergibt 2,2 % statt −0,1 %. Die Autoren haben den
+  Fehler in der Tabellenkalkulation eingeräumt.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-rr-2010
+- ev-rr-nachrechnung-2014
+status: vorgeschlagen

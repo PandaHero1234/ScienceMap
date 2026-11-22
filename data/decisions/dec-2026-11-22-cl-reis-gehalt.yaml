@@ -1,0 +1,10 @@
+id: dec-2026-11-22-cl-reis-gehalt
+date: '2026-11-22'
+kind: aussage
+target_id: cl-reis-gehalt
+outcome: vorlaeufig_gestuetzt
+rationale: Die Veröffentlichung nennt bis zu 37 µg je Gramm. Es liegt eine Quelle vor.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-reis-paine-2005
+status: vorgeschlagen

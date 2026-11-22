@@ -153,16 +153,19 @@ def test_nach_freigabe_sind_alle_aussagen_der_drei_faecher_eingestuft(approved):
         assert claim["conflict"] == []
 
 
-def test_nach_freigabe_stimmt_der_gesamtstand(approved):
-    assert approved["totals"]["milestones"] == {
-        "total": 19, "reached": 12, "proposed": 0, "proposed_failed": 0, "failed": 2, "open": 5}
-    assert approved["totals"]["claims"] == {"total": 12, "reviewed": 11}
-    assert approved["totals"]["evidence"] == {"total": 21, "reviewed": 21}
+def test_nach_freigabe_stimmt_der_gesamtstand(approved, real_state):
+    before, after = real_state["totals"]["milestones"], approved["totals"]["milestones"]
+    assert after == {"total": before["total"], "reached": before["proposed"], "proposed": 0, "proposed_failed": 0,
+                     "failed": before["proposed_failed"], "open": before["open"]}, "jeder Vorschlag wird zu seinem Ergebnis"
+    with_proposal = sum(1 for c in real_state["claims"] if c["open_proposals"])
+    assert approved["totals"]["claims"] == {"total": len(real_state["claims"]), "reviewed": with_proposal}
+    total = real_state["totals"]["evidence"]["total"]
+    assert approved["totals"]["evidence"] == {"total": total, "reviewed": total}
 
 
-def test_nach_freigabe_steht_jede_entscheidung_im_verlauf(approved):
+def test_nach_freigabe_steht_jede_entscheidung_im_verlauf(approved, real_atlas):
     decisions = [e for e in approved["history"] if e["type"] == "entscheidung"]
-    assert len(decisions) == 25
+    assert len(decisions) == len(real_atlas.decisions)
     ngago = by_id([{"id": e["decision_id"], **e} for e in decisions], "dec-2026-11-21-ms-ngago-erstbefund")
     assert ngago["new"] == "nicht_erreicht"
     assert ngago["sources"][0]["study"].startswith("Gao et al.")

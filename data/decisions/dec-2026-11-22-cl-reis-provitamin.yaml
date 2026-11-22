@@ -1,0 +1,10 @@
+id: dec-2026-11-22-cl-reis-provitamin
+date: '2026-11-22'
+kind: aussage
+target_id: cl-reis-provitamin
+outcome: vorlaeufig_gestuetzt
+rationale: Die Veröffentlichung berichtet Provitamin A im Endosperm. Es liegt eine Quelle vor.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-reis-ye-2000
+status: vorgeschlagen

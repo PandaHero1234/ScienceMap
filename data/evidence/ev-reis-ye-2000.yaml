@@ -1,0 +1,14 @@
+id: ev-reis-ye-2000
+claim_id: cl-reis-provitamin
+study_id: ye-golden-rice-science-2000
+study_version: journal
+locator: Titel
+dataset_id: exp-ye-2000
+metric: Provitamin A im Endosperm
+values:
+  Befund: Biosyntheseweg für Provitamin A in das Endosperm von Reis eingebracht
+uncertainty: offen
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Die Angaben zur Veröffentlichung und die Gehalte sind noch mit dem Original abzugleichen.

@@ -1,0 +1,14 @@
+id: ev-lk99-puphal-2023
+claim_id: cl-lk99-supraleiter
+study_id: puphal-lk99-aplm-2023
+study_version: journal
+locator: Abstract
+dataset_id: exp-puphal-lk99
+metric: Elektrische und magnetische Eigenschaften
+values:
+  Befund: Phasenreine Einkristalle sind stark isolierend. Keines der behaupteten Kennzeichen der Supraleitung
+    ist bestätigt
+uncertainty: Im Abstract nicht beziffert.
+relation: spricht_dagegen
+review_status: vorgeschlagen
+suggested_by: Sprachmodell

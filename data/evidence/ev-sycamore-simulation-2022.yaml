@@ -1,0 +1,14 @@
+id: ev-sycamore-simulation-2022
+claim_id: cl-sycamore-klassischer-aufwand
+study_id: pan-sycamore-prl-2022
+study_version: journal
+locator: Abstract
+dataset_id: simulation-pan-2022
+metric: Laufzeit einer klassischen Simulation derselben Aufgabe
+values:
+  Laufzeit: etwa 15 Stunden auf 512 Grafikprozessoren
+  Fidelity der Stichproben: 0,0037
+uncertainty: Als ungefähre Angabe berichtet.
+relation: spricht_dagegen
+review_status: vorgeschlagen
+suggested_by: Sprachmodell

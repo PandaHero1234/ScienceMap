@@ -1,0 +1,13 @@
+id: cms-higgs-plb-2012
+label: CMS Collaboration, Observation of a new boson at a mass of 125 GeV with the CMS experiment at the
+  LHC (Phys. Lett. B 716, 30)
+short_label: CMS 2012
+team: cms-kollaboration
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1016/j.physletb.2012.08.021
+- id: arxiv
+  kind: Preprint arXiv:1207.7235
+  url: https://arxiv.org/abs/1207.7235

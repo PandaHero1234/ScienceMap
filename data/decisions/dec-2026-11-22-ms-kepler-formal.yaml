@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-kepler-formal
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-kepler-formal
+catalog_version: 1
+outcome: erreicht
+rationale: Das Flyspeck-Projekt berichtet die formale Prüfung in HOL Light und Isabelle.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-kepler-flyspeck-2017
+status: vorgeschlagen

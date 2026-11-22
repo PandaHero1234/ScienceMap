@@ -1,0 +1,13 @@
+id: dec-2026-11-22-cl-ego-depletion
+date: '2026-11-22'
+kind: aussage
+target_id: cl-ego-depletion
+outcome: widerspruechlich
+rationale: Der Erstbefund berichtet den Effekt. Zwei große, vorab registrierte Replikationen finden Effekte
+  nahe null.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-ego-baumeister-1998
+- ev-ego-hagger-2016
+- ev-ego-vohs-2021
+status: vorgeschlagen

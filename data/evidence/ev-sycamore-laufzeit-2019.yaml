@@ -1,0 +1,15 @@
+id: ev-sycamore-laufzeit-2019
+claim_id: cl-sycamore-laufzeit
+study_id: arute-sycamore-nature-2019
+study_version: journal
+locator: Abstract
+dataset_id: sycamore-experiment-2019
+metric: Laufzeit des Quantenprozessors
+values:
+  Laufzeit: etwa 200 Sekunden
+  Qubits: 53
+  Stichproben: eine Million
+uncertainty: Als ungefähre Angabe berichtet.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell

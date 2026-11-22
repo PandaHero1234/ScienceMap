@@ -1,0 +1,9 @@
+id: reinhart-rogoff-aer-2010
+label: Reinhart und Rogoff, Growth in a Time of Debt (Am. Econ. Rev., 2010)
+short_label: Reinhart und Rogoff 2010
+team: reinhart-und-rogoff
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1257/aer.100.2.573

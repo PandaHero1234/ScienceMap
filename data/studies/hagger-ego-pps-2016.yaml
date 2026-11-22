@@ -1,0 +1,10 @@
+id: hagger-ego-pps-2016
+label: Hagger et al., A Multilab Preregistered Replication of the Ego-Depletion Effect (Perspect. Psychol.
+  Sci. 11, 546–573)
+short_label: Hagger et al. 2016
+team: hagger-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Nachweis im Forschungsportal der Universität Utrecht
+  url: https://research-portal.uu.nl/en/publications/a-multilab-preregistered-replication-of-the-ego-depletion-effect/

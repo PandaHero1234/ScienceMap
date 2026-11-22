@@ -1,0 +1,13 @@
+id: ev-sycamore-schaetzung-2019
+claim_id: cl-sycamore-klassischer-aufwand
+study_id: arute-sycamore-nature-2019
+study_version: journal
+locator: Abstract
+dataset_id: sycamore-experiment-2019
+metric: Geschätzter Aufwand eines klassischen Supercomputers
+values:
+  Geschätzter Aufwand: etwa 10 000 Jahre
+uncertainty: Schätzung der Autoren.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell

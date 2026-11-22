@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-reis-kinder
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-reis-kinder
+catalog_version: 1
+outcome: nicht_erreicht
+rationale: Die Studie mit Kindern wurde am 29. Juli 2015 zurückgezogen.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-reis-tang-2012
+status: vorgeschlagen

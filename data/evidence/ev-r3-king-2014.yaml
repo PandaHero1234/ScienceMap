@@ -1,0 +1,17 @@
+id: ev-r3-king-2014
+claim_id: cl-r3-identitaet
+study_id: king-richard-iii-ncomms-2014
+study_version: journal
+locator: Abstract
+dataset_id: skelett-greyfriars
+metric: Übereinstimmung der mitochondrialen DNA und Gesamtbewertung
+values:
+  Mitochondriale DNA: vollständige Übereinstimmung mit einem lebenden Verwandten, eine abweichende Base
+    bei einem zweiten
+  Likelihood-Quotient der Gesamtbewertung: 6,7 Millionen (vorsichtige Schätzung)
+  Radiokarbondatierung: 1456 bis 1530 n. Chr. (95,4 %)
+uncertainty: Die Y-Chromosomen stimmen nicht mit Verwandten der männlichen Linie überein. Die Arbeit erklärt
+  das mit einer möglichen falschen Vaterschaft in den Generationen dazwischen.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell

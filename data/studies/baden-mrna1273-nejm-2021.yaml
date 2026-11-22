@@ -1,0 +1,9 @@
+id: baden-mrna1273-nejm-2021
+label: Baden et al., Efficacy and Safety of the mRNA-1273 SARS-CoV-2 Vaccine (N. Engl. J. Med., 2021)
+short_label: Baden et al. 2021
+team: moderna-und-niaid
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1056/NEJMoa2035389

@@ -1,0 +1,7 @@
+id: cl-ego-depletion
+statement: Eine Aufgabe, die Selbstkontrolle erfordert, verschlechtert die Leistung in einer darauf folgenden
+  Selbstkontrollaufgabe.
+scope: Laborexperimente mit zwei aufeinanderfolgenden Aufgaben.
+milestone_ids:
+- ms-ego-erstbefund
+- ms-ego-replikation

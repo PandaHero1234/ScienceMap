@@ -1,0 +1,15 @@
+id: ev-kepler-hales-2005
+claim_id: cl-kepler-dichte
+study_id: hales-kepler-annals-2005
+study_version: journal
+locator: Gesamter Artikel
+basis_ids:
+- beweis-hales-kepler
+metric: Beweis der Vermutung
+values:
+  Befund: Beweis der Kepler-Vermutung
+uncertainty: Entfällt. Die Aussage ist ein bewiesener Satz.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Die Nummer des Hauptsatzes ist nachzutragen.

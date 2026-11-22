@@ -1,0 +1,15 @@
+id: ev-rr-nachrechnung-2014
+claim_id: cl-rr-wachstum-ueber-90
+study_id: herndon-ash-pollin-cje-2014
+study_version: journal
+locator: Abstract
+dataset_id: rr-datensatz
+metric: Mittleres reales Wachstum bei Schulden über 90 % nach Korrektur
+values:
+  Mittleres Wachstum: 2,2 %
+uncertainty: offen
+relation: spricht_dagegen
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Als Ursachen nennt die Arbeit ausgelassene Daten, einen Fehler in der Tabellenkalkulation und die
+  Art der Gewichtung.

@@ -1,0 +1,6 @@
+id: cl-mrna-bevoelkerung
+statement: In einer landesweiten Impfkampagne senkte BNT162b2 das Risiko für symptomatisches COVID-19
+  ab sieben Tagen nach der zweiten Dosis um 94 %.
+scope: Versicherte von Clalit Health Services in Israel, Dezember 2020 bis Februar 2021.
+milestone_ids:
+- ms-mrna-bevoelkerung

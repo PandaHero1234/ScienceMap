@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-higgs-masse
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-higgs-masse
+catalog_version: 1
+outcome: erreicht
+rationale: Die gemeinsame Auswertung nennt 125,09 GeV mit einer Unsicherheit unter 0,3 GeV.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-higgs-masse-2015
+status: vorgeschlagen

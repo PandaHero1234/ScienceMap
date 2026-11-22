@@ -1,0 +1,14 @@
+id: ev-kpg-alvarez-1980
+claim_id: cl-kpg-iridium
+study_id: alvarez-kt-science-1980
+study_version: journal
+locator: Titel und Abstract
+dataset_id: kpg-grenzschichten-alvarez
+metric: Iridiumgehalt an der Grenze
+values:
+  Befund: Anreicherung von Iridium an der Grenze, gedeutet als Folge eines Einschlags
+uncertainty: offen
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Die Anreicherungsfaktoren je Fundort sind aus dem Volltext nachzutragen.

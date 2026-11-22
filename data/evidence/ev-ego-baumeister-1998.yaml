@@ -1,0 +1,14 @@
+id: ev-ego-baumeister-1998
+claim_id: cl-ego-depletion
+study_id: baumeister-ego-jpsp-1998
+study_version: journal
+locator: Titel
+dataset_id: exp-baumeister-1998
+metric: Leistung in der zweiten Aufgabe
+values:
+  Befund: Effekt berichtet
+uncertainty: offen
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Effektstärken und Angaben zur Veröffentlichung sind noch mit dem Original abzugleichen.

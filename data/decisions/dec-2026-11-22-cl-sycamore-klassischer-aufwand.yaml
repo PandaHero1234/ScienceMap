@@ -1,0 +1,12 @@
+id: dec-2026-11-22-cl-sycamore-klassischer-aufwand
+date: '2026-11-22'
+kind: aussage
+target_id: cl-sycamore-klassischer-aufwand
+outcome: spricht_dagegen
+rationale: Eine klassische Simulation löst die Aufgabe in etwa 15 Stunden. Die Schätzung von 10 000 Jahren
+  ist damit überholt.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-sycamore-schaetzung-2019
+- ev-sycamore-simulation-2022
+status: vorgeschlagen

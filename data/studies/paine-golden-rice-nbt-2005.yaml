@@ -1,0 +1,10 @@
+id: paine-golden-rice-nbt-2005
+label: Paine et al., Improving the nutritional value of Golden Rice through increased pro-vitamin A content
+  (Nat. Biotechnol. 23, 482–487)
+short_label: Paine et al. 2005
+team: paine-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Eintrag in PubMed
+  url: https://pubmed.ncbi.nlm.nih.gov/15793573/

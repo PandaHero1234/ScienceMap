@@ -1,0 +1,6 @@
+id: cl-lk99-supraleiter
+statement: Kupferdotierter Bleiapatit (LK-99) ist bei Raumtemperatur und Normaldruck supraleitend.
+scope: Proben der jeweiligen Arbeitsgruppen.
+milestone_ids:
+- ms-lk99-behauptung
+- ms-lk99-replikation

@@ -1,0 +1,10 @@
+id: dec-2026-11-22-cl-sycamore-laufzeit
+date: '2026-11-22'
+kind: aussage
+target_id: cl-sycamore-laufzeit
+outcome: vorlaeufig_gestuetzt
+rationale: Die Veröffentlichung nennt etwa 200 Sekunden. Es liegt eine Quelle vor.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-sycamore-laufzeit-2019
+status: vorgeschlagen

@@ -1,0 +1,9 @@
+id: lee-lk99-arxiv-2023
+label: Lee, Kim und Kwon, The First Room-Temperature Ambient-Pressure Superconductor (Preprint, 2023)
+short_label: Lee et al. 2023
+team: lee-kim-kwon
+status: aktiv
+versions:
+- id: journal
+  kind: Preprint arXiv:2307.12008
+  url: https://arxiv.org/abs/2307.12008

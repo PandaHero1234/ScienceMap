@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-reis-gehalt
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-reis-gehalt
+catalog_version: 1
+outcome: erreicht
+rationale: Paine et al. berichten bis zu 37 µg Carotinoide je Gramm.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-reis-paine-2005
+status: vorgeschlagen

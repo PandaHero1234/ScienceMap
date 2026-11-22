@@ -1,0 +1,15 @@
+id: ev-mrna-dagan-2021
+claim_id: cl-mrna-bevoelkerung
+study_id: dagan-bnt162b2-nejm-2021
+study_version: journal
+locator: Abstract
+dataset_id: clalit-kohorte-2021
+metric: Wirksamkeit gegen symptomatisches COVID-19 ab sieben Tagen nach der zweiten Dosis
+values:
+  Wirksamkeit: 94 %
+  Personen je Gruppe: 596618
+uncertainty: 95-%-Konfidenzintervall 87 bis 98 %
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Beobachtungsstudie mit paarweise zugeordneten Ungeimpften, keine randomisierte Studie.

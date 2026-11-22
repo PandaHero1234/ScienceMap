@@ -1,0 +1,14 @@
+id: ev-kpg-renne-2013
+claim_id: cl-kpg-gleichzeitig
+study_id: renne-kpg-science-2013
+study_version: journal
+locator: Abstract
+dataset_id: kpg-datierung-renne
+metric: Zeitlicher Abstand zwischen Einschlag und Grenze
+values:
+  Abstand: innerhalb von etwa 32 000 Jahren
+uncertainty: Als Obergrenze angegeben.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Fundstelle bisher nur auf Ebene des Abstracts erfasst. Tabelle oder Abbildung im Volltext ist nachzutragen.

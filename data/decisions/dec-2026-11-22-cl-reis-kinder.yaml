@@ -1,0 +1,10 @@
+id: dec-2026-11-22-cl-reis-kinder
+date: '2026-11-22'
+kind: aussage
+target_id: cl-reis-kinder
+outcome: offen
+rationale: Die einzige erfasste Studie wurde zurückgezogen. Ein Gegenbeleg liegt nicht vor.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-reis-tang-2012
+status: vorgeschlagen

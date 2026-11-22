@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-rr-nachrechnung
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-rr-nachrechnung
+catalog_version: 1
+outcome: nicht_erreicht
+rationale: Die Nachrechnung erhält 2,2 % statt −0,1 %.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-rr-nachrechnung-2014
+status: vorgeschlagen

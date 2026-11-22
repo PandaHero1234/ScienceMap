@@ -1,0 +1,9 @@
+id: hales-flyspeck-fmp-2017
+label: Hales et al., A formal proof of the Kepler conjecture (Forum Math. Pi 5, 2017, e2)
+short_label: Hales et al. 2017
+team: flyspeck-projekt
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1017/fmp.2017.1

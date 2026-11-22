@@ -1,0 +1,15 @@
+id: ev-ego-hagger-2016
+claim_id: cl-ego-depletion
+study_id: hagger-ego-pps-2016
+study_version: journal
+locator: Abstract
+dataset_id: replikation-hagger-2016
+metric: Effektstärke d über alle Labore
+values:
+  Effektstärke d: 0,04
+  Labore: 23
+  Teilnehmende: 2141
+uncertainty: 95-%-Konfidenzintervall −0,07 bis 0,15
+relation: spricht_dagegen
+review_status: vorgeschlagen
+suggested_by: Sprachmodell

@@ -1,0 +1,17 @@
+id: ev-ego-vohs-2021
+claim_id: cl-ego-depletion
+study_id: vohs-ego-psci-2021
+study_version: journal
+locator: Abstract
+dataset_id: replikation-vohs-2021
+metric: Effektstärke d über alle Labore
+values:
+  Effektstärke d: 0,06
+  Labore: 36
+  Teilnehmende: 3531
+uncertainty: Nicht signifikant. Nach der vorab festgelegten Bayes-Analyse sind die Daten unter der Nullhypothese
+  viermal wahrscheinlicher.
+relation: spricht_dagegen
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Eine nicht vorab festgelegte Auswertung ohne Ausschlusskriterien ergab d = 0,08 und war signifikant.

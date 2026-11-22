@@ -1,0 +1,6 @@
+id: cl-sycamore-laufzeit
+statement: Der Prozessor Sycamore zieht in etwa 200 Sekunden eine Million Stichproben aus einem Zufallsschaltkreis
+  mit 53 Qubits.
+scope: Die im Experiment verwendeten Zufallsschaltkreise.
+milestone_ids:
+- ms-qc-experiment

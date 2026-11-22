@@ -1,0 +1,10 @@
+id: renne-kpg-science-2013
+label: Renne et al., Time Scales of Critical Events Around the Cretaceous-Paleogene Boundary (Science
+  339, 684–687)
+short_label: Renne et al. 2013
+team: renne-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1126/science.1230492

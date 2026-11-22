@@ -1,0 +1,15 @@
+id: ev-alphafold-casp14
+claim_id: cl-alphafold-genauigkeit
+study_id: jumper-alphafold-nature-2021
+study_version: journal
+locator: Abstract
+dataset_id: casp14
+metric: Mittlere Abweichung des Rückgrats (r.m.s.d.95 der Cα-Atome)
+values:
+  AlphaFold: 0,96 Å
+  Nächstbestes Verfahren: 2,8 Å
+uncertainty: 95-%-Konfidenzintervall 0,85 bis 1,16 Å
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Fundstelle bisher nur auf Ebene des Abstracts erfasst. Tabelle oder Abbildung im Volltext ist nachzutragen.

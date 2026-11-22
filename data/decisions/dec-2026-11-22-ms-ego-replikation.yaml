@@ -1,0 +1,13 @@
+id: dec-2026-11-22-ms-ego-replikation
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-ego-replikation
+catalog_version: 1
+outcome: nicht_erreicht
+rationale: Beide Replikationen finden Effekte nahe null. Das Konfidenzintervall der ersten schließt die
+  Null ein.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-ego-hagger-2016
+- ev-ego-vohs-2021
+status: vorgeschlagen

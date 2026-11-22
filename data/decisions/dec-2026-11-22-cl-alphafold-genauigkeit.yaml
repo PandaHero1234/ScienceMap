@@ -1,0 +1,11 @@
+id: dec-2026-11-22-cl-alphafold-genauigkeit
+date: '2026-11-22'
+kind: aussage
+target_id: cl-alphafold-genauigkeit
+outcome: vorlaeufig_gestuetzt
+rationale: Die Veröffentlichung nennt 0,96 Å gegenüber 2,8 Å für das nächstbeste Verfahren. Es liegt eine
+  Quelle vor.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-alphafold-casp14
+status: vorgeschlagen

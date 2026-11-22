@@ -1,0 +1,33 @@
+id: goal-goldener-reis
+field: Agrarwissenschaften
+area: '404'
+topic: Biofortifikation von Reis
+title: Provitamin A in Reis anreichern und die Wirkung beim Menschen belegen
+last_work: Vier Veröffentlichungen mit vier Belegen als Vorschlag erfasst, eine davon zurückgezogen
+open_question: Zweite Person prüft die Angaben zur ersten Veröffentlichung und zum Rückzug
+milestones:
+- id: ms-reis-provitamin
+  title: Provitamin A im Korn erzeugen
+  criterion: Eine begutachtete Veröffentlichung zeigt Provitamin A im Endosperm von Reis.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-reis-gehalt
+  title: Gehalt steigern
+  criterion: Der Gehalt an Carotinoiden ist auf mindestens 30 µg je Gramm gesteigert.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-reis-umwandlung
+  title: Umwandlung beim Menschen zeigen
+  criterion: Eine Studie am Menschen zeigt die Umwandlung in Vitamin A.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-reis-kinder
+  title: Wirkung bei Kindern zeigen
+  criterion: Eine nicht zurückgezogene Studie zeigt die Wirkung bei Kindern.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+catalog:
+- version: 1
+  date: '2026-11-22'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-reis-provitamin
+  - ms-reis-gehalt
+  - ms-reis-umwandlung
+  - ms-reis-kinder

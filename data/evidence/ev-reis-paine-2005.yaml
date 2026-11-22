@@ -1,0 +1,14 @@
+id: ev-reis-paine-2005
+claim_id: cl-reis-gehalt
+study_id: paine-golden-rice-nbt-2005
+study_version: journal
+locator: Abstract
+dataset_id: exp-paine-2005
+metric: Gesamtgehalt an Carotinoiden
+values:
+  Höchstwert: 37 µg/g
+  Steigerung gegenüber der ersten Linie: bis 23-fach
+uncertainty: Höchstwert, keine Streuung angegeben.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell

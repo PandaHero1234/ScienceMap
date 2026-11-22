@@ -1,0 +1,11 @@
+id: khuyagbaatar-e117-prl-2014
+label: Khuyagbaatar et al., 48Ca+249Bk Fusion Reaction Leading to Element Z=117 (Phys. Rev. Lett. 112,
+  172501)
+short_label: Khuyagbaatar et al. 2014
+team: tasca-kollaboration
+status: aktiv
+published: '2014-05-01'
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1103/PhysRevLett.112.172501

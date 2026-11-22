@@ -1,0 +1,14 @@
+id: ev-mrna-polack-2020
+claim_id: cl-mrna-phase3-wirksam
+study_id: polack-bnt162b2-nejm-2020
+study_version: journal
+locator: Abstract
+basis_ids:
+- nct04368728
+metric: Wirksamkeit gegen COVID-19
+values:
+  Wirksamkeit: 95 %
+uncertainty: Das Konfidenzintervall ist aus dem Volltext nachzutragen.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell

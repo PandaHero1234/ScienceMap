@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-kpg-datierung
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-kpg-datierung
+catalog_version: 1
+outcome: erreicht
+rationale: Renne et al. datieren Einschlag und Grenze als gleichzeitig innerhalb von etwa 32 000 Jahren.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-kpg-renne-2013
+status: vorgeschlagen

@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-reis-provitamin
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-reis-provitamin
+catalog_version: 1
+outcome: erreicht
+rationale: Ye et al. berichten Provitamin A im Endosperm.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-reis-ye-2000
+status: vorgeschlagen

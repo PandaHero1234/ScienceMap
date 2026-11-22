@@ -1,0 +1,10 @@
+id: puphal-lk99-aplm-2023
+label: Puphal et al., Single crystal synthesis, structure, and magnetism of Pb10−xCux(PO4)6O (APL Materials
+  11, 101128)
+short_label: Puphal et al. 2023
+team: puphal-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Preprint arXiv:2308.06256
+  url: https://arxiv.org/abs/2308.06256

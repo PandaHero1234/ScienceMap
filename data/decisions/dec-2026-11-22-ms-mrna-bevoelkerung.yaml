@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-mrna-bevoelkerung
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-mrna-bevoelkerung
+catalog_version: 1
+outcome: erreicht
+rationale: Die Auswertung der Impfkampagne in Israel nennt 94 %.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-mrna-dagan-2021
+status: vorgeschlagen

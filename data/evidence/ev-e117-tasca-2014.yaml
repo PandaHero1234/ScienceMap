@@ -1,0 +1,15 @@
+id: ev-e117-tasca-2014
+claim_id: cl-e117-erzeugt
+study_id: khuyagbaatar-e117-prl-2014
+study_version: journal
+locator: Abstract
+dataset_id: exp-tasca-e117
+metric: Nachgewiesene Zerfallsketten
+values:
+  Zerfallsketten: 2
+  Zuordnung: Isotop 294-117 und seine Zerfallsprodukte
+uncertainty: offen
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Fundstelle bisher nur auf Ebene des Abstracts erfasst. Tabelle oder Abbildung im Volltext ist nachzutragen.

@@ -1,0 +1,13 @@
+id: atlas-cms-higgs-masse-prl-2015
+label: ATLAS and CMS Collaborations, Combined Measurement of the Higgs Boson Mass in pp Collisions at
+  √s = 7 and 8 TeV (Phys. Rev. Lett. 114, 191803)
+short_label: ATLAS und CMS 2015
+team: atlas-und-cms
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1103/PhysRevLett.114.191803
+- id: arxiv
+  kind: Preprint arXiv:1503.07589
+  url: https://arxiv.org/abs/1503.07589

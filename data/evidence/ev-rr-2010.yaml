@@ -1,0 +1,15 @@
+id: ev-rr-2010
+claim_id: cl-rr-wachstum-ueber-90
+study_id: reinhart-rogoff-aer-2010
+study_version: journal
+locator: Veröffentlichter Mittelwert der höchsten Schuldenklasse
+dataset_id: rr-datensatz
+metric: Mittleres reales Wachstum bei Schulden über 90 %
+values:
+  Mittleres Wachstum: −0,1 %
+uncertainty: offen
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Der Wert ist nach der Kritik von Herndon, Ash und Pollin wiedergegeben. Tabelle, Seitenzahl und
+  Angaben zur Veröffentlichung sind noch mit dem Original abzugleichen.

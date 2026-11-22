@@ -100,3 +100,30 @@ def world(tmp_path: Path) -> World:
     w.dataset("ds-eins")
     w.evidence("ev-a")
     return w
+
+
+@pytest.fixture(scope="session")
+def real_atlas():
+    """Die echten Daten unter data/, einmal je Testlauf geladen."""
+    loaded, errors = atlas.load_checked(ROOT / "data")
+    assert errors == [], errors
+    return loaded
+
+
+@pytest.fixture(scope="session")
+def real_state(real_atlas) -> dict:
+    return atlas.build_state(real_atlas)
+
+
+@pytest.fixture(scope="session")
+def real_site(tmp_path_factory) -> Path:
+    out = tmp_path_factory.mktemp("echte-seiten")
+    assert atlas.main(["build", "--out", str(out)]) == 0
+    return out
+
+
+def write_taxonomy(world: "World", groups: list[tuple[str, str, list[tuple[str, str]]]]) -> None:
+    """Legt für erfundene Daten eine kleine Systematik an: (Code, Name, [(Code, Name), ...])."""
+    record = {"source": "erfunden", "groups": [
+        {"code": code, "name": name, "areas": [{"code": c, "name": n} for c, n in areas]} for code, name, areas in groups]}
+    (world.root / "taxonomy.yaml").write_text(yaml.safe_dump(record, allow_unicode=True, sort_keys=False), encoding="utf-8")

@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-kpg-iridium
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-kpg-iridium
+catalog_version: 1
+outcome: erreicht
+rationale: Alvarez et al. berichten die Anreicherung in Science.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-kpg-alvarez-1980
+status: vorgeschlagen

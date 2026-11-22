@@ -1,0 +1,15 @@
+id: ev-kepler-flyspeck-2017
+claim_id: cl-kepler-dichte
+study_id: hales-flyspeck-fmp-2017
+study_version: journal
+locator: Abstract
+basis_ids:
+- beweis-hales-kepler
+metric: Formale Prüfung des Beweises
+values:
+  Befund: Formaler Beweis in den Beweisassistenten HOL Light und Isabelle
+uncertainty: Entfällt. Die Aussage ist ein bewiesener Satz.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Formale Prüfung desselben Beweises, kein zweiter Beweis.

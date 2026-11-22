@@ -1,0 +1,23 @@
+id: goal-lk99-supraleitung
+field: Werkstofftechnik
+area: '205'
+topic: Supraleitung bei Raumtemperatur
+title: Supraleitung von LK-99 bei Raumtemperatur und Normaldruck unabhängig bestätigen
+last_work: Drei Veröffentlichungen mit drei Belegen als Vorschlag erfasst
+open_question: Zweite Person prüft die Kennung der Erstmeldung
+milestones:
+- id: ms-lk99-behauptung
+  title: Befund öffentlich berichten
+  criterion: Der Befund ist mit Messdaten öffentlich berichtet.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-lk99-replikation
+  title: Unabhängig replizieren
+  criterion: Ein unabhängiges Team misst an eigenen Proben die Kennzeichen der Supraleitung.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+catalog:
+- version: 1
+  date: '2026-11-22'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-lk99-behauptung
+  - ms-lk99-replikation

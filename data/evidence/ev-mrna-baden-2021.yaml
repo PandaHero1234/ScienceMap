@@ -1,0 +1,15 @@
+id: ev-mrna-baden-2021
+claim_id: cl-mrna-phase3-wirksam
+study_id: baden-mrna1273-nejm-2021
+study_version: journal
+locator: Abstract
+basis_ids:
+- nct04470427
+metric: Wirksamkeit gegen COVID-19
+values:
+  Wirksamkeit: 94,1 %
+uncertainty: Das Konfidenzintervall ist aus dem Volltext nachzutragen.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Eine spätere Auswertung derselben Studie nennt 93,2 %. Beide Werte sind nicht zu vermengen.

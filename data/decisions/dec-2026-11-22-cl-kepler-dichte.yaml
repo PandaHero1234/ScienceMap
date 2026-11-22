@@ -1,0 +1,11 @@
+id: dec-2026-11-22-cl-kepler-dichte
+date: '2026-11-22'
+kind: aussage
+target_id: cl-kepler-dichte
+outcome: vorlaeufig_gestuetzt
+rationale: 'Ein Beweis in zwei Veröffentlichungen: der Beweis selbst und seine formale Prüfung im Flyspeck-Projekt.'
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-kepler-hales-2005
+- ev-kepler-flyspeck-2017
+status: vorgeschlagen

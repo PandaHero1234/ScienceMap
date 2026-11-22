@@ -1,0 +1,5 @@
+id: cl-reis-gehalt
+statement: Die Reislinie Golden Rice 2 enthält bis zu 37 µg Carotinoide je Gramm.
+scope: Höchstwert der in der Studie erzeugten Linien. Gemeint ist der Gesamtgehalt an Carotinoiden.
+milestone_ids:
+- ms-reis-gehalt

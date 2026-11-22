@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-mrna-phase3
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-mrna-phase3
+catalog_version: 1
+outcome: erreicht
+rationale: Die Studie zu BNT162b2 berichtet eine Wirksamkeit von 95 %.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-mrna-polack-2020
+status: vorgeschlagen

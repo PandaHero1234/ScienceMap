@@ -1,0 +1,10 @@
+id: dec-2026-11-22-cl-reis-umwandlung
+date: '2026-11-22'
+kind: aussage
+target_id: cl-reis-umwandlung
+outcome: vorlaeufig_gestuetzt
+rationale: Die Studie nennt einen Umwandlungsfaktor von 3,8 zu 1. Es liegt eine Quelle vor.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-reis-tang-2009
+status: vorgeschlagen

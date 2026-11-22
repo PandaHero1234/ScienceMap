@@ -1,0 +1,11 @@
+id: dec-2026-11-22-cl-higgs-masse
+date: '2026-11-22'
+kind: aussage
+target_id: cl-higgs-masse
+outcome: vorlaeufig_gestuetzt
+rationale: Die gemeinsame Auswertung nennt die Masse mit einer Unsicherheit unter 0,3 GeV. Es liegt eine
+  Quelle vor.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-higgs-masse-2015
+status: vorgeschlagen

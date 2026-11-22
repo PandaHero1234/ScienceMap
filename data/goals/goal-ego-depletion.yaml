@@ -1,0 +1,24 @@
+id: goal-ego-depletion
+field: Psychologie
+area: '501'
+topic: Selbstkontrolle
+title: Den Ego-Depletion-Effekt in vorab registrierten Replikationen bestätigen
+last_work: Drei Veröffentlichungen mit drei Belegen als Vorschlag erfasst
+open_question: Zweite Person trägt Effektstärken des Erstbefunds aus dem Volltext nach
+milestones:
+- id: ms-ego-erstbefund
+  title: Erstbefund belegen
+  criterion: Der Effekt ist in einer begutachteten Veröffentlichung berichtet.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-ego-replikation
+  title: Vorab registriert replizieren
+  criterion: Eine vorab registrierte Replikation in mehreren Laboren findet einen Effekt, dessen 95-%-Konfidenzintervall
+    die Null ausschließt.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+catalog:
+- version: 1
+  date: '2026-11-22'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-ego-erstbefund
+  - ms-ego-replikation

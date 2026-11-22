@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-ego-erstbefund
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-ego-erstbefund
+catalog_version: 1
+outcome: erreicht
+rationale: Baumeister et al. berichten den Effekt.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-ego-baumeister-1998
+status: vorgeschlagen

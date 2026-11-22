@@ -1,0 +1,23 @@
+id: goal-element-117
+field: Chemie
+area: '104'
+topic: Superschwere Elemente
+title: Element 117 erzeugen und in einem zweiten Labor bestätigen
+last_work: Zwei Veröffentlichungen mit zwei Belegen als Vorschlag erfasst
+open_question: Zweite Person gleicht Isotope und Zerfallsketten mit den Veröffentlichungen ab
+milestones:
+- id: ms-e117-erzeugung
+  title: Erzeugung berichten
+  criterion: Ein Labor berichtet die Erzeugung von Atomen des Elements 117 in einer begutachteten Veröffentlichung.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-e117-zweites-labor
+  title: In zweitem Labor bestätigen
+  criterion: Ein zweites Labor mit eigener Anlage berichtet die Erzeugung.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+catalog:
+- version: 1
+  date: '2026-11-22'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-e117-erzeugung
+  - ms-e117-zweites-labor

@@ -1,0 +1,9 @@
+id: jumper-alphafold-nature-2021
+label: Jumper et al., Highly accurate protein structure prediction with AlphaFold (Nature 596, 583–589)
+short_label: Jumper et al. 2021
+team: deepmind
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1038/s41586-021-03819-2

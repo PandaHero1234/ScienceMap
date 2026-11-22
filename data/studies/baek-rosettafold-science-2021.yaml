@@ -1,0 +1,11 @@
+id: baek-rosettafold-science-2021
+label: Baek et al., Accurate prediction of protein structures and interactions using a three-track neural
+  network (Science 373, 871–876)
+short_label: Baek et al. 2021
+team: baker-labor
+status: aktiv
+published: '2021-07-15'
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1126/science.abj8754

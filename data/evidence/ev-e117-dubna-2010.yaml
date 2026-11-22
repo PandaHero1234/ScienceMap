@@ -1,0 +1,15 @@
+id: ev-e117-dubna-2010
+claim_id: cl-e117-erzeugt
+study_id: oganessian-e117-prl-2010
+study_version: journal
+locator: Abstract
+dataset_id: exp-dubna-e117
+metric: Nachgewiesene Isotope und Zerfallsketten
+values:
+  Isotope: 293-117 und 294-117
+  Neue Kerne in den Zerfallsketten: 11
+uncertainty: offen
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Fundstelle bisher nur auf Ebene des Abstracts erfasst. Tabelle oder Abbildung im Volltext ist nachzutragen.

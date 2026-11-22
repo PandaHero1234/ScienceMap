@@ -1,0 +1,11 @@
+id: dec-2026-11-22-cl-kpg-krater
+date: '2026-11-22'
+kind: aussage
+target_id: cl-kpg-krater
+outcome: vorlaeufig_gestuetzt
+rationale: Die Veröffentlichung beschreibt eine vergrabene Ringstruktur von 180 km Durchmesser als Einschlagkrater.
+  Es liegt eine Quelle vor.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-kpg-hildebrand-1991
+status: vorgeschlagen

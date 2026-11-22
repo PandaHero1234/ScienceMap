@@ -1,0 +1,5 @@
+id: simulation-pan-2022
+title: Klassische Simulation auf 512 Grafikprozessoren
+short_title: Simulation Pan
+kind: experiment
+source: pan-sycamore-prl-2022

@@ -1,0 +1,23 @@
+id: goal-kepler-vermutung
+field: Mathematik
+area: '101'
+topic: Kugelpackungen
+title: Die Kepler-Vermutung beweisen und den Beweis formal prüfen
+last_work: Zwei Veröffentlichungen mit zwei Belegen als Vorschlag erfasst
+open_question: Zweite Person trägt die Nummer des Hauptsatzes nach
+milestones:
+- id: ms-kepler-beweis
+  title: Beweis veröffentlichen
+  criterion: Ein Beweis ist in einer begutachteten Zeitschrift erschienen.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-kepler-formal
+  title: Beweis formal prüfen
+  criterion: Der Beweis ist vollständig in einem Beweisassistenten geprüft.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+catalog:
+- version: 1
+  date: '2026-11-22'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-kepler-beweis
+  - ms-kepler-formal

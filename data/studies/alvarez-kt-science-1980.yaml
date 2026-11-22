@@ -1,0 +1,9 @@
+id: alvarez-kt-science-1980
+label: Alvarez et al., Extraterrestrial cause for the Cretaceous-Tertiary extinction (Science 208, 1095–1108)
+short_label: Alvarez et al. 1980
+team: alvarez-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1126/science.208.4448.1095

@@ -1,0 +1,14 @@
+id: ev-lk99-zhu-2023
+claim_id: cl-lk99-supraleiter
+study_id: zhu-lk99-matter-2023
+study_version: journal
+locator: Abstract
+dataset_id: exp-zhu-lk99
+metric: Verlauf des elektrischen Widerstands
+values:
+  Befund: Abfall des Widerstands nahe 385 K ohne Nullwiderstand, erklärt durch einen Phasenübergang von
+    Kupfersulfid
+uncertainty: Im Abstract nicht beziffert.
+relation: spricht_dagegen
+review_status: vorgeschlagen
+suggested_by: Sprachmodell

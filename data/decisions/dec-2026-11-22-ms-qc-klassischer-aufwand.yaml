@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-qc-klassischer-aufwand
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-qc-klassischer-aufwand
+catalog_version: 1
+outcome: nicht_erreicht
+rationale: Die Nachrechnung von Pan, Chen und Zhang braucht etwa 15 Stunden statt 10 000 Jahre.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-sycamore-simulation-2022
+status: vorgeschlagen

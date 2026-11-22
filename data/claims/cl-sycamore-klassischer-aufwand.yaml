@@ -1,0 +1,5 @@
+id: cl-sycamore-klassischer-aufwand
+statement: Ein klassischer Supercomputer bräuchte für dieselbe Aufgabe etwa 10 000 Jahre.
+scope: Schätzung für die Aufgabe des Experiments von 2019.
+milestone_ids:
+- ms-qc-klassischer-aufwand

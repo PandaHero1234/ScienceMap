@@ -1,0 +1,9 @@
+id: king-richard-iii-ncomms-2014
+label: King et al., Identification of the remains of King Richard III (Nat. Commun. 5, 5631)
+short_label: King et al. 2014
+team: king-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://www.nature.com/articles/ncomms6631

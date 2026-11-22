@@ -1,0 +1,11 @@
+id: dec-2026-11-22-cl-kpg-gleichzeitig
+date: '2026-11-22'
+kind: aussage
+target_id: cl-kpg-gleichzeitig
+outcome: vorlaeufig_gestuetzt
+rationale: Die Datierung nennt Gleichzeitigkeit innerhalb von etwa 32 000 Jahren. Es liegt eine Quelle
+  vor.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-kpg-renne-2013
+status: vorgeschlagen

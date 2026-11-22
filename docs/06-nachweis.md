@@ -11,7 +11,7 @@ python -m pytest -q                  # prüft jede Regel
 python scripts/atlas.py build        # schreibt die Übersicht nach public/
 ```
 
-Von den 118 Tests arbeiten 50 mit erfundenen Daten in einem temporären Ordner. `tests/test_pilotdaten.py`, `tests/test_fachgebiete.py`, `tests/test_ebenen.py` und der größte Teil von `tests/test_oberflaeche.py`, `tests/test_gesamt.py` und `tests/test_ueberatlas.py` lesen die echten Daten. Als Gegenprobe wurden dreizehn Regeln einzeln im Skript ausgeschaltet. Jedes Mal schlug mindestens ein Test fehl.
+Von den 142 Tests arbeiten 52 mit erfundenen Daten in einem temporären Ordner. Die übrigen lesen die echten Daten. Sie leiten ihre Erwartungen aus den Daten ab, damit ein weiterer Ausbau der Karte keine Tests bricht. Als Gegenprobe wurden dreizehn Regeln einzeln im Skript ausgeschaltet. Jedes Mal schlug mindestens ein Test fehl.
 
 ## Belegt
 
@@ -68,6 +68,6 @@ Von den 118 Tests arbeiten 50 mit erfundenen Daten in einem temporären Ordner. 
 - **Veröffentlichung auf GitHub Pages.** Der Workflow liegt vor. Er läuft erst, wenn ein Branch `main` existiert und Pages in den Einstellungen mit der Quelle „GitHub Actions“ eingeschaltet ist.
 - **Überwachung von Korrekturen und Rückzügen.** Jemand muss den Status der Studie von Hand eintragen. Danach markiert das Skript alle betroffenen Entscheidungen.
 - **Unsicherheit in Meilenstein 3.** Das Kriterium nennt noch kein Verfahren und keine Schwelle für „Vorteil nicht nachweisbar“.
-- **Drei Fachgebiete.** Die Einträge aus Physik, Mathematik und Biologie sind mit Abstracts abgeglichen, nicht mit den Volltexten. Einzelheiten stehen in [Drei Fachgebiete als Prozesstest](07-fachgebiete.md).
+- **Einträge außerhalb des Pilots.** Die Einträge der 16 weiteren Ziele sind mit Abstracts abgeglichen, nicht mit den Volltexten. Was sich nicht bestätigen ließ, steht in [Drei Fachgebiete als Prozesstest](07-fachgebiete.md).
 - **Bezeichnungen der Systematik.** Der Aufbau von ÖFOS 2012 mit 6 Hauptgruppen und 42 Gruppen ist geprüft. Die Namen der Gruppen sind noch nicht vollständig mit der Veröffentlichung von Statistik Austria abgeglichen.
 - **Zuordnung von Meilenstein 1.** Der Quellenabgleich ist Arbeit am Atlas und zählt derzeit im Fortschrittsbalken mit. Kapitel 1 trennt beides. Die Entscheidung steht aus.

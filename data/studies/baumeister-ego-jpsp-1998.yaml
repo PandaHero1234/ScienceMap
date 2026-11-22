@@ -1,0 +1,10 @@
+id: baumeister-ego-jpsp-1998
+label: 'Baumeister et al., Ego depletion: Is the active self a limited resource? (J. Pers. Soc. Psychol.
+  74, 1998)'
+short_label: Baumeister et al. 1998
+team: baumeister-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1037/0022-3514.74.5.1252

@@ -14,10 +14,8 @@ REPO = "https://github.com/PandaHero1234/ScienceMap"
 
 
 @pytest.fixture(scope="module")
-def site(tmp_path_factory) -> Path:
-    out = tmp_path_factory.mktemp("seiten")
-    assert atlas.main(["build", "--out", str(out)]) == 0
-    return out
+def site(real_site) -> Path:
+    return real_site
 
 
 def pages(site: Path) -> list[Path]:
@@ -32,15 +30,16 @@ def ids(page: Path) -> set[str]:
     return set(re.findall(r'\bid="([^"]+)"', page.read_text(encoding="utf-8")))
 
 
-def test_alle_seiten_sind_vorhanden(site):
+def test_alle_seiten_sind_vorhanden(site, real_state):
     names = {p.relative_to(site).as_posix() for p in pages(site)}
     assert {"index.html", "ziele.html", "pruefen.html", "verlauf.html"} <= names
-    assert {n for n in names if n.startswith("fach/")} == {
-        "fach/mathematik.html", "fach/informatik.html", "fach/physik-astronomie.html", "fach/biologie.html"}
-    assert sum(n.startswith("bereich/") for n in names) == 6, "eine Zwischenkarte je Bereich, auch ohne Einträge"
-    assert sum(n.startswith("thema/") for n in names) == 4
-    assert sum(n.startswith("ziele/") for n in names) == 5
-    assert sum(n.startswith("aussagen/") for n in names) == 12
+    areas = [a for r in real_state["realms"] for a in r["areas"]]
+    assert {"fach/mathematik.html", "fach/informatik.html", "fach/physik-astronomie.html", "fach/biologie.html"} <= names
+    assert sum(n.startswith("fach/") for n in names) == sum(1 for a in areas if a["goal_ids"])
+    assert sum(n.startswith("bereich/") for n in names) == 6, "eine Zwischenkarte je Bereich"
+    assert sum(n.startswith("thema/") for n in names) == sum(len(a["topics"]) for a in areas)
+    assert sum(n.startswith("ziele/") for n in names) == len(real_state["goals"])
+    assert sum(n.startswith("aussagen/") for n in names) == len(real_state["claims"])
     assert (site / "atlas.css").is_file() and (site / "atlas.js").is_file()
     assert (site / "badge.svg").is_file() and (site / "badge-physik.svg").is_file()
 
@@ -67,25 +66,27 @@ def test_kein_interner_link_und_kein_anker_fuehrt_ins_leere(site):
                 assert anchor in ids(target), f"{page.name}: Anker {href} fehlt"
 
 
-def test_route_zeigt_jeden_meilenstein_mit_seinem_zustand(site):
+def test_route_zeigt_jeden_meilenstein_mit_seinem_zustand(site, real_state):
     index = (site / "ziele.html").read_text(encoding="utf-8")
+    m = real_state["totals"]["milestones"]
     states = re.findall(r'<li class="station is-([a-z-]+)">', index)
-    assert len(states) == 19
-    assert {s: states.count(s) for s in set(states)} == {"proposed": 12, "proposed-failed": 2, "open": 5}
+    assert len(states) == m["total"]
+    assert {s: states.count(s) for s in set(states)} == {
+        "proposed": m["proposed"], "proposed-failed": m["proposed_failed"], "open": m["open"]}
     assert "is-reached" not in " ".join(states), "ohne Freigabe ist keine Station erreicht"
 
 
-def test_zustand_steht_als_text_und_nicht_nur_als_farbe(site):
+def test_zustand_steht_als_text_und_nicht_nur_als_farbe(site, real_state):
     index = (site / "ziele.html").read_text(encoding="utf-8")
-    assert index.count('<span class="sr">: Vorschlag: erreicht</span>') == 12
+    assert index.count('<span class="sr">: Vorschlag: erreicht</span>') == real_state["totals"]["milestones"]["proposed"]
     assert 'aria-label="Legende der Stationen"' in index
     claim = (site / "aussagen" / "cl-gw-zwei-ereignisse.html").read_text(encoding="utf-8")
     assert "Vorschlag: mehrfach gestützt" in claim
 
 
-def test_ohne_javascript_ist_alles_lesbar(site):
+def test_ohne_javascript_ist_alles_lesbar(site, real_state):
     index = (site / "ziele.html").read_text(encoding="utf-8")
-    assert index.count('<li class="goal"') == 5, "alle Ziele stehen im HTML"
+    assert index.count('<li class="goal"') == len(real_state["goals"]), "alle Ziele stehen im HTML"
     assert 'id="filter" role="search" hidden' in index, "die Filterleiste erscheint erst mit JavaScript"
     assert 'id="theme" type="button" hidden' in index
 
@@ -117,15 +118,14 @@ def test_aussage_fuehrt_zurueck_zu_ziel_und_meilenstein(site):
     assert "../fach/mathematik.html" in links, "der Rückweg führt über das Fachgebiet"
 
 
-def test_offene_pruefungen_nennen_jeden_ungeprueften_eintrag_mit_datei(site):
-    loaded, _ = atlas.load_checked(ROOT / "data")
-    expected = {e["id"] for e in loaded.evidence.values() if e["review_status"] != "freigegeben"}
-    expected |= {d["id"] for d in loaded.decisions.values() if d["status"] != "freigegeben"}
+def test_offene_pruefungen_nennen_jeden_ungeprueften_eintrag_mit_datei(site, real_atlas):
+    expected = {e["id"] for e in real_atlas.evidence.values() if e["review_status"] != "freigegeben"}
+    expected |= {d["id"] for d in real_atlas.decisions.values() if d["status"] != "freigegeben"}
     queue = site / "pruefen.html"
     listed = {i[2:] for i in ids(queue) if i.startswith("q-")}
-    assert listed == expected and len(listed) == 46
+    assert listed == expected and len(listed) > 100
     edits = [h for h in hrefs(queue) if h.startswith(f"{REPO}/edit/main/")]
-    assert len(edits) == 46
+    assert len(edits) == len(expected)
     for href in edits:
         assert (ROOT / href.removeprefix(f"{REPO}/edit/main/")).is_file(), f"Datei fehlt: {href}"
 

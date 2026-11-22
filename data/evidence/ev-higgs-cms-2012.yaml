@@ -1,0 +1,15 @@
+id: ev-higgs-cms-2012
+claim_id: cl-higgs-neues-boson
+study_id: cms-higgs-plb-2012
+study_version: journal
+locator: Abstract
+dataset_id: lhc-cms-2011-2012
+metric: Signifikanz und Masse des beobachteten Teilchens
+values:
+  Lokale Signifikanz: 5,0 σ
+  Masse: 125,3 ± 0,4 (stat.) ± 0,5 (syst.) GeV
+uncertainty: Statistische und systematische Unsicherheit der Masse sind angegeben.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Die Seitenzahlen der Zeitschrift sind noch nicht geprüft.

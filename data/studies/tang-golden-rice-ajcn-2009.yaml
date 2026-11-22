@@ -1,0 +1,9 @@
+id: tang-golden-rice-ajcn-2009
+label: Tang et al., Golden Rice is an effective source of vitamin A (Am. J. Clin. Nutr. 89, 1776–1783)
+short_label: Tang et al. 2009
+team: tang-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Eintrag in PubMed
+  url: https://pubmed.ncbi.nlm.nih.gov/19369372/

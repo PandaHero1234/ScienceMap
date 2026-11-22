@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-protein-blindtest
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-protein-blindtest
+catalog_version: 1
+outcome: erreicht
+rationale: AlphaFold erreicht in CASP14 eine mittlere Abweichung von 0,96 Å.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-alphafold-casp14
+status: vorgeschlagen

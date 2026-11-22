@@ -1,0 +1,13 @@
+id: pan-sycamore-prl-2022
+label: Pan, Chen und Zhang, Solving the Sampling Problem of the Sycamore Quantum Circuits (Phys. Rev.
+  Lett. 129, 090502)
+short_label: Pan, Chen und Zhang 2022
+team: pan-chen-zhang
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1103/PhysRevLett.129.090502
+- id: arxiv
+  kind: Preprint arXiv:2111.03011
+  url: https://arxiv.org/abs/2111.03011

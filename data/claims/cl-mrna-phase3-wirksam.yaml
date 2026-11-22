@@ -1,0 +1,7 @@
+id: cl-mrna-phase3-wirksam
+statement: mRNA-Impfstoffe senken in Phase-3-Studien das Risiko für COVID-19 um über 90 %.
+scope: Zwei Impfstoffe, BNT162b2 und mRNA-1273. Die Angabe gilt für den Beobachtungszeitraum der Studien
+  und die damals verbreiteten Virusvarianten.
+milestone_ids:
+- ms-mrna-phase3
+- ms-mrna-zweite-studie

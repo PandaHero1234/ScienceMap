@@ -1,0 +1,9 @@
+id: oganessian-e117-prl-2010
+label: Oganessian et al., Synthesis of a New Element with Atomic Number Z=117 (Phys. Rev. Lett. 104, 142502)
+short_label: Oganessian et al. 2010
+team: dubna-kollaboration
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1103/PhysRevLett.104.142502

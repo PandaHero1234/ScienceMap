@@ -1,0 +1,15 @@
+id: ev-reis-tang-2009
+claim_id: cl-reis-umwandlung
+study_id: tang-golden-rice-ajcn-2009
+study_version: journal
+locator: Abstract
+basis_ids:
+- studie-tang-2009
+metric: Umwandlungsfaktor von β-Carotin zu Retinol nach Gewicht
+values:
+  Umwandlungsfaktor: 3,8 zu 1
+  Spanne: 1,9 bis 6,4 zu 1
+uncertainty: Standardabweichung 1,7
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell

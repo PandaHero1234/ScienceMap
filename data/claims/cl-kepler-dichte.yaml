@@ -1,0 +1,7 @@
+id: cl-kepler-dichte
+statement: Keine Packung gleich großer Kugeln im dreidimensionalen Raum ist dichter als die kubisch-flächenzentrierte
+  Packung.
+scope: Unbedingte Aussage ohne unbewiesene Annahmen.
+milestone_ids:
+- ms-kepler-beweis
+- ms-kepler-formal

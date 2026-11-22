@@ -46,6 +46,38 @@ Drei Angaben ließen sich nicht bestätigen und fehlen deshalb:
 - **Qualitative Befunde.** Die Felder für Ergebnis und Unsicherheit sind auf Zahlen ausgelegt. Befunde aus Zellkulturexperimenten stehen dort als Text.
 - **Der Verlauf beginnt heute.** Er zeigt das Datum der Atlasentscheidung. Die historische Abfolge von Befund, Widerlegung und Rückzug bei NgAgo erscheint nur über die Daten der Studien.
 
+## Ausbau in alle sechs Bereiche
+
+**Stand vom 22. November 2026.** Zwölf weitere Ziele erweitern die Karte in drei Richtungen: nach außen in alle sechs Bereiche, zur Seite in neue Fachgebiete und nach innen mit einem zweiten Teilgebiet in Mathematik, Informatik, Physik und Biologie. Der Atlas hat damit 17 Ziele in 12 von 42 Fachgebieten. Alle neuen Einträge sind Vorschläge.
+
+| Fachgebiet | Teilgebiet | Ziel | Was der Fall zeigt |
+|---|---|---|---|
+| Mathematik | Kugelpackungen | Kepler-Vermutung beweisen und formal prüfen | Zwei Veröffentlichungen, ein Beweis: Die formale Prüfung zählt nicht als zweiter Beweis |
+| Informatik | Quantenüberlegenheit | Rechenvorteil eines Quantenprozessors belegen | Eine Schätzung, die eine spätere Nachrechnung überholt |
+| Physik, Astronomie | Higgs-Boson | Higgs-Boson nachweisen und Masse bestimmen | Zwei Experimente mit eigenen Detektoren am selben Beschleuniger |
+| Chemie | Superschwere Elemente | Element 117 erzeugen und bestätigen | Bestätigung in einem zweiten Labor mit eigener Anlage |
+| Geowissenschaften | Massenaussterben am Ende der Kreidezeit | Einschlag belegen und datieren | Drei Belege verschiedener Art für eine Kette von Meilensteinen |
+| Biologie | Proteinstrukturvorhersage | Strukturen aus der Sequenz vorhersagen | Verblindeter Vergleich als gemeinsame Grundlage zweier Verfahren |
+| Werkstofftechnik | Supraleitung bei Raumtemperatur | LK-99 unabhängig bestätigen | Erstmeldung als Preprint, zwei Gruppen finden nichts |
+| Klinische Medizin | mRNA-Impfstoffe gegen COVID-19 | Wirksamkeit belegen | Zwei Studien verschiedener Sponsoren, dazu eine Beobachtungsstudie |
+| Agrarbiotechnologie | Biofortifikation von Reis | Provitamin A anreichern und Wirkung belegen | Eine zurückgezogene Studie lässt den letzten Meilenstein unerreicht |
+| Psychologie | Selbstkontrolle | Ego-Depletion-Effekt replizieren | Erstbefund gegen zwei große, vorab registrierte Replikationen |
+| Wirtschaftswissenschaften | Staatsverschuldung und Wachstum | Wachstumseinbruch nachrechnen | Nachrechnung auf demselben Datensatz mit anderem Ergebnis |
+| Geschichte, Archäologie | Identifizierung historischer Personen | Skelett als Richard III. identifizieren | Eine Quelle, ein offener Meilenstein ohne Beleg |
+
+Diese Angaben ließen sich per Websuche nicht bestätigen. Sie fehlen oder sind im Beleg als offen vermerkt:
+
+- die Konfidenzintervalle der beiden Phase-3-Studien zu den Impfstoffen,
+- die Anreicherungsfaktoren des Iridiums bei Alvarez et al.,
+- die Seitenzahlen der CMS-Veröffentlichung,
+- die Nummer des Hauptsatzes bei Hales und die Zahlenwerte zu RoseTTAFold,
+- die Angaben zur Veröffentlichung bei Ye et al., Baumeister et al. und Reinhart und Rogoff,
+- die DOI der zurückgezogenen Studie von Tang et al. und die Kennung des Preprints zu LK-99.
+
+Bei drei Studien verweist der Link deshalb auf einen Nachweis in einer Datenbank oder auf ein Arbeitspapier statt auf die Zeitschrift: Hildebrand et al., Hagger et al. sowie Herndon, Ash und Pollin.
+
+Der Ausbau hat den Prozess nicht mehr verändert. Alle neuen Fälle ließen sich mit dem bestehenden Datenmodell erfassen, auch der zurückgezogene, der widersprüchliche und der bedingte.
+
 ## Der Weg zur Freigabe
 
 1. Eine Person prüft einen Beleg gegen den Volltext, trägt die genaue Fundstelle nach und setzt sich in `extracted_by` ein.
