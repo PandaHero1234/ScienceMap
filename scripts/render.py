@@ -520,7 +520,7 @@ def zoom(steps: list[tuple[str, str]], current: str) -> str:
     items += f'<li aria-current="page"><span class="k">{LEVELS[level]}</span><b>{e(current)}</b></li>'
     out_title, out_href = steps[-1]
     return (f'<nav class="zoom" aria-label="Ebenen der Karte">'
-            f'<a class="btn ghost s" href="{e(out_href)}">{icon("out")}Raus: {e(out_title)}</a>'
+            f'<a class="btn ghost s" href="{e(out_href)}">{icon("out")}<span>Raus: {e(out_title)}</span></a>'
             f'<ol class="zoom-path">{items}</ol>'
             f'<p class="zoom-level">Ebene {level + 1} von {len(LEVELS)}</p></nav>')
 

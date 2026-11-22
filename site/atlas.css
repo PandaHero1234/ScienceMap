@@ -95,8 +95,12 @@ p { margin: 0 0 .75rem; }
 .crumbs a { color: var(--ink-2); }
 
 /* Ebenen der Karte: hinaus über den Weg oben, hinein über die Felder */
-.zoom { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1rem; margin: 0 0 1rem; padding-bottom: .9rem; border-bottom: 1px solid var(--line); }
-.zoom-path { display: flex; flex-wrap: wrap; gap: .5rem .4rem; list-style: none; margin: 0; padding: 0; flex: 1 1 20rem; min-width: 0; }
+.zoom { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "out level" "path path";
+        align-items: center; gap: .7rem 1rem; margin: 0 0 1rem; padding-bottom: .9rem; border-bottom: 1px solid var(--line); }
+.zoom > .btn { grid-area: out; justify-self: start; max-width: 100%; min-width: 0; }
+.zoom > .btn span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.zoom-level { grid-area: level; }
+.zoom-path { grid-area: path; display: flex; flex-wrap: wrap; gap: .5rem .4rem; list-style: none; margin: 0; padding: 0; min-width: 0; }
 .zoom-path li { display: flex; flex-direction: column; min-width: 0; max-width: 16rem; font-size: .875rem; line-height: 1.3; }
 .zoom-path li + li { padding-left: .9rem; border-left: 1px solid var(--line-strong); margin-left: .5rem; }
 .zoom-path .k { font-size: .6875rem; }
