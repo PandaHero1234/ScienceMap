@@ -1,0 +1,11 @@
+id: dec-2026-11-22-cl-graphen-feldeffekt
+date: '2026-11-22'
+kind: aussage
+target_id: cl-graphen-feldeffekt
+outcome: vorlaeufig_gestuetzt
+rationale: Novoselov et al. berichten stabile Schichten mit ausgeprägtem Feldeffekt. Es liegt eine Quelle
+  vor.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-graphen-novoselov-2004
+status: vorgeschlagen

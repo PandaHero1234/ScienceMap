@@ -1,0 +1,10 @@
+id: dec-2026-11-22-cl-vcjk-neue-variante
+date: '2026-11-22'
+kind: aussage
+target_id: cl-vcjk-neue-variante
+outcome: vorlaeufig_gestuetzt
+rationale: Will et al. beschreiben zehn Fälle mit neuem Befund. Es liegt eine Quelle vor.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-vcjk-will-1996
+status: vorgeschlagen

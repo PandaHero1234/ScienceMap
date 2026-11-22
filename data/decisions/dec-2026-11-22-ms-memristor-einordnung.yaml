@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-memristor-einordnung
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-memristor-einordnung
+catalog_version: 1
+outcome: nicht_erreicht
+rationale: Die erfasste unabhängige Veröffentlichung bestreitet die Einordnung, statt sie zu bestätigen.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-memristor-vongehr-2015
+status: vorgeschlagen

@@ -1,0 +1,15 @@
+id: ev-vcjk-will-1996
+claim_id: cl-vcjk-neue-variante
+study_id: will-vcjk-lancet-1996
+study_version: journal
+locator: Abstract
+dataset_id: faelle-vcjk-1996
+metric: Befund am Gehirn der Erkrankten
+values:
+  Fälle: 10
+  Befund: neue Variante, möglicherweise nur im Vereinigten Königreich
+uncertainty: Im Abstract nicht beziffert.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Die Zahl der Fälle ist über Sekundärquellen erfasst.

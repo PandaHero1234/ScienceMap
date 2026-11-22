@@ -1,0 +1,16 @@
+id: ev-cart-eliana-2018
+claim_id: cl-cart-remission
+study_id: maude-eliana-nejm-2018
+study_version: pubmed
+locator: Abstract
+dataset_id: nct02435849
+metric: Remissionsrate
+values:
+  Remissionsrate: 81 %
+  Auswertbare Behandelte: 75
+  Gesamtüberleben nach 12 Monaten: 76 %
+uncertainty: '95-%-Konfidenzintervall der Remissionsrate: 71 bis 89 %.'
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Fundstelle bisher nur auf Ebene des Abstracts erfasst. Tabelle oder Abbildung im Volltext ist nachzutragen.

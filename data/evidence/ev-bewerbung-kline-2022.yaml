@@ -1,0 +1,16 @@
+id: ev-bewerbung-kline-2022
+claim_id: cl-bewerbung-rueckmeldungen
+study_id: kline-bewerbung-qje-2022
+study_version: arbeitspapier
+locator: Abstract
+dataset_id: exp-kline-2022
+metric: Wahrscheinlichkeit einer Rückmeldung
+values:
+  Bewerbungen: über 83 000
+  Unternehmen: 108
+  Geringere Wahrscheinlichkeit bei schwarzen Namen: 2,1 Prozentpunkte
+uncertainty: Standardfehler ist aus dem Volltext nachzutragen.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Fundstelle aus dem Arbeitspapier. Die Tabelle der Zeitschriftenfassung ist nachzutragen.

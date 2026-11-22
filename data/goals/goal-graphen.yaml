@@ -1,0 +1,29 @@
+id: goal-graphen
+field: Nanotechnologie
+area: '210'
+topic: Graphen
+title: Atomar dünne Kohlenstoffschichten herstellen und masselose Dirac-Fermionen darin nachweisen
+last_work: Drei Veröffentlichungen mit drei Belegen als Vorschlag erfasst
+open_question: Zweite Person trägt Abbildungen und Messwerte aus den Volltexten nach
+milestones:
+- id: ms-graphen-herstellung
+  title: Atomar dünne Kohlenstoffschichten herstellen
+  criterion: Eine begutachtete Veröffentlichung berichtet wenige Atomlagen dünne Kohlenstoffschichten,
+    die unter Umgebungsbedingungen stabil sind und einen elektrischen Feldeffekt zeigen.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-graphen-quanten-hall
+  title: Halbzahligen Quanten-Hall-Effekt messen
+  criterion: Eine begutachtete Veröffentlichung berichtet den Quanten-Hall-Effekt bei halbzahligen Füllfaktoren.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-graphen-zweite-gruppe
+  title: Durch zweite Gruppe bestätigen
+  criterion: Eine zweite Gruppe berichtet den halbzahligen Quanten-Hall-Effekt an eigenen Proben.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+catalog:
+- version: 1
+  date: '2026-11-22'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-graphen-herstellung
+  - ms-graphen-quanten-hall
+  - ms-graphen-zweite-gruppe

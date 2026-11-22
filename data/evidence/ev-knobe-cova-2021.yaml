@@ -1,0 +1,16 @@
+id: ev-knobe-cova-2021
+claim_id: cl-knobe-nebenfolgen
+study_id: cova-replikation-rpp-2021
+study_version: journal
+locator: Abstract
+dataset_id: replikation-xphi-2021
+metric: Anteil erfolgreicher Replikationen
+values:
+  Replizierte Studien: 40
+  Erfolgreich repliziert: etwa 70 %
+uncertainty: Als ungefähre Angabe berichtet.
+relation: nicht_entscheidend
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Ob die Studie von 2003 zu den 40 Studien gehört und wie sie ausfiel, steht nicht im Abstract. Knobe
+  hat an der Replikationsstudie mitgeschrieben.

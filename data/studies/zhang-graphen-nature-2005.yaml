@@ -1,0 +1,10 @@
+id: zhang-graphen-nature-2005
+label: Zhang et al., Experimental observation of the quantum Hall effect and Berry's phase in graphene
+  (Nature 438, 201–204)
+short_label: Zhang et al. 2005
+team: zhang-et-al
+status: aktiv
+versions:
+- id: arxiv
+  kind: Preprint arXiv:cond-mat/0509355
+  url: https://arxiv.org/abs/cond-mat/0509355

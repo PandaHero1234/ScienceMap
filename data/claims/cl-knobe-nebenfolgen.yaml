@@ -1,0 +1,7 @@
+id: cl-knobe-nebenfolgen
+statement: Menschen stufen eine schädliche Nebenfolge einer Handlung häufiger als absichtlich ein als
+  eine nützliche.
+scope: Befragungen mit kurzen Fallgeschichten.
+milestone_ids:
+- ms-knobe-erstbefund
+- ms-knobe-replikation

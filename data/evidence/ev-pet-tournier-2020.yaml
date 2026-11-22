@@ -1,0 +1,15 @@
+id: ev-pet-tournier-2020
+claim_id: cl-pet-enzym
+study_id: tournier-pet-nature-2020
+study_version: journal
+locator: Abstract
+dataset_id: exp-tournier-2020
+metric: Abbau von PET zu Monomeren
+values:
+  Abbau zu Monomeren: mindestens 90 % in 10 Stunden
+  Produktivität: 16,7 g Terephthalat je Liter und Stunde
+uncertainty: Als Mindestwert berichtet.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Fundstelle bisher nur auf Ebene des Abstracts erfasst. Tabelle oder Abbildung im Volltext ist nachzutragen.

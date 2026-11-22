@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-hpylori-rueckfall
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-hpylori-rueckfall
+catalog_version: 1
+outcome: erreicht
+rationale: Hentschel et al. berichten deutlich weniger Rückfälle nach Behandlung mit Amoxicillin und Metronidazol.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-hpylori-hentschel-1993
+status: vorgeschlagen

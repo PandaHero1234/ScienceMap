@@ -1,0 +1,13 @@
+id: yoshida-pet-science-2016
+label: Yoshida et al., A bacterium that degrades and assimilates poly(ethylene terephthalate) (Science
+  351, 1196)
+short_label: Yoshida et al. 2016
+team: yoshida-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1126/science.aad6359
+- id: pubmed
+  kind: Eintrag in PubMed
+  url: https://pubmed.ncbi.nlm.nih.gov/26965627/

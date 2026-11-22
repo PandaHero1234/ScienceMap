@@ -1,0 +1,7 @@
+id: cl-mindset-noten
+statement: Eine kurze Online-Intervention zum Growth Mindset verbessert die Noten leistungsschwächerer
+  Schülerinnen und Schüler.
+scope: Highschools in den USA.
+milestone_ids:
+- ms-mindset-experiment
+- ms-mindset-metaanalyse

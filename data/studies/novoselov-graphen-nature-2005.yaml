@@ -1,0 +1,9 @@
+id: novoselov-graphen-nature-2005
+label: Novoselov et al., Two-dimensional gas of massless Dirac fermions in graphene (Nature 438, 197–200)
+short_label: Novoselov et al. 2005
+team: novoselov-et-al
+status: aktiv
+versions:
+- id: arxiv
+  kind: Preprint arXiv:cond-mat/0509330
+  url: https://arxiv.org/abs/cond-mat/0509330

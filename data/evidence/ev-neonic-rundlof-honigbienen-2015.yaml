@@ -1,0 +1,14 @@
+id: ev-neonic-rundlof-honigbienen-2015
+claim_id: cl-neonic-honigbienen
+study_id: rundlof-wildbienen-nature-2015
+study_version: journal
+locator: Abstract
+dataset_id: feldversuch-rundlof-2015
+metric: Honigbienenvölker an behandelten Feldern
+values:
+  Befund: keine signifikante Wirkung auf Honigbienenvölker
+uncertainty: Im Abstract nicht beziffert.
+relation: spricht_dagegen
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Fundstelle bisher nur auf Ebene des Abstracts erfasst. Tabelle oder Abbildung im Volltext ist nachzutragen.

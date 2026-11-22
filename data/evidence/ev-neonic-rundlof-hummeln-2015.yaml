@@ -1,0 +1,15 @@
+id: ev-neonic-rundlof-hummeln-2015
+claim_id: cl-neonic-hummeln
+study_id: rundlof-wildbienen-nature-2015
+study_version: journal
+locator: Abstract
+dataset_id: feldversuch-rundlof-2015
+metric: Wildbienen und Hummelvölker an behandelten Feldern
+values:
+  Befund: geringere Dichte von Wildbienen, weniger Nester von Solitärbienen, geringeres Wachstum und geringere
+    Fortpflanzung von Hummelvölkern
+uncertainty: Im Abstract nicht beziffert.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Fundstelle bisher nur auf Ebene des Abstracts erfasst. Tabelle oder Abbildung im Volltext ist nachzutragen.

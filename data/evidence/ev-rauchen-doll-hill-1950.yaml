@@ -1,0 +1,14 @@
+id: ev-rauchen-doll-hill-1950
+claim_id: cl-rauchen-lungenkrebs
+study_id: doll-hill-bmj-1950
+study_version: journal
+locator: Schlussfolgerung des Artikels
+dataset_id: fallkontrolle-doll-hill-1950
+metric: Zusammenhang zwischen Rauchen und Lungenkrebs
+values:
+  Befund: Rauchen ist eine Ursache von Lungenkrebs, und zwar eine wichtige
+uncertainty: Zahlen zu Fällen und Kontrollen sind aus dem Volltext nachzutragen.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Die Schlussfolgerung ist bisher über eine Sekundärquelle erfasst.

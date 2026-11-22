@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-neonic-hummeln
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-neonic-hummeln
+catalog_version: 1
+outcome: erreicht
+rationale: Whitehorn et al. berichten 85 % weniger neue Königinnen.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-neonic-whitehorn-2012
+status: vorgeschlagen

@@ -1,0 +1,10 @@
+id: dec-2026-11-22-cl-federalist-madison
+date: '2026-11-22'
+kind: aussage
+target_id: cl-federalist-madison
+outcome: vorlaeufig_gestuetzt
+rationale: Mosteller und Wallace ordnen alle zwölf Texte Madison zu. Es liegt eine Quelle vor.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-federalist-mosteller-1963
+status: vorgeschlagen

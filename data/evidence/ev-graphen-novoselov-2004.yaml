@@ -1,0 +1,15 @@
+id: ev-graphen-novoselov-2004
+claim_id: cl-graphen-feldeffekt
+study_id: novoselov-graphen-science-2004
+study_version: journal
+locator: Abstract
+dataset_id: exp-novoselov-2004
+metric: Stabilität und Beweglichkeit der Ladungsträger
+values:
+  Beweglichkeit bei Raumtemperatur: etwa 10 000 cm²/(V·s)
+  Befund: ausgeprägter ambipolarer Feldeffekt
+uncertainty: Als ungefähre Angabe berichtet.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Fundstelle bisher nur auf Ebene des Abstracts erfasst. Tabelle oder Abbildung im Volltext ist nachzutragen.

@@ -1,0 +1,17 @@
+id: ev-bewerbung-quillian-2017
+claim_id: cl-bewerbung-rueckmeldungen
+study_id: quillian-bewerbung-pnas-2017
+study_version: journal
+locator: Abstract
+dataset_id: meta-quillian-2017
+metric: Rückmeldungen auf Bewerbungen
+values:
+  Mehr Rückmeldungen für Weiße als für Afroamerikaner: 36 %
+  Mehr Rückmeldungen für Weiße als für Latinos: 24 %
+  Studien seit 1989: 24
+  Trend: keine Veränderung über 25 Jahre gegenüber Afroamerikanern
+uncertainty: Konfidenzintervalle sind aus dem Volltext nachzutragen.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Die Meta-Analyse kann das Feldexperiment von 2004 enthalten. Dann sind beide Grundlagen nicht unabhängig.

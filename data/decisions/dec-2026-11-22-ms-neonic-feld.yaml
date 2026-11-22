@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-neonic-feld
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-neonic-feld
+catalog_version: 1
+outcome: erreicht
+rationale: Rundlöf et al. berichten im Feldversuch Schäden an Wildbienen und Hummeln.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-neonic-rundlof-hummeln-2015
+status: vorgeschlagen

@@ -1,0 +1,14 @@
+id: ev-memristor-vongehr-2015
+claim_id: cl-memristor-chua
+study_id: vongehr-memristor-scirep-2015
+study_version: journal
+locator: Abstract
+dataset_id: exp-strukov-2008
+metric: Einordnung des Bauelements
+values:
+  Befund: der ursprünglich vorhergesagte Memristor fehlt weiterhin und ist wahrscheinlich unmöglich
+uncertainty: Entfällt. Es geht um eine Einordnung, nicht um einen Messwert.
+relation: spricht_dagegen
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Begriffliche und historische Einwände zu denselben Bauelementen, keine neue Messung.

@@ -1,0 +1,10 @@
+id: dec-2026-11-22-cl-pet-enzym
+date: '2026-11-22'
+kind: aussage
+target_id: cl-pet-enzym
+outcome: vorlaeufig_gestuetzt
+rationale: Tournier et al. berichten mindestens 90 % Abbau in 10 Stunden. Es liegt eine Quelle vor.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-pet-tournier-2020
+status: vorgeschlagen

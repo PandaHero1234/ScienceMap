@@ -1,0 +1,16 @@
+id: ev-haustuer-broockman-2016
+claim_id: cl-haustuer-transphobie
+study_id: broockman-kalla-science-2016
+study_version: repositorium
+locator: Abstract
+dataset_id: feldexperiment-broockman-kalla-2016
+metric: Einstellung gegenüber Transgender-Personen
+values:
+  Wählerinnen und Wähler: 501
+  Wahlhelfende: 56
+  Dauer der Wirkung: mindestens 3 Monate
+uncertainty: Effektstärke und Konfidenzintervall sind aus dem Volltext nachzutragen.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Fundstelle bisher nur auf Ebene des Abstracts erfasst. Tabelle oder Abbildung im Volltext ist nachzutragen.

@@ -1,0 +1,6 @@
+id: cl-bleiweiss-alter
+statement: Am Verhältnis von Blei-210 zu Radium-226 lässt sich modernes von altem Blei unterscheiden.
+scope: Blei und Bleiweiß. Blei-210 zerfällt mit einer Halbwertszeit von 22 Jahren.
+milestone_ids:
+- ms-bleiweiss-verfahren
+- ms-bleiweiss-anwendung

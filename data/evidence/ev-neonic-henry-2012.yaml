@@ -1,0 +1,15 @@
+id: ev-neonic-henry-2012
+claim_id: cl-neonic-honigbienen
+study_id: henry-honigbienen-science-2012
+study_version: pubmed
+locator: Abstract
+dataset_id: exp-henry-2012
+metric: Heimkehr der Sammlerinnen
+values:
+  Befund: Heimkehr nach Belastung mit Thiamethoxam beeinträchtigt
+uncertainty: Im Abstract nicht beziffert.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Guez hat 2013 die Berechnung der Ausfallrate kritisiert, die Gruppe um Henry hat geantwortet. Beides
+  ist noch nicht erfasst.

@@ -1,0 +1,13 @@
+id: dec-2026-11-22-cl-rauchen-lungenkrebs
+date: '2026-11-22'
+kind: aussage
+target_id: cl-rauchen-lungenkrebs
+outcome: mehrfach_gestuetzt
+rationale: Zwei Fall-Kontroll-Studien zweier Gruppen und eine Kohortenstudie berichten den Zusammenhang
+  an drei verschiedenen Grundlagen. Zwei der drei Arbeiten stammen von Doll und Hill.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-rauchen-doll-hill-1950
+- ev-rauchen-wynder-graham-1950
+- ev-rauchen-doll-hill-1954
+status: vorgeschlagen

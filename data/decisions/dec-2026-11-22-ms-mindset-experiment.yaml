@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-mindset-experiment
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-mindset-experiment
+catalog_version: 1
+outcome: erreicht
+rationale: Yeager et al. berichten bessere Noten bei Leistungsschwächeren.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-mindset-yeager-2019
+status: vorgeschlagen

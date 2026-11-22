@@ -1,0 +1,12 @@
+id: doll-hill-bmj-1954
+label: Doll und Hill, The Mortality of Doctors in Relation to Their Smoking Habits (Br. Med. J. 1, 1451–1455)
+short_label: Doll und Hill 1954
+team: doll-hill
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1136/bmj.1.4877.1451
+- id: pubmed
+  kind: Eintrag in PubMed
+  url: https://pubmed.ncbi.nlm.nih.gov/13160495/

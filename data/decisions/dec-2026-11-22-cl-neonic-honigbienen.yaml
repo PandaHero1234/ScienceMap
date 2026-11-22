@@ -1,0 +1,12 @@
+id: dec-2026-11-22-cl-neonic-honigbienen
+date: '2026-11-22'
+kind: aussage
+target_id: cl-neonic-honigbienen
+outcome: widerspruechlich
+rationale: Henry et al. berichten eine gestörte Heimkehr einzelner Sammlerinnen. Rundlöf et al. finden
+  im Feld keine signifikante Wirkung auf Honigbienenvölker. Die gemessenen Größen unterscheiden sich.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-neonic-henry-2012
+- ev-neonic-rundlof-honigbienen-2015
+status: vorgeschlagen

@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-klon-zweite-art
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-klon-zweite-art
+catalog_version: 1
+outcome: erreicht
+rationale: Wakayama et al. berichten ausgetragene Mäuse aus Kumuluszellkernen.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-klon-wakayama-1998
+status: vorgeschlagen

@@ -1,0 +1,30 @@
+id: goal-helicobacter-geschwuer
+field: Medizin
+area: '302'
+topic: Helicobacter pylori und Geschwüre
+title: Helicobacter pylori als Ursache wiederkehrender Zwölffingerdarmgeschwüre belegen
+last_work: Zwei Veröffentlichungen mit zwei Belegen als Vorschlag erfasst
+open_question: Zweite Person trägt die Rückfallraten beider Gruppen aus der Studie von 1993 nach
+milestones:
+- id: ms-hpylori-bakterium
+  title: Bakterium bei Erkrankten nachweisen
+  criterion: Eine begutachtete Veröffentlichung berichtet das Bakterium in Magenproben von Menschen mit
+    Gastritis oder Geschwür.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-hpylori-rueckfall
+  title: Rückfälle durch Beseitigung des Bakteriums senken
+  criterion: Eine kontrollierte Studie berichtet deutlich weniger Rückfälle, nachdem das Bakterium mit
+    Mitteln beseitigt wurde, die nicht direkt auf die Schleimhaut wirken.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-hpylori-zweite-studie
+  title: In zweiter kontrollierter Studie bestätigen
+  criterion: Eine zweite kontrollierte Studie einer anderen Gruppe berichtet dasselbe.
+  note: Offen. Im Atlas ist kein Beleg erfasst.
+catalog:
+- version: 1
+  date: '2026-11-22'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-hpylori-bakterium
+  - ms-hpylori-rueckfall
+  - ms-hpylori-zweite-studie

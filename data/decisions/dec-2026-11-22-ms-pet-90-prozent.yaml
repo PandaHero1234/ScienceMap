@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-pet-90-prozent
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-pet-90-prozent
+catalog_version: 1
+outcome: erreicht
+rationale: Tournier et al. berichten mindestens 90 % Abbau in 10 Stunden.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-pet-tournier-2020
+status: vorgeschlagen

@@ -1,0 +1,9 @@
+id: vongehr-memristor-scirep-2015
+label: Vongehr und Meng, The Missing Memristor has Not been Found (Sci. Rep. 5, 11657)
+short_label: Vongehr und Meng 2015
+team: vongehr-meng
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://www.nature.com/articles/srep11657

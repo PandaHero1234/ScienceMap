@@ -1,0 +1,7 @@
+id: cl-rauchen-lungenkrebs
+statement: Rauchen ist eine Ursache von Lungenkrebs.
+scope: Zwei Fall-Kontroll-Studien von 1950 und eine Kohortenstudie von 1954.
+milestone_ids:
+- ms-rauchen-fallkontrolle
+- ms-rauchen-zweite-studie
+- ms-rauchen-kohorte

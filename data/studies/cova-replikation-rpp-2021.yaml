@@ -1,0 +1,10 @@
+id: cova-replikation-rpp-2021
+label: Cova et al., Estimating the Reproducibility of Experimental Philosophy (Rev. Philos. Psychol. 12,
+  9–44)
+short_label: Cova et al. 2021
+team: cova-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1007/s13164-018-0400-9

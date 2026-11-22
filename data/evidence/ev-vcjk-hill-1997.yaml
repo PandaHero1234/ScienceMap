@@ -1,0 +1,14 @@
+id: ev-vcjk-hill-1997
+claim_id: cl-vcjk-bse-stamm
+study_id: hill-vcjk-nature-1997
+study_version: journal
+locator: Titel
+dataset_id: maeuse-hill-1997
+metric: Vergleich der Erregerstämme
+values:
+  Befund: derselbe Prionstamm verursacht die neue Variante und BSE
+uncertainty: offen
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Verfahren und Fallzahlen sind aus dem Volltext nachzutragen.

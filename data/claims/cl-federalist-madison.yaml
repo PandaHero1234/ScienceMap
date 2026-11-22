@@ -1,0 +1,6 @@
+id: cl-federalist-madison
+statement: Alle zwölf umstrittenen Federalist Papers stammen von James Madison, nicht von Alexander Hamilton.
+scope: Die zwölf Texte, deren Autorschaft zwischen Hamilton und Madison strittig ist.
+milestone_ids:
+- ms-federalist-zuordnung
+- ms-federalist-zweites-verfahren

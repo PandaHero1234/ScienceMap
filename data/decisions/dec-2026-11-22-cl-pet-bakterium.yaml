@@ -1,0 +1,10 @@
+id: dec-2026-11-22-cl-pet-bakterium
+date: '2026-11-22'
+kind: aussage
+target_id: cl-pet-bakterium
+outcome: vorlaeufig_gestuetzt
+rationale: Yoshida et al. beschreiben das Bakterium. Es liegt eine Quelle vor.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-pet-yoshida-2016
+status: vorgeschlagen

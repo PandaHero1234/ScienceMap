@@ -1,0 +1,13 @@
+id: wynder-graham-jama-1950
+label: Wynder und Graham, Tobacco smoking as a possible etiologic factor in bronchiogenic carcinoma; a
+  study of 684 proved cases (J. Am. Med. Assoc. 143, 329–336)
+short_label: Wynder und Graham 1950
+team: wynder-graham
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1001/jama.1950.02910390001001
+- id: pubmed
+  kind: Eintrag in PubMed
+  url: https://pubmed.ncbi.nlm.nih.gov/15415260/

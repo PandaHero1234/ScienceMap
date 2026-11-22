@@ -1,0 +1,10 @@
+id: whitehorn-hummeln-science-2012
+label: Whitehorn et al., Neonicotinoid pesticide reduces bumble bee colony growth and queen production
+  (Science 336, 351–352)
+short_label: Whitehorn et al. 2012
+team: whitehorn-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1126/science.1215025

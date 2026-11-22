@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-klon-geburt
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-klon-geburt
+catalog_version: 1
+outcome: erreicht
+rationale: Wilmut et al. berichten die Geburt 1997 in Nature.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-dolly-wilmut-1997
+status: vorgeschlagen

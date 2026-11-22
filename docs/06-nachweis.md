@@ -11,7 +11,7 @@ python -m pytest -q                  # prüft jede Regel
 python scripts/atlas.py build        # schreibt die Übersicht nach public/
 ```
 
-Von den 142 Tests arbeiten 52 mit erfundenen Daten in einem temporären Ordner. Die übrigen lesen die echten Daten. Sie leiten ihre Erwartungen aus den Daten ab, damit ein weiterer Ausbau der Karte keine Tests bricht. Als Gegenprobe wurden dreizehn Regeln einzeln im Skript ausgeschaltet. Jedes Mal schlug mindestens ein Test fehl.
+Von den 180 Tests arbeiten 52 mit erfundenen Daten in einem temporären Ordner. Die übrigen lesen die echten Daten. Sie leiten ihre Erwartungen aus den Daten ab, damit ein weiterer Ausbau der Karte keine Tests bricht. Als Gegenprobe wurden dreizehn Regeln einzeln im Skript ausgeschaltet. Jedes Mal schlug mindestens ein Test fehl.
 
 ## Belegt
 
@@ -48,6 +48,10 @@ Von den 142 Tests arbeiten 52 mit erfundenen Daten in einem temporären Ordner. 
 | Eine zurückgezogene Studie stützt nichts mehr | 7 | `test_zurueckgezogene_studie_stuetzt_nichts_mehr` |
 | Ein Beweis ist eine Grundlage wie ein Datensatz oder ein Ereignis | 7 | `test_zwei_verschiedene_beweise_sind_zwei_grundlagen` |
 | Die Vorschläge der drei Fächer bleiben nach einer Freigabe durch zwei Personen widerspruchsfrei | 7 | `test_nach_freigabe_steht_der_zaehler_wie_vorgeschlagen` |
+| Ein nicht entscheidender Beleg zählt weder dafür noch dagegen | 7 | `test_nicht_entscheidender_beleg_zaehlt_weder_dafuer_noch_dagegen` |
+| Dieselbe Studie kann eine Aussage stützen und gegen eine andere sprechen | 7 | `test_eine_studie_stuetzt_eine_aussage_und_spricht_gegen_eine_andere` |
+| Der Link eines Belegs führt zu der Fassung, die gelesen wurde | 7 | `test_beleg_verweist_auf_die_fassung_die_gelesen_wurde` |
+| Jeder der sechs Bereiche hat mindestens drei Fachgebiete mit Zielen | 7 | `test_jeder_bereich_hat_mindestens_drei_fachgebiete_mit_zielen` |
 
 ## Widerlegt oder nur mit Änderung umsetzbar
 
@@ -65,9 +69,9 @@ Von den 142 Tests arbeiten 52 mit erfundenen Daten in einem temporären Ordner. 
 
 - **Zahlenwerte aus Tabelle 4.** Die Werte 0,88 und 0,66 stammen aus dem Dokumentationsentwurf. Sie sind noch nicht mit der Veröffentlichung abgeglichen. Der Beleg steht deshalb auf „vorgeschlagen“. Dieser Abgleich ist Meilenstein 1.
 - **Variante des Inductive Miner, Fassung und Vorverarbeitung von BPIC12.** Diese Angaben sind in Aussage und Datensatz als offen markiert.
-- **Veröffentlichung auf GitHub Pages.** Der Workflow liegt vor. Er läuft erst, wenn ein Branch `main` existiert und Pages in den Einstellungen mit der Quelle „GitHub Actions“ eingeschaltet ist.
+- **Veröffentlichung von `main` aus.** Die Übersicht ist auf GitHub Pages veröffentlicht. Den Lauf von `main` aus lehnt GitHub bisher ab, vermutlich weil die Umgebung `github-pages` nur den früheren Standard-Branch zulässt. Bis `main` dort eingetragen ist, wird der Lauf von Hand vom Arbeits-Branch aus gestartet.
 - **Überwachung von Korrekturen und Rückzügen.** Jemand muss den Status der Studie von Hand eintragen. Danach markiert das Skript alle betroffenen Entscheidungen.
 - **Unsicherheit in Meilenstein 3.** Das Kriterium nennt noch kein Verfahren und keine Schwelle für „Vorteil nicht nachweisbar“.
-- **Einträge außerhalb des Pilots.** Die Einträge der 16 weiteren Ziele sind mit Abstracts abgeglichen, nicht mit den Volltexten. Was sich nicht bestätigen ließ, steht in [Drei Fachgebiete als Prozesstest](07-fachgebiete.md).
+- **Einträge außerhalb des Pilots.** Die Einträge der 31 weiteren Ziele sind mit Abstracts abgeglichen, nicht mit den Volltexten. Was sich nicht bestätigen ließ, steht in [Drei Fachgebiete als Prozesstest](07-fachgebiete.md).
 - **Bezeichnungen der Systematik.** Der Aufbau von ÖFOS 2012 mit 6 Hauptgruppen und 42 Gruppen ist geprüft. Die Namen der Gruppen sind noch nicht vollständig mit der Veröffentlichung von Statistik Austria abgeglichen.
 - **Zuordnung von Meilenstein 1.** Der Quellenabgleich ist Arbeit am Atlas und zählt derzeit im Fortschrittsbalken mit. Kapitel 1 trennt beides. Die Entscheidung steht aus.

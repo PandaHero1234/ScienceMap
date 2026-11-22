@@ -1,0 +1,5 @@
+id: cl-pet-bakterium
+statement: Das Bakterium Ideonella sakaiensis 201-F6 baut PET ab und nutzt es als Kohlenstoff- und Energiequelle.
+scope: Versuche mit PET-Folie bei 30 °C.
+milestone_ids:
+- ms-pet-organismus

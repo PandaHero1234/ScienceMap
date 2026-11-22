@@ -1,0 +1,9 @@
+id: signer-dolly-nature-1998
+label: Signer et al., DNA fingerprinting Dolly (Nature 394, 329–330)
+short_label: Signer et al. 1998
+team: signer-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1038/28524

@@ -1,0 +1,16 @@
+id: ev-mindset-sisk-2018
+claim_id: cl-mindset-noten
+study_id: sisk-mindset-psci-2018
+study_version: journal
+locator: Abstract
+dataset_id: meta-sisk-2018
+metric: Gesamtwirkung der Interventionen
+values:
+  Studien: 43
+  Teilnehmende: 57155
+  Befund: insgesamt schwache Wirkung
+uncertainty: Effektstärken sind aus dem Volltext nachzutragen.
+relation: nicht_entscheidend
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Eine schwache Gesamtwirkung schließt eine Wirkung bei Leistungsschwächeren nicht aus.

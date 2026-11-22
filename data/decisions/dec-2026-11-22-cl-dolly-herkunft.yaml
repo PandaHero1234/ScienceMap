@@ -1,0 +1,13 @@
+id: dec-2026-11-22-cl-dolly-herkunft
+date: '2026-11-22'
+kind: aussage
+target_id: cl-dolly-herkunft
+outcome: mehrfach_gestuetzt
+rationale: Die Erstveröffentlichung und zwei genetische Analysen stützen die Herkunft. Eine der beiden
+  Analysen ist nicht unabhängig, die andere stammt von einer anderen Gruppe.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-dolly-wilmut-1997
+- ev-dolly-ashworth-1998
+- ev-dolly-signer-1998
+status: vorgeschlagen

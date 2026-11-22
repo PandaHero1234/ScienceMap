@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-bewerbung-metaanalyse
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-bewerbung-metaanalyse
+catalog_version: 1
+outcome: erreicht
+rationale: Quillian et al. werten 24 Studien seit 1989 aus.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-bewerbung-quillian-2017
+status: vorgeschlagen

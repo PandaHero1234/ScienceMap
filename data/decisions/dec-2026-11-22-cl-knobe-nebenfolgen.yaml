@@ -1,0 +1,12 @@
+id: dec-2026-11-22-cl-knobe-nebenfolgen
+date: '2026-11-22'
+kind: aussage
+target_id: cl-knobe-nebenfolgen
+outcome: vorlaeufig_gestuetzt
+rationale: Knobe berichtet den Unterschied. Die Replikationsstudie ist erfasst, entscheidet die Frage
+  aber noch nicht.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-knobe-2003
+- ev-knobe-cova-2021
+status: vorgeschlagen

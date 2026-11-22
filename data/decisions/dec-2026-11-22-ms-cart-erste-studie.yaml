@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-cart-erste-studie
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-cart-erste-studie
+catalog_version: 1
+outcome: erreicht
+rationale: Die Studie von 2014 berichtet vollständige Remissionen bei 90 % von 30 Behandelten.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-cart-maude-2014
+status: vorgeschlagen

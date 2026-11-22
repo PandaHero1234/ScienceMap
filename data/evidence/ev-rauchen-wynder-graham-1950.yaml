@@ -1,0 +1,15 @@
+id: ev-rauchen-wynder-graham-1950
+claim_id: cl-rauchen-lungenkrebs
+study_id: wynder-graham-jama-1950
+study_version: journal
+locator: Titel
+dataset_id: fallkontrolle-wynder-graham-1950
+metric: Zusammenhang zwischen Rauchen und Lungenkrebs
+values:
+  Gesicherte Fälle: 684
+  Befund: Tabakrauchen als möglicher ursächlicher Faktor benannt
+uncertainty: Anteile der Rauchenden unter Fällen und Kontrollen sind aus dem Volltext nachzutragen.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: PubMed führt zu diesem Artikel kein Abstract.

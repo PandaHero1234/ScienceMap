@@ -1,0 +1,7 @@
+id: cl-haustuer-transphobie
+statement: Ein etwa zehnminütiges Haustürgespräch verringert Vorurteile gegenüber Transgender-Personen
+  für mindestens drei Monate.
+scope: Wählerinnen und Wähler in Südflorida.
+milestone_ids:
+- ms-haustuer-feldexperiment
+- ms-haustuer-anderes-team

@@ -1,0 +1,6 @@
+id: cl-memristor-verhalten
+statement: Ein zweipoliges elektrisches Bauelement verhält sich in einem eingeschränkten Bereich seiner
+  Zustandsvariablen wie ein idealer Memristor.
+scope: Die 2008 vorgestellten Bauelemente und ihr physikalisches Modell.
+milestone_ids:
+- ms-memristor-bauelement

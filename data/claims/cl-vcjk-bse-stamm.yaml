@@ -1,0 +1,7 @@
+id: cl-vcjk-bse-stamm
+statement: Die neue Variante der Creutzfeldt-Jakob-Krankheit wird vom selben Erregerstamm verursacht wie
+  BSE.
+scope: Übertragungsversuche mit Mäusen.
+milestone_ids:
+- ms-vcjk-erregerstamm
+- ms-vcjk-zweite-gruppe

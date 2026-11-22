@@ -1,0 +1,13 @@
+id: sisk-mindset-psci-2018
+label: Sisk et al., To What Extent and Under Which Circumstances Are Growth Mind-Sets Important to Academic
+  Achievement? Two Meta-Analyses (Psychol. Sci. 29, 549–571)
+short_label: Sisk et al. 2018
+team: sisk-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1177/0956797617739704
+- id: pubmed
+  kind: Eintrag in PubMed
+  url: https://pubmed.ncbi.nlm.nih.gov/29505339/

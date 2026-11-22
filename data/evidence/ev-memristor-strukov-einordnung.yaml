@@ -1,0 +1,13 @@
+id: ev-memristor-strukov-einordnung
+claim_id: cl-memristor-chua
+study_id: strukov-memristor-nature-2008
+study_version: journal
+locator: Titel und Abstract
+dataset_id: exp-strukov-2008
+metric: Einordnung des Bauelements
+values:
+  Befund: als der fehlende Memristor vorgestellt
+uncertainty: Entfällt. Es geht um eine Einordnung, nicht um einen Messwert.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell

@@ -1,0 +1,6 @@
+id: cl-hpylori-rueckfall
+statement: Wird Helicobacter pylori beseitigt, kehren Zwölffingerdarmgeschwüre deutlich seltener zurück.
+scope: Erkrankte mit Helicobacter-pylori-Infektion und wiederkehrendem Zwölffingerdarmgeschwür.
+milestone_ids:
+- ms-hpylori-rueckfall
+- ms-hpylori-zweite-studie

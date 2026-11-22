@@ -1,0 +1,12 @@
+id: dec-2026-11-22-cl-neonic-hummeln
+date: '2026-11-22'
+kind: aussage
+target_id: cl-neonic-hummeln
+outcome: mehrfach_gestuetzt
+rationale: Ein Versuch mit Imidacloprid und ein Feldversuch mit Clothianidin berichten Schäden an Hummelvölkern.
+  Zwei Gruppen, zwei Wirkstoffe, zwei Grundlagen.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-neonic-whitehorn-2012
+- ev-neonic-rundlof-hummeln-2015
+status: vorgeschlagen

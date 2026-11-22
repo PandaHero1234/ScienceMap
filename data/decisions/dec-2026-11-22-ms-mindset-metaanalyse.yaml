@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-mindset-metaanalyse
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-mindset-metaanalyse
+catalog_version: 1
+outcome: nicht_erreicht
+rationale: Sisk et al. berichten insgesamt eine schwache Wirkung.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-mindset-sisk-2018
+status: vorgeschlagen

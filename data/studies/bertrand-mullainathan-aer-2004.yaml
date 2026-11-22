@@ -1,0 +1,10 @@
+id: bertrand-mullainathan-aer-2004
+label: Bertrand und Mullainathan, Are Emily and Greg More Employable than Lakisha and Jamal? A Field Experiment
+  on Labor Market Discrimination (Am. Econ. Rev. 94, 991–1013)
+short_label: Bertrand und Mullainathan 2004
+team: bertrand-mullainathan
+status: aktiv
+versions:
+- id: arbeitspapier
+  kind: Arbeitspapier NBER w9873
+  url: https://www.nber.org/papers/w9873

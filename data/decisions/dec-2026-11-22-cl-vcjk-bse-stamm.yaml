@@ -1,0 +1,11 @@
+id: dec-2026-11-22-cl-vcjk-bse-stamm
+date: '2026-11-22'
+kind: aussage
+target_id: cl-vcjk-bse-stamm
+outcome: mehrfach_gestuetzt
+rationale: Zwei Gruppen kommen mit eigenen Übertragungsversuchen zum selben Ergebnis.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-vcjk-bruce-1997
+- ev-vcjk-hill-1997
+status: vorgeschlagen

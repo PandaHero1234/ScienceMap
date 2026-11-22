@@ -1,0 +1,10 @@
+id: bruce-vcjk-nature-1997
+label: Bruce et al., Transmissions to mice indicate that 'new variant' CJD is caused by the BSE agent
+  (Nature 389, 498–501)
+short_label: Bruce et al. 1997
+team: bruce-et-al
+status: aktiv
+versions:
+- id: pubmed
+  kind: Eintrag in PubMed
+  url: https://pubmed.ncbi.nlm.nih.gov/9333239/

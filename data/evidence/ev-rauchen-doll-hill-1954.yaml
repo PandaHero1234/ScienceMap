@@ -1,0 +1,15 @@
+id: ev-rauchen-doll-hill-1954
+claim_id: cl-rauchen-lungenkrebs
+study_id: doll-hill-bmj-1954
+study_version: journal
+locator: Zusammenfassung des Artikels
+dataset_id: kohorte-britische-aerzte
+metric: Sterblichkeit nach Rauchgewohnheit
+values:
+  Befund: höhere Sterblichkeit bei Rauchenden
+  Dosis und Wirkung: Sterblichkeit an Lungenkrebs steigt mit der gerauchten Menge
+uncertainty: Sterberaten je Gruppe sind aus dem Volltext nachzutragen.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Der Befund ist bisher über eine Sekundärquelle erfasst.

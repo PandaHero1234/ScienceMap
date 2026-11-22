@@ -1,0 +1,9 @@
+id: strukov-memristor-nature-2008
+label: Strukov et al., The missing memristor found (Nature 453, 80–83)
+short_label: Strukov et al. 2008
+team: strukov-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1038/nature06932

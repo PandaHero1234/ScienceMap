@@ -1,0 +1,6 @@
+id: cl-dolly-herkunft
+statement: Das Schaf Dolly stammt aus einer Euterzelle eines sechs Jahre alten Mutterschafs.
+scope: Das 1997 berichtete Tier.
+milestone_ids:
+- ms-klon-geburt
+- ms-klon-herkunft

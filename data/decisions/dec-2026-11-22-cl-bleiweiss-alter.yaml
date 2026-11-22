@@ -1,0 +1,12 @@
+id: dec-2026-11-22-cl-bleiweiss-alter
+date: '2026-11-22'
+kind: aussage
+target_id: cl-bleiweiss-alter
+outcome: vorlaeufig_gestuetzt
+rationale: Keisch et al. beschreiben das Verfahren 1967. Die Anwendung von 1968 ist nur mit ihrem Titel
+  erfasst.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-bleiweiss-keisch-1967
+- ev-bleiweiss-keisch-1968
+status: vorgeschlagen

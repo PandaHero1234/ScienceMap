@@ -1,0 +1,10 @@
+id: henry-honigbienen-science-2012
+label: Henry et al., A common pesticide decreases foraging success and survival in honey bees (Science
+  336, 348–350)
+short_label: Henry et al. 2012
+team: henry-et-al
+status: aktiv
+versions:
+- id: pubmed
+  kind: Eintrag in PubMed
+  url: https://pubmed.ncbi.nlm.nih.gov/22461498/

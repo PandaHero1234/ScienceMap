@@ -1,0 +1,9 @@
+id: mosteller-wallace-jasa-1963
+label: Mosteller und Wallace, Inference in an Authorship Problem (J. Am. Stat. Assoc. 58, 275–309)
+short_label: Mosteller und Wallace 1963
+team: mosteller-wallace
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1080/01621459.1963.10500849

@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-rauchen-kohorte
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-rauchen-kohorte
+catalog_version: 1
+outcome: erreicht
+rationale: Doll und Hill berichten 1954 eine höhere Sterblichkeit bei Rauchenden.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-rauchen-doll-hill-1954
+status: vorgeschlagen

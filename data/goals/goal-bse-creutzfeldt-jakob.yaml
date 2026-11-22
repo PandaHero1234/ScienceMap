@@ -1,0 +1,29 @@
+id: goal-bse-creutzfeldt-jakob
+field: Veterinärmedizin
+area: '403'
+topic: BSE und Creutzfeldt-Jakob-Krankheit
+title: Klären, ob die neue Variante der Creutzfeldt-Jakob-Krankheit vom BSE-Erreger stammt
+last_work: Drei Veröffentlichungen mit drei Belegen als Vorschlag erfasst
+open_question: Zweite Person trägt Verfahren und Fallzahlen aus den Volltexten nach
+milestones:
+- id: ms-vcjk-beschreibung
+  title: Neue Krankheitsvariante beschreiben
+  criterion: Eine begutachtete Veröffentlichung beschreibt Fälle mit einem neuen, einheitlichen Befund
+    am Gehirn.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-vcjk-erregerstamm
+  title: Gleichen Erregerstamm im Tierversuch zeigen
+  criterion: Übertragungen auf Mäuse zeigen bei der neuen Variante denselben Erregerstamm wie bei BSE.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-vcjk-zweite-gruppe
+  title: Durch zweite Gruppe bestätigen
+  criterion: Eine zweite Gruppe kommt mit eigenen Versuchen zum selben Ergebnis.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+catalog:
+- version: 1
+  date: '2026-11-22'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-vcjk-beschreibung
+  - ms-vcjk-erregerstamm
+  - ms-vcjk-zweite-gruppe

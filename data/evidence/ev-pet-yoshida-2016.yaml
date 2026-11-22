@@ -1,0 +1,15 @@
+id: ev-pet-yoshida-2016
+claim_id: cl-pet-bakterium
+study_id: yoshida-pet-science-2016
+study_version: journal
+locator: Abstract
+dataset_id: exp-yoshida-2016
+metric: Abbau einer PET-Folie
+values:
+  Abbau der Folie: fast vollständig nach 6 Wochen bei 30 °C
+  Befund: PET dient als Kohlenstoff- und Energiequelle
+uncertainty: Abbauraten sind aus dem Volltext nachzutragen.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Dauer und Temperatur stammen aus Berichten über die Studie, nicht aus dem Abstract.

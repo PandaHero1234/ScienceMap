@@ -1,0 +1,12 @@
+id: dec-2026-11-22-cl-bewerbung-rueckmeldungen
+date: '2026-11-22'
+kind: aussage
+target_id: cl-bewerbung-rueckmeldungen
+outcome: mehrfach_gestuetzt
+rationale: Zwei Feldexperimente verschiedener Gruppen und eine Meta-Analyse berichten den Unterschied.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-bewerbung-bertrand-2004
+- ev-bewerbung-quillian-2017
+- ev-bewerbung-kline-2022
+status: vorgeschlagen

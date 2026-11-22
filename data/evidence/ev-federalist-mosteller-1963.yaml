@@ -1,0 +1,15 @@
+id: ev-federalist-mosteller-1963
+claim_id: cl-federalist-madison
+study_id: mosteller-wallace-jasa-1963
+study_version: journal
+locator: Schlussfolgerungen des Artikels
+dataset_id: korpus-federalist
+metric: Zuordnung der umstrittenen Texte
+values:
+  Befund: Madison schrieb alle zwölf umstrittenen Texte
+  Verfahren: Vergleich mehrerer Trennverfahren, darunter Bayes-Statistik
+uncertainty: Die Chancenverhältnisse je Text sind aus dem Volltext nachzutragen.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Die DOI ist noch nicht an der Verlagsseite geprüft.

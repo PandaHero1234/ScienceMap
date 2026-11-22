@@ -1,0 +1,30 @@
+id: goal-klonen-saeugetier
+field: Tierzucht
+area: '402'
+topic: Klonen durch Kerntransfer
+title: Ein Säugetier aus einer Körperzelle eines erwachsenen Tieres klonen
+last_work: Vier Veröffentlichungen mit vier Belegen als Vorschlag erfasst
+open_question: Zweite Person trägt Zahlen zu Versuchen und Geburten aus den Volltexten nach
+milestones:
+- id: ms-klon-geburt
+  title: Geburt eines geklonten Tieres berichten
+  criterion: Eine begutachtete Veröffentlichung berichtet lebensfähige Nachkommen aus Zellen eines erwachsenen
+    Säugetiers.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-klon-herkunft
+  title: Herkunft genetisch prüfen
+  criterion: Eine genetische Analyse bestätigt, dass das Tier aus der Spenderzelle stammt.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-klon-zweite-art
+  title: Bei einer zweiten Tierart wiederholen
+  criterion: Eine andere Gruppe berichtet ausgetragene Nachkommen aus erwachsenen Körperzellen bei einer
+    zweiten Tierart.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+catalog:
+- version: 1
+  date: '2026-11-22'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-klon-geburt
+  - ms-klon-herkunft
+  - ms-klon-zweite-art

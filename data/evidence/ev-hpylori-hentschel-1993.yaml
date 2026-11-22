@@ -1,0 +1,15 @@
+id: ev-hpylori-hentschel-1993
+claim_id: cl-hpylori-rueckfall
+study_id: hentschel-geschwuer-nejm-1993
+study_version: pubmed
+locator: Abstract
+dataset_id: studie-hentschel-1993
+metric: Rückfälle nach der Behandlung
+values:
+  Teilnehmende: 104
+  Befund: deutlich weniger Rückfälle nach Beseitigung des Bakteriums
+uncertainty: Im erfassten Teil des Abstracts nicht beziffert.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Die Rückfallraten beider Gruppen sind nachzutragen.

@@ -1,0 +1,15 @@
+id: ev-neonic-whitehorn-2012
+claim_id: cl-neonic-hummeln
+study_id: whitehorn-hummeln-science-2012
+study_version: journal
+locator: Abstract
+dataset_id: exp-whitehorn-2012
+metric: Wachstum der Völker und Zahl neuer Königinnen
+values:
+  Rückgang neuer Königinnen: 85 %
+  Befund: signifikant geringeres Wachstum der Völker
+uncertainty: Im Abstract nicht beziffert.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Fundstelle bisher nur auf Ebene des Abstracts erfasst. Tabelle oder Abbildung im Volltext ist nachzutragen.

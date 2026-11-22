@@ -1,0 +1,7 @@
+id: cl-cart-remission
+statement: CD19-gerichtete CAR-T-Zellen (CTL019, Tisagenlecleucel) führen bei rezidivierter oder refraktärer
+  akuter lymphatischer Leukämie bei der Mehrheit der Behandelten zu einer Remission.
+scope: Kinder und Erwachsene (2014) sowie Kinder und junge Erwachsene (2018).
+milestone_ids:
+- ms-cart-erste-studie
+- ms-cart-zweite-studie

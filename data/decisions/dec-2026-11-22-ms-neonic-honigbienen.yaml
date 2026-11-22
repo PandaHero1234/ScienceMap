@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-neonic-honigbienen
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-neonic-honigbienen
+catalog_version: 1
+outcome: nicht_erreicht
+rationale: Der erfasste Feldversuch findet keine signifikante Wirkung auf Honigbienenvölker.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-neonic-rundlof-honigbienen-2015
+status: vorgeschlagen

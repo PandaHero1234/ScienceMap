@@ -1,0 +1,24 @@
+id: goal-growth-mindset
+field: Erziehungswissenschaften
+area: '503'
+topic: Growth Mindset
+title: Klären, ob eine kurze Intervention zum Growth Mindset Schulnoten verbessert
+last_work: Zwei Veröffentlichungen mit zwei Belegen als Vorschlag erfasst
+open_question: Zweite Person trägt Effektstärken und Konfidenzintervalle aus den Volltexten nach
+milestones:
+- id: ms-mindset-experiment
+  title: Wirkung in großem Experiment zeigen
+  criterion: Ein vorab registriertes Experiment mit repräsentativer Stichprobe berichtet bessere Noten
+    nach der Intervention.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-mindset-metaanalyse
+  title: Wirkung in Meta-Analyse bestätigen
+  criterion: Eine Meta-Analyse der Interventionsstudien berichtet insgesamt eine mehr als schwache Wirkung.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+catalog:
+- version: 1
+  date: '2026-11-22'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-mindset-experiment
+  - ms-mindset-metaanalyse

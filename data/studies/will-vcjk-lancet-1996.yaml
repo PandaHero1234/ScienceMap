@@ -1,0 +1,12 @@
+id: will-vcjk-lancet-1996
+label: Will et al., A new variant of Creutzfeldt-Jakob disease in the UK (Lancet 347, 921–925)
+short_label: Will et al. 1996
+team: will-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1016/S0140-6736(96)91412-9
+- id: pubmed
+  kind: Eintrag in PubMed
+  url: https://pubmed.ncbi.nlm.nih.gov/8598754/

@@ -1,0 +1,9 @@
+id: doll-hill-bmj-1950
+label: Doll und Hill, Smoking and Carcinoma of the Lung (Br. Med. J. 2, 739–748)
+short_label: Doll und Hill 1950
+team: doll-hill
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1136/bmj.2.4682.739

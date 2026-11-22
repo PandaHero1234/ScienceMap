@@ -1,0 +1,14 @@
+id: ev-memristor-strukov-verhalten
+claim_id: cl-memristor-verhalten
+study_id: strukov-memristor-nature-2008
+study_version: journal
+locator: Abstract
+dataset_id: exp-strukov-2008
+metric: Verhalten des Bauelements
+values:
+  Befund: verhält sich in einem eingeschränkten Bereich wie ein idealer Memristor
+uncertainty: Im Abstract nicht beziffert.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Fundstelle bisher nur auf Ebene des Abstracts erfasst. Tabelle oder Abbildung im Volltext ist nachzutragen.

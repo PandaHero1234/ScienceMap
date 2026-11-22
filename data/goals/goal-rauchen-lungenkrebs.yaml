@@ -1,0 +1,31 @@
+id: goal-rauchen-lungenkrebs
+field: Gesundheitswissenschaften
+area: '303'
+topic: Rauchen und Lungenkrebs
+title: Rauchen als Ursache von Lungenkrebs belegen
+last_work: Drei Veröffentlichungen mit drei Belegen als Vorschlag erfasst
+open_question: Zweite Person trägt die Zahlen zu Fällen, Kontrollen und Sterblichkeit aus den Volltexten
+  nach
+milestones:
+- id: ms-rauchen-fallkontrolle
+  title: Zusammenhang in Fall-Kontroll-Studie zeigen
+  criterion: Eine begutachtete Fall-Kontroll-Studie berichtet einen Zusammenhang zwischen Rauchen und
+    Lungenkrebs.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-rauchen-zweite-studie
+  title: In zweiter Fall-Kontroll-Studie bestätigen
+  criterion: Eine zweite Gruppe berichtet den Zusammenhang an eigenen Fällen.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-rauchen-kohorte
+  title: In Kohortenstudie bestätigen
+  criterion: Eine Kohortenstudie, die das Rauchen vor der Erkrankung erfasst, berichtet eine höhere Sterblichkeit
+    bei Rauchenden.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+catalog:
+- version: 1
+  date: '2026-11-22'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-rauchen-fallkontrolle
+  - ms-rauchen-zweite-studie
+  - ms-rauchen-kohorte

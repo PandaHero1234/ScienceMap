@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-graphen-quanten-hall
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-graphen-quanten-hall
+catalog_version: 1
+outcome: erreicht
+rationale: Novoselov et al. berichten den Effekt bei halbzahligen Füllfaktoren.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-graphen-novoselov-2005
+status: vorgeschlagen

@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-knobe-erstbefund
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-knobe-erstbefund
+catalog_version: 1
+outcome: erreicht
+rationale: Knobe berichtet den Unterschied 2003 in Analysis.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-knobe-2003
+status: vorgeschlagen

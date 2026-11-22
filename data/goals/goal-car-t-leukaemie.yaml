@@ -1,0 +1,29 @@
+id: goal-car-t-leukaemie
+field: Medizinische Biotechnologie
+area: '304'
+topic: CAR-T-Zell-Therapie
+title: Mit CAR-T-Zellen Remissionen bei akuter lymphatischer Leukämie erreichen
+last_work: Zwei Veröffentlichungen mit zwei Belegen als Vorschlag erfasst
+open_question: Zweite Person gleicht Remissionsraten und Überlebenszahlen mit den Tabellen ab
+milestones:
+- id: ms-cart-erste-studie
+  title: Remissionen in erster Studie zeigen
+  criterion: Eine klinische Studie berichtet vollständige Remissionen bei mindestens der Hälfte der Behandelten.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-cart-zweite-studie
+  title: In zweiter klinischer Studie bestätigen
+  criterion: Eine zweite, eigenständig registrierte klinische Studie berichtet eine Remissionsrate von
+    mindestens 50 %.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-cart-fuenf-jahre
+  title: Verlauf über fünf Jahre berichten
+  criterion: Eine Veröffentlichung berichtet das Überleben der Behandelten über mindestens fünf Jahre.
+  note: Offen. Im Atlas ist kein Beleg erfasst.
+catalog:
+- version: 1
+  date: '2026-11-22'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-cart-erste-studie
+  - ms-cart-zweite-studie
+  - ms-cart-fuenf-jahre

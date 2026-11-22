@@ -1,0 +1,9 @@
+id: wilmut-dolly-nature-1997
+label: Wilmut et al., Viable offspring derived from fetal and adult mammalian cells (Nature 385, 810–813)
+short_label: Wilmut et al. 1997
+team: wilmut-et-al
+status: aktiv
+versions:
+- id: pubmed
+  kind: Eintrag in PubMed
+  url: https://pubmed.ncbi.nlm.nih.gov/9039911/

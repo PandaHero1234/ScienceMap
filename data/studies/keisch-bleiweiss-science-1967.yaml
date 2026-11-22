@@ -1,0 +1,10 @@
+id: keisch-bleiweiss-science-1967
+label: Keisch et al., Dating and Authenticating Works of Art by Measurement of Natural Alpha Emitters
+  (Science 155, 1238–1242)
+short_label: Keisch et al. 1967
+team: keisch-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1126/science.155.3767.1238

@@ -1,0 +1,13 @@
+id: ev-haustuer-lacour-2014
+claim_id: cl-haustuer-gleichstellung
+study_id: lacour-green-science-2014
+study_version: rueckzug
+locator: Rückzugsnotiz
+dataset_id: befragung-lacour-2014
+metric: Einstellungswandel nach dem Gespräch
+values:
+  Befund: dauerhafter Einstellungswandel berichtet, Bericht zurückgezogen
+uncertainty: Entfällt. Die Originaldaten wurden nicht vorgelegt.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell

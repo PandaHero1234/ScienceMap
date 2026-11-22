@@ -1,0 +1,15 @@
+id: ev-mindset-yeager-2019
+claim_id: cl-mindset-noten
+study_id: yeager-mindset-nature-2019
+study_version: journal
+locator: Abstract
+dataset_id: exp-yeager-2019
+metric: Noten nach der Intervention
+values:
+  Befund: bessere Noten bei Leistungsschwächeren
+  Verbesserung: 0,10 Notenpunkte auf einer Skala bis 4
+uncertainty: Konfidenzintervall ist aus dem Volltext nachzutragen.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Die Größe der Verbesserung stammt aus einem Bericht in Education Week, nicht aus dem Abstract.

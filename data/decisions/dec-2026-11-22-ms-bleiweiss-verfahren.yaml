@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-bleiweiss-verfahren
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-bleiweiss-verfahren
+catalog_version: 1
+outcome: erreicht
+rationale: Keisch et al. veröffentlichen das Verfahren 1967 in Science.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-bleiweiss-keisch-1967
+status: vorgeschlagen

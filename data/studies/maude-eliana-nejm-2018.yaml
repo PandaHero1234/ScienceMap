@@ -1,0 +1,10 @@
+id: maude-eliana-nejm-2018
+label: Maude et al., Tisagenlecleucel in Children and Young Adults with B-Cell Lymphoblastic Leukemia
+  (N. Engl. J. Med. 378, 439–448)
+short_label: Maude et al. 2018
+team: maude-et-al
+status: aktiv
+versions:
+- id: pubmed
+  kind: Eintrag in PubMed
+  url: https://pubmed.ncbi.nlm.nih.gov/29385370/

@@ -78,10 +78,49 @@ Bei drei Studien verweist der Link deshalb auf einen Nachweis in einer Datenbank
 
 Der Ausbau hat den Prozess nicht mehr verändert. Alle neuen Fälle ließen sich mit dem bestehenden Datenmodell erfassen, auch der zurückgezogene, der widersprüchliche und der bedingte.
 
+## Zweite Ausbaustufe: 26 von 42 Fachgebieten
+
+**Stand vom 22. November 2026.** Fünfzehn weitere Ziele bringen vierzehn neue Fachgebiete auf die Karte und ein zweites Teilgebiet in die Klinische Medizin. Der Atlas hat damit 32 Ziele in 26 von 42 Fachgebieten. Jeder der sechs Bereiche hat mindestens drei Fachgebiete mit Zielen. Alle neuen Einträge sind Vorschläge.
+
+| Fachgebiet | Teilgebiet | Ziel | Was der Fall zeigt |
+|---|---|---|---|
+| Elektrotechnik, Elektronik, Informationstechnik | Memristor | Den vorhergesagten Memristor als Bauelement nachweisen | Streit um die Einordnung derselben Bauelemente, ohne neue Messung |
+| Industrielle Biotechnologie | Enzymatischer Abbau von PET | PET schnell genug für die Wiederverwertung abbauen | Ein Meilenstein mit Schwelle: 90 % in unter einem Tag |
+| Nanotechnologie | Graphen | Atomar dünne Schichten herstellen, Dirac-Fermionen nachweisen | Zwei Gruppen mit eigenen Proben im selben Band der Zeitschrift |
+| Klinische Medizin | Helicobacter pylori und Geschwüre | Bakterium als Ursache wiederkehrender Geschwüre belegen | Befund bestätigt, Zahlen fehlen noch: Der Beleg bleibt bewusst unvollständig |
+| Gesundheitswissenschaften | Rauchen und Lungenkrebs | Rauchen als Ursache von Lungenkrebs belegen | Drei Grundlagen verschiedener Art, zwei davon vom selben Team |
+| Medizinische Biotechnologie | CAR-T-Zell-Therapie | Remissionen bei Leukämie erreichen | Zwei Studien derselben Arbeitsgruppe: Die Seite nennt die Abhängigkeit |
+| Land- und Forstwirtschaft, Fischerei | Neonicotinoide und Bestäuber | Schaden an Bienen klären | Dieselbe Studie stützt eine Aussage und spricht gegen eine andere |
+| Tierzucht, Tierproduktion | Klonen durch Kerntransfer | Säugetier aus erwachsener Körperzelle klonen | Genetische Prüfung der Herkunft, eine Analyse davon nicht unabhängig |
+| Veterinärmedizin | BSE und Creutzfeldt-Jakob-Krankheit | Herkunft der neuen Variante klären | Zwei Gruppen mit eigenen Übertragungsversuchen |
+| Erziehungswissenschaften | Growth Mindset | Wirkung einer kurzen Intervention klären | Eine Meta-Analyse als nicht entscheidender Beleg |
+| Soziologie | Benachteiligung bei Bewerbungen | Benachteiligung mit Feldexperimenten messen | Meta-Analyse, die ein erfasstes Experiment enthalten kann |
+| Politikwissenschaften | Einstellungswandel durch Gespräche | Dauerhafte Wirkung eines Haustürgesprächs zeigen | Zurückgezogene Erststudie, Nachfolgestudie der Kritiker |
+| Sprach- und Literaturwissenschaften | Autorschaft der Federalist Papers | Autorschaft der zwölf umstrittenen Texte klären | Eine Quelle, Bestätigung durch ein zweites Verfahren offen |
+| Philosophie, Ethik, Religion | Experimentelle Philosophie | Knobe-Effekt belegen | Große Replikationsstudie, deren Abstract den Einzelfall nicht nennt |
+| Kunstwissenschaften | Echtheitsprüfung von Gemälden | Bleiweiß über natürliche Radioaktivität datieren | Verfahren belegt, Anwendung nur mit dem Titel erfasst |
+
+Diese Angaben ließen sich per Websuche nicht bestätigen. Sie fehlen oder sind im Beleg als offen vermerkt:
+
+- die Rückfallraten beider Gruppen bei Hentschel et al.,
+- die Zahlen zu Fällen, Kontrollen und Sterblichkeit in den drei Arbeiten zu Rauchen und Lungenkrebs,
+- Verfahren und Fallzahlen bei Hill et al.,
+- die Effektstärken bei Sisk et al. und das Konfidenzintervall bei Yeager et al.,
+- der Vergleichswert für die nützliche Nebenfolge bei Knobe und die Frage, ob seine Studie zu den 40 replizierten gehört,
+- welche Gemälde Keisch 1968 gemessen hat und mit welchem Ergebnis,
+- die Befunde von Holmes und Forsyth 1995 zu den Federalist Papers,
+- die DOI von Mosteller und Wallace, die nur aus einer Literaturliste stammt.
+
+Sechs Werte stammen aus Sekundärquellen und sind im Beleg so gekennzeichnet: die Schlussfolgerungen von Doll und Hill, die Zahl der Fälle bei Will et al., die Notenverbesserung bei Yeager et al., der Anteil bei Knobe sowie Dauer und Temperatur bei Yoshida et al.
+
+Bei 14 der 36 neuen Studien verweist der Link auf die Fassung, die gelesen wurde, statt auf die Zeitschrift: auf ein Arbeitspapier (Bertrand und Mullainathan; Kline, Rose und Walters), einen Preprint (Novoselov et al. 2005, Zhang et al.), ein Repositorium oder Archiv (Broockman und Kalla, Knobe), einen Eintrag in PubMed oder einem Katalog (Hentschel et al., Maude et al. 2014 und 2018, Henry et al., Bruce et al., Wilmut et al., Keisch 1968) oder einen Eintrag im Astrophysics Data System (Novoselov et al. 2004). Die zurückgezogene Studie von LaCour und Green ist über die Rückzugsnotiz verlinkt.
+
+Auch diese Stufe hat den Prozess nicht verändert. Neu genutzt wurde nur, was das Datenmodell schon konnte: die Beziehung „nicht entscheidend“ und Fassungen einer Studie, die nicht die Zeitschriftenfassung sind.
+
 ## Der Weg zur Freigabe
 
 1. Eine Person prüft einen Beleg gegen den Volltext, trägt die genaue Fundstelle nach und setzt sich in `extracted_by` ein.
 2. Eine zweite Person prüft Fundstelle, Richtung und Grenzen, setzt sich in `reviewed_by` ein und stellt `review_status` auf `freigegeben`.
 3. Dieselben zwei Schritte folgen für die Entscheidung. Sie erhält zusätzlich die Art der Absicherung und den Status `freigegeben`.
 
-`tests/test_fachgebiete.py` spielt diesen Weg für alle Vorschläge durch. Das Ergebnis wäre 4 von 4 in der Physik, 4 von 5 in der Mathematik, 4 von 4 bei CRISPR-Cas9 und 0 von 2 bei NgAgo.
+`tests/test_fachgebiete.py` spielt diesen Weg für alle Vorschläge durch. Das Ergebnis wäre 4 von 4 in der Physik, 4 von 5 in der Mathematik, 4 von 4 bei CRISPR-Cas9 und 0 von 2 bei NgAgo. `tests/test_ausbau.py` und `tests/test_ausbau2.py` tun dasselbe für die beiden Ausbaustufen.

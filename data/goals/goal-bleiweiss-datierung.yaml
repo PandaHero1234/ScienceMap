@@ -1,0 +1,25 @@
+id: goal-bleiweiss-datierung
+field: Kunstwissenschaften
+area: '604'
+topic: Echtheitsprüfung von Gemälden
+title: Gemälde über die natürliche Radioaktivität von Bleiweiß datieren und Fälschungen erkennen
+last_work: Zwei Veröffentlichungen mit zwei Belegen als Vorschlag erfasst
+open_question: Zweite Person trägt aus dem Volltext von 1968 nach, welche Gemälde gemessen wurden
+milestones:
+- id: ms-bleiweiss-verfahren
+  title: Verfahren veröffentlichen
+  criterion: Eine begutachtete Veröffentlichung beschreibt, wie sich modernes von altem Blei unterscheiden
+    lässt.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-bleiweiss-anwendung
+  title: An strittigen Gemälden anwenden
+  criterion: Eine begutachtete Veröffentlichung berichtet Messwerte für Gemälde, deren Echtheit strittig
+    war.
+  note: Offen. Die Veröffentlichung von 1968 ist bisher nur mit ihrem Titel erfasst.
+catalog:
+- version: 1
+  date: '2026-11-22'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-bleiweiss-verfahren
+  - ms-bleiweiss-anwendung

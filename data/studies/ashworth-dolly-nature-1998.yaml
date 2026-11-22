@@ -1,0 +1,9 @@
+id: ashworth-dolly-nature-1998
+label: Ashworth et al., DNA microsatellite analysis of Dolly (Nature 394, 329)
+short_label: Ashworth et al. 1998
+team: ashworth-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1038/28521

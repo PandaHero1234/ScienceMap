@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-cart-zweite-studie
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-cart-zweite-studie
+catalog_version: 1
+outcome: erreicht
+rationale: Die Studie ELIANA berichtet eine Remissionsrate von 81 % bei 75 Behandelten.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-cart-eliana-2018
+status: vorgeschlagen

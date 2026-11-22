@@ -1,0 +1,12 @@
+id: dec-2026-11-22-cl-mindset-noten
+date: '2026-11-22'
+kind: aussage
+target_id: cl-mindset-noten
+outcome: vorlaeufig_gestuetzt
+rationale: Das Experiment berichtet bessere Noten bei Leistungsschwächeren. Die Meta-Analyse findet insgesamt
+  nur eine schwache Wirkung und entscheidet die Frage nicht.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-mindset-yeager-2019
+- ev-mindset-sisk-2018
+status: vorgeschlagen

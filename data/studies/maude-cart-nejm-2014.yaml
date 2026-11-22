@@ -1,0 +1,10 @@
+id: maude-cart-nejm-2014
+label: Maude et al., Chimeric antigen receptor T cells for sustained remissions in leukemia (N. Engl.
+  J. Med. 371, 1507–1517)
+short_label: Maude et al. 2014
+team: maude-et-al
+status: aktiv
+versions:
+- id: pubmed
+  kind: Eintrag in PubMed
+  url: https://pubmed.ncbi.nlm.nih.gov/25317870/

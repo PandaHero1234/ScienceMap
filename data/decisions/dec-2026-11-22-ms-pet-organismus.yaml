@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-pet-organismus
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-pet-organismus
+catalog_version: 1
+outcome: erreicht
+rationale: Yoshida et al. beschreiben das Bakterium 2016 in Science.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-pet-yoshida-2016
+status: vorgeschlagen

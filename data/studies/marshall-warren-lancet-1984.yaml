@@ -1,0 +1,13 @@
+id: marshall-warren-lancet-1984
+label: 'Marshall und Warren, Unidentified curved bacilli in the stomach of patients with gastritis and
+  peptic ulceration (Lancet 1984; 1: 1311–1315)'
+short_label: Marshall und Warren 1984
+team: marshall-warren
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1016/S0140-6736(84)91816-6
+- id: pubmed
+  kind: Eintrag in PubMed
+  url: https://pubmed.ncbi.nlm.nih.gov/6145023/

@@ -1,0 +1,15 @@
+id: ev-bleiweiss-keisch-1967
+claim_id: cl-bleiweiss-alter
+study_id: keisch-bleiweiss-science-1967
+study_version: journal
+locator: Abstract
+dataset_id: messungen-keisch-1967
+metric: Unterscheidung von modernem und altem Blei
+values:
+  Halbwertszeit von Blei-210: 22 Jahre
+  Befund: Verfahren unterscheidet modernes von altem Blei
+uncertainty: Messunsicherheiten sind aus dem Volltext nachzutragen.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Fundstelle bisher nur auf Ebene des Abstracts erfasst. Tabelle oder Abbildung im Volltext ist nachzutragen.

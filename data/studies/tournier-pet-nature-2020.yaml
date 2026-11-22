@@ -1,0 +1,13 @@
+id: tournier-pet-nature-2020
+label: Tournier et al., An engineered PET depolymerase to break down and recycle plastic bottles (Nature
+  580, 216)
+short_label: Tournier et al. 2020
+team: tournier-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1038/s41586-020-2149-4
+- id: pubmed
+  kind: Eintrag in PubMed
+  url: https://pubmed.ncbi.nlm.nih.gov/32269349/

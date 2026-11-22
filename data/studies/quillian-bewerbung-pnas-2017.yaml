@@ -1,0 +1,10 @@
+id: quillian-bewerbung-pnas-2017
+label: Quillian et al., Meta-analysis of field experiments shows no change in racial discrimination in
+  hiring over time (Proc. Natl. Acad. Sci. 114, 10870–10875)
+short_label: Quillian et al. 2017
+team: quillian-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1073/pnas.1706255114

@@ -1,0 +1,11 @@
+id: dec-2026-11-22-cl-memristor-verhalten
+date: '2026-11-22'
+kind: aussage
+target_id: cl-memristor-verhalten
+outcome: vorlaeufig_gestuetzt
+rationale: Strukov et al. berichten das Verhalten für einen eingeschränkten Bereich. Es liegt eine Quelle
+  vor.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-memristor-strukov-verhalten
+status: vorgeschlagen

@@ -1,0 +1,12 @@
+id: novoselov-graphen-science-2004
+label: Novoselov et al., Electric Field Effect in Atomically Thin Carbon Films (Science 306, 666–669)
+short_label: Novoselov et al. 2004
+team: novoselov-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Eintrag im Astrophysics Data System
+  url: https://ui.adsabs.harvard.edu/abs/2004Sci...306..666N/abstract
+- id: arxiv
+  kind: Preprint arXiv:cond-mat/0410550
+  url: https://arxiv.org/abs/cond-mat/0410550

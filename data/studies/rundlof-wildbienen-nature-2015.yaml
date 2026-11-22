@@ -1,0 +1,10 @@
+id: rundlof-wildbienen-nature-2015
+label: Rundlöf et al., Seed coating with a neonicotinoid insecticide negatively affects wild bees (Nature
+  521, 77)
+short_label: Rundlöf et al. 2015
+team: rundlof-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1038/nature14420

@@ -1,0 +1,10 @@
+id: hentschel-geschwuer-nejm-1993
+label: Hentschel et al., Effect of ranitidine and amoxicillin plus metronidazole on the eradication of
+  Helicobacter pylori and the recurrence of duodenal ulcer (N. Engl. J. Med. 328, 308–312)
+short_label: Hentschel et al. 1993
+team: hentschel-et-al
+status: aktiv
+versions:
+- id: pubmed
+  kind: Eintrag in PubMed
+  url: https://pubmed.ncbi.nlm.nih.gov/8419816/

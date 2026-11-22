@@ -1,0 +1,10 @@
+id: wakayama-maus-nature-1998
+label: Wakayama et al., Full-term development of mice from enucleated oocytes injected with cumulus cell
+  nuclei (Nature 394, 369–374)
+short_label: Wakayama et al. 1998
+team: wakayama-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1038/28615

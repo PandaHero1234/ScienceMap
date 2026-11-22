@@ -1,0 +1,13 @@
+id: ev-dolly-signer-1998
+claim_id: cl-dolly-herkunft
+study_id: signer-dolly-nature-1998
+study_version: journal
+locator: Zusammenfassung
+dataset_id: analyse-fingerabdruck-dolly
+metric: Abgleich des Erbguts
+values:
+  Befund: DNA-Fingerabdruck bestätigt die Herkunft aus der Spenderzelle
+uncertainty: Wahrscheinlichkeit einer zufälligen Übereinstimmung ist aus dem Volltext nachzutragen.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell

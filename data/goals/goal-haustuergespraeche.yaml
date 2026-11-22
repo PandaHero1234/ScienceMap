@@ -1,0 +1,24 @@
+id: goal-haustuergespraeche
+field: Politikwissenschaften
+area: '506'
+topic: Einstellungswandel durch Gespräche
+title: Zeigen, dass ein kurzes Haustürgespräch Einstellungen dauerhaft verändert
+last_work: Zwei Veröffentlichungen mit zwei Belegen als Vorschlag erfasst, eine davon zurückgezogen
+open_question: Zweite Person erfasst die späteren Feldexperimente von Kalla und Broockman
+milestones:
+- id: ms-haustuer-feldexperiment
+  title: Dauerhafte Wirkung im Feldexperiment berichten
+  criterion: Ein begutachtetes Feldexperiment berichtet eine Wirkung über mindestens drei Monate. Die
+    Veröffentlichung ist nicht zurückgezogen.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-haustuer-anderes-team
+  title: Durch ein anderes Team bestätigen
+  criterion: Ein anderes Team berichtet die Wirkung in einem eigenen Feldexperiment.
+  note: Offen. Im Atlas ist kein Beleg erfasst.
+catalog:
+- version: 1
+  date: '2026-11-22'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-haustuer-feldexperiment
+  - ms-haustuer-anderes-team

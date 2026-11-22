@@ -1,0 +1,29 @@
+id: goal-neonicotinoide-bienen
+field: Land- und Forstwirtschaft
+area: '401'
+topic: Neonicotinoide und Bestäuber
+title: Klären, ob Neonicotinoide in feldüblichen Mengen Bienen schaden
+last_work: Drei Veröffentlichungen mit vier Belegen als Vorschlag erfasst
+open_question: Zweite Person erfasst die Kritik an der Studie zu Honigbienen und die Antwort darauf
+milestones:
+- id: ms-neonic-hummeln
+  title: Schaden an Hummelvölkern zeigen
+  criterion: Eine begutachtete Veröffentlichung berichtet bei feldüblicher Belastung ein geringeres Wachstum
+    oder weniger Königinnen.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-neonic-feld
+  title: Unter Feldbedingungen bestätigen
+  criterion: Ein Feldversuch mit behandeltem Saatgut berichtet Schäden an Wildbienen oder Hummeln.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-neonic-honigbienen
+  title: Wirkung auf Honigbienenvölker im Feld zeigen
+  criterion: Ein Feldversuch berichtet eine signifikante Wirkung auf Honigbienenvölker.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+catalog:
+- version: 1
+  date: '2026-11-22'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-neonic-hummeln
+  - ms-neonic-feld
+  - ms-neonic-honigbienen

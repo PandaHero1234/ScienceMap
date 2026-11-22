@@ -1,0 +1,5 @@
+id: cl-memristor-chua
+statement: Die 2008 vorgestellten Bauelemente sind der von Chua vorhergesagte Memristor.
+scope: Einordnung als viertes Grundbauelement elektrischer Schaltungen.
+milestone_ids:
+- ms-memristor-einordnung

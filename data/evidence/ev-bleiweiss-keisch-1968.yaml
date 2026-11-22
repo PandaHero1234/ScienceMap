@@ -1,0 +1,15 @@
+id: ev-bleiweiss-keisch-1968
+claim_id: cl-bleiweiss-alter
+study_id: keisch-bleiweiss-science-1968
+study_version: katalog
+locator: Titel
+dataset_id: messungen-keisch-1968
+metric: Anwendung des Verfahrens auf Kunstwerke
+values:
+  Befund: Verbesserungen und Anwendungen des Verfahrens
+uncertainty: offen
+relation: nicht_entscheidend
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Welche Gemälde gemessen wurden und mit welchem Ergebnis, ist nachzutragen. Eine spätere Broschüre
+  von Keisch nennt Gemälde von van Meegeren.

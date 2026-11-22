@@ -1,0 +1,29 @@
+id: goal-pet-enzymabbau
+field: Industrielle Biotechnologie
+area: '209'
+topic: Enzymatischer Abbau von PET
+title: PET-Kunststoff mit Enzymen so schnell abbauen, dass er sich wiederverwerten lässt
+last_work: Zwei Veröffentlichungen mit zwei Belegen als Vorschlag erfasst
+open_question: Zweite Person erfasst ein zweites Enzym einer anderen Gruppe
+milestones:
+- id: ms-pet-organismus
+  title: Organismus finden, der PET abbaut
+  criterion: Eine begutachtete Veröffentlichung beschreibt einen Organismus, der PET abbaut und als Nahrung
+    nutzt.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-pet-90-prozent
+  title: 90 % Abbau in unter einem Tag erreichen
+  criterion: Ein Enzym baut PET in höchstens 24 Stunden zu mindestens 90 % zu Monomeren ab.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-pet-zweites-enzym
+  title: Mit zweitem Enzym einer anderen Gruppe erreichen
+  criterion: Eine andere Gruppe erreicht mit einem eigenen Enzym denselben Abbaugrad.
+  note: Offen. Im Atlas ist kein Beleg erfasst.
+catalog:
+- version: 1
+  date: '2026-11-22'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-pet-organismus
+  - ms-pet-90-prozent
+  - ms-pet-zweites-enzym

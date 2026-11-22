@@ -1,0 +1,25 @@
+id: goal-memristor
+field: Elektrotechnik
+area: '202'
+topic: Memristor
+title: Den von Chua vorhergesagten Memristor als Bauelement nachweisen
+last_work: Zwei Veröffentlichungen mit drei Belegen als Vorschlag erfasst
+open_question: Zweite Person prüft, ob weitere Veröffentlichungen die Einordnung stützen oder bestreiten
+milestones:
+- id: ms-memristor-bauelement
+  title: Bauelement mit Memristor-Verhalten berichten
+  criterion: Eine begutachtete Veröffentlichung berichtet ein zweipoliges Bauelement, das sich wie ein
+    Memristor verhält.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-memristor-einordnung
+  title: Einordnung unabhängig bestätigen
+  criterion: Eine unabhängige begutachtete Veröffentlichung bestätigt, dass das Bauelement der vorhergesagte
+    Memristor ist.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+catalog:
+- version: 1
+  date: '2026-11-22'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-memristor-bauelement
+  - ms-memristor-einordnung

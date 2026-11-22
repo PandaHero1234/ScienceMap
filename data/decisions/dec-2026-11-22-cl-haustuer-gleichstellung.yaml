@@ -1,0 +1,10 @@
+id: dec-2026-11-22-cl-haustuer-gleichstellung
+date: '2026-11-22'
+kind: aussage
+target_id: cl-haustuer-gleichstellung
+outcome: offen
+rationale: Der einzige Beleg stammt aus einer zurückgezogenen Veröffentlichung und zählt nicht.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-haustuer-lacour-2014
+status: vorgeschlagen

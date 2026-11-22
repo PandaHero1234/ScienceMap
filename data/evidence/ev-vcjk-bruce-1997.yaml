@@ -1,0 +1,15 @@
+id: ev-vcjk-bruce-1997
+claim_id: cl-vcjk-bse-stamm
+study_id: bruce-vcjk-nature-1997
+study_version: pubmed
+locator: Abstract
+dataset_id: maeuse-bruce-1997
+metric: Vergleich der Erregerstämme
+values:
+  Übertragene Fälle der neuen Variante: 3
+  Befund: derselbe Erregerstamm bei BSE und neuer Variante
+uncertainty: Zwischenergebnisse. Im Abstract nicht beziffert.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Fundstelle bisher nur auf Ebene des Abstracts erfasst. Tabelle oder Abbildung im Volltext ist nachzutragen.

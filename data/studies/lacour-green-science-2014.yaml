@@ -1,0 +1,17 @@
+id: lacour-green-science-2014
+label: 'LaCour und Green, When contact changes minds: An experiment on transmission of support for gay
+  equality (Science, 12. Dezember 2014)'
+short_label: LaCour und Green 2014
+team: lacour-green
+status: zurueckgezogen
+status_date: '2015-05-28'
+status_note: Rückzug durch Science mit Zustimmung von Green. LaCour legte die Originaldaten der Befragung
+  nicht vor und stimmte dem Rückzug nicht zu. Zuvor hatten Broockman, Kalla und Aronow Unstimmigkeiten
+  in den Daten gemeldet.
+versions:
+- id: rueckzug
+  kind: Rückzugsnotiz von Science vom 28. Mai 2015 (Kopie)
+  url: https://www.povertyactionlab.org/sites/default/files/2015.05.28-Science-LaCourGreen.pdf
+- id: bericht
+  kind: Bericht zum Rückzug (Retraction Watch)
+  url: https://retractionwatch.com/2025/06/06/same-sex-marriage-retraction-political-science-study-lacour-green-broockman-kalla

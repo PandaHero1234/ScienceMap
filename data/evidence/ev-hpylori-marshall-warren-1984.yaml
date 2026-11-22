@@ -1,0 +1,16 @@
+id: ev-hpylori-marshall-warren-1984
+claim_id: cl-hpylori-vorkommen
+study_id: marshall-warren-lancet-1984
+study_version: journal
+locator: Abstract
+dataset_id: biopsien-marshall-warren-1984
+metric: Nachweis der Bakterien in Magenbiopsien
+values:
+  Personen mit nachgewiesenen Bakterien: 58
+  Kulturen aus diesen Biopsien: 11
+  Befund: bei fast allen mit aktiver chronischer Gastritis, Zwölffingerdarm- oder Magengeschwür vorhanden
+uncertainty: Anteile je Diagnose sind aus dem Volltext nachzutragen.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Fundstelle bisher nur auf Ebene des Abstracts erfasst. Tabelle oder Abbildung im Volltext ist nachzutragen.

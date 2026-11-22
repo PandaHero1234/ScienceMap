@@ -1,0 +1,11 @@
+id: dec-2026-11-22-cl-hpylori-vorkommen
+date: '2026-11-22'
+kind: aussage
+target_id: cl-hpylori-vorkommen
+outcome: vorlaeufig_gestuetzt
+rationale: Marshall und Warren berichten die Bakterien bei fast allen Erkrankten. Es liegt eine Quelle
+  vor.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-hpylori-marshall-warren-1984
+status: vorgeschlagen

@@ -1,0 +1,8 @@
+id: cl-bewerbung-rueckmeldungen
+statement: In den USA erhalten Bewerbungen mit Namen, die als typisch weiß gelten, mehr Rückmeldungen
+  als gleichwertige Bewerbungen mit Namen, die als typisch schwarz gelten.
+scope: Feldexperimente mit erfundenen Bewerbungen in den USA.
+milestone_ids:
+- ms-bewerbung-feldexperiment
+- ms-bewerbung-metaanalyse
+- ms-bewerbung-grossversuch

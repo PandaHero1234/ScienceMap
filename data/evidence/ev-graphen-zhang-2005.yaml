@@ -1,0 +1,15 @@
+id: ev-graphen-zhang-2005
+claim_id: cl-graphen-dirac
+study_id: zhang-graphen-nature-2005
+study_version: arxiv
+locator: Abstract
+dataset_id: exp-zhang-2005
+metric: Quanten-Hall-Effekt
+values:
+  Befund: halbzahliger Quanten-Hall-Effekt für Elektronen und Löcher
+  Berry-Phase: durch Magnetooszillationen bestätigt
+uncertainty: Im Abstract nicht beziffert.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Fundstelle aus dem Preprint. Die Abbildung in der Zeitschrift ist nachzutragen.

@@ -1,0 +1,15 @@
+id: ev-klon-wakayama-1998
+claim_id: cl-klon-maus
+study_id: wakayama-maus-nature-1998
+study_version: journal
+locator: Abstract
+dataset_id: exp-wakayama-maus
+metric: Anteil ausgetragener Embryonen
+values:
+  Anteil ausgetragener Embryonen: etwa 2 bis 2,8 %
+  Spenderzellen: Kumuluszellen
+uncertainty: Als Spanne berichtet.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Fundstelle bisher nur auf Ebene des Abstracts erfasst. Tabelle oder Abbildung im Volltext ist nachzutragen.

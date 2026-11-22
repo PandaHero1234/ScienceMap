@@ -1,0 +1,14 @@
+id: ev-dolly-wilmut-1997
+claim_id: cl-dolly-herkunft
+study_id: wilmut-dolly-nature-1997
+study_version: pubmed
+locator: Abstract
+dataset_id: exp-wilmut-kerntransfer
+metric: Geburt nach Kerntransfer
+values:
+  Befund: Lämmer aus Zellen eines Fetus und eines erwachsenen Tieres geboren
+uncertainty: Zahl der Versuche ist aus dem Volltext nachzutragen.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Fundstelle bisher nur auf Ebene des Abstracts erfasst. Tabelle oder Abbildung im Volltext ist nachzutragen.

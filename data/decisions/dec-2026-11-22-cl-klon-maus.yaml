@@ -1,0 +1,10 @@
+id: dec-2026-11-22-cl-klon-maus
+date: '2026-11-22'
+kind: aussage
+target_id: cl-klon-maus
+outcome: vorlaeufig_gestuetzt
+rationale: Wakayama et al. berichten ausgetragene Mäuse. Es liegt eine Quelle vor.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-klon-wakayama-1998
+status: vorgeschlagen

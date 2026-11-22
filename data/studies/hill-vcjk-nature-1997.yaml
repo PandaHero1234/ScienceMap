@@ -1,0 +1,9 @@
+id: hill-vcjk-nature-1997
+label: Hill et al., The same prion strain causes vCJD and BSE (Nature 389, 448–450)
+short_label: Hill et al. 1997
+team: hill-et-al
+status: aktiv
+versions:
+- id: journal
+  kind: Journalfassung
+  url: https://doi.org/10.1038/38925

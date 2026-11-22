@@ -1,0 +1,7 @@
+id: cl-graphen-dirac
+statement: In Graphen tritt der Quanten-Hall-Effekt bei halbzahligen Füllfaktoren auf, wie es für masselose
+  Dirac-Fermionen erwartet wird.
+scope: Messungen an einlagigem Graphen im Magnetfeld.
+milestone_ids:
+- ms-graphen-quanten-hall
+- ms-graphen-zweite-gruppe

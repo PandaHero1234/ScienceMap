@@ -1,0 +1,12 @@
+id: dec-2026-11-22-cl-memristor-chua
+date: '2026-11-22'
+kind: aussage
+target_id: cl-memristor-chua
+outcome: widerspruechlich
+rationale: Strukov et al. stellen die Bauelemente als den fehlenden Memristor vor. Vongehr und Meng bestreiten
+  diese Einordnung.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-memristor-strukov-einordnung
+- ev-memristor-vongehr-2015
+status: vorgeschlagen

@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-rauchen-zweite-studie
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-rauchen-zweite-studie
+catalog_version: 1
+outcome: erreicht
+rationale: Wynder und Graham berichten 684 gesicherte Fälle.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-rauchen-wynder-graham-1950
+status: vorgeschlagen

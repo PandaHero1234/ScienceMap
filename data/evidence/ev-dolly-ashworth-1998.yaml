@@ -1,0 +1,15 @@
+id: ev-dolly-ashworth-1998
+claim_id: cl-dolly-herkunft
+study_id: ashworth-dolly-nature-1998
+study_version: journal
+locator: Zusammenfassung
+dataset_id: analyse-mikrosatelliten-dolly
+metric: Abgleich des Erbguts
+values:
+  Übereinstimmende Mikrosatelliten-Allele: 7
+  Befund: Dolly stammt aus einer Euterzelle des Spendertiers
+uncertainty: Wahrscheinlichkeit einer zufälligen Übereinstimmung ist aus dem Volltext nachzutragen.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Wilmut hat an der Analyse mitgeschrieben. Sie ist nicht unabhängig von der Erstveröffentlichung.

@@ -1,0 +1,11 @@
+id: dec-2026-11-22-ms-memristor-bauelement
+date: '2026-11-22'
+kind: meilenstein
+target_id: ms-memristor-bauelement
+catalog_version: 1
+outcome: erreicht
+rationale: Strukov et al. berichten das Bauelement 2008 in Nature.
+suggested_by: Sprachmodell
+evidence_ids:
+- ev-memristor-strukov-verhalten
+status: vorgeschlagen

@@ -1,0 +1,14 @@
+id: ev-knobe-2003
+claim_id: cl-knobe-nebenfolgen
+study_id: knobe-analysis-2003
+study_version: archiv
+locator: Ergebnisteil
+dataset_id: exp-knobe-2003
+metric: Anteil der Befragten, die die Nebenfolge als absichtlich einstufen
+values:
+  Schädliche Nebenfolge als absichtlich eingestuft: 82 %
+uncertainty: Der Vergleichswert für die nützliche Nebenfolge ist aus dem Volltext nachzutragen.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Der Wert ist bisher über eine Sekundärquelle erfasst.

@@ -1,0 +1,18 @@
+id: ev-cart-maude-2014
+claim_id: cl-cart-remission
+study_id: maude-cart-nejm-2014
+study_version: pubmed
+locator: Abstract
+dataset_id: studie-ctl019-2014
+metric: Rate vollständiger Remissionen
+values:
+  Vollständige Remission: 90 %
+  Behandelte: 30
+  Ereignisfreies Überleben nach 6 Monaten: 67 %
+  Gesamtüberleben nach 6 Monaten: 78 %
+  Schweres Zytokin-Freisetzungssyndrom: 27 %
+uncertainty: Konfidenzintervalle sind aus dem Abstract nachzutragen.
+relation: stuetzt
+review_status: vorgeschlagen
+suggested_by: Sprachmodell
+note: Fundstelle bisher nur auf Ebene des Abstracts erfasst. Tabelle oder Abbildung im Volltext ist nachzutragen.

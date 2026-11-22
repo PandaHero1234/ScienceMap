@@ -1,0 +1,29 @@
+id: goal-bewerbung-benachteiligung
+field: Soziologie
+area: '504'
+topic: Benachteiligung bei Bewerbungen
+title: Benachteiligung nach Herkunft bei Bewerbungen mit Feldexperimenten messen
+last_work: Drei Veröffentlichungen mit drei Belegen als Vorschlag erfasst
+open_question: Zweite Person prüft, ob die Meta-Analyse das Feldexperiment von 2004 enthält
+milestones:
+- id: ms-bewerbung-feldexperiment
+  title: Benachteiligung im Feldexperiment messen
+  criterion: Ein Feldexperiment mit erfundenen, gleichwertigen Bewerbungen berichtet unterschiedliche
+    Rückmelderaten.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-bewerbung-metaanalyse
+  title: Über viele Feldexperimente bestätigen
+  criterion: Eine Meta-Analyse von mindestens zehn Feldexperimenten berichtet den Unterschied.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+- id: ms-bewerbung-grossversuch
+  title: In unabhängigem Großversuch bestätigen
+  criterion: Ein Experiment einer anderen Gruppe mit mindestens 10 000 Bewerbungen berichtet den Unterschied.
+  note: Vorschlag liegt vor, Zweitprüfung offen.
+catalog:
+- version: 1
+  date: '2026-11-22'
+  reason: Erster Zielkatalog, als Vorschlag erfasst
+  milestones:
+  - ms-bewerbung-feldexperiment
+  - ms-bewerbung-metaanalyse
+  - ms-bewerbung-grossversuch
